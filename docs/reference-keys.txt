@@ -27,3 +27,11 @@ preliminaries
 quarto-markdown
 starting-a-quarto-file
 packages
+instructions-for-managing-working-directories
+local-working-directory-setup
+steps
+file-naming-convention
+shared-google-drive-setup
+workflow-for-.qmd-files
+rendering-the-final-report
+summary-workflow
