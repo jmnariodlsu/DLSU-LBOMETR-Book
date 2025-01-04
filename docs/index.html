@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Basic Introduction to R | LBOMETR Course Book</title>
-  <meta name="description" content="5 Basic Introduction to R | LBOMETR Course Book" />
+  <title>LBOMETR Course Book</title>
+  <meta name="description" content="LBOMETR Course Book" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Basic Introduction to R | LBOMETR Course Book" />
+  <meta property="og:title" content="LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Basic Introduction to R | LBOMETR Course Book" />
+  <meta name="twitter:title" content="LBOMETR Course Book" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grouping-process.html"/>
 
+<link rel="next" href="syllabus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,157 +201,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="basic-introduction-to-r" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Basic Introduction to R<a href="basic-introduction-to-r.html#basic-introduction-to-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This portion of the book offers an introduction to the basics of R. R offers a wide variety of functionality. Note that this book only offers basic Econometric analysis. It will be useful to have some basic familiarity with R and its syntax but this is not strictly necessary.</p>
-<p>Each chapter includes both R code and results to make it easier for students to follow along, even without detailed knowledge of R.</p>
-<div id="session-information" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Session Information<a href="basic-introduction-to-r.html#session-information" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This version of the book was built using R version 4.4.2. See below for the session information:</p>
-<pre><code>## R version 4.4.2 (2024-10-31 ucrt)
-## Platform: x86_64-w64-mingw32/x64
-## Running under: Windows 11 x64 (build 22631)
-## 
-## Matrix products: default
-## 
-## 
-## locale:
-## [1] LC_COLLATE=English_Philippines.utf8  LC_CTYPE=English_Philippines.utf8    LC_MONETARY=English_Philippines.utf8
-## [4] LC_NUMERIC=C                         LC_TIME=English_Philippines.utf8    
-## 
-## time zone: Europe/Berlin
-## tzcode source: internal
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## other attached packages:
-## [1] bookdown_0.41
-## 
-## loaded via a namespace (and not attached):
-##  [1] digest_0.6.37     R6_2.5.1          fastmap_1.2.0     xfun_0.49         cachem_1.1.0      knitr_1.49       
-##  [7] htmltools_0.5.8.1 rmarkdown_2.29    tinytex_0.54      lifecycle_1.0.4   cli_3.6.3         sass_0.4.9       
-## [13] jquerylib_0.1.4   compiler_4.4.2    rstudioapi_0.17.1 tools_4.4.2       evaluate_1.0.1    bslib_0.8.0      
-## [19] yaml_2.3.10       jsonlite_1.8.9    rlang_1.1.4</code></pre>
+<div id="header">
+<h1 class="title">LBOMETR Course Book</h1>
+<p class="author"><em>Jem Marie M. Nario</em></p>
 </div>
-<div id="preliminaries" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Preliminaries<a href="basic-introduction-to-r.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The first step is to gain access to R, which is free and available on the R website: <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a>. Simply go to the R website, select the appropriate location and operating system, and follow the instructions to download the base distribution of R. <a href="https://posit.co/">RStudio</a> offers a user friendly environment to run R and is recommended.</p>
-<p>Once R is opened, we can begin to run commands. R commands can be run directly from the console, from the R script editor or from a text editor separate from R.</p>
-<p>R offers detailed help files for each function. To access help, run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="basic-introduction-to-r.html#cb3-1" tabindex="-1"></a>?sum</span></code></pre></div>
-<p>All lines proceeded by a # are comments and will not run. For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="basic-introduction-to-r.html#cb4-1" tabindex="-1"></a><span class="co"># This is a comment. R will not recognize this as a command.</span></span></code></pre></div>
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Welcome to the <strong>LBOMETR Course Book</strong>! This book is designed to guide students through the course by providing all necessary resources, materials, and instructions.</p>
+<div class="float">
+<img src="cover.jpg" style="float: right; width: 300px; margin-left: 15px; margin-bottom: 15px;" alt="LBOMETR" />
+<div class="figcaption">LBOMETR</div>
 </div>
-<div id="quarto-markdown" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Quarto Markdown<a href="basic-introduction-to-r.html#quarto-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In LBOMETR, Quarto Markdown will be used by the students when submitting the Scripts for the Data Story Archive. Quarto Markdown is a tool for creating documents, reports and presentations using Markdown and executable code. Below is a concise guide to help you get started, along with key shortcuts for both Mac and Windows.</p>
-<div id="starting-a-quarto-file" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> 1. Starting a Quarto File<a href="basic-introduction-to-r.html#starting-a-quarto-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To begin creating a Quarto document, follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li><p>Open RStudio.</p></li>
-<li><p>Go to <strong>File &gt; New File &gt; Quarto Document.</strong></p></li>
-<li><p>Choose the document type (e.g., HTML, PDF, Word, etc.) and specify whether the document will include code. For ease, we will use the html document type. I have also added a sample Quarto Markdown file you can copy.</p>
-<p><a href="https://drive.google.com/file/d/1pr02p_f30MN8VAllTRxpejAkFl2-3LBq/view?usp=sharing">Quarto Markdown Template</a></p>
-<h3 id="quarto-key-features" class="hasAnchor">2. Quarto Key Features<a href="basic-introduction-to-r.html#quarto-key-features" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Code Chunks</strong></p>
-<p>Code chunks allow you to include and run code inside your document.</p>
-<p><strong>Inline Code</strong></p>
-<p>Embed R code in text using backticks and <code>r</code> .</p>
-<h3 id="quarto-markdown-shortcuts" class="hasAnchor">Quarto Markdown Shortcuts<a href="basic-introduction-to-r.html#quarto-markdown-shortcuts" class="anchor-section" aria-label="Anchor link to header"></a></h3></li>
-</ol>
-<table style="width:99%;">
-<colgroup>
-<col width="20%" />
-<col width="39%" />
-<col width="39%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Action</th>
-<th>Windows Shortcut</th>
-<th>Mac Shortcut</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Insert a new code chunk</td>
-<td>Ctrl+Alt+I</td>
-<td>Cmd+Alt+I</td>
-</tr>
-<tr class="even">
-<td>Run current code chunk</td>
-<td>Ctrl+Shift+Enter</td>
-<td>Cmd+Shift+Enter</td>
-</tr>
-<tr class="odd">
-<td>Run all code chunks</td>
-<td>Ctrl+Alt+R</td>
-<td>Cmd+Alt+R</td>
-</tr>
-<tr class="even">
-<td>Run current line/selection</td>
-<td>Ctrl+Enter</td>
-<td>Cmd+Enter</td>
-</tr>
-<tr class="odd">
-<td>Knit/Render document</td>
-<td>Ctrl+Shift+K</td>
-<td>Cmd+Shift+K</td>
-</tr>
-<tr class="even">
-<td>Comment/uncomment lines</td>
-<td>Ctrl+Shift+C</td>
-<td>Cmd+Shift+C</td>
-</tr>
-<tr class="odd">
-<td>Insert pipe (%&gt;%)</td>
-<td>Ctrl+Shift+M</td>
-<td>Cmd+Shift+M</td>
-</tr>
-<tr class="even">
-<td>Headings</td>
-<td><p>/Number of Heading (if in Visual mode)</p>
-<p>Prefix line with #, ##, etc. manually (in Source mode)</p></td>
-<td><p>/Number of Heading (if in Visual mode)</p>
-<p>Prefix line with #, ##, etc. manually (in Source mode)</p></td>
-</tr>
-<tr class="odd">
-<td>Bold</td>
-<td>Ctrl+B</td>
-<td>Cmd+B</td>
-</tr>
-<tr class="even">
-<td>Italic</td>
-<td>Ctrl+I</td>
-<td>Cmd+I</td>
-</tr>
-<tr class="odd">
-<td>Inline code</td>
-<td>Surround with backticks (’) manually</td>
-<td>Surround with backticks (’) manually</td>
-</tr>
-</tbody>
-</table>
-<p>*Note: you can choose between Source or Visual (upper left); personally, it is easier for me to use the Visual Mode compared to the Source Mode.</p>
-</div>
-</div>
-<div id="packages" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Packages<a href="basic-introduction-to-r.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each package of interest must be installed and loaded before it can be used. The packages will not be immediately available when R is opened. A package only has to be installed once on a computer, but the package will have to be loaded every time R is restarted.</p>
-<p>We can install a package individually as we need them. For example, to install <strong>tidyverse</strong> and <strong>psych</strong>, we would do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="basic-introduction-to-r.html#cb5-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb5-2"><a href="basic-introduction-to-r.html#cb5-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span></code></pre></div>
-<p>In the tidyverse package, the <strong>ggplot2</strong> is usually included; if you do not see the package in the Packages list at the lower right, you can do this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="basic-introduction-to-r.html#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;ggplot2&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
-<p>Now that we have our packages successfully installed, we can go ahead and load them into R. Here we will load the tidyverse package as an example. We can use of all the functions available in that package once it is loaded into R. We load packages by using a <code>library()</code> function. The input is the name of the package, not in quotes.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="basic-introduction-to-r.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(network)</span></code></pre></div>
-<p>We can look up all of the functions within a package by using a <code>help()</code> function. For example, let’s look at the functions available in the <strong>tidyverse</strong> package.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="basic-introduction-to-r.html#cb8-1" tabindex="-1"></a><span class="fu">help</span>(<span class="at">package =</span> tidyverse)</span></code></pre></div>
-<p>Note that the package argument is necessary to look up all of the functions. We can also detach a package if we no longer want it loaded. This is sometimes useful if two packages do not play well together. Here we will use a <code>detach()</code> function.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="basic-introduction-to-r.html#cb9-1" tabindex="-1"></a><span class="fu">detach</span>(package<span class="sc">:</span>tidyverse)</span></code></pre></div>
-<p>For simplicity, we will assume that the reader has restarted R at the beginning of each tutorial.</p>
+<p>This course book is intended to ensure that DLSU Carlos L. Tiu-School of Economics students will be able to learn more about Econometrics using R. You will find sections on the syllabus, course assessments, and group projects, as well as guidance for navigating the course effectively.</p>
+<div id="about-me" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> About Me<a href="index.html#about-me" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>My name is <strong>Jem Marie M. Nario</strong>, and I am your lecturer for this course. I am excited to guide you through this journey of learning and discovery since I am also on a journey of learning and discovery while teaching part-time.</p>
+<p>This book is a trial version which will be updated along the course as it also serves as a practice for me.</p>
+<ul>
+<li><strong>Email</strong>: <a href="mailto:jem.nario@dlsu.edu.ph">jem.nario@dlsu.edu.ph</a><br />
+</li>
+<li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/jmnario/">linkedin.com/in/jmnario/</a></li>
+</ul>
+<p>Feel free to reach out with any questions or concerns throughout the course.</p>
 
 </div>
 </div>
@@ -360,8 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="grouping-process.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
+<a href="syllabus.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
