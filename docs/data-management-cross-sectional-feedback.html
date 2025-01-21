@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Grouping Process | LBOMETR Course Book</title>
+  <title>8 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Grouping Process | LBOMETR Course Book" />
+  <meta property="og:title" content="8 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Grouping Process | LBOMETR Course Book" />
+  <meta name="twitter:title" content="8 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="course-assessments.html"/>
-<link rel="next" href="basic-introduction-to-r.html"/>
+<link rel="prev" href="data-management-practical.html"/>
+<link rel="next" href="data-management---time-series-and-panel-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -265,33 +265,198 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="grouping-process" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> Grouping Process<a href="grouping-process.html#grouping-process" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Students will be randomly assigned to groups of <strong>4-5 members</strong> based on their responses to a pre-course survey. The survey collects information that will be used to ensure fair and balanced groupings. The group assignments will be announced on the first day of the course.</p>
-<div id="survey" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Survey<a href="grouping-process.html#survey" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Please complete the survey <strong>before 14:30 PM on January 6, 2025</strong> using the link:</p>
-<ul>
-<li><a href="https://forms.gle/C1fiE9BWjiTwVWgV9">Google Form Survey Link</a></li>
-</ul>
-</div>
-<div id="how-groups-are-formed" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> How Groups Are Formed<a href="grouping-process.html#how-groups-are-formed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The groupings are created using RStudio. The coding ensures randomness while incorporating some aspects of the survey responses to balance groups. If you wish to see the code used for grouping, you may contact me directly. However, please note: - The <strong>CSV file with survey responses will not be shared</strong> to protect your anonymity and privacy.</p>
-</div>
-<div id="announcement-of-groups" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Announcement of Groups<a href="grouping-process.html#announcement-of-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The group assignments will be distributed on the <strong>first day of the course</strong>. Please check your assigned group and connect with your group members as soon as possible.</p>
+<div id="data-management-cross-sectional-feedback" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Data Management (Cross-Sectional) Feedback<a href="data-management-cross-sectional-feedback.html#data-management-cross-sectional-feedback" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This feedback will contain only what the answers should look like and some clues and hints. It does not contain the entire codes.</p>
+<ol style="list-style-type: decimal">
+<li>Loading the dataset and loading the needed libraries: <code>dplyr</code> and <code>lubridate</code></li>
+</ol>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1               Taeyeon         Kim Taeyeon                  김태연                        태연
+## 2                 Sunny          Lee Sunkyu                  이순규                        써니
+## 3               Tiffany       Hwang Miyoung                  황미영                      티파니
+## 4               Hyoyeon         Kim Hyoyeon                  김효연                        효연
+## 5                  Yuri           Kwon Yuri                  권유리                        유리
+## 6              Sooyoung       Choi Sooyoung                  최수영                        수영
+##   Date.of.Birth.Date.of.Birth Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                    3/9/1989        SNSD     South Korea           160            44                Jeonju
+## 2                   5/15/1989        SNSD     South Korea           158            43            California
+## 3                    8/1/1989        SNSD     South Korea           163            50         San Francisco
+## 4                   9/22/1989        SNSD     South Korea           158            48               Incheon
+## 5                   12/5/1989        SNSD     South Korea           167            45                Goyang
+## 6                   2/10/1990        SNSD     South Korea           170            48               Gwangju
+##   Gender.Gender Instagram.Instagram
+## 1             F          taeyeon_ss
+## 2             F          svnnynight
+## 3             F        xolovestephi
+## 4             F         watasiwahyo
+## 5             F             yulyulk
+## 6             F          hotsootuff</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Separate the dataset into Males and Females and save as CSVs. You might notice that the column name is <code>Gender.Gender</code>. You have to type it out. Later, we will change the names.</p>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1                 T.O.P      Choi Seunghyun                  최승현                          탑
+## 2               Taeyang       Dong Youngbae                  동영배                        태양
+## 3              G-Dragon         Kwon Jiyong                  권지용                    지드래곤
+## 4               Daesung             Daesung                  강대성                        대성
+## 5               Seungri       Lee Seunghyun                  이승현                        승리
+## 6               Leeteuk        Park Jeongsu                  박정수                        이특
+##   Date.of.Birth.Date.of.Birth  Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                   11/4/1987      BIGBANG     South Korea           180            65                 Seoul
+## 2                   5/18/1988      BIGBANG     South Korea           174            56             Uljeongbu
+## 3                   8/18/1988      BIGBANG     South Korea           177            58                 Seoul
+## 4                   4/26/1989      BIGBANG     South Korea           178            63               Incheon
+## 5                  12/12/1990                  South Korea           176            60               Gwangju
+## 6                    7/1/1983 Super Junior     South Korea           179            59                 Seoul
+##   Gender.Gender Instagram.Instagram
+## 1             M                    
+## 2             M                    
+## 3             M                    
+## 4             M                    
+## 5             M                    
+## 6             M</code></pre>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1               Taeyeon         Kim Taeyeon                  김태연                        태연
+## 2                 Sunny          Lee Sunkyu                  이순규                        써니
+## 3               Tiffany       Hwang Miyoung                  황미영                      티파니
+## 4               Hyoyeon         Kim Hyoyeon                  김효연                        효연
+## 5                  Yuri           Kwon Yuri                  권유리                        유리
+## 6              Sooyoung       Choi Sooyoung                  최수영                        수영
+##   Date.of.Birth.Date.of.Birth Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                    3/9/1989        SNSD     South Korea           160            44                Jeonju
+## 2                   5/15/1989        SNSD     South Korea           158            43            California
+## 3                    8/1/1989        SNSD     South Korea           163            50         San Francisco
+## 4                   9/22/1989        SNSD     South Korea           158            48               Incheon
+## 5                   12/5/1989        SNSD     South Korea           167            45                Goyang
+## 6                   2/10/1990        SNSD     South Korea           170            48               Gwangju
+##   Gender.Gender Instagram.Instagram
+## 1             F          taeyeon_ss
+## 2             F          svnnynight
+## 3             F        xolovestephi
+## 4             F         watasiwahyo
+## 5             F             yulyulk
+## 6             F          hotsootuff</code></pre></li>
+<li><p>Edit Column Names and Remove Unnecessary Columns</p></li>
+</ol>
+<pre><code>We are going to use the pipe operator for this and if you are lazy to type all the column names you need to remove, you can create like a collection of the columns you will keep.
 
-</div>
+
+``` r
+#only those that remain
+#col&lt;-c(&quot;Full.Name.Full.Name&quot;, &quot;Date.of.Birth.Date.of.Birth&quot;...)
+```
+
+THEN, after you select the columns to keep, you can rename. Note that you need to follow the old conventions for R to find the column names before renaming them using `rename`. In the `rename`, say
+
+
+```
+##       Full_Name       DOB  Grp     Country  Ht Wt            BP Gender
+## 1   Kim Taeyeon  3/9/1989 SNSD South Korea 160 44        Jeonju      F
+## 2    Lee Sunkyu 5/15/1989 SNSD South Korea 158 43    California      F
+## 3 Hwang Miyoung  8/1/1989 SNSD South Korea 163 50 San Francisco      F
+## 4   Kim Hyoyeon 9/22/1989 SNSD South Korea 158 48       Incheon      F
+## 5     Kwon Yuri 12/5/1989 SNSD South Korea 167 45        Goyang      F
+## 6 Choi Sooyoung 2/10/1990 SNSD South Korea 170 48       Gwangju      F
+```
+
+```
+##        Full_Name        DOB          Grp     Country  Ht Wt        BP Gender
+## 1 Choi Seunghyun  11/4/1987      BIGBANG South Korea 180 65     Seoul      M
+## 2  Dong Youngbae  5/18/1988      BIGBANG South Korea 174 56 Uljeongbu      M
+## 3    Kwon Jiyong  8/18/1988      BIGBANG South Korea 177 58     Seoul      M
+## 4        Daesung  4/26/1989      BIGBANG South Korea 178 63   Incheon      M
+## 5  Lee Seunghyun 12/12/1990              South Korea 176 60   Gwangju      M
+## 6   Park Jeongsu   7/1/1983 Super Junior South Korea 179 59     Seoul      M
+```</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Count the Number of Males and Females</p>
+<p>As mentioned, use <code>nrow</code>. Now, I will introduce you to the <code>cat</code> function, The <code>cat</code> function will print in the result some text and what will be seen when you include the object you created that reveals the number of males (or females). We should all have the same number. If not, something is wrong.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-management-cross-sectional-feedback.html#cb71-1" tabindex="-1"></a><span class="co">#cat(&quot;Number of males:&quot;, nummale,&quot;\n&quot;)</span></span></code></pre></div>
+<pre><code>## Number of males: 843</code></pre>
+<pre><code>## Number of females: 823</code></pre></li>
+<li><p>Create a binary variable <code>not_seoul</code></p>
+<p>Here, create a new column for not_seoul in both males and females. Use <code>ifelse</code> and the statement should include <code>!=</code></p></li>
+<li><p>Count Individuals from and not from Seoul</p>
+<p>I introduce the <code>count</code> function. Simply add <code>count</code> after choosing the dataset. So, the code is choose males THEN count those that are not_seoul. We should have the same number.</p>
+<pre><code>## Males from Seoul and not Seoul:</code></pre>
+<pre><code>## From Seoul: 98</code></pre>
+<pre><code>## Not from Seoul: 745</code></pre>
+<pre><code>## Females from Seoul and not Seoul:</code></pre>
+<pre><code>## From Seoul: 108</code></pre>
+<pre><code>## Not from Seoul: 715</code></pre></li>
+<li><p>Filter Males Eligible for Military Service</p>
+<p>Use reference date and when you filter, you can actually combine filtering the Age to be: Age<code>&gt;= 18, Age&lt;=28, Country == "South Korea"</code>. We should have the same number.</p></li>
+</ol>
+<pre><code>## Number of males eligible for military service: 496</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Assign Generations Based on Age</p>
+<p>We should have the same numbers. If you have created an <code>Age</code> column for males before, you cannot use that for this number since the reference dates are different. You need to create a new column for <code>Age</code> for both males and females.</p>
+<pre><code>## Generation distribution for males:</code></pre>
+<pre><code>## 1st Gen: 8
+## 2nd Gen: 137
+## 3rd Gen: 358
+## 4th Gen: 340</code></pre>
+<pre><code>## Generation distribution for females:</code></pre>
+<pre><code>## 1st Gen: 4
+## 2nd Gen: 131
+## 3rd Gen: 302
+## 4th Gen: 386</code></pre></li>
+<li><p>Create Income Column Based on Hypothesis</p>
+<p>My hypothesis is that older idols earn more since they have been in the industry much longer. I also hypothesize that females earn less than males.</p>
+<p>I introduce a new function here, it is the <code>runif(n(), value, value)</code>. This function is to just create income values which will be in-line with the number of rows in the dataset. However, I am amenable in any strategy you employ to generate income here. I just need to know your hypothesis and how you plan to do the income column. In fact, if you want, you can even create the income column in Excel already. Just let me know.</p>
+<p>Another strategy is to still do <code>case_when</code> and have smaller increments in <code>Age</code> then have income values. Another, have the same income for each generation, that is also fine. Again, this is for practice purposes.</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-management-cross-sectional-feedback.html#cb85-1" tabindex="-1"></a><span class="co"># Generate income values based on age group directly</span></span>
+<span id="cb85-2"><a href="data-management-cross-sectional-feedback.html#cb85-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb85-3"><a href="data-management-cross-sectional-feedback.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="data-management-cross-sectional-feedback.html#cb85-4" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span></span>
+<span id="cb85-5"><a href="data-management-cross-sectional-feedback.html#cb85-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-6"><a href="data-management-cross-sectional-feedback.html#cb85-6" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-7"><a href="data-management-cross-sectional-feedback.html#cb85-7" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-8"><a href="data-management-cross-sectional-feedback.html#cb85-8" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-9"><a href="data-management-cross-sectional-feedback.html#cb85-9" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-10"><a href="data-management-cross-sectional-feedback.html#cb85-10" tabindex="-1"></a>  ))</span>
+<span id="cb85-11"><a href="data-management-cross-sectional-feedback.html#cb85-11" tabindex="-1"></a></span>
+<span id="cb85-12"><a href="data-management-cross-sectional-feedback.html#cb85-12" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span></span>
+<span id="cb85-13"><a href="data-management-cross-sectional-feedback.html#cb85-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-14"><a href="data-management-cross-sectional-feedback.html#cb85-14" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-15"><a href="data-management-cross-sectional-feedback.html#cb85-15" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-16"><a href="data-management-cross-sectional-feedback.html#cb85-16" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-17"><a href="data-management-cross-sectional-feedback.html#cb85-17" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-18"><a href="data-management-cross-sectional-feedback.html#cb85-18" tabindex="-1"></a>  ))</span></code></pre></div></li>
+<li><p>Combine datasets</p>
+<p>So, I taught you how to merge the datasets. You can do that as well, however, it is important to determine which came from the males, which came from the females so, you need to create a new column in the males and the females that would include the Gender.</p>
+<p>I also show a different way of merging datasets. I use <code>bind_rows</code> since males and females have the same columns. However, if you view the <code>combined</code> dataset, you will notice that the females will appear after the males. This is fine.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-management-cross-sectional-feedback.html#cb86-1" tabindex="-1"></a><span class="co"># Ensure column names match and add a Gender column</span></span>
+<span id="cb86-2"><a href="data-management-cross-sectional-feedback.html#cb86-2" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb86-3"><a href="data-management-cross-sectional-feedback.html#cb86-3" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Female&quot;</span>)</span>
+<span id="cb86-4"><a href="data-management-cross-sectional-feedback.html#cb86-4" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="data-management-cross-sectional-feedback.html#cb86-5" tabindex="-1"></a><span class="co"># Combine the datasets</span></span>
+<span id="cb86-6"><a href="data-management-cross-sectional-feedback.html#cb86-6" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(males, females)</span>
+<span id="cb86-7"><a href="data-management-cross-sectional-feedback.html#cb86-7" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="data-management-cross-sectional-feedback.html#cb86-8" tabindex="-1"></a><span class="co"># View the combined dataset</span></span>
+<span id="cb86-9"><a href="data-management-cross-sectional-feedback.html#cb86-9" tabindex="-1"></a><span class="fu">View</span>(combined)</span></code></pre></div></li>
+</ol>
+<p>Calculate the Income Difference</p>
+<p>I use the <code>group_by</code> function and the <code>summarise</code> function. I got the Mean and the Median. Later on, I will discuss the difference between getting the mean and the median or when best to use the mean or the median.</p>
+<pre><code>## # A tibble: 2 × 3
+##   Gender Mean_Income Median_Income
+##   &lt;chr&gt;        &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Female      36858.        36414.
+## 2 Male        37907.        37246.</code></pre>
+<pre><code>## The gender with the higher mean income is: Male</code></pre>
+<pre><code>## The gender with the higher median income is: Male</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>Now that we have the combined dataset, simply save it as a CSV file and you are done with the practical.</li>
+</ol>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-assessments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="basic-introduction-to-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-management-practical.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-management---time-series-and-panel-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
