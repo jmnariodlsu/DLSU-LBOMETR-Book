@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Data Management - Time Series and Panel Data | LBOMETR Course Book</title>
+  <title>10 Data Management - Time Series and Panel Data | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Data Management - Time Series and Panel Data | LBOMETR Course Book" />
+  <meta property="og:title" content="10 Data Management - Time Series and Panel Data | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Data Management - Time Series and Panel Data | LBOMETR Course Book" />
+  <meta name="twitter:title" content="10 Data Management - Time Series and Panel Data | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="data-management-cross-sectional-feedback.html"/>
-
+<link rel="next" href="visualizations-using-ggplot2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -177,77 +177,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="grouping-process.html"><a href="grouping-process.html#how-groups-are-formed"><i class="fa fa-check"></i><b>4.2</b> How Groups Are Formed</a></li>
 <li class="chapter" data-level="4.3" data-path="grouping-process.html"><a href="grouping-process.html#announcement-of-groups"><i class="fa fa-check"></i><b>4.3</b> Announcement of Groups</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>5</b> Basic Introduction to R</a>
+<li class="chapter" data-level="5" data-path="data-story-research-question.html"><a href="data-story-research-question.html"><i class="fa fa-check"></i><b>5</b> Data Story Research Question</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>5.1</b> Session Information</a></li>
-<li class="chapter" data-level="5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>5.2</b> Preliminaries</a></li>
-<li class="chapter" data-level="5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>5.3</b> Quarto Markdown</a>
+<li class="chapter" data-level="5.1" data-path="data-story-research-question.html"><a href="data-story-research-question.html#guidelines-in-conducting-data-story"><i class="fa fa-check"></i><b>5.1</b> Guidelines in Conducting Data Story</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-file"><i class="fa fa-check"></i><b>5.3.1</b> 1. Starting a Quarto File</a></li>
+<li class="chapter" data-level="5.1.1" data-path="data-story-research-question.html"><a href="data-story-research-question.html#research-question"><i class="fa fa-check"></i><b>5.1.1</b> Research Question:</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-story-research-question.html"><a href="data-story-research-question.html#relevance"><i class="fa fa-check"></i><b>5.1.2</b> Relevance</a></li>
+<li class="chapter" data-level="5.1.3" data-path="data-story-research-question.html"><a href="data-story-research-question.html#for-the-data-story-should-i-use-kaggle"><i class="fa fa-check"></i><b>5.1.3</b> For the data story, should I use Kaggle?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>5.4</b> Packages</a></li>
-<li class="chapter" data-level="5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#instructions-for-managing-working-directories"><i class="fa fa-check"></i><b>5.5</b> Instructions for Managing Working Directories</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#local-working-directory-setup"><i class="fa fa-check"></i><b>5.5.1</b> 1. Local Working Directory Setup</a></li>
-<li class="chapter" data-level="5.5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention"><i class="fa fa-check"></i><b>5.5.2</b> 2. File Naming Convention</a></li>
-<li class="chapter" data-level="5.5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#shared-google-drive-setup"><i class="fa fa-check"></i><b>5.5.3</b> 3. Shared Google Drive Setup</a></li>
-<li class="chapter" data-level="5.5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#workflow-for-.qmd-files"><i class="fa fa-check"></i><b>5.5.4</b> 4. Workflow for <code>.qmd</code> files</a></li>
-<li class="chapter" data-level="5.5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-the-final-report"><i class="fa fa-check"></i><b>5.5.5</b> 5. Rendering the Final Report</a></li>
-<li class="chapter" data-level="5.5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#summary-workflow"><i class="fa fa-check"></i><b>5.5.6</b> Summary Workflow</a></li>
+<li class="chapter" data-level="5.2" data-path="data-story-research-question.html"><a href="data-story-research-question.html#comments-on-research-questions"><i class="fa fa-check"></i><b>5.2</b> Comments on Research Questions:</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>6</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>6.1</b> Session Information</a></li>
+<li class="chapter" data-level="6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a></li>
+<li class="chapter" data-level="6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>6.3</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-file"><i class="fa fa-check"></i><b>6.3.1</b> 1. Starting a Quarto File</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>6</b> Data Management - Cross-Sectional Data</a>
+<li class="chapter" data-level="6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>6.4</b> Packages</a></li>
+<li class="chapter" data-level="6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#instructions-for-managing-working-directories"><i class="fa fa-check"></i><b>6.5</b> Instructions for Managing Working Directories</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#where-to-get-data"><i class="fa fa-check"></i><b>6.1</b> Where to Get Data?</a></li>
-<li class="chapter" data-level="6.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#preliminaries-1"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dataset"><i class="fa fa-check"></i><b>6.2.1</b> Dataset</a></li>
-<li class="chapter" data-level="6.2.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#packages-1"><i class="fa fa-check"></i><b>6.2.2</b> Packages</a></li>
-<li class="chapter" data-level="6.2.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#setting-up-the-directory"><i class="fa fa-check"></i><b>6.2.3</b> Setting up the Directory</a></li>
-<li class="chapter" data-level="6.2.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#clean-everything"><i class="fa fa-check"></i><b>6.2.4</b> Clean Everything</a></li>
-<li class="chapter" data-level="6.2.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#importing-the-dataset"><i class="fa fa-check"></i><b>6.2.5</b> Importing the Dataset</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#renaming-the-variables"><i class="fa fa-check"></i><b>6.3.1</b> Renaming the Variables</a></li>
-<li class="chapter" data-level="6.3.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#sorting-certain-values"><i class="fa fa-check"></i><b>6.3.2</b> Sorting certain values</a></li>
-<li class="chapter" data-level="6.3.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#pipe-operator"><i class="fa fa-check"></i><b>6.3.3</b> Pipe Operator</a></li>
-<li class="chapter" data-level="6.3.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#adding-columns"><i class="fa fa-check"></i><b>6.3.4</b> Adding columns</a></li>
-<li class="chapter" data-level="6.3.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#transforming-values"><i class="fa fa-check"></i><b>6.3.5</b> Transforming values</a></li>
-<li class="chapter" data-level="6.3.6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#summarizing"><i class="fa fa-check"></i><b>6.3.6</b> Summarizing</a></li>
-<li class="chapter" data-level="6.3.7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#merging-datasets"><i class="fa fa-check"></i><b>6.3.7</b> Merging datasets</a></li>
-<li class="chapter" data-level="6.3.8" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#splitting-datasets"><i class="fa fa-check"></i><b>6.3.8</b> Splitting datasets</a></li>
-<li class="chapter" data-level="6.3.9" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dates"><i class="fa fa-check"></i><b>6.3.9</b> Dates</a></li>
+<li class="chapter" data-level="6.5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#local-working-directory-setup"><i class="fa fa-check"></i><b>6.5.1</b> 1. Local Working Directory Setup</a></li>
+<li class="chapter" data-level="6.5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention"><i class="fa fa-check"></i><b>6.5.2</b> 2. File Naming Convention</a></li>
+<li class="chapter" data-level="6.5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#shared-google-drive-setup"><i class="fa fa-check"></i><b>6.5.3</b> 3. Shared Google Drive Setup</a></li>
+<li class="chapter" data-level="6.5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#workflow-for-.qmd-files"><i class="fa fa-check"></i><b>6.5.4</b> 4. Workflow for <code>.qmd</code> files</a></li>
+<li class="chapter" data-level="6.5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-the-final-report"><i class="fa fa-check"></i><b>6.5.5</b> 5. Rendering the Final Report</a></li>
+<li class="chapter" data-level="6.5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#summary-workflow"><i class="fa fa-check"></i><b>6.5.6</b> Summary Workflow</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-management-practical.html"><a href="data-management-practical.html"><i class="fa fa-check"></i><b>7</b> Data Management Practical</a></li>
-<li class="chapter" data-level="8" data-path="data-management-cross-sectional-feedback.html"><a href="data-management-cross-sectional-feedback.html"><i class="fa fa-check"></i><b>8</b> Data Management (Cross-Sectional) Feedback</a></li>
-<li class="chapter" data-level="9" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html"><i class="fa fa-check"></i><b>9</b> Data Management - Time Series and Panel Data</a>
+<li class="chapter" data-level="7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>7</b> Data Management - Cross-Sectional Data</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#topic-guide"><i class="fa fa-check"></i><b>9.1</b> Topic Guide:</a></li>
-<li class="chapter" data-level="9.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#time-series-data"><i class="fa fa-check"></i><b>9.2</b> Time Series Data</a>
+<li class="chapter" data-level="7.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#where-to-get-data"><i class="fa fa-check"></i><b>7.1</b> Where to Get Data?</a></li>
+<li class="chapter" data-level="7.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#preliminaries-1"><i class="fa fa-check"></i><b>7.2</b> Preliminaries</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#preliminaries-2"><i class="fa fa-check"></i><b>9.2.1</b> Preliminaries</a></li>
-<li class="chapter" data-level="9.2.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#convert-to-date-format"><i class="fa fa-check"></i><b>9.2.2</b> Convert to Date Format</a></li>
-<li class="chapter" data-level="9.2.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#aggregate-data"><i class="fa fa-check"></i><b>9.2.3</b> Aggregate Data</a></li>
+<li class="chapter" data-level="7.2.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dataset"><i class="fa fa-check"></i><b>7.2.1</b> Dataset</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#packages-1"><i class="fa fa-check"></i><b>7.2.2</b> Packages</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#setting-up-the-directory"><i class="fa fa-check"></i><b>7.2.3</b> Setting up the Directory</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#clean-everything"><i class="fa fa-check"></i><b>7.2.4</b> Clean Everything</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#importing-the-dataset"><i class="fa fa-check"></i><b>7.2.5</b> Importing the Dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#modifying-long-and-wide-datasets"><i class="fa fa-check"></i><b>9.3</b> Modifying Long and Wide Datasets</a>
+<li class="chapter" data-level="7.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#data-cleaning"><i class="fa fa-check"></i><b>7.3</b> Data Cleaning</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#how-to-determine"><i class="fa fa-check"></i><b>9.3.1</b> How to Determine</a></li>
-<li class="chapter" data-level="9.3.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-the-dataset"><i class="fa fa-check"></i><b>9.3.2</b> Setting up the Dataset</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#missing-values"><i class="fa fa-check"></i><b>9.4</b> Missing Values</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-a-sample-dataset"><i class="fa fa-check"></i><b>9.4.1</b> Setting up a Sample Dataset</a></li>
-<li class="chapter" data-level="9.4.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#replace-with-0"><i class="fa fa-check"></i><b>9.4.2</b> Replace with <code>0</code></a></li>
-<li class="chapter" data-level="9.4.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values"><i class="fa fa-check"></i><b>9.4.3</b> Remove Rows or Columns with Missing Values</a></li>
-<li class="chapter" data-level="9.4.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean"><i class="fa fa-check"></i><b>9.4.4</b> Imputing Missing Values with the Mean</a></li>
-<li class="chapter" data-level="9.4.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#note"><i class="fa fa-check"></i><b>9.4.5</b> Note:</a></li>
-<li class="chapter" data-level="9.4.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#best-practice"><i class="fa fa-check"></i><b>9.4.6</b> Best Practice:</a></li>
-<li class="chapter" data-level="9.4.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#next-meeting"><i class="fa fa-check"></i><b>9.4.7</b> Next Meeting:</a></li>
-<li class="chapter" data-level="9.4.8" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#final-note"><i class="fa fa-check"></i><b>9.4.8</b> Final Note:</a></li>
+<li class="chapter" data-level="7.3.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#renaming-the-variables"><i class="fa fa-check"></i><b>7.3.1</b> Renaming the Variables</a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#sorting-certain-values"><i class="fa fa-check"></i><b>7.3.2</b> Sorting certain values</a></li>
+<li class="chapter" data-level="7.3.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#pipe-operator"><i class="fa fa-check"></i><b>7.3.3</b> Pipe Operator</a></li>
+<li class="chapter" data-level="7.3.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#adding-columns"><i class="fa fa-check"></i><b>7.3.4</b> Adding columns</a></li>
+<li class="chapter" data-level="7.3.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#transforming-values"><i class="fa fa-check"></i><b>7.3.5</b> Transforming values</a></li>
+<li class="chapter" data-level="7.3.6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#summarizing"><i class="fa fa-check"></i><b>7.3.6</b> Summarizing</a></li>
+<li class="chapter" data-level="7.3.7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#merging-datasets"><i class="fa fa-check"></i><b>7.3.7</b> Merging datasets</a></li>
+<li class="chapter" data-level="7.3.8" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#splitting-datasets"><i class="fa fa-check"></i><b>7.3.8</b> Splitting datasets</a></li>
+<li class="chapter" data-level="7.3.9" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dates"><i class="fa fa-check"></i><b>7.3.9</b> Dates</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="data-management-practical.html"><a href="data-management-practical.html"><i class="fa fa-check"></i><b>8</b> Data Management Practical</a></li>
+<li class="chapter" data-level="9" data-path="data-management-cross-sectional-feedback.html"><a href="data-management-cross-sectional-feedback.html"><i class="fa fa-check"></i><b>9</b> Data Management (Cross-Sectional) Feedback</a></li>
+<li class="chapter" data-level="10" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html"><i class="fa fa-check"></i><b>10</b> Data Management - Time Series and Panel Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#topic-guide"><i class="fa fa-check"></i><b>10.1</b> Topic Guide:</a></li>
+<li class="chapter" data-level="10.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#time-series-data"><i class="fa fa-check"></i><b>10.2</b> Time Series Data</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#preliminaries-2"><i class="fa fa-check"></i><b>10.2.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="10.2.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#convert-to-date-format"><i class="fa fa-check"></i><b>10.2.2</b> Convert to Date Format</a></li>
+<li class="chapter" data-level="10.2.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#aggregate-data"><i class="fa fa-check"></i><b>10.2.3</b> Aggregate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#modifying-long-and-wide-datasets"><i class="fa fa-check"></i><b>10.3</b> Modifying Long and Wide Datasets</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#how-to-determine"><i class="fa fa-check"></i><b>10.3.1</b> How to Determine</a></li>
+<li class="chapter" data-level="10.3.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-the-dataset"><i class="fa fa-check"></i><b>10.3.2</b> Setting up the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#missing-values"><i class="fa fa-check"></i><b>10.4</b> Missing Values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-a-sample-dataset"><i class="fa fa-check"></i><b>10.4.1</b> Setting up a Sample Dataset</a></li>
+<li class="chapter" data-level="10.4.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#replace-with-0"><i class="fa fa-check"></i><b>10.4.2</b> Replace with <code>0</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values"><i class="fa fa-check"></i><b>10.4.3</b> Remove Rows or Columns with Missing Values</a></li>
+<li class="chapter" data-level="10.4.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean"><i class="fa fa-check"></i><b>10.4.4</b> Imputing Missing Values with the Mean</a></li>
+<li class="chapter" data-level="10.4.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#note"><i class="fa fa-check"></i><b>10.4.5</b> Note:</a></li>
+<li class="chapter" data-level="10.4.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#best-practice"><i class="fa fa-check"></i><b>10.4.6</b> Best Practice:</a></li>
+<li class="chapter" data-level="10.4.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#next-meeting"><i class="fa fa-check"></i><b>10.4.7</b> Next Meeting:</a></li>
+<li class="chapter" data-level="10.4.8" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#final-note"><i class="fa fa-check"></i><b>10.4.8</b> Final Note:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html"><i class="fa fa-check"></i><b>11</b> Visualizations using ggplot2</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#preliminaries-3"><i class="fa fa-check"></i><b>11.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#load-the-dataset"><i class="fa fa-check"></i><b>11.1.1</b> Load the dataset</a></li>
+<li class="chapter" data-level="11.1.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#template"><i class="fa fa-check"></i><b>11.1.2</b> Template</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-data-using-geom"><i class="fa fa-check"></i><b>11.2</b> Visualizing Data using <code>geom</code></a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#scatterplots"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="11.2.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#boxplots"><i class="fa fa-check"></i><b>11.2.2</b> Boxplots</a></li>
+<li class="chapter" data-level="11.2.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#bar-plots"><i class="fa fa-check"></i><b>11.2.3</b> Bar plots</a></li>
+<li class="chapter" data-level="11.2.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#faceting"><i class="fa fa-check"></i><b>11.2.4</b> Faceting</a></li>
+<li class="chapter" data-level="11.2.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart"><i class="fa fa-check"></i><b>11.2.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="11.2.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram"><i class="fa fa-check"></i><b>11.2.6</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>11.3</b> Visualizing Time Series Data</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="practical-visualizations.html"><a href="practical-visualizations.html"><i class="fa fa-check"></i><b>12</b> Practical: Visualizations</a></li>
 </ul>
 
       </nav>
@@ -265,42 +294,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-management---time-series-and-panel-data" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">9</span> Data Management - Time Series and Panel Data<a href="data-management---time-series-and-panel-data.html#data-management---time-series-and-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="data-management---time-series-and-panel-data" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Data Management - Time Series and Panel Data<a href="data-management---time-series-and-panel-data.html#data-management---time-series-and-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>For this portion of the discussion, we will use one dataset then generate randomly here in R some practice data frames.</p>
-<div id="topic-guide" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Topic Guide:<a href="data-management---time-series-and-panel-data.html#topic-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="topic-guide" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Topic Guide:<a href="data-management---time-series-and-panel-data.html#topic-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Changing from daily to monthly to quarterly to yearly</li>
 <li>Change from long to wide and vice-versa</li>
 <li>Missing values</li>
 </ol>
 </div>
-<div id="time-series-data" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Time Series Data<a href="data-management---time-series-and-panel-data.html#time-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="time-series-data" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Time Series Data<a href="data-management---time-series-and-panel-data.html#time-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For this, we will use <a href="%22C:\Users\jemma\OneDrive\Documents\DLSU\LBOMETR_Book\Ch3Practice.csv%22">Chapter3 Practice</a> found in the Modules.</p>
-<div id="preliminaries-2" class="section level3 hasAnchor" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Preliminaries<a href="data-management---time-series-and-panel-data.html#preliminaries-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preliminaries-2" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Preliminaries<a href="data-management---time-series-and-panel-data.html#preliminaries-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Always remember the first steps: Set Working Directory and Clean the Global Environment.</strong></p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-management---time-series-and-panel-data.html#cb90-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb90-2"><a href="data-management---time-series-and-panel-data.html#cb90-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 2218132 118.5    3701068 197.7  3701068 197.7
-## Vcells 6242839  47.7   12255594  93.6  9559978  73.0</code></pre>
+## Ncells 2287865 122.2    3701068 197.7  3701068 197.7
+## Vcells 6412790  49.0   12255594  93.6 12255594  93.6</code></pre>
 <p>To make sure that you are using the correct directory and that you have all the files you need, use <code>list.files()</code> function.</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-management---time-series-and-panel-data.html#cb92-1" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <p>Now, we load the following packages: <code>dplyr</code>, <code>lubridate</code>, and <code>zoo</code>. Make sure you have all 3 installed; if not, install them.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="data-management---time-series-and-panel-data.html#cb93-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb93-2"><a href="data-management---time-series-and-panel-data.html#cb93-2" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
 <span id="cb93-3"><a href="data-management---time-series-and-panel-data.html#cb93-3" tabindex="-1"></a><span class="fu">library</span>(zoo)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     as.Date, as.Date.numeric</code></pre>
 <p>Now we load the csv file:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="data-management---time-series-and-panel-data.html#cb96-1" tabindex="-1"></a>ch3_p1<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;Ch3Practice.csv&quot;</span>)</span>
-<span id="cb96-2"><a href="data-management---time-series-and-panel-data.html#cb96-2" tabindex="-1"></a><span class="fu">head</span>(ch3_p1)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="data-management---time-series-and-panel-data.html#cb94-1" tabindex="-1"></a>ch3_p1<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;Ch3Practice.csv&quot;</span>)</span>
+<span id="cb94-2"><a href="data-management---time-series-and-panel-data.html#cb94-2" tabindex="-1"></a><span class="fu">head</span>(ch3_p1)</span></code></pre></div>
 <pre><code>##           ds       y
 ## 1 2015-06-13 232.402
 ## 2 2015-06-14 233.543
@@ -309,35 +333,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 2015-06-17 249.284
 ## 6 2015-06-18 249.007</code></pre>
 <p>We need to understand our data;</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data-management---time-series-and-panel-data.html#cb98-1" tabindex="-1"></a><span class="fu">str</span>(ch3_p1)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="data-management---time-series-and-panel-data.html#cb96-1" tabindex="-1"></a><span class="fu">str</span>(ch3_p1)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    1825 obs. of  2 variables:
 ##  $ ds: chr  &quot;2015-06-13&quot; &quot;2015-06-14&quot; &quot;2015-06-15&quot; &quot;2015-06-16&quot; ...
 ##  $ y : num  232 234 237 251 249 ...</code></pre>
 </div>
-<div id="convert-to-date-format" class="section level3 hasAnchor" number="9.2.2">
-<h3><span class="header-section-number">9.2.2</span> Convert to Date Format<a href="data-management---time-series-and-panel-data.html#convert-to-date-format" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="convert-to-date-format" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Convert to Date Format<a href="data-management---time-series-and-panel-data.html#convert-to-date-format" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As you can see, our ds is what our date column is, however, it is in the <code>character</code> format. We need to convert it to the <code>Date</code> class. We also need to do this to a copy of the raw data for further modifications.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="data-management---time-series-and-panel-data.html#cb100-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p1</span>
-<span id="cb100-2"><a href="data-management---time-series-and-panel-data.html#cb100-2" tabindex="-1"></a><span class="fu">head</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data-management---time-series-and-panel-data.html#cb98-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p1</span>
+<span id="cb98-2"><a href="data-management---time-series-and-panel-data.html#cb98-2" tabindex="-1"></a><span class="fu">head</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
 <pre><code>## [1] &quot;2015-06-13&quot; &quot;2015-06-14&quot; &quot;2015-06-15&quot; &quot;2015-06-16&quot; &quot;2015-06-17&quot; &quot;2015-06-18&quot;</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data-management---time-series-and-panel-data.html#cb102-1" tabindex="-1"></a><span class="fu">class</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="data-management---time-series-and-panel-data.html#cb100-1" tabindex="-1"></a><span class="fu">class</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="data-management---time-series-and-panel-data.html#cb104-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
-<span id="cb104-2"><a href="data-management---time-series-and-panel-data.html#cb104-2" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="data-management---time-series-and-panel-data.html#cb104-3" tabindex="-1"></a><span class="fu">class</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data-management---time-series-and-panel-data.html#cb102-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb102-2"><a href="data-management---time-series-and-panel-data.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="data-management---time-series-and-panel-data.html#cb102-3" tabindex="-1"></a><span class="fu">class</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 </div>
-<div id="aggregate-data" class="section level3 hasAnchor" number="9.2.3">
-<h3><span class="header-section-number">9.2.3</span> Aggregate Data<a href="data-management---time-series-and-panel-data.html#aggregate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="aggregate-data" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Aggregate Data<a href="data-management---time-series-and-panel-data.html#aggregate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We now have <code>daily</code> data. Say we want to create weekly data, we use the <code>cut</code> function to group dates by week, month, quarter and year.</p>
 <p>Since we know for sure that the <code>date</code> column is in <code>date</code> format, no need to check, however, it is always useful to check the class of <code>date</code>.</p>
-<div id="aggregate-by-week" class="section level4 hasAnchor" number="9.2.3.1">
-<h4><span class="header-section-number">9.2.3.1</span> Aggregate by Week<a href="data-management---time-series-and-panel-data.html#aggregate-by-week" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="aggregate-by-week" class="section level4 hasAnchor" number="10.2.3.1">
+<h4><span class="header-section-number">10.2.3.1</span> Aggregate by Week<a href="data-management---time-series-and-panel-data.html#aggregate-by-week" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Add new columns for each aggregation.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="data-management---time-series-and-panel-data.html#cb106-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>week<span class="ot">&lt;-</span><span class="fu">cut</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="at">breaks =</span> <span class="st">&quot;week&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="data-management---time-series-and-panel-data.html#cb104-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>week<span class="ot">&lt;-</span><span class="fu">cut</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="at">breaks =</span> <span class="st">&quot;week&quot;</span>)</span></code></pre></div>
 <p>The <code>cut</code> is used to divide the date into intervals while the <code>breaks</code> specifies that the <code>date</code> be divided into weekly intervals.</p>
 <p>Check creation of the week column</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="data-management---time-series-and-panel-data.html#cb107-1" tabindex="-1"></a><span class="fu">head</span>(ch3_p1<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="data-management---time-series-and-panel-data.html#cb105-1" tabindex="-1"></a><span class="fu">head</span>(ch3_p1<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>##           ds       y       week
 ## 1 2015-06-13 232.402 2015-06-08
 ## 2 2015-06-14 233.543 2015-06-08
@@ -346,38 +370,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 2015-06-17 249.284 2015-06-15
 ## 6 2015-06-18 249.007 2015-06-15</code></pre>
 <p>Since we have the <code>y</code> column which is actually Bitcoin Price, we need to aggregate that weekly using the <code>aggregate</code> function</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="data-management---time-series-and-panel-data.html#cb109-1" tabindex="-1"></a>week_y<span class="ot">&lt;-</span><span class="fu">aggregate</span>(. <span class="sc">~</span> week, <span class="co">#refers to all other columns in the dataset and groups them by week</span></span>
-<span id="cb109-2"><a href="data-management---time-series-and-panel-data.html#cb109-2" tabindex="-1"></a>                  <span class="at">data=</span>ch3_p1<span class="fl">.1</span>, </span>
-<span id="cb109-3"><a href="data-management---time-series-and-panel-data.html#cb109-3" tabindex="-1"></a>                  <span class="at">FUN =</span> mean <span class="co">#specifies that the mean function should be applied to the numeric column within each week</span></span>
-<span id="cb109-4"><a href="data-management---time-series-and-panel-data.html#cb109-4" tabindex="-1"></a>                  )</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="data-management---time-series-and-panel-data.html#cb107-1" tabindex="-1"></a>week_y<span class="ot">&lt;-</span><span class="fu">aggregate</span>(. <span class="sc">~</span> week, <span class="co">#refers to all other columns in the dataset and groups them by week</span></span>
+<span id="cb107-2"><a href="data-management---time-series-and-panel-data.html#cb107-2" tabindex="-1"></a>                  <span class="at">data=</span>ch3_p1<span class="fl">.1</span>, </span>
+<span id="cb107-3"><a href="data-management---time-series-and-panel-data.html#cb107-3" tabindex="-1"></a>                  <span class="at">FUN =</span> mean <span class="co">#specifies that the mean function should be applied to the numeric column within each week</span></span>
+<span id="cb107-4"><a href="data-management---time-series-and-panel-data.html#cb107-4" tabindex="-1"></a>                  )</span></code></pre></div>
 <p>You will notice that this creates a separate data frame. We will merge <code>week_y</code> with <code>ch3_p1.1</code></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="data-management---time-series-and-panel-data.html#cb110-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">merge</span>(ch3_p1<span class="fl">.1</span>, week_y, <span class="at">by =</span> <span class="st">&quot;week&quot;</span>, <span class="co">#ensures the merge aligns based on the week</span></span>
-<span id="cb110-2"><a href="data-management---time-series-and-panel-data.html#cb110-2" tabindex="-1"></a>                <span class="at">suffixes =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;_weekly&quot;</span>)) <span class="co">#adds _weekly to the column name to distinguish them from the original columns</span></span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="data-management---time-series-and-panel-data.html#cb108-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">merge</span>(ch3_p1<span class="fl">.1</span>, week_y, <span class="at">by =</span> <span class="st">&quot;week&quot;</span>, <span class="co">#ensures the merge aligns based on the week</span></span>
+<span id="cb108-2"><a href="data-management---time-series-and-panel-data.html#cb108-2" tabindex="-1"></a>                <span class="at">suffixes =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;_weekly&quot;</span>)) <span class="co">#adds _weekly to the column name to distinguish them from the original columns</span></span></code></pre></div>
 <p>We will slightly do the same thing when aggregating by month, quarter and year. I will do the initial steps, but please do the succeeding steps on your own.</p>
 </div>
-<div id="aggregate-by-month" class="section level4 hasAnchor" number="9.2.3.2">
-<h4><span class="header-section-number">9.2.3.2</span> Aggregate by Month<a href="data-management---time-series-and-panel-data.html#aggregate-by-month" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="data-management---time-series-and-panel-data.html#cb111-1" tabindex="-1"></a><span class="co"># Add a month column</span></span>
-<span id="cb111-2"><a href="data-management---time-series-and-panel-data.html#cb111-2" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>month <span class="ot">&lt;-</span> <span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y-%m&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="data-management---time-series-and-panel-data.html#cb112-1" tabindex="-1"></a><span class="co"># Calculate monthly means</span></span>
-<span id="cb112-2"><a href="data-management---time-series-and-panel-data.html#cb112-2" tabindex="-1"></a>month_y <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> month, <span class="at">data =</span> ch3_p1<span class="fl">.1</span>, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<div id="aggregate-by-month" class="section level4 hasAnchor" number="10.2.3.2">
+<h4><span class="header-section-number">10.2.3.2</span> Aggregate by Month<a href="data-management---time-series-and-panel-data.html#aggregate-by-month" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="data-management---time-series-and-panel-data.html#cb109-1" tabindex="-1"></a><span class="co"># Add a month column</span></span>
+<span id="cb109-2"><a href="data-management---time-series-and-panel-data.html#cb109-2" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>month <span class="ot">&lt;-</span> <span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y-%m&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="data-management---time-series-and-panel-data.html#cb110-1" tabindex="-1"></a><span class="co"># Calculate monthly means</span></span>
+<span id="cb110-2"><a href="data-management---time-series-and-panel-data.html#cb110-2" tabindex="-1"></a>month_y <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> month, <span class="at">data =</span> ch3_p1<span class="fl">.1</span>, <span class="at">FUN =</span> mean)</span></code></pre></div>
 </div>
-<div id="aggregate-by-quarter" class="section level4 hasAnchor" number="9.2.3.3">
-<h4><span class="header-section-number">9.2.3.3</span> Aggregate by Quarter<a href="data-management---time-series-and-panel-data.html#aggregate-by-quarter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="aggregate-by-quarter" class="section level4 hasAnchor" number="10.2.3.3">
+<h4><span class="header-section-number">10.2.3.3</span> Aggregate by Quarter<a href="data-management---time-series-and-panel-data.html#aggregate-by-quarter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This is different since we will use the <code>paste0</code> and the <code>format</code> functions. The format function extracts the year from the date and extracts the quarter from the date. The paste0 combines the year and quarter without a space between them so that it results in which quarter of which year.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="data-management---time-series-and-panel-data.html#cb113-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>quarter <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y&quot;</span>), <span class="st">&quot; &quot;</span>, <span class="fu">quarters</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds))</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="data-management---time-series-and-panel-data.html#cb111-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>quarter <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y&quot;</span>), <span class="st">&quot; &quot;</span>, <span class="fu">quarters</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds))</span></code></pre></div>
 </div>
-<div id="aggregate-by-year" class="section level4 hasAnchor" number="9.2.3.4">
-<h4><span class="header-section-number">9.2.3.4</span> Aggregate by Year<a href="data-management---time-series-and-panel-data.html#aggregate-by-year" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="data-management---time-series-and-panel-data.html#cb114-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>year<span class="ot">&lt;-</span><span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y&quot;</span>)</span></code></pre></div>
+<div id="aggregate-by-year" class="section level4 hasAnchor" number="10.2.3.4">
+<h4><span class="header-section-number">10.2.3.4</span> Aggregate by Year<a href="data-management---time-series-and-panel-data.html#aggregate-by-year" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="data-management---time-series-and-panel-data.html#cb112-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>year<span class="ot">&lt;-</span><span class="fu">format</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="st">&quot;%Y&quot;</span>)</span></code></pre></div>
 <p>Can you aggregate the Bitcoin values on your own?</p>
 </div>
 </div>
 </div>
-<div id="modifying-long-and-wide-datasets" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Modifying Long and Wide Datasets<a href="data-management---time-series-and-panel-data.html#modifying-long-and-wide-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="how-to-determine" class="section level3 hasAnchor" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> How to Determine<a href="data-management---time-series-and-panel-data.html#how-to-determine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="modifying-long-and-wide-datasets" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Modifying Long and Wide Datasets<a href="data-management---time-series-and-panel-data.html#modifying-long-and-wide-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="how-to-determine" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> How to Determine<a href="data-management---time-series-and-panel-data.html#how-to-determine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <colgroup>
 <col width="33%" />
@@ -414,12 +438,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="examples-of-long-and-wide-formats" class="section level4 hasAnchor" number="9.3.1.1">
-<h4><span class="header-section-number">9.3.1.1</span> Examples of Long and Wide Formats<a href="data-management---time-series-and-panel-data.html#examples-of-long-and-wide-formats" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="student-scores" class="section level5 hasAnchor" number="9.3.1.1.1">
-<h5><span class="header-section-number">9.3.1.1.1</span> 1. Student Scores<a href="data-management---time-series-and-panel-data.html#student-scores" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div id="long-format" class="section level6 hasAnchor" number="9.3.1.1.1.1">
-<h6><span class="header-section-number">9.3.1.1.1.1</span> Long Format<a href="data-management---time-series-and-panel-data.html#long-format" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<div id="examples-of-long-and-wide-formats" class="section level4 hasAnchor" number="10.3.1.1">
+<h4><span class="header-section-number">10.3.1.1</span> Examples of Long and Wide Formats<a href="data-management---time-series-and-panel-data.html#examples-of-long-and-wide-formats" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="student-scores" class="section level5 hasAnchor" number="10.3.1.1.1">
+<h5><span class="header-section-number">10.3.1.1.1</span> 1. Student Scores<a href="data-management---time-series-and-panel-data.html#student-scores" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="long-format" class="section level6 hasAnchor" number="10.3.1.1.1.1">
+<h6><span class="header-section-number">10.3.1.1.1.1</span> Long Format<a href="data-management---time-series-and-panel-data.html#long-format" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <table>
 <thead>
 <tr class="header">
@@ -452,8 +476,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="wide-format" class="section level6 hasAnchor" number="9.3.1.1.1.2">
-<h6><span class="header-section-number">9.3.1.1.1.2</span> Wide Format<a href="data-management---time-series-and-panel-data.html#wide-format" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<div id="wide-format" class="section level6 hasAnchor" number="10.3.1.1.1.2">
+<h6><span class="header-section-number">10.3.1.1.1.2</span> Wide Format<a href="data-management---time-series-and-panel-data.html#wide-format" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <table>
 <thead>
 <tr class="header">
@@ -477,10 +501,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
-<div id="temperature-data" class="section level5 hasAnchor" number="9.3.1.1.2">
-<h5><span class="header-section-number">9.3.1.1.2</span> 2. Temperature Data<a href="data-management---time-series-and-panel-data.html#temperature-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div id="long-format-1" class="section level6 hasAnchor" number="9.3.1.1.2.1">
-<h6><span class="header-section-number">9.3.1.1.2.1</span> Long Format<a href="data-management---time-series-and-panel-data.html#long-format-1" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<div id="temperature-data" class="section level5 hasAnchor" number="10.3.1.1.2">
+<h5><span class="header-section-number">10.3.1.1.2</span> 2. Temperature Data<a href="data-management---time-series-and-panel-data.html#temperature-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="long-format-1" class="section level6 hasAnchor" number="10.3.1.1.2.1">
+<h6><span class="header-section-number">10.3.1.1.2.1</span> Long Format<a href="data-management---time-series-and-panel-data.html#long-format-1" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <table>
 <thead>
 <tr class="header">
@@ -513,8 +537,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="wide-format-1" class="section level6 hasAnchor" number="9.3.1.1.2.2">
-<h6><span class="header-section-number">9.3.1.1.2.2</span> Wide Format<a href="data-management---time-series-and-panel-data.html#wide-format-1" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<div id="wide-format-1" class="section level6 hasAnchor" number="10.3.1.1.2.2">
+<h6><span class="header-section-number">10.3.1.1.2.2</span> Wide Format<a href="data-management---time-series-and-panel-data.html#wide-format-1" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <table>
 <thead>
 <tr class="header">
@@ -540,20 +564,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="setting-up-the-dataset" class="section level3 hasAnchor" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Setting up the Dataset<a href="data-management---time-series-and-panel-data.html#setting-up-the-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="generate-a-long-dataset" class="section level4 hasAnchor" number="9.3.2.1">
-<h4><span class="header-section-number">9.3.2.1</span> Generate a Long Dataset<a href="data-management---time-series-and-panel-data.html#generate-a-long-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="setting-up-the-dataset" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Setting up the Dataset<a href="data-management---time-series-and-panel-data.html#setting-up-the-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="generate-a-long-dataset" class="section level4 hasAnchor" number="10.3.2.1">
+<h4><span class="header-section-number">10.3.2.1</span> Generate a Long Dataset<a href="data-management---time-series-and-panel-data.html#generate-a-long-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For practice, we will generate a long dataset. We will need <code>set.seed</code> for reproducibility when you want to run the entire code again and to generate random values, we will use the <code>rnorm</code> function.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="data-management---time-series-and-panel-data.html#cb115-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb115-2"><a href="data-management---time-series-and-panel-data.html#cb115-2" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="data-management---time-series-and-panel-data.html#cb115-3" tabindex="-1"></a><span class="co">#Generate a long dataset</span></span>
-<span id="cb115-4"><a href="data-management---time-series-and-panel-data.html#cb115-4" tabindex="-1"></a>long<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
-<span id="cb115-5"><a href="data-management---time-series-and-panel-data.html#cb115-5" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">3</span>), <span class="co">#creates 5 groups and repeated 3 times each</span></span>
-<span id="cb115-6"><a href="data-management---time-series-and-panel-data.html#cb115-6" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">times=</span><span class="dv">5</span>), <span class="co">#Variables A,B,C are created and repeated 5 times</span></span>
-<span id="cb115-7"><a href="data-management---time-series-and-panel-data.html#cb115-7" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>) <span class="co">#creates random values for 15 observations with mean 50 and standard deviation of 10</span></span>
-<span id="cb115-8"><a href="data-management---time-series-and-panel-data.html#cb115-8" tabindex="-1"></a>)</span>
-<span id="cb115-9"><a href="data-management---time-series-and-panel-data.html#cb115-9" tabindex="-1"></a><span class="fu">print</span>(long)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="data-management---time-series-and-panel-data.html#cb113-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb113-2"><a href="data-management---time-series-and-panel-data.html#cb113-2" tabindex="-1"></a></span>
+<span id="cb113-3"><a href="data-management---time-series-and-panel-data.html#cb113-3" tabindex="-1"></a><span class="co">#Generate a long dataset</span></span>
+<span id="cb113-4"><a href="data-management---time-series-and-panel-data.html#cb113-4" tabindex="-1"></a>long<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb113-5"><a href="data-management---time-series-and-panel-data.html#cb113-5" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">3</span>), <span class="co">#creates 5 groups and repeated 3 times each</span></span>
+<span id="cb113-6"><a href="data-management---time-series-and-panel-data.html#cb113-6" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">times=</span><span class="dv">5</span>), <span class="co">#Variables A,B,C are created and repeated 5 times</span></span>
+<span id="cb113-7"><a href="data-management---time-series-and-panel-data.html#cb113-7" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>) <span class="co">#creates random values for 15 observations with mean 50 and standard deviation of 10</span></span>
+<span id="cb113-8"><a href="data-management---time-series-and-panel-data.html#cb113-8" tabindex="-1"></a>)</span>
+<span id="cb113-9"><a href="data-management---time-series-and-panel-data.html#cb113-9" tabindex="-1"></a><span class="fu">print</span>(long)</span></code></pre></div>
 <pre><code>##    id variable    value
 ## 1   1        A 44.39524
 ## 2   1        B 47.69823
@@ -571,18 +595,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 14  5        B 51.10683
 ## 15  5        C 44.44159</code></pre>
 </div>
-<div id="converting-long-to-wide-format" class="section level4 hasAnchor" number="9.3.2.2">
-<h4><span class="header-section-number">9.3.2.2</span> Converting Long to Wide Format<a href="data-management---time-series-and-panel-data.html#converting-long-to-wide-format" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="converting-long-to-wide-format" class="section level4 hasAnchor" number="10.3.2.2">
+<h4><span class="header-section-number">10.3.2.2</span> Converting Long to Wide Format<a href="data-management---time-series-and-panel-data.html#converting-long-to-wide-format" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the <code>pivot_wider()</code> function from the <code>tidyr</code> package.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="data-management---time-series-and-panel-data.html#cb117-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb117-2"><a href="data-management---time-series-and-panel-data.html#cb117-2" tabindex="-1"></a></span>
-<span id="cb117-3"><a href="data-management---time-series-and-panel-data.html#cb117-3" tabindex="-1"></a>wide<span class="ot">&lt;-</span><span class="fu">pivot_wider</span>(</span>
-<span id="cb117-4"><a href="data-management---time-series-and-panel-data.html#cb117-4" tabindex="-1"></a>  <span class="at">data =</span> long,</span>
-<span id="cb117-5"><a href="data-management---time-series-and-panel-data.html#cb117-5" tabindex="-1"></a>  <span class="at">names_from =</span> variable, <span class="co">#Columns to become new column names</span></span>
-<span id="cb117-6"><a href="data-management---time-series-and-panel-data.html#cb117-6" tabindex="-1"></a>  <span class="at">values_from =</span> value <span class="co">#Values to put under new columns</span></span>
-<span id="cb117-7"><a href="data-management---time-series-and-panel-data.html#cb117-7" tabindex="-1"></a>)</span>
-<span id="cb117-8"><a href="data-management---time-series-and-panel-data.html#cb117-8" tabindex="-1"></a></span>
-<span id="cb117-9"><a href="data-management---time-series-and-panel-data.html#cb117-9" tabindex="-1"></a><span class="fu">print</span>(wide)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="data-management---time-series-and-panel-data.html#cb115-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb115-2"><a href="data-management---time-series-and-panel-data.html#cb115-2" tabindex="-1"></a></span>
+<span id="cb115-3"><a href="data-management---time-series-and-panel-data.html#cb115-3" tabindex="-1"></a>wide<span class="ot">&lt;-</span><span class="fu">pivot_wider</span>(</span>
+<span id="cb115-4"><a href="data-management---time-series-and-panel-data.html#cb115-4" tabindex="-1"></a>  <span class="at">data =</span> long,</span>
+<span id="cb115-5"><a href="data-management---time-series-and-panel-data.html#cb115-5" tabindex="-1"></a>  <span class="at">names_from =</span> variable, <span class="co">#Columns to become new column names</span></span>
+<span id="cb115-6"><a href="data-management---time-series-and-panel-data.html#cb115-6" tabindex="-1"></a>  <span class="at">values_from =</span> value <span class="co">#Values to put under new columns</span></span>
+<span id="cb115-7"><a href="data-management---time-series-and-panel-data.html#cb115-7" tabindex="-1"></a>)</span>
+<span id="cb115-8"><a href="data-management---time-series-and-panel-data.html#cb115-8" tabindex="-1"></a></span>
+<span id="cb115-9"><a href="data-management---time-series-and-panel-data.html#cb115-9" tabindex="-1"></a><span class="fu">print</span>(wide)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 4
 ##      id     A     B     C
 ##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -592,17 +616,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4     4  45.5  62.2  53.6
 ## 5     5  54.0  51.1  44.4</code></pre>
 </div>
-<div id="convert-wide-to-long" class="section level4 hasAnchor" number="9.3.2.3">
-<h4><span class="header-section-number">9.3.2.3</span> Convert Wide to Long<a href="data-management---time-series-and-panel-data.html#convert-wide-to-long" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="convert-wide-to-long" class="section level4 hasAnchor" number="10.3.2.3">
+<h4><span class="header-section-number">10.3.2.3</span> Convert Wide to Long<a href="data-management---time-series-and-panel-data.html#convert-wide-to-long" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the converted wide dataset for this. We will use the <code>pivot_longer</code> function.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="data-management---time-series-and-panel-data.html#cb119-1" tabindex="-1"></a>long2<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(</span>
-<span id="cb119-2"><a href="data-management---time-series-and-panel-data.html#cb119-2" tabindex="-1"></a>  <span class="at">data =</span> wide,</span>
-<span id="cb119-3"><a href="data-management---time-series-and-panel-data.html#cb119-3" tabindex="-1"></a>  <span class="at">cols =</span> A<span class="sc">:</span>C, <span class="co">#Which columns to collapse</span></span>
-<span id="cb119-4"><a href="data-management---time-series-and-panel-data.html#cb119-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="co">#New column for variable names</span></span>
-<span id="cb119-5"><a href="data-management---time-series-and-panel-data.html#cb119-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span> <span class="co">#new column for values</span></span>
-<span id="cb119-6"><a href="data-management---time-series-and-panel-data.html#cb119-6" tabindex="-1"></a>)</span>
-<span id="cb119-7"><a href="data-management---time-series-and-panel-data.html#cb119-7" tabindex="-1"></a></span>
-<span id="cb119-8"><a href="data-management---time-series-and-panel-data.html#cb119-8" tabindex="-1"></a><span class="fu">print</span>(long2)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="data-management---time-series-and-panel-data.html#cb117-1" tabindex="-1"></a>long2<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb117-2"><a href="data-management---time-series-and-panel-data.html#cb117-2" tabindex="-1"></a>  <span class="at">data =</span> wide,</span>
+<span id="cb117-3"><a href="data-management---time-series-and-panel-data.html#cb117-3" tabindex="-1"></a>  <span class="at">cols =</span> A<span class="sc">:</span>C, <span class="co">#Which columns to collapse</span></span>
+<span id="cb117-4"><a href="data-management---time-series-and-panel-data.html#cb117-4" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="co">#New column for variable names</span></span>
+<span id="cb117-5"><a href="data-management---time-series-and-panel-data.html#cb117-5" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span> <span class="co">#new column for values</span></span>
+<span id="cb117-6"><a href="data-management---time-series-and-panel-data.html#cb117-6" tabindex="-1"></a>)</span>
+<span id="cb117-7"><a href="data-management---time-series-and-panel-data.html#cb117-7" tabindex="-1"></a></span>
+<span id="cb117-8"><a href="data-management---time-series-and-panel-data.html#cb117-8" tabindex="-1"></a><span class="fu">print</span>(long2)</span></code></pre></div>
 <pre><code>## # A tibble: 15 × 3
 ##       id variable value
 ##    &lt;int&gt; &lt;chr&gt;    &lt;dbl&gt;
@@ -624,25 +648,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="missing-values" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Missing Values<a href="data-management---time-series-and-panel-data.html#missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="missing-values" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Missing Values<a href="data-management---time-series-and-panel-data.html#missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In handling missing values in R, we focus on 3 common methods:</p>
 <ol style="list-style-type: decimal">
 <li>Replacing missing values with <code>0</code></li>
 <li>Removing rows or columns with missing values</li>
 <li>Replacing missing values with the mean</li>
 </ol>
-<div id="setting-up-a-sample-dataset" class="section level3 hasAnchor" number="9.4.1">
-<h3><span class="header-section-number">9.4.1</span> Setting up a Sample Dataset<a href="data-management---time-series-and-panel-data.html#setting-up-a-sample-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="data-management---time-series-and-panel-data.html#cb121-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb121-2"><a href="data-management---time-series-and-panel-data.html#cb121-2" tabindex="-1"></a>ch3_p2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
-<span id="cb121-3"><a href="data-management---time-series-and-panel-data.html#cb121-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb121-4"><a href="data-management---time-series-and-panel-data.html#cb121-4" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="cn">NA</span>),</span>
-<span id="cb121-5"><a href="data-management---time-series-and-panel-data.html#cb121-5" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">45</span>),</span>
-<span id="cb121-6"><a href="data-management---time-series-and-panel-data.html#cb121-6" tabindex="-1"></a>  <span class="at">var3 =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd=</span><span class="dv">10</span>)</span>
-<span id="cb121-7"><a href="data-management---time-series-and-panel-data.html#cb121-7" tabindex="-1"></a>)</span>
-<span id="cb121-8"><a href="data-management---time-series-and-panel-data.html#cb121-8" tabindex="-1"></a></span>
-<span id="cb121-9"><a href="data-management---time-series-and-panel-data.html#cb121-9" tabindex="-1"></a><span class="fu">print</span>(ch3_p2)</span></code></pre></div>
+<div id="setting-up-a-sample-dataset" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Setting up a Sample Dataset<a href="data-management---time-series-and-panel-data.html#setting-up-a-sample-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="data-management---time-series-and-panel-data.html#cb119-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb119-2"><a href="data-management---time-series-and-panel-data.html#cb119-2" tabindex="-1"></a>ch3_p2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb119-3"><a href="data-management---time-series-and-panel-data.html#cb119-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb119-4"><a href="data-management---time-series-and-panel-data.html#cb119-4" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="cn">NA</span>),</span>
+<span id="cb119-5"><a href="data-management---time-series-and-panel-data.html#cb119-5" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">45</span>),</span>
+<span id="cb119-6"><a href="data-management---time-series-and-panel-data.html#cb119-6" tabindex="-1"></a>  <span class="at">var3 =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd=</span><span class="dv">10</span>)</span>
+<span id="cb119-7"><a href="data-management---time-series-and-panel-data.html#cb119-7" tabindex="-1"></a>)</span>
+<span id="cb119-8"><a href="data-management---time-series-and-panel-data.html#cb119-8" tabindex="-1"></a></span>
+<span id="cb119-9"><a href="data-management---time-series-and-panel-data.html#cb119-9" tabindex="-1"></a><span class="fu">print</span>(ch3_p2)</span></code></pre></div>
 <pre><code>##   id var1 var2     var3
 ## 1  1   10   NA 44.39524
 ## 2  2   NA   15 47.69823
@@ -650,13 +674,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4   40   35 50.70508
 ## 5  5   NA   45 51.29288</code></pre>
 </div>
-<div id="replace-with-0" class="section level3 hasAnchor" number="9.4.2">
-<h3><span class="header-section-number">9.4.2</span> Replace with <code>0</code><a href="data-management---time-series-and-panel-data.html#replace-with-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="for-a-specific-column" class="section level4 hasAnchor" number="9.4.2.1">
-<h4><span class="header-section-number">9.4.2.1</span> For a Specific Column:<a href="data-management---time-series-and-panel-data.html#for-a-specific-column" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="data-management---time-series-and-panel-data.html#cb123-1" tabindex="-1"></a>ch3_p2<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p2</span>
-<span id="cb123-2"><a href="data-management---time-series-and-panel-data.html#cb123-2" tabindex="-1"></a>ch3_p2<span class="fl">.1</span><span class="sc">$</span>var1[<span class="fu">is.na</span>(ch3_p2<span class="fl">.1</span><span class="sc">$</span>var1)]<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb123-3"><a href="data-management---time-series-and-panel-data.html#cb123-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.1</span>)</span></code></pre></div>
+<div id="replace-with-0" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Replace with <code>0</code><a href="data-management---time-series-and-panel-data.html#replace-with-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="for-a-specific-column" class="section level4 hasAnchor" number="10.4.2.1">
+<h4><span class="header-section-number">10.4.2.1</span> For a Specific Column:<a href="data-management---time-series-and-panel-data.html#for-a-specific-column" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="data-management---time-series-and-panel-data.html#cb121-1" tabindex="-1"></a>ch3_p2<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p2</span>
+<span id="cb121-2"><a href="data-management---time-series-and-panel-data.html#cb121-2" tabindex="-1"></a>ch3_p2<span class="fl">.1</span><span class="sc">$</span>var1[<span class="fu">is.na</span>(ch3_p2<span class="fl">.1</span><span class="sc">$</span>var1)]<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb121-3"><a href="data-management---time-series-and-panel-data.html#cb121-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>##   id var1 var2     var3
 ## 1  1   10   NA 44.39524
 ## 2  2    0   15 47.69823
@@ -664,12 +688,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4   40   35 50.70508
 ## 5  5    0   45 51.29288</code></pre>
 </div>
-<div id="for-the-entire-dataset" class="section level4 hasAnchor" number="9.4.2.2">
-<h4><span class="header-section-number">9.4.2.2</span> For the Entire Dataset<a href="data-management---time-series-and-panel-data.html#for-the-entire-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="data-management---time-series-and-panel-data.html#cb125-1" tabindex="-1"></a>ch3_p2<span class="fl">.2</span><span class="ot">&lt;-</span>ch3_p2</span>
-<span id="cb125-2"><a href="data-management---time-series-and-panel-data.html#cb125-2" tabindex="-1"></a>ch3_p2<span class="fl">.2</span>[<span class="fu">is.na</span>(ch3_p2<span class="fl">.2</span>)]<span class="ot">&lt;-</span><span class="dv">0</span></span>
-<span id="cb125-3"><a href="data-management---time-series-and-panel-data.html#cb125-3" tabindex="-1"></a></span>
-<span id="cb125-4"><a href="data-management---time-series-and-panel-data.html#cb125-4" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.2</span>)</span></code></pre></div>
+<div id="for-the-entire-dataset" class="section level4 hasAnchor" number="10.4.2.2">
+<h4><span class="header-section-number">10.4.2.2</span> For the Entire Dataset<a href="data-management---time-series-and-panel-data.html#for-the-entire-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="data-management---time-series-and-panel-data.html#cb123-1" tabindex="-1"></a>ch3_p2<span class="fl">.2</span><span class="ot">&lt;-</span>ch3_p2</span>
+<span id="cb123-2"><a href="data-management---time-series-and-panel-data.html#cb123-2" tabindex="-1"></a>ch3_p2<span class="fl">.2</span>[<span class="fu">is.na</span>(ch3_p2<span class="fl">.2</span>)]<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb123-3"><a href="data-management---time-series-and-panel-data.html#cb123-3" tabindex="-1"></a></span>
+<span id="cb123-4"><a href="data-management---time-series-and-panel-data.html#cb123-4" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>##   id var1 var2     var3
 ## 1  1   10    0 44.39524
 ## 2  2    0   15 47.69823
@@ -678,22 +702,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  5    0   45 51.29288</code></pre>
 </div>
 </div>
-<div id="remove-rows-or-columns-with-missing-values" class="section level3 hasAnchor" number="9.4.3">
-<h3><span class="header-section-number">9.4.3</span> Remove Rows or Columns with Missing Values<a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="remove-rows-with-missing-values" class="section level4 hasAnchor" number="9.4.3.1">
-<h4><span class="header-section-number">9.4.3.1</span> Remove Rows with Missing Values<a href="data-management---time-series-and-panel-data.html#remove-rows-with-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="data-management---time-series-and-panel-data.html#cb127-1" tabindex="-1"></a>ch3_p2<span class="fl">.3</span><span class="ot">&lt;-</span>ch3_p2</span>
-<span id="cb127-2"><a href="data-management---time-series-and-panel-data.html#cb127-2" tabindex="-1"></a>ch3_p2<span class="fl">.3</span><span class="ot">&lt;-</span><span class="fu">na.omit</span>(ch3_p2<span class="fl">.3</span>)</span>
-<span id="cb127-3"><a href="data-management---time-series-and-panel-data.html#cb127-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.3</span>)</span></code></pre></div>
+<div id="remove-rows-or-columns-with-missing-values" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Remove Rows or Columns with Missing Values<a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="remove-rows-with-missing-values" class="section level4 hasAnchor" number="10.4.3.1">
+<h4><span class="header-section-number">10.4.3.1</span> Remove Rows with Missing Values<a href="data-management---time-series-and-panel-data.html#remove-rows-with-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="data-management---time-series-and-panel-data.html#cb125-1" tabindex="-1"></a>ch3_p2<span class="fl">.3</span><span class="ot">&lt;-</span>ch3_p2</span>
+<span id="cb125-2"><a href="data-management---time-series-and-panel-data.html#cb125-2" tabindex="-1"></a>ch3_p2<span class="fl">.3</span><span class="ot">&lt;-</span><span class="fu">na.omit</span>(ch3_p2<span class="fl">.3</span>)</span>
+<span id="cb125-3"><a href="data-management---time-series-and-panel-data.html#cb125-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.3</span>)</span></code></pre></div>
 <pre><code>##   id var1 var2     var3
 ## 3  3   30   25 65.58708
 ## 4  4   40   35 50.70508</code></pre>
 </div>
-<div id="remove-columns-with-missing-data" class="section level4 hasAnchor" number="9.4.3.2">
-<h4><span class="header-section-number">9.4.3.2</span> Remove Columns with Missing Data<a href="data-management---time-series-and-panel-data.html#remove-columns-with-missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="data-management---time-series-and-panel-data.html#cb129-1" tabindex="-1"></a>ch3_p2<span class="fl">.4</span><span class="ot">&lt;-</span>ch3_p2</span>
-<span id="cb129-2"><a href="data-management---time-series-and-panel-data.html#cb129-2" tabindex="-1"></a>ch3_p2<span class="fl">.4</span><span class="ot">&lt;-</span>ch3_p2<span class="fl">.4</span>[, <span class="fu">colSums</span>(<span class="fu">is.na</span>(ch3_p2<span class="fl">.4</span>)) <span class="sc">==</span><span class="dv">0</span>]</span>
-<span id="cb129-3"><a href="data-management---time-series-and-panel-data.html#cb129-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.4</span>)</span></code></pre></div>
+<div id="remove-columns-with-missing-data" class="section level4 hasAnchor" number="10.4.3.2">
+<h4><span class="header-section-number">10.4.3.2</span> Remove Columns with Missing Data<a href="data-management---time-series-and-panel-data.html#remove-columns-with-missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="data-management---time-series-and-panel-data.html#cb127-1" tabindex="-1"></a>ch3_p2<span class="fl">.4</span><span class="ot">&lt;-</span>ch3_p2</span>
+<span id="cb127-2"><a href="data-management---time-series-and-panel-data.html#cb127-2" tabindex="-1"></a>ch3_p2<span class="fl">.4</span><span class="ot">&lt;-</span>ch3_p2<span class="fl">.4</span>[, <span class="fu">colSums</span>(<span class="fu">is.na</span>(ch3_p2<span class="fl">.4</span>)) <span class="sc">==</span><span class="dv">0</span>]</span>
+<span id="cb127-3"><a href="data-management---time-series-and-panel-data.html#cb127-3" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.4</span>)</span></code></pre></div>
 <pre><code>##   id     var3
 ## 1  1 44.39524
 ## 2  2 47.69823
@@ -702,16 +726,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  5 51.29288</code></pre>
 </div>
 </div>
-<div id="imputing-missing-values-with-the-mean" class="section level3 hasAnchor" number="9.4.4">
-<h3><span class="header-section-number">9.4.4</span> Imputing Missing Values with the Mean<a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="imputing-missing-values-with-the-mean" class="section level3 hasAnchor" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> Imputing Missing Values with the Mean<a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here, we will impute missing values with the mean and unlike previous methods, this method uses a <code>for</code> function to loop through columns and check for columns with missing values. However, this method needs to have numeric format.</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="data-management---time-series-and-panel-data.html#cb131-1" tabindex="-1"></a>ch3_p2<span class="fl">.5</span><span class="ot">&lt;-</span>ch3_p2</span>
-<span id="cb131-2"><a href="data-management---time-series-and-panel-data.html#cb131-2" tabindex="-1"></a><span class="cf">for</span>(col <span class="cf">in</span> <span class="fu">names</span>(ch3_p2<span class="fl">.5</span>)){</span>
-<span id="cb131-3"><a href="data-management---time-series-and-panel-data.html#cb131-3" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.numeric</span>(ch3_p2<span class="fl">.5</span>[[col]])) {<span class="co">#Check if column is numeric</span></span>
-<span id="cb131-4"><a href="data-management---time-series-and-panel-data.html#cb131-4" tabindex="-1"></a>    ch3_p2<span class="fl">.5</span>[[col]][<span class="fu">is.na</span>(ch3_p2<span class="fl">.5</span>[[col]])]<span class="ot">&lt;-</span><span class="fu">mean</span>(ch3_p2<span class="fl">.5</span>[[col]], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb131-5"><a href="data-management---time-series-and-panel-data.html#cb131-5" tabindex="-1"></a>    }</span>
-<span id="cb131-6"><a href="data-management---time-series-and-panel-data.html#cb131-6" tabindex="-1"></a>}</span>
-<span id="cb131-7"><a href="data-management---time-series-and-panel-data.html#cb131-7" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="data-management---time-series-and-panel-data.html#cb129-1" tabindex="-1"></a>ch3_p2<span class="fl">.5</span><span class="ot">&lt;-</span>ch3_p2</span>
+<span id="cb129-2"><a href="data-management---time-series-and-panel-data.html#cb129-2" tabindex="-1"></a><span class="cf">for</span>(col <span class="cf">in</span> <span class="fu">names</span>(ch3_p2<span class="fl">.5</span>)){</span>
+<span id="cb129-3"><a href="data-management---time-series-and-panel-data.html#cb129-3" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.numeric</span>(ch3_p2<span class="fl">.5</span>[[col]])) {<span class="co">#Check if column is numeric</span></span>
+<span id="cb129-4"><a href="data-management---time-series-and-panel-data.html#cb129-4" tabindex="-1"></a>    ch3_p2<span class="fl">.5</span>[[col]][<span class="fu">is.na</span>(ch3_p2<span class="fl">.5</span>[[col]])]<span class="ot">&lt;-</span><span class="fu">mean</span>(ch3_p2<span class="fl">.5</span>[[col]], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb129-5"><a href="data-management---time-series-and-panel-data.html#cb129-5" tabindex="-1"></a>    }</span>
+<span id="cb129-6"><a href="data-management---time-series-and-panel-data.html#cb129-6" tabindex="-1"></a>}</span>
+<span id="cb129-7"><a href="data-management---time-series-and-panel-data.html#cb129-7" tabindex="-1"></a><span class="fu">print</span>(ch3_p2<span class="fl">.5</span>)</span></code></pre></div>
 <pre><code>##   id     var1 var2     var3
 ## 1  1 10.00000   30 44.39524
 ## 2  2 26.66667   15 47.69823
@@ -719,8 +743,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4 40.00000   35 50.70508
 ## 5  5 26.66667   45 51.29288</code></pre>
 </div>
-<div id="note" class="section level3 hasAnchor" number="9.4.5">
-<h3><span class="header-section-number">9.4.5</span> Note:<a href="data-management---time-series-and-panel-data.html#note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="note" class="section level3 hasAnchor" number="10.4.5">
+<h3><span class="header-section-number">10.4.5</span> Note:<a href="data-management---time-series-and-panel-data.html#note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When doing the three methods, there are pros and cons.</p>
 <ol style="list-style-type: decimal">
 <li>Replacing with Zero can introduce bias if <code>0</code> is not realistic in the context of the data</li>
@@ -729,21 +753,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>Always make sure you should understand your data.</p>
 </div>
-<div id="best-practice" class="section level3 hasAnchor" number="9.4.6">
-<h3><span class="header-section-number">9.4.6</span> Best Practice:<a href="data-management---time-series-and-panel-data.html#best-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="best-practice" class="section level3 hasAnchor" number="10.4.6">
+<h3><span class="header-section-number">10.4.6</span> Best Practice:<a href="data-management---time-series-and-panel-data.html#best-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Always <strong>explore and visualize</strong> patterns first.</li>
 </ol>
 <p>Leading to…</p>
 </div>
-<div id="next-meeting" class="section level3 hasAnchor" number="9.4.7">
-<h3><span class="header-section-number">9.4.7</span> Next Meeting:<a href="data-management---time-series-and-panel-data.html#next-meeting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="next-meeting" class="section level3 hasAnchor" number="10.4.7">
+<h3><span class="header-section-number">10.4.7</span> Next Meeting:<a href="data-management---time-series-and-panel-data.html#next-meeting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Visualizing the data with base R package</li>
 </ol>
 </div>
-<div id="final-note" class="section level3 hasAnchor" number="9.4.8">
-<h3><span class="header-section-number">9.4.8</span> Final Note:<a href="data-management---time-series-and-panel-data.html#final-note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="final-note" class="section level3 hasAnchor" number="10.4.8">
+<h3><span class="header-section-number">10.4.8</span> Final Note:<a href="data-management---time-series-and-panel-data.html#final-note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>No Practical for this session; please work on the previous practical and the research problem to be submitted on January 24.</p>
 <p>Next week, we will have a computer practical.</p>
 
@@ -755,8 +779,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-management-cross-sectional-feedback.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="data-management-cross-sectional-feedback.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizations-using-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
