@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-01-27" />
+<meta name="date" content="2025-02-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="visualizations-using-ggplot2.html"/>
-
+<link rel="next" href="feedback-practical-visualizations.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -277,6 +277,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>11.3</b> Visualizing Time Series Data</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="practical-visualizations.html"><a href="practical-visualizations.html"><i class="fa fa-check"></i><b>12</b> Practical: Visualizations</a></li>
+<li class="chapter" data-level="13" data-path="feedback-practical-visualizations.html"><a href="feedback-practical-visualizations.html"><i class="fa fa-check"></i><b>13</b> Feedback: Practical Visualizations</a></li>
+<li class="chapter" data-level="14" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html"><i class="fa fa-check"></i><b>14</b> Advanced Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#preliminaries-4"><i class="fa fa-check"></i><b>14.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#install-packages"><i class="fa fa-check"></i><b>14.1.1</b> Install Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-visualizations"><i class="fa fa-check"></i><b>14.2</b> Animated Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-bar-chart"><i class="fa fa-check"></i><b>14.2.1</b> Animated Bar Chart</a></li>
+<li class="chapter" data-level="14.2.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-scatter-plot"><i class="fa fa-check"></i><b>14.2.2</b> Animated Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-scatter-plot"><i class="fa fa-check"></i><b>14.2.3</b> Animated Faceted Scatter Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-time-series"><i class="fa fa-check"></i><b>14.3</b> Animated Time Series</a></li>
+<li class="chapter" data-level="14.4" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-time-series"><i class="fa fa-check"></i><b>14.4</b> Animated Faceted Time Series</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#saving-in-quarto"><i class="fa fa-check"></i><b>14.4.1</b> Saving in Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#maps"><i class="fa fa-check"></i><b>14.5</b> Maps</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#where-to-get-shapefiles"><i class="fa fa-check"></i><b>14.5.1</b> Where to get shapefiles?</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#static-maps"><i class="fa fa-check"></i><b>14.6</b> Static Maps</a>
+<ul>
+<li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
+</ul></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-maps"><i class="fa fa-check"></i><b>14.7</b> Animated Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
 </ul>
 
       </nav>
@@ -309,15 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>What did you find most challenging or rewarding about working with this dataset? Which visualization techniques did you find most useful for communicating your insights?</li>
 <li>For the time series plot, I want you to search the <a href="https://data.worldbank.org/indicator/SE.ADT.LITR.ZS"><strong>Literacy rate, adult total (% of people ages 15 and above)</strong></a>from the World Bank. I want you to download as CSV the data. Then, I want you to choose India only. Create a time series plot for India.</li>
 </ol>
-
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="visualizations-using-ggplot2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="visualizations-using-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="feedback-practical-visualizations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

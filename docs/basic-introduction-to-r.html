@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-01-27" />
+<meta name="date" content="2025-02-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -277,6 +277,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>11.3</b> Visualizing Time Series Data</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="practical-visualizations.html"><a href="practical-visualizations.html"><i class="fa fa-check"></i><b>12</b> Practical: Visualizations</a></li>
+<li class="chapter" data-level="13" data-path="feedback-practical-visualizations.html"><a href="feedback-practical-visualizations.html"><i class="fa fa-check"></i><b>13</b> Feedback: Practical Visualizations</a></li>
+<li class="chapter" data-level="14" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html"><i class="fa fa-check"></i><b>14</b> Advanced Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#preliminaries-4"><i class="fa fa-check"></i><b>14.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#install-packages"><i class="fa fa-check"></i><b>14.1.1</b> Install Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-visualizations"><i class="fa fa-check"></i><b>14.2</b> Animated Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-bar-chart"><i class="fa fa-check"></i><b>14.2.1</b> Animated Bar Chart</a></li>
+<li class="chapter" data-level="14.2.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-scatter-plot"><i class="fa fa-check"></i><b>14.2.2</b> Animated Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-scatter-plot"><i class="fa fa-check"></i><b>14.2.3</b> Animated Faceted Scatter Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-time-series"><i class="fa fa-check"></i><b>14.3</b> Animated Time Series</a></li>
+<li class="chapter" data-level="14.4" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-time-series"><i class="fa fa-check"></i><b>14.4</b> Animated Faceted Time Series</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#saving-in-quarto"><i class="fa fa-check"></i><b>14.4.1</b> Saving in Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#maps"><i class="fa fa-check"></i><b>14.5</b> Maps</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#where-to-get-shapefiles"><i class="fa fa-check"></i><b>14.5.1</b> Where to get shapefiles?</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#static-maps"><i class="fa fa-check"></i><b>14.6</b> Static Maps</a>
+<ul>
+<li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
+</ul></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-maps"><i class="fa fa-check"></i><b>14.7</b> Animated Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
 </ul>
 
       </nav>
@@ -319,18 +348,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] zoo_1.8-12      bookdown_0.41   lubridate_1.9.4 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4     purrr_1.0.2    
-##  [8] readr_2.1.5     tidyr_1.3.1     tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0 readxl_1.4.3   
+##  [1] forcats_1.0.0       purrr_1.0.2         tibble_3.2.1        tidyverse_2.0.0     readxl_1.4.3       
+##  [6] zoo_1.8-12          lubridate_1.9.4     stringr_1.5.1       bookdown_0.41       sp_2.1-4           
+## [11] leaflet_2.2.2       WDI_2.7.8           gifski_1.32.0-1     gganimate_1.0.9     readr_2.1.5        
+## [16] rnaturalearth_1.0.1 sf_1.0-19           tidyr_1.3.1         dplyr_1.1.4         ggplot2_3.5.1      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] sass_0.4.9        utf8_1.2.4        generics_0.1.3    lattice_0.22-6    stringi_1.8.4     hms_1.1.3        
-##  [7] digest_0.6.37     magrittr_2.0.3    evaluate_1.0.1    grid_4.4.2        timechange_0.3.0  fastmap_1.2.0    
-## [13] cellranger_1.1.0  jsonlite_1.8.9    tinytex_0.54      scales_1.3.0      jquerylib_0.1.4   cli_3.6.3        
-## [19] rlang_1.1.4       munsell_0.5.1     withr_3.0.2       cachem_1.1.0      yaml_2.3.10       tools_4.4.2      
-## [25] tzdb_0.4.0        colorspace_2.1-1  vctrs_0.6.5       R6_2.5.1          lifecycle_1.0.4   pkgconfig_2.0.3  
-## [31] pillar_1.10.0     bslib_0.8.0       gtable_0.3.6      glue_1.8.0        xfun_0.49         tidyselect_1.2.1 
-## [37] rstudioapi_0.17.1 knitr_1.49        farver_2.1.2      htmltools_0.5.8.1 rmarkdown_2.29    labeling_0.4.3   
-## [43] compiler_4.4.2</code></pre>
+##  [1] gtable_0.3.6            bslib_0.8.0             transformr_0.1.5        xfun_0.49              
+##  [5] htmlwidgets_1.6.4       lattice_0.22-6          tzdb_0.4.0              leaflet.providers_2.0.0
+##  [9] vctrs_0.6.5             tools_4.4.2             crosstalk_1.2.1         generics_0.1.3         
+## [13] proxy_0.4-27            pkgconfig_2.0.3         Matrix_1.7-1            KernSmooth_2.23-24     
+## [17] lifecycle_1.0.4         compiler_4.4.2          farver_2.1.2            progress_1.2.3         
+## [21] tinytex_0.54            munsell_0.5.1           terra_1.8-5             codetools_0.2-20       
+## [25] sass_0.4.9              htmltools_0.5.8.1       class_7.3-22            yaml_2.3.10            
+## [29] jquerylib_0.1.4         pillar_1.10.0           crayon_1.5.3            classInt_0.4-10        
+## [33] cachem_1.1.0            nlme_3.1-166            rnaturalearthdata_1.0.0 tidyselect_1.2.1       
+## [37] digest_0.6.37           stringi_1.8.4           labeling_0.4.3          splines_4.4.2          
+## [41] fastmap_1.2.0           grid_4.4.2              colorspace_2.1-1        cli_3.6.3              
+## [45] magrittr_2.0.3          utf8_1.2.4              e1071_1.7-16            withr_3.0.2            
+## [49] prettyunits_1.2.0       scales_1.3.0            timechange_0.3.0        rmarkdown_2.29         
+## [53] httr_1.4.7              cellranger_1.1.0        hms_1.1.3               lpSolve_5.6.23         
+## [57] evaluate_1.0.1          knitr_1.49              viridisLite_0.4.2       mgcv_1.9-1             
+## [61] rlang_1.1.4             Rcpp_1.0.13-1           glue_1.8.0              DBI_1.2.3              
+## [65] tweenr_2.0.3            rstudioapi_0.17.1       jsonlite_1.8.9          R6_2.5.1               
+## [69] units_0.8-5</code></pre>
 </div>
 <div id="preliminaries" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Preliminaries<a href="basic-introduction-to-r.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>

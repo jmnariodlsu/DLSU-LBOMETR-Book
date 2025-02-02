@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Data Story Research Question | LBOMETR Course Book</title>
+  <title>15 Practical: Advanced Visualizations | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Data Story Research Question | LBOMETR Course Book" />
+  <meta property="og:title" content="15 Practical: Advanced Visualizations | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Data Story Research Question | LBOMETR Course Book" />
+  <meta name="twitter:title" content="15 Practical: Advanced Visualizations | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grouping-process.html"/>
-<link rel="next" href="basic-introduction-to-r.html"/>
+<link rel="prev" href="advanced-visualizations.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -323,65 +323,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-story-research-question" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Data Story Research Question<a href="data-story-research-question.html#data-story-research-question" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="guidelines-in-conducting-data-story" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Guidelines in Conducting Data Story<a href="data-story-research-question.html#guidelines-in-conducting-data-story" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="research-question" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Research Question:<a href="data-story-research-question.html#research-question" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In writing your Research Question, you should keep in mind the following acronym:</p>
-<p><strong>S-M-A-R-T</strong></p>
-<p><strong>S</strong>-<strong>S</strong>pecific</p>
-<p><strong>M-M</strong>easurable</p>
-<p><strong>A-A</strong>chievable</p>
-<p><strong>R-R</strong>elevant</p>
-<p><strong>T-T</strong>ime-bound</p>
-<p>What do you think of this research question:</p>
-<p>“<em>What is the effect of X(Twitter) on mental health?“</em></p>
-<p>Do you think this question is SMART?</p>
-<p>How about this question:</p>
-<p>“<em>What is the relationship between hours spent per day on X/Twitter and reported levels of anxiety among undergraduate students in DLSU during 2020-2021?“</em></p>
-<p>Which of the two achieves the SMART elements?</p>
-</div>
-<div id="relevance" class="section level3 hasAnchor" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Relevance<a href="data-story-research-question.html#relevance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>What will be asked by the audience?</p>
-<p>You need to ask yourselves the following questions; if you are able to, you are close to achieving a good presentation!</p>
+<div id="practical-advanced-visualizations" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">15</span> Practical: Advanced Visualizations<a href="practical-advanced-visualizations.html#practical-advanced-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>For the practical, you need to search and clean the dataset on your own. Please search in PSA OpenStat: <em>Number of Registered Live Births by Sex and by Usual Residence of Mother (Region, Province and Highly Urbanized City), Philippines: January - December 2013-2022.</em> Only gather regional data since the shapefile that is given for this practical is for Regions only. Please save each animation using <code>anim_save</code></p>
 <ol style="list-style-type: decimal">
-<li>What is the problem to be solved?</li>
-<li>Who cares about this problem and why?</li>
+<li>Using PSA OpenStat (2013-2022) data, create an animated bar chart showing the total number of live births per year. Differentiate Male vs. Female births using <code>fill</code></li>
+<li>Create an animated bar chart that compares the number of live births per region over time (2013-2022). Use <code>transition_states(year, wrap = FALSE)</code> to animate regional birth counts changing over time. Determine the region with the highest live births in each frame.</li>
+<li>Select 3-5 regions and visualize their live birth trends (2013-2022) using an animated time series plot.</li>
+<li>Using PSA OpenStat (2013-2022) data and a Philippines regional shapefile, create an animated choropleth map showing how the number of live births per region changes over time. Color the regions based on <code>birth count</code></li>
+<li>Create an animated proportional map using <code>gganimate</code> + <code>sf</code> that highlights how each region’s share of total births changes from 2013 to 2022.
+<ul>
+<li><p>You need to calculate each region’s percentage of total births for each year.</p></li>
+<li><p>Use labels to display the exact percentage per region.</p></li>
+</ul></li>
+<li>How do birth trends differ across Philippine regions?</li>
+<li>Which regions have experienced the highest increase or decrease in live births from 2013 to 2022?</li>
+<li>How does using <code>gganimate</code> with <code>sf</code> enhance your ability to analyze spatial(and time) data trends?</li>
 </ol>
-</div>
-<div id="for-the-data-story-should-i-use-kaggle" class="section level3 hasAnchor" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> For the data story, should I use Kaggle?<a href="data-story-research-question.html#for-the-data-story-should-i-use-kaggle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The answer is <strong>NO</strong> because of the following reasons:</p>
-<ol style="list-style-type: decimal">
-<li>It has already been cleaned and curated based on the owner’s own purposes. It may not accurately reflect the real-world data.</li>
-<li>It has limited context, potentially limiting your ability to interpret findings accurately.</li>
-<li>While <u>some</u> Kaggle datasets have clear sources, others may have unclear origins or have undergone modifications by multiple users raising concerns about data integrity.</li>
-</ol>
-<p>Thus, you should use credible sources like statistics from World Bank, government sites, etc. I am not saying that you can already drop Kaggle datasets. You can still use them for the following:</p>
-<ol style="list-style-type: decimal">
-<li>Benchmarking: Compare your model on a well-known Kaggle dataset</li>
-<li>For learning: You can try to match how the datasets in Kaggle have been cleaned. You can also use the datasets to practice your codes before applying them to the data you found from other credible sources.</li>
-</ol>
-<p>Important to note: Check data documentation from Kaggle; this will help you find the sources and will help supplement your data story with reputable sources.</p>
-<p>Furthermore, this is LBOMETR class wherein you were taught how to clean a dataset. You have to gather and clean the data yourselves to align with your research question.</p>
-</div>
-</div>
-<div id="comments-on-research-questions" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Comments on Research Questions:<a href="data-story-research-question.html#comments-on-research-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Please check your emails for comments regarding your research questions. The approved and final research questions will be posted in Animospace as an announcement.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="grouping-process.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="basic-introduction-to-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="advanced-visualizations.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
