@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-02-02" />
+<meta name="date" content="2025-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -303,9 +303,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-maps"><i class="fa fa-check"></i><b>14.7</b> Animated Maps</a></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#philippine-regional-map"><i class="fa fa-check"></i><b>14.7</b> Philippine Regional Map</a></li>
+<li class="chapter" data-level="14.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>14.8</b> Animated Map</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
+<li class="chapter" data-level="16" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>16</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>16.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>16.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="16.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>16.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>16.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>16.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-1"><i class="fa fa-check"></i><b>16.3</b> Histogram</a></li>
+<li class="chapter" data-level="16.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>16.4</b> Summary Table</a></li>
+<li class="chapter" data-level="16.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#interpretation-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5</b> Interpretation of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>16.5.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="16.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#purpose-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.3</b> <strong>Purpose of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>16.5.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html"><i class="fa fa-check"></i><b>17</b> Practical: Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html#descriptive-statistics-questions"><i class="fa fa-check"></i><b>17.0.1</b> <strong>Descriptive Statistics Questions</strong></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -342,9 +368,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Always remember the first steps: Set Working Directory and Clean the Global Environment.</strong></p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-management---time-series-and-panel-data.html#cb90-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb90-2"><a href="data-management---time-series-and-panel-data.html#cb90-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells  5240869 279.9    8204610 438.2  8204610 438.2
-## Vcells 13179070 100.6   38516325 293.9 38516325 293.9</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4098861 219.0    6966302 372.1   6966302  372.1
+## Vcells 8498912  64.9  129289790 986.5 254130479 1938.9</code></pre>
 <p>To make sure that you are using the correct directory and that you have all the files you need, use <code>list.files()</code> function.</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-management---time-series-and-panel-data.html#cb92-1" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <p>Now, we load the following packages: <code>dplyr</code>, <code>lubridate</code>, and <code>zoo</code>. Make sure you have all 3 installed; if not, install them.</p>

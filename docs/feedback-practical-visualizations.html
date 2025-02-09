@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-02-02" />
+<meta name="date" content="2025-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -303,9 +303,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-maps"><i class="fa fa-check"></i><b>14.7</b> Animated Maps</a></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#philippine-regional-map"><i class="fa fa-check"></i><b>14.7</b> Philippine Regional Map</a></li>
+<li class="chapter" data-level="14.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>14.8</b> Animated Map</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
+<li class="chapter" data-level="16" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>16</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>16.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>16.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="16.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>16.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>16.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>16.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-1"><i class="fa fa-check"></i><b>16.3</b> Histogram</a></li>
+<li class="chapter" data-level="16.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>16.4</b> Summary Table</a></li>
+<li class="chapter" data-level="16.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#interpretation-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5</b> Interpretation of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>16.5.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="16.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#purpose-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.3</b> <strong>Purpose of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>16.5.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html"><i class="fa fa-check"></i><b>17</b> Practical: Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html#descriptive-statistics-questions"><i class="fa fa-check"></i><b>17.0.1</b> <strong>Descriptive Statistics Questions</strong></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -366,40 +392,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  3rd Qu.:174641   3rd Qu.:20.0968   3rd Qu.:35.787   3rd Qu.:21.488   3rd Qu.:36.72   3rd Qu.:68.02   3rd Qu.:30.91  
 ##  Max.   :242840   Max.   :66.5320   Max.   :78.294   Max.   :66.887   Max.   :60.52   Max.   :92.88   Max.   :66.69  
 ##                                                                                                                      
-##    P_elecVD01     P_elecVD01_sc      P_educVD01     P_educVD01_sc     P_medicVD01     P_medicVD01_sc  
-##  Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00  
-##  1st Qu.: 89.02   1st Qu.: 90.53   1st Qu.: 93.54   1st Qu.: 93.65   1st Qu.: 39.97   1st Qu.: 39.99  
-##  Median : 99.54   Median : 99.78   Median : 98.26   Median : 98.60   Median : 60.53   Median : 61.55  
-##  Mean   : 89.15   Mean   : 89.70   Mean   : 95.03   Mean   : 95.24   Mean   : 61.05   Mean   : 61.42  
-##  3rd Qu.:100.00   3rd Qu.:100.00   3rd Qu.: 99.86   3rd Qu.: 99.99   3rd Qu.: 83.22   3rd Qu.: 83.86  
-##  Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00  
-##  NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58      
-##    P_commVD01     P_commVD01_sc   
-##  Min.   :  0.00   Min.   :  0.00  
-##  1st Qu.: 54.20   1st Qu.: 54.51  
-##  Median : 74.72   Median : 76.40  
-##  Mean   : 71.88   Mean   : 72.70  
-##  3rd Qu.: 93.84   3rd Qu.: 94.44  
-##  Max.   :100.00   Max.   :100.00  
-##  NA&#39;s   :58       NA&#39;s   :58</code></pre></li>
+##    P_elecVD01     P_elecVD01_sc      P_educVD01     P_educVD01_sc     P_medicVD01     P_medicVD01_sc     P_commVD01    
+##  Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00   Min.   :  0.00  
+##  1st Qu.: 89.02   1st Qu.: 90.53   1st Qu.: 93.54   1st Qu.: 93.65   1st Qu.: 39.97   1st Qu.: 39.99   1st Qu.: 54.20  
+##  Median : 99.54   Median : 99.78   Median : 98.26   Median : 98.60   Median : 60.53   Median : 61.55   Median : 74.72  
+##  Mean   : 89.15   Mean   : 89.70   Mean   : 95.03   Mean   : 95.24   Mean   : 61.05   Mean   : 61.42   Mean   : 71.88  
+##  3rd Qu.:100.00   3rd Qu.:100.00   3rd Qu.: 99.86   3rd Qu.: 99.99   3rd Qu.: 83.22   3rd Qu.: 83.86   3rd Qu.: 93.84  
+##  Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00   Max.   :100.00  
+##  NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58       NA&#39;s   :58      
+##  P_commVD01_sc   
+##  Min.   :  0.00  
+##  1st Qu.: 54.51  
+##  Median : 76.40  
+##  Mean   : 72.70  
+##  3rd Qu.: 94.44  
+##  Max.   :100.00  
+##  NA&#39;s   :58</code></pre></li>
 <li><p>Plot a histogram of the total population (<code>tot_pop71_true</code>). Adjust the number of bins to 15. What does this tell you about the distribution of population sizes in 1971?</p>
 <p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p></li>
 <li><p>Plot a bar plot of the count of Assembly Constituencies (<code>AC_type_noST</code>) based on reservation status. Which category has the highest count?</p></li>
 </ol>
-<pre><code>&lt;img src=&quot;LBOMETR_Course_Book_files/figure-html/unnamed-chunk-119-1.png&quot; width=&quot;672&quot; /&gt;</code></pre>
+<p><code>{{r, echo=FALSE,eval=TRUE}} # Bar plot of count of Assembly Constituencies by reservation status ggplot(quotas, aes(x = factor(AC_type_noST))) +   geom_bar(fill = "darkgreen", color = "black") +   labs(title = "Count of Assembly Constituencies by Reservation Status",        x = "Reservation Status",        y = "Count") +   theme_minimal()</code></p>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Plot the literacy rates (<code>Plit71</code>) against employment rates (<code>P_W71</code>). Add a regression line using <code>geom_smooth()</code>. What relationship do you observe?</p>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p></li>
 <li><p>Add color to the scatter plot by using color to distinguish between different reservation statuses (<code>AC_type_noST</code>). How do the patterns differ across groups?</p>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p></li>
 <li><p>Create a box plot of literacy rates (<code>Plit71</code>) for different reservation statuses (<code>AC_type_noST</code>). What do you notice about the spread of literacy rates across categories?</p>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p></li>
 <li><p>Create a faceted scatter plot of literacy rates (<code>Plit71</code>) vs. employment rates (<code>P_W71</code>), grouped by reservation status (<code>AC_type_noST</code>). What differences can you identify between the facets?</p>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p></li>
 <li><p>Create a pie chart showing the proportion of constituencies by reservation status (<code>AC_type_noST</code>). What does this chart reveal about the dataset?</p>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p></li>
 <li><p>For the time series plot, I want you to search the <a href="https://data.worldbank.org/indicator/SE.ADT.LITR.ZS"><strong>Literacy rate, adult total (% of people ages 15 and above)</strong></a>from the World Bank. I want you to download as CSV the data. Then, I want you to choose India only. Create a time series plot for India.</p>
 <p>Steps include:</p>
 <ol style="list-style-type: decimal">
@@ -409,34 +435,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Before doing the visualization, also notice that the time has a character “X” and some of the literacy rate does not have any data. Remove the “X” and the “NA”</li>
 </ol></li>
 </ol>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="feedback-practical-visualizations.html#cb168-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb168-2"><a href="feedback-practical-visualizations.html#cb168-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb168-3"><a href="feedback-practical-visualizations.html#cb168-3" tabindex="-1"></a></span>
-<span id="cb168-4"><a href="feedback-practical-visualizations.html#cb168-4" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb168-5"><a href="feedback-practical-visualizations.html#cb168-5" tabindex="-1"></a>world_bank_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;API_SE.ADT.LITR.ZS_DS2_en_csv_v2_160.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
-<span id="cb168-6"><a href="feedback-practical-visualizations.html#cb168-6" tabindex="-1"></a></span>
-<span id="cb168-7"><a href="feedback-practical-visualizations.html#cb168-7" tabindex="-1"></a><span class="co"># Filter data for India</span></span>
-<span id="cb168-8"><a href="feedback-practical-visualizations.html#cb168-8" tabindex="-1"></a>india_data <span class="ot">&lt;-</span> world_bank_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="st">`</span><span class="at">Country.Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">&quot;India&quot;</span>)</span>
-<span id="cb168-9"><a href="feedback-practical-visualizations.html#cb168-9" tabindex="-1"></a></span>
-<span id="cb168-10"><a href="feedback-practical-visualizations.html#cb168-10" tabindex="-1"></a><span class="co"># Convert wide format to long format</span></span>
-<span id="cb168-11"><a href="feedback-practical-visualizations.html#cb168-11" tabindex="-1"></a>india_long <span class="ot">&lt;-</span> india_data <span class="sc">%&gt;%</span></span>
-<span id="cb168-12"><a href="feedback-practical-visualizations.html#cb168-12" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">Country.Code</span><span class="st">`</span>, <span class="st">`</span><span class="at">Indicator.Name</span><span class="st">`</span>, <span class="st">`</span><span class="at">Indicator.Code</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb168-13"><a href="feedback-practical-visualizations.html#cb168-13" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="st">`</span><span class="at">Country.Name</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Literacy Rate&quot;</span>)</span>
-<span id="cb168-14"><a href="feedback-practical-visualizations.html#cb168-14" tabindex="-1"></a></span>
-<span id="cb168-15"><a href="feedback-practical-visualizations.html#cb168-15" tabindex="-1"></a><span class="co"># 🛠 Remove &quot;X&quot; prefix from Year and convert to numeric</span></span>
-<span id="cb168-16"><a href="feedback-practical-visualizations.html#cb168-16" tabindex="-1"></a>india_long<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;&quot;</span>, india_long<span class="sc">$</span>Year))</span>
-<span id="cb168-17"><a href="feedback-practical-visualizations.html#cb168-17" tabindex="-1"></a></span>
-<span id="cb168-18"><a href="feedback-practical-visualizations.html#cb168-18" tabindex="-1"></a><span class="co"># Remove missing values</span></span>
-<span id="cb168-19"><a href="feedback-practical-visualizations.html#cb168-19" tabindex="-1"></a>india_long <span class="ot">&lt;-</span> india_long <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Literacy Rate</span><span class="st">`</span>))</span>
-<span id="cb168-20"><a href="feedback-practical-visualizations.html#cb168-20" tabindex="-1"></a></span>
-<span id="cb168-21"><a href="feedback-practical-visualizations.html#cb168-21" tabindex="-1"></a><span class="fu">ggplot</span>(india_long, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Literacy Rate</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb168-22"><a href="feedback-practical-visualizations.html#cb168-22" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb168-23"><a href="feedback-practical-visualizations.html#cb168-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb168-24"><a href="feedback-practical-visualizations.html#cb168-24" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;India&#39;s Literacy Rate Over Time&quot;</span>,</span>
-<span id="cb168-25"><a href="feedback-practical-visualizations.html#cb168-25" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb168-26"><a href="feedback-practical-visualizations.html#cb168-26" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Literacy Rate (%)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb168-27"><a href="feedback-practical-visualizations.html#cb168-27" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="feedback-practical-visualizations.html#cb167-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb167-2"><a href="feedback-practical-visualizations.html#cb167-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb167-3"><a href="feedback-practical-visualizations.html#cb167-3" tabindex="-1"></a></span>
+<span id="cb167-4"><a href="feedback-practical-visualizations.html#cb167-4" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb167-5"><a href="feedback-practical-visualizations.html#cb167-5" tabindex="-1"></a>world_bank_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;API_SE.ADT.LITR.ZS_DS2_en_csv_v2_160.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb167-6"><a href="feedback-practical-visualizations.html#cb167-6" tabindex="-1"></a></span>
+<span id="cb167-7"><a href="feedback-practical-visualizations.html#cb167-7" tabindex="-1"></a><span class="co"># Filter data for India</span></span>
+<span id="cb167-8"><a href="feedback-practical-visualizations.html#cb167-8" tabindex="-1"></a>india_data <span class="ot">&lt;-</span> world_bank_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="st">`</span><span class="at">Country.Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">&quot;India&quot;</span>)</span>
+<span id="cb167-9"><a href="feedback-practical-visualizations.html#cb167-9" tabindex="-1"></a></span>
+<span id="cb167-10"><a href="feedback-practical-visualizations.html#cb167-10" tabindex="-1"></a><span class="co"># Convert wide format to long format</span></span>
+<span id="cb167-11"><a href="feedback-practical-visualizations.html#cb167-11" tabindex="-1"></a>india_long <span class="ot">&lt;-</span> india_data <span class="sc">%&gt;%</span></span>
+<span id="cb167-12"><a href="feedback-practical-visualizations.html#cb167-12" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">Country.Code</span><span class="st">`</span>, <span class="st">`</span><span class="at">Indicator.Name</span><span class="st">`</span>, <span class="st">`</span><span class="at">Indicator.Code</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb167-13"><a href="feedback-practical-visualizations.html#cb167-13" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="st">`</span><span class="at">Country.Name</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Literacy Rate&quot;</span>)</span>
+<span id="cb167-14"><a href="feedback-practical-visualizations.html#cb167-14" tabindex="-1"></a></span>
+<span id="cb167-15"><a href="feedback-practical-visualizations.html#cb167-15" tabindex="-1"></a><span class="co"># 🛠 Remove &quot;X&quot; prefix from Year and convert to numeric</span></span>
+<span id="cb167-16"><a href="feedback-practical-visualizations.html#cb167-16" tabindex="-1"></a>india_long<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;&quot;</span>, india_long<span class="sc">$</span>Year))</span>
+<span id="cb167-17"><a href="feedback-practical-visualizations.html#cb167-17" tabindex="-1"></a></span>
+<span id="cb167-18"><a href="feedback-practical-visualizations.html#cb167-18" tabindex="-1"></a><span class="co"># Remove missing values</span></span>
+<span id="cb167-19"><a href="feedback-practical-visualizations.html#cb167-19" tabindex="-1"></a>india_long <span class="ot">&lt;-</span> india_long <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Literacy Rate</span><span class="st">`</span>))</span>
+<span id="cb167-20"><a href="feedback-practical-visualizations.html#cb167-20" tabindex="-1"></a></span>
+<span id="cb167-21"><a href="feedback-practical-visualizations.html#cb167-21" tabindex="-1"></a><span class="fu">ggplot</span>(india_long, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Literacy Rate</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb167-22"><a href="feedback-practical-visualizations.html#cb167-22" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb167-23"><a href="feedback-practical-visualizations.html#cb167-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb167-24"><a href="feedback-practical-visualizations.html#cb167-24" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;India&#39;s Literacy Rate Over Time&quot;</span>,</span>
+<span id="cb167-25"><a href="feedback-practical-visualizations.html#cb167-25" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb167-26"><a href="feedback-practical-visualizations.html#cb167-26" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Literacy Rate (%)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb167-27"><a href="feedback-practical-visualizations.html#cb167-27" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 
 </div>
             </section>

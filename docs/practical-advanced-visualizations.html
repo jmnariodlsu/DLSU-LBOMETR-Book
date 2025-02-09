@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-02-02" />
+<meta name="date" content="2025-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="advanced-visualizations.html"/>
-
+<link rel="next" href="descriptive-statistics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -303,9 +303,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
 </ul></li>
-<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-maps"><i class="fa fa-check"></i><b>14.7</b> Animated Maps</a></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#philippine-regional-map"><i class="fa fa-check"></i><b>14.7</b> Philippine Regional Map</a></li>
+<li class="chapter" data-level="14.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>14.8</b> Animated Map</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
+<li class="chapter" data-level="16" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>16</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>16.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>16.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="16.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>16.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>16.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>16.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-1"><i class="fa fa-check"></i><b>16.3</b> Histogram</a></li>
+<li class="chapter" data-level="16.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>16.4</b> Summary Table</a></li>
+<li class="chapter" data-level="16.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#interpretation-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5</b> Interpretation of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>16.5.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="16.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#purpose-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.3</b> <strong>Purpose of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>16.5.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html"><i class="fa fa-check"></i><b>17</b> Practical: Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html#descriptive-statistics-questions"><i class="fa fa-check"></i><b>17.0.1</b> <strong>Descriptive Statistics Questions</strong></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -330,12 +356,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Using PSA OpenStat (2013-2022) data, create an animated bar chart showing the total number of live births per year. Differentiate Male vs. Female births using <code>fill</code></li>
 <li>Create an animated bar chart that compares the number of live births per region over time (2013-2022). Use <code>transition_states(year, wrap = FALSE)</code> to animate regional birth counts changing over time. Determine the region with the highest live births in each frame.</li>
 <li>Select 3-5 regions and visualize their live birth trends (2013-2022) using an animated time series plot.</li>
+<li>Using PSA OpenStat (2013-2022) data and a Philippines regional shapefile, create a static choropleth map of the recent number of live births per region. Color the regions based on <code>birth count</code></li>
 <li>Using PSA OpenStat (2013-2022) data and a Philippines regional shapefile, create an animated choropleth map showing how the number of live births per region changes over time. Color the regions based on <code>birth count</code></li>
-<li>Create an animated proportional map using <code>gganimate</code> + <code>sf</code> that highlights how each region’s share of total births changes from 2013 to 2022.
-<ul>
-<li><p>You need to calculate each region’s percentage of total births for each year.</p></li>
-<li><p>Use labels to display the exact percentage per region.</p></li>
-</ul></li>
 <li>How do birth trends differ across Philippine regions?</li>
 <li>Which regions have experienced the highest increase or decrease in live births from 2013 to 2022?</li>
 <li>How does using <code>gganimate</code> with <code>sf</code> enhance your ability to analyze spatial(and time) data trends?</li>
@@ -347,8 +369,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="advanced-visualizations.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="advanced-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
