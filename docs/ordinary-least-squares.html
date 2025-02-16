@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | LBOMETR Course Book</title>
+  <title>19 Ordinary Least Squares | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | LBOMETR Course Book" />
+  <meta property="og:title" content="19 Ordinary Least Squares | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | LBOMETR Course Book" />
+  <meta name="twitter:title" content="19 Ordinary Least Squares | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="hypothesis-testing.html"/>
+<link rel="next" href="practical-hypothesis-testing-and-ols.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -388,19 +388,240 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="ordinary-least-squares" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Ordinary Least Squares<a href="ordinary-least-squares.html#ordinary-least-squares" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="general-description-and-notation-of-a-linear-regression" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> <strong>General Description and notation of a Linear Regression</strong><a href="ordinary-least-squares.html#general-description-and-notation-of-a-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, the <strong><code>set.seed()</code></strong> function is used to set the random number generator’s seed. Random number generators in computer programming are not truly random; they are pseudo-random, meaning they generate sequences of numbers that appear random but are actually determined by an initial starting point called a seed. If you set the seed to a specific value, you can reproduce the same sequence of random numbers every time you run your program. This is important in many data analysis and simulation tasks, as it allows for the results to be reproducible.</p>
+<p><strong>Note</strong>: we will use the <strong><code>cat()</code></strong> function today. The <strong><code>cat()</code></strong> function is used for printing or concatenating objects to the console. It is primarily used to display text, numbers, or other R objects on the screen or to write them to a file. The name “cat” stands for “concatenate” or “concatenation,” as the function can be used to combine and display multiple objects.</p>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="ordinary-least-squares.html#cb307-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="ordinary-least-squares.html#cb308-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;sample&quot;</span>))</span>
+<span id="cb308-2"><a href="ordinary-least-squares.html#cb308-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells  4787128 255.7    7255318 387.5   7255318  387.5
+## Vcells 10624913  81.1  126632985 966.2 247299333 1886.8</code></pre>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="ordinary-least-squares.html#cb310-1" tabindex="-1"></a><span class="co"># Generate example data</span></span>
+<span id="cb310-2"><a href="ordinary-least-squares.html#cb310-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb310-3"><a href="ordinary-least-squares.html#cb310-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb310-4"><a href="ordinary-least-squares.html#cb310-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb310-5"><a href="ordinary-least-squares.html#cb310-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb310-6"><a href="ordinary-least-squares.html#cb310-6" tabindex="-1"></a></span>
+<span id="cb310-7"><a href="ordinary-least-squares.html#cb310-7" tabindex="-1"></a><span class="co"># Create a scatterplot</span></span>
+<span id="cb310-8"><a href="ordinary-least-squares.html#cb310-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb310-9"><a href="ordinary-least-squares.html#cb310-9" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb310-10"><a href="ordinary-least-squares.html#cb310-10" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb310-11"><a href="ordinary-least-squares.html#cb310-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Scatterplot of Simulated Data&quot;</span>,</span>
+<span id="cb310-12"><a href="ordinary-least-squares.html#cb310-12" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;X&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-198-1.png" width="672" /></p>
+<div id="the-notation" class="section level3 hasAnchor" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> The notation<a href="ordinary-least-squares.html#the-notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="ordinary-least-squares.html#cb312-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Linear Regression Notation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Linear Regression Notation:</code></pre>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="ordinary-least-squares.html#cb314-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Y = β₀ + β₁*X + ε</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Y = β₀ + β₁*X + ε</code></pre>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="ordinary-least-squares.html#cb316-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Y: Dependent variable (response)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Y: Dependent variable (response)</code></pre>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="ordinary-least-squares.html#cb318-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;X: Independent variable (predictor)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## X: Independent variable (predictor)</code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="ordinary-least-squares.html#cb320-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;β₀: Intercept (constant)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## β₀: Intercept (constant)</code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="ordinary-least-squares.html#cb322-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;β₁: Coefficient for X (slope)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## β₁: Coefficient for X (slope)</code></pre>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="ordinary-least-squares.html#cb324-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;ε: Error (residuals)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## ε: Error (residuals)</code></pre>
+</div>
+</div>
+<div id="running-and-reporting-ols-regression" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> <strong>Running and reporting OLS Regression</strong><a href="ordinary-least-squares.html#running-and-reporting-ols-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, the <strong><code>lm()</code></strong> function is used to fit linear regression models. Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables by finding the best-fitting linear equation. The <strong><code>lm()</code></strong> function is a fundamental tool for performing linear regression analysis in R.</p>
+<p>Here’s how to use the <strong><code>lm()</code></strong> function in R:</p>
+<p><em>model &lt;- lm(dependent_variable ~ independent_variable1 + independent_variable2, data = your_data_frame)</em></p>
+<p>Let’s break down the components of this function:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong><code>dependent_variable</code></strong>: This is the variable you want to predict or model. It is the response variable, typically numeric.</p></li>
+<li><p><strong><code>independent_variable1</code></strong>, <strong><code>independent_variable2</code></strong>, …: These are the variables that you believe are related to the dependent variable. They are the predictor variables, which can be numeric or categorical.</p></li>
+<li><p><strong><code>data</code></strong>: This argument specifies the data frame in which the variables are located. You should specify the name of your data frame here.</p></li>
+</ol>
+<p>The <strong><code>lm()</code></strong> function returns a linear regression model object, which contains information about the estimated coefficients and other statistical details of the model.</p>
+<p>After fitting the model, you can access various information and summaries, such as:</p>
+<ul>
+<li><p><strong><code>summary(model)</code></strong>: This function provides a detailed summary of the regression model, including coefficients, standard errors, t-values, p-values, R-squared, and more.</p></li>
+<li><p><strong><code>coef(model)</code></strong>: This function returns the estimated coefficients of the model.</p></li>
+<li><p><strong><code>predict(model, newdata)</code></strong>: You can use this function to make predictions with the model, where <strong><code>newdata</code></strong> is a data frame containing the values of the independent variables for which you want to make predictions.</p></li>
+</ul>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="ordinary-least-squares.html#cb326-1" tabindex="-1"></a><span class="co"># Fit an OLS regression model</span></span>
+<span id="cb326-2"><a href="ordinary-least-squares.html#cb326-2" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb326-3"><a href="ordinary-least-squares.html#cb326-3" tabindex="-1"></a></span>
+<span id="cb326-4"><a href="ordinary-least-squares.html#cb326-4" tabindex="-1"></a><span class="co"># Display the model summary</span></span>
+<span id="cb326-5"><a href="ordinary-least-squares.html#cb326-5" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5116 -1.1157 -0.1313  1.0985  4.3723 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -0.2847     0.5442  -0.523    0.603    
+## x             2.0764     0.0913  22.743   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.881 on 48 degrees of freedom
+## Multiple R-squared:  0.9151, Adjusted R-squared:  0.9133 
+## F-statistic: 517.2 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="interpretation-of-coefficients" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> <strong>Interpretation of Coefficients</strong><a href="ordinary-least-squares.html#interpretation-of-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For numeric independent variables, a positive coefficient means that an increase in the independent variable is associated with an increase in the dependent variable, and a negative coefficient means the opposite.</p>
+<p>For categorical independent variables (e.g., dummies for categories), the coefficients represent the difference in the dependent variable for that category compared to the reference category.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="ordinary-least-squares.html#cb328-1" tabindex="-1"></a><span class="co"># Extract and interpret coefficients</span></span>
+<span id="cb328-2"><a href="ordinary-least-squares.html#cb328-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Intercept (β₀): &quot;</span>, <span class="fu">coef</span>(model)[<span class="dv">1</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Intercept (β₀):  -0.2847054</code></pre>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="ordinary-least-squares.html#cb330-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Coefficient for X (β₁): &quot;</span>, <span class="fu">coef</span>(model)[<span class="dv">2</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Coefficient for X (β₁):  2.076349</code></pre>
+</div>
+<div id="goodness-of-fit-f-statistics-and-adjusted-r-squared" class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> <strong>Goodness of Fit (F-Statistics and Adjusted R-squared)</strong><a href="ordinary-least-squares.html#goodness-of-fit-f-statistics-and-adjusted-r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The null hypothesis (H0) for the F-test is that all coefficients in the model are equal to zero, meaning that none of the independent variables (wt and cyl) have any effect on the dependent variable. The small p-value (&lt;0.05) means we can reject the null hypothesis.</p>
+<p><strong>Note</strong>: to extract p-value of F-statistic you have to use the function pf() that gives the area, for the F distribution, to the left of the value x for two given degrees of freedom, df1 and df2.</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="ordinary-least-squares.html#cb332-1" tabindex="-1"></a><span class="co"># Adjusted R-squared</span></span>
+<span id="cb332-2"><a href="ordinary-least-squares.html#cb332-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared: &quot;</span>, <span class="fu">summary</span>(model)<span class="sc">$</span>adj.r.squared, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Adjusted R-squared:  0.9133112</code></pre>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="ordinary-least-squares.html#cb334-1" tabindex="-1"></a><span class="co"># Print the F-statistic and p-value</span></span>
+<span id="cb334-2"><a href="ordinary-least-squares.html#cb334-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;F-statistic:&quot;</span>, <span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">1</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## F-statistic: 517.2401</code></pre>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="ordinary-least-squares.html#cb336-1" tabindex="-1"></a>p_val <span class="ot">=</span> <span class="fu">pf</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">1</span>],<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">2</span>],<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">3</span>],<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb336-2"><a href="ordinary-least-squares.html#cb336-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;p-value:&quot;</span>, p_val, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## p-value: 2.364413e-27</code></pre>
+</div>
+<div id="assumption-diagnostics" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> <strong>Assumption Diagnostics</strong><a href="ordinary-least-squares.html#assumption-diagnostics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, when you create a plot of a linear regression model (an OLS model) using the <strong><code>plot()</code></strong> function, it produces a set of diagnostic plots to help you assess the assumptions and goodness of fit of the model. These diagnostic plots are typically used to check if the model is a good fit for the data and whether the assumptions underlying linear regression are met. Here’s an explanation of each output produced by <strong><code>plot(model)</code></strong>:</p>
+<ul>
+<li><p><strong>Residuals vs. Fitted Values (Partial Regression Plot)</strong>:</p>
+<ul>
+<li><p>This plot shows the relationship between the residuals (the differences between the observed values and the predicted values) and the fitted values (the predicted values from the model).</p></li>
+<li><p>It is used to check for linearity, which is one of the key assumptions of linear regression. Ideally, you want to see a random scattering of points around a horizontal line, with no clear pattern.</p></li>
+<li><p>If you see a pattern, such as a curve or funnel shape, it may indicate a violation of the linearity assumption.</p></li>
+</ul></li>
+<li><p><strong>Normal Q-Q (Quantile-Quantile) Plot</strong>:</p>
+<ul>
+<li><p>This plot compares the distribution of the residuals to a theoretical normal distribution. If the residuals are normally distributed, the points should roughly follow a straight line.</p></li>
+<li><p>Deviations from a straight line may indicate departures from normality in the residuals. For example, if the points bend upwards or downwards, it may indicate skewness or heavy-tailed residuals.</p></li>
+</ul></li>
+<li><p><strong>Scale-Location (Spread-Location) Plot</strong>:</p>
+<ul>
+<li><p>This plot shows the square root of the absolute residuals against the fitted values. It is also known as a “spread vs. location” plot.</p></li>
+<li><p>It is used to check for homoscedasticity, which means that the variability of the residuals is roughly constant across different levels of the fitted values.</p></li>
+<li><p>Ideally, you want to see a random scattering of points around a horizontal line with roughly equal spread.</p></li>
+<li><p>If the spread changes systematically with the fitted values (e.g., a funnel shape), it may indicate heteroscedasticity, which can lead to unreliable parameter estimates and hypothesis tests.</p></li>
+</ul></li>
+<li><p><strong>Residuals vs. Leverage Plot (Cook’s Distance Plot)</strong>:</p>
+<ul>
+<li><p>This plot displays the standardized residuals against the leverage values (a measure of how much an observation affects the regression coefficients). It is often used to identify influential data points.</p></li>
+<li><p>Data points that are far from the other points in this plot have high leverage, and points above a certain threshold may be influential.</p></li>
+<li><p>Influential points can have a significant impact on the model’s parameters, and it’s important to examine them for potential outliers or errors.</p></li>
+</ul></li>
+<li><p><strong>Cook’s Distance Plot</strong>:</p>
+<ul>
+<li><p>Cook’s distance is a measure of the impact of each observation on the model’s coefficients. This plot shows the Cook’s distance for each observation.</p></li>
+<li><p>Observations with a high Cook’s distance are potential outliers or influential points that can significantly affect the model. It is a useful tool for identifying data points that should be investigated further.</p></li>
+</ul></li>
+<li><p><strong>Multicollinearity</strong></p>
+<ul>
+<li><strong>Correlation Matrix</strong>: A simple way to start is by looking at the correlation matrix of the predictors. High correlation coefficients (close to -1 or 1) between pairs of predictors indicate potential multicollinearity. This can be done using the <strong><code>cor()</code></strong> function.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="ordinary-least-squares.html#cb338-1" tabindex="-1"></a><span class="co"># Check OLS assumptions</span></span>
+<span id="cb338-2"><a href="ordinary-least-squares.html#cb338-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb338-3"><a href="ordinary-least-squares.html#cb338-3" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
+</div>
+<div id="real-world-example-3" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Real-World Example<a href="ordinary-least-squares.html#real-world-example-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are going to use the <code>sample</code> dataset</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="ordinary-least-squares.html#cb339-1" tabindex="-1"></a>sample_sub<span class="ot">&lt;-</span>sample <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(wage,educ,exper,tenure))</span>
+<span id="cb339-2"><a href="ordinary-least-squares.html#cb339-2" tabindex="-1"></a><span class="fu">head</span>(sample_sub)</span></code></pre></div>
+<pre><code>##   wage educ exper tenure
+## 1 3.10   11     2      0
+## 2 3.24   12    22      2
+## 3 3.00   11     2      0
+## 4 6.00    8    44     28
+## 5 5.30   12     7      2
+## 6 8.75   16     9      8</code></pre>
+<p>Create a scatterplot</p>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="ordinary-least-squares.html#cb341-1" tabindex="-1"></a><span class="co"># Create a scatterplot</span></span>
+<span id="cb341-2"><a href="ordinary-least-squares.html#cb341-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> sample_sub, <span class="fu">aes</span>(<span class="at">x =</span> sample_sub<span class="sc">$</span>educ, <span class="at">y =</span>sample_sub<span class="sc">$</span>wage)) <span class="sc">+</span></span>
+<span id="cb341-3"><a href="ordinary-least-squares.html#cb341-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb341-4"><a href="ordinary-least-squares.html#cb341-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb341-5"><a href="ordinary-least-squares.html#cb341-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Scatterplot of Wage Data&quot;</span>,</span>
+<span id="cb341-6"><a href="ordinary-least-squares.html#cb341-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Education&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wage&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-205-1.png" width="672" /></p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="ordinary-least-squares.html#cb343-1" tabindex="-1"></a><span class="co"># Fit an OLS regression model</span></span>
+<span id="cb343-2"><a href="ordinary-least-squares.html#cb343-2" tabindex="-1"></a>model<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ, <span class="at">data=</span>sample_sub)</span>
+<span id="cb343-3"><a href="ordinary-least-squares.html#cb343-3" tabindex="-1"></a></span>
+<span id="cb343-4"><a href="ordinary-least-squares.html#cb343-4" tabindex="-1"></a><span class="co"># Display the model summary</span></span>
+<span id="cb343-5"><a href="ordinary-least-squares.html#cb343-5" tabindex="-1"></a><span class="fu">summary</span>(model<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ educ, data = sample_sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.3396 -2.1501 -0.9674  1.1921 16.6085 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -0.90485    0.68497  -1.321    0.187    
+## educ         0.54136    0.05325  10.167   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.378 on 524 degrees of freedom
+## Multiple R-squared:  0.1648, Adjusted R-squared:  0.1632 
+## F-statistic: 103.4 on 1 and 524 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div id="coefficients" class="section level4 hasAnchor" number="19.6.0.1">
+<h4><span class="header-section-number">19.6.0.1</span> Coefficients:<a href="ordinary-least-squares.html#coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="ordinary-least-squares.html#cb345-1" tabindex="-1"></a><span class="co"># Extract and interpret coefficients</span></span>
+<span id="cb345-2"><a href="ordinary-least-squares.html#cb345-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Intercept (β₀): &quot;</span>, <span class="fu">coef</span>(model<span class="fl">.1</span>)[<span class="dv">1</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Intercept (β₀):  -0.9048516</code></pre>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="ordinary-least-squares.html#cb347-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Coefficient for X (β₁): &quot;</span>, <span class="fu">coef</span>(model<span class="fl">.1</span>)[<span class="dv">2</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Coefficient for X (β₁):  0.5413593</code></pre>
+</div>
+<div id="adjusted-r-squared-and-goodness-of-fit" class="section level4 hasAnchor" number="19.6.0.2">
+<h4><span class="header-section-number">19.6.0.2</span> Adjusted R-Squared and Goodness of Fit<a href="ordinary-least-squares.html#adjusted-r-squared-and-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="ordinary-least-squares.html#cb349-1" tabindex="-1"></a><span class="co"># Adjusted R-squared</span></span>
+<span id="cb349-2"><a href="ordinary-least-squares.html#cb349-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared: &quot;</span>, <span class="fu">summary</span>(model)<span class="sc">$</span>adj.r.squared, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Adjusted R-squared:  0.9133112</code></pre>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="ordinary-least-squares.html#cb351-1" tabindex="-1"></a><span class="co"># Print the F-statistic and p-value</span></span>
+<span id="cb351-2"><a href="ordinary-least-squares.html#cb351-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;F-statistic:&quot;</span>, <span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">1</span>], <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## F-statistic: 517.2401</code></pre>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="ordinary-least-squares.html#cb353-1" tabindex="-1"></a>p_val <span class="ot">=</span> <span class="fu">pf</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">1</span>],<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">2</span>],<span class="fu">summary</span>(model)<span class="sc">$</span>fstatistic[<span class="dv">3</span>],<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb353-2"><a href="ordinary-least-squares.html#cb353-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;p-value:&quot;</span>, p_val, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## p-value: 2.364413e-27</code></pre>
+</div>
+<div id="assumption-diagnostics-1" class="section level4 hasAnchor" number="19.6.0.3">
+<h4><span class="header-section-number">19.6.0.3</span> Assumption Diagnostics<a href="ordinary-least-squares.html#assumption-diagnostics-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="ordinary-least-squares.html#cb355-1" tabindex="-1"></a><span class="co"># Check OLS assumptions</span></span>
+<span id="cb355-2"><a href="ordinary-least-squares.html#cb355-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb355-3"><a href="ordinary-least-squares.html#cb355-3" tabindex="-1"></a><span class="fu">plot</span>(model<span class="fl">.1</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
+<p><img src="images/clipboard-9133593.png" /></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="practical-hypothesis-testing-and-ols.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
