@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>11 Descriptive Statistics | LBOMETR Course Book</title>
+  <title>14 Multivariate Regression with Dummy Variables | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="11 Descriptive Statistics | LBOMETR Course Book" />
+  <meta property="og:title" content="14 Multivariate Regression with Dummy Variables | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="11 Descriptive Statistics | LBOMETR Course Book" />
+  <meta name="twitter:title" content="14 Multivariate Regression with Dummy Variables | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="advanced-visualizations.html"/>
-<link rel="next" href="hypothesis-testing.html"/>
+<link rel="prev" href="ordinary-least-squares.html"/>
+<link rel="next" href="formal-tests-on-assumptions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -409,730 +409,506 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="descriptive-statistics" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">11</span> Descriptive Statistics<a href="descriptive-statistics.html#descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>For this section, we will make use of <code>Ch6PRactice.RData</code>. Since the file is in RData format, we will only need to load it in R.</p>
-<div id="preliminaries-5" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Preliminaries<a href="descriptive-statistics.html#preliminaries-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="install-packages-1" class="section level3 hasAnchor" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Install Packages<a href="descriptive-statistics.html#install-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We install and load the “psych” package then load the tidyverse package</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="descriptive-statistics.html#cb243-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;psych&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span>
-<span id="cb243-2"><a href="descriptive-statistics.html#cb243-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;gtsummary&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;gtsummary&quot;</span>)</span>
-<span id="cb243-3"><a href="descriptive-statistics.html#cb243-3" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;psych&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:scales&#39;:
-## 
-##     alpha, rescale</code></pre>
-<pre><code>## The following object is masked from &#39;package:car&#39;:
-## 
-##     logit</code></pre>
-<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
-## 
-##     %+%, alpha</code></pre>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="descriptive-statistics.html#cb248-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb248-2"><a href="descriptive-statistics.html#cb248-2" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span></code></pre></div>
+<div id="multivariate-regression-with-dummy-variables" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">14</span> Multivariate Regression with Dummy Variables<a href="multivariate-regression-with-dummy-variables.html#multivariate-regression-with-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="preliminaries-6" class="section level4 hasAnchor" number="14.0.0.1">
+<h4><span class="header-section-number">14.0.0.1</span> Preliminaries<a href="multivariate-regression-with-dummy-variables.html#preliminaries-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="multivariate-regression-with-dummy-variables.html#cb340-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb340-2"><a href="multivariate-regression-with-dummy-variables.html#cb340-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="multivariate-regression-with-dummy-variables.html#cb341-1" tabindex="-1"></a><span class="fu">library</span>(wooldridge) </span>
+<span id="cb341-2"><a href="multivariate-regression-with-dummy-variables.html#cb341-2" tabindex="-1"></a><span class="fu">data</span>(wage1)</span>
+<span id="cb341-3"><a href="multivariate-regression-with-dummy-variables.html#cb341-3" tabindex="-1"></a>sample1<span class="ot">&lt;-</span>wage1</span></code></pre></div>
 </div>
-<div id="load-the-dataset-1" class="section level3 hasAnchor" number="11.1.2">
-<h3><span class="header-section-number">11.1.2</span> Load the dataset<a href="descriptive-statistics.html#load-the-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="descriptive-statistics.html#cb249-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb249-2"><a href="descriptive-statistics.html#cb249-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger (Mb) max used  (Mb)
-## Ncells  5232552 279.5    9174740  490  7550357 403.3
-## Vcells 18641019 142.3   74965168  572 93343244 712.2</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="descriptive-statistics.html#cb251-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
-<p>We subset the data:</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="descriptive-statistics.html#cb252-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
-<span id="cb252-2"><a href="descriptive-statistics.html#cb252-2" tabindex="-1"></a>Dataset_CP_f <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>)  </span>
-<span id="cb252-3"><a href="descriptive-statistics.html#cb252-3" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only male respondents</span></span>
-<span id="cb252-4"><a href="descriptive-statistics.html#cb252-4" tabindex="-1"></a>Dataset_CP_m <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="frequency-table" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Frequency Table<a href="descriptive-statistics.html#frequency-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Run a Frequency Table for the number of hours the respondents spend caring for children and/or grandchildren per week (variable <strong>Q37a_HoursWeekChildren</strong>). For both sex separately, report the mean and standard deviation.</p>
-<div id="male" class="section level3 hasAnchor" number="11.2.1">
-<h3><span class="header-section-number">11.2.1</span> Male<a href="descriptive-statistics.html#male" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Calculate the descriptive statistics for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <em>describe</em> of the package <em>psych</em>:</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="descriptive-statistics.html#cb253-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren)</span></code></pre></div>
-<pre><code>##    vars   n  mean    sd median trimmed   mad min max range skew kurtosis   se
-## X1    1 575 16.86 15.53     10   14.36 10.38   1 100    99 1.83     4.65 0.65</code></pre>
-<p>Notice how we directly use the <em>describe</em> function on the variable <strong>Q37a_HoursWeekChildren</strong> (called with the dollar sign operator, <em>$</em>, which works as follows: <em>name_dataset$name_variable</em> - notice that to access a specific variable, some functions can use the pipe operator while others require the dollar sign operator, as in this case). Notice also how we call the function <em>describe</em>: we use the :: operator, which tells R to look for a function within a specific package as follows</p>
-<p><em>name_package::name_function</em></p>
-<p>You could also simply call the function by only using its name, R will then search for that specific function across all the loaded R packages. However, if more packages have functions with the same name, specifying the name of the package with the :: operator helps assuring the usage of the correct function.</p>
-<p>Report the Frequency Table for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <code>tbl_summary</code> of the package <code>gtsummary</code>:</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="descriptive-statistics.html#cb255-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb255-2"><a href="descriptive-statistics.html#cb255-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
-<span id="cb255-3"><a href="descriptive-statistics.html#cb255-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb255-4"><a href="descriptive-statistics.html#cb255-4" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">&quot;{n} ({p}%)&quot;</span>),  <span class="co"># Show count &amp; percentage</span></span>
-<span id="cb255-5"><a href="descriptive-statistics.html#cb255-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
-<span id="cb255-6"><a href="descriptive-statistics.html#cb255-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb255-7"><a href="descriptive-statistics.html#cb255-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
-<div id="syyichzgji" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#syyichzgji table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#syyichzgji thead, #syyichzgji tbody, #syyichzgji tfoot, #syyichzgji tr, #syyichzgji td, #syyichzgji th {
-  border-style: none;
-}
-
-#syyichzgji p {
-  margin: 0;
-  padding: 0;
-}
-
-#syyichzgji .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#syyichzgji .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#syyichzgji .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#syyichzgji .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#syyichzgji .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#syyichzgji .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#syyichzgji .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#syyichzgji .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#syyichzgji .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#syyichzgji .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#syyichzgji .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#syyichzgji .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#syyichzgji .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#syyichzgji .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#syyichzgji .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#syyichzgji .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#syyichzgji .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#syyichzgji .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#syyichzgji .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#syyichzgji .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#syyichzgji .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#syyichzgji .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#syyichzgji .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#syyichzgji .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#syyichzgji .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#syyichzgji .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#syyichzgji .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#syyichzgji .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#syyichzgji .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#syyichzgji .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#syyichzgji .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#syyichzgji .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#syyichzgji .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#syyichzgji .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#syyichzgji .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#syyichzgji .gt_left {
-  text-align: left;
-}
-
-#syyichzgji .gt_center {
-  text-align: center;
-}
-
-#syyichzgji .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#syyichzgji .gt_font_normal {
-  font-weight: normal;
-}
-
-#syyichzgji .gt_font_bold {
-  font-weight: bold;
-}
-
-#syyichzgji .gt_font_italic {
-  font-style: italic;
-}
-
-#syyichzgji .gt_super {
-  font-size: 65%;
-}
-
-#syyichzgji .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#syyichzgji .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#syyichzgji .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#syyichzgji .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#syyichzgji .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#syyichzgji .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#syyichzgji .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#syyichzgji .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#syyichzgji div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="label"><span class='gt_from_md'><strong>Hours per Week with Children</strong></span></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="stat_0"><span class='gt_from_md'><strong>N = 1,723</strong></span><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_left">Q37a_HoursWeekChildren</td>
-<td headers="stat_0" class="gt_row gt_center">10 (5, 24)</td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="2"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> <span class='gt_from_md'>Median (Q1, Q3)</span></td>
-    </tr>
-  </tfoot>
-</table>
-</div>
-<p>The table shows that there are 1, 723 non-missing observations for the variable, <code>Q37a_HoursWeekChildren</code></p>
-<p>The median value of hours per week with children is 10 hours. (5,24) represents the interquartile range. Q1 (5): The first quartile (25th percentile) and the third quartile (75th percentile) are 5 and 24 hours respectively. This simply means that 50% of the responses lie between 5 and 24 hours per week.</p>
-<p>When interpreting:</p>
-<p>“The median hours per week spent with children of males is 10 hours, with half of the respondents reporting values between 5 and 24 hours. The total sample size is 1,723.”</p>
-<p>Moreover, in R there are other ways to access specific elements within a dataset. Datasets are organized in rows (which represent our observations) and columns (which represent our variables). We can select a specific cell of a dataset as follows: <em>name_dataset[row, column]</em>, where <em>row</em> is the number(s) of row(s) we are interested in and <em>column</em> is either the number or the name of the column we are interested in. For instance, if we want to select the value of the variable <strong>Q37a_HoursWeekChildren</strong> for the third observation, we can use the following command</p>
-<p><em>Dataset_CP[3,“Q37a_HoursWeekChildren”]</em></p>
-<p>If we do not specify a value for the rows (or columns), we select all the rows (or columns) of the specified columns (or rows). For instance, the following command selects all the observations for the variable <strong>Q37a_HoursWeekChildren</strong></p>
-<p><em>Dataset_CP[ ,“Q37a_HoursWeekChildren”]</em></p>
-</div>
-</div>
-<div id="histogram-1" class="section level2 hasAnchor" number="11.3">
-<h2><span class="header-section-number">11.3</span> Histogram<a href="descriptive-statistics.html#histogram-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Plot the histogram for the variable <strong>Q37a_HoursWeekChildren</strong></p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="descriptive-statistics.html#cb256-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Dataset_CP_m, <span class="fu">aes</span>(<span class="at">x =</span> Q37a_HoursWeekChildren)) <span class="sc">+</span>      </span>
-<span id="cb256-2"><a href="descriptive-statistics.html#cb256-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
-<span id="cb256-3"><a href="descriptive-statistics.html#cb256-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb256-4"><a href="descriptive-statistics.html#cb256-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
-<span id="cb256-5"><a href="descriptive-statistics.html#cb256-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span>   </span>
-<span id="cb256-6"><a href="descriptive-statistics.html#cb256-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram: Hours per week spent taking care of children&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Only male respondents&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb256-7"><a href="descriptive-statistics.html#cb256-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Hours per week spent taking care of children (Question 37a)&quot;</span>) <span class="sc">+</span>   </span>
-<span id="cb256-8"><a href="descriptive-statistics.html#cb256-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span>      </span>
-<span id="cb256-9"><a href="descriptive-statistics.html#cb256-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb256-10"><a href="descriptive-statistics.html#cb256-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
-<span id="cb256-11"><a href="descriptive-statistics.html#cb256-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
-<span id="cb256-12"><a href="descriptive-statistics.html#cb256-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
+<div id="dummy-variables" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Dummy Variables<a href="multivariate-regression-with-dummy-variables.html#dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Depending on the data, different number of bins are more or less appropriate. In this case, we indicate that we want our data to be split in 50 intervals. You could indicate a different number or you could also leave the <em>bins</em> option out of the code and let R select it (R will give a warning (not error) about the number of bins which has been selected). Each type of graph has its own set of options that can be set, use the help function to learn more about them.</p></li>
-<li><p>Next, we call a pre-defined layout of the graph called <em>theme_minimal</em>. There are many pre-defined layouts and you are free to choose whichever you like the most, or even create your own layout (which is partially what we do with the last layer).</p></li>
-<li><p>In the fourth layer we use <em>labs</em> in order to define the title of the graph, we add a subtitle and we specify the name of the axes. There are more options that you can define within <em>labs</em>, use <em>help(labs)</em> to find out what these are.</p></li>
-<li><p>Finally, we edit the appearance of the title and subtitle using <em>theme</em> and introducing the elements <em>plot.title = element_text()</em> and <em>plot.subtitle = element_text()</em>, where we specify their <em>color</em>, <em>size</em> and <em>face</em>. With that, we are able to change the format of the title and subtitle, however, it is not always necessary. If you want to find out more options that you can specify within theme, you can use <em>help(“theme”)</em> or search in Google.</p></li>
+<li><p>Binary variables defined as 0 or 1;</p></li>
+<li><p>D=1 if the criterion is satisfied</p></li>
+<li><p>D=0 if not</p>
+<ul>
+<li><p>Convey qualitative info</p></li>
+<li><p>Examples: female, married, graduated, passed</p></li>
+<li><p>Example: variable female where female=1 for females, female=0 for males</p></li>
+</ul></li>
+<li><p>“gender” is not a good variable name because it is not clear if gender=1 for male or femal</p></li>
+<li><p>Can be an independent variable or dependent variable in a probit/logit model</p></li>
 </ul>
-</div>
-<div id="summary-table" class="section level2 hasAnchor" number="11.4">
-<h2><span class="header-section-number">11.4</span> Summary Table<a href="descriptive-statistics.html#summary-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To summarize, we can build a table showing the mean and the standard deviation for the variable <strong>Q37a_HoursWeekChildren</strong> for the two groups, separately. To do so, we use two features:</p>
-<p>First, in the menu bar of your Quarto document (on top), we click on “Table” and then select “Insert Table”. A new window will appear and ask us the number of rows and columns our table should include. Once the table has been created, we can fill in its cells with whatever we wish to present in the table.</p>
-<p>Second, we use inline code, which allows us to embed directly into the text the output of an R code (you can find more information about inline coding <a href="https://r4ds.hadley.nz/quarto.html">here</a>).</p>
-<p>A chunk of code, as we have seen so far, is separated from the text of our Quarto document and does not allow us to build a readable text combining words with output from R codes which in one linear sentence. So, if we want to say:<br />
-<br />
-The number of male respondents in our dataset is equal to</p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="descriptive-statistics.html#cb257-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>## # A tibble: 1 × 1
-##       n
-##   &lt;int&gt;
-## 1  1723</code></pre>
-<p>We can clearly see that this is not ideal when using a chunk of code.<br />
-<br />
-To better integrate this into our text we can use inline code. To do so, in the menu bar of our Quarto document (on top), we click on “&lt;/&gt;”, then we type r and add a space and then write the line of code we would like to execute in order to include its output into the text. In our previous example, this could be done by writing as an inline code “r Dataset_CP_m %&gt;% summarize(n = n())”, as follows:<br />
-<br />
-The number of male respondents in our dataset is equal to 1723</p>
-<p>This could be useful, for instance, if we wish to present some properties of the data without us manually copy-pasting the numbers from the console to the text. At the same time, we can use this to populate our table, as we indeed do below.</p>
-<p><strong>Note:</strong></p>
-<p>In a Quarto document, you can run the code which is included in a chunk of code with the green play button. This allows you to execute and visualize the output of that specific command. Unfortunately, inline codes do not have the same option. Inline codes will be executed only when the Quarto document is rendered. This means that you cannot directly see the result of inline codes before you render your Quarto document nor you can verify if that code is correct (and if it is not, the rendering will not work).</p>
-<p>To overcome this issue, you can copy-paste the code of your inline code into the Console and run it from there. This will allow you to verify if the code is correct and what is the output.</p>
-<p>We have created here a table summarizing some of the descriptive statistics for the male respondents in our dataset. Take a look at this table:</p>
 <table>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="50%" />
+<col width="50%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>Male</th>
 <th>Code</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>N_total</td>
-<td>1723</td>
-<td>Dataset_CP_m %&gt;% summarize (n=n())</td>
+<td><code>data &lt;- data %&gt;% mutate(response_dummy = if_else(response == "yes", 1, 0))</code></td>
+<td>This is when you generate a new variable in your dataset. You can change “yes” to female or married, etc.</td>
 </tr>
 <tr class="even">
-<td>N_missing</td>
-<td>1148</td>
-<td>Dataset_CP_m%&gt;% summarize(n_na=sum(is.na(Q37a_HoursWeekChildren)))</td>
-</tr>
-<tr class="odd">
-<td>N_valid</td>
-<td>575</td>
-<td>Dataset_CP_m%&gt;%summarize(n_valid=sum(!is.na(Q37a_HoursWeekChildren)))</td>
-</tr>
-<tr class="even">
-<td>Mean</td>
-<td>16.8591304</td>
-<td>Dataset_CP_m%&gt;%summarize(mean = mean(Q37a_HoursWeekChildren, na.rm=T))</td>
-</tr>
-<tr class="odd">
-<td>Median</td>
-<td>10</td>
-<td>Dataset_CP_m%&gt;%summarize(median = median(Q37a_HoursWeekChildren, na.rm=T))</td>
-</tr>
-<tr class="even">
-<td>Std. Deviation</td>
-<td>15.5294252</td>
-<td>Dataset_CP_m%&gt;% summarize(sd=sd(Q37a_HoursWeekChildren, na.rm=T))</td>
+<td><code>Dataset_CP_modified &lt;- Dataset_CP %&gt;%mutate(Q37a_HoursWeekChildren_level = case_when (Q37a_HoursWeekChildren &lt;= 5 ~ "low",Q37a_HoursWeekChildren &gt; 5 &amp; Q37a_HoursWeekChildren &lt;= 15 ~ "medium",Q37a_HoursWeekChildren &gt; 15 ~ "high"))</code></td>
+<td>This is when you have numerous categories to represent dummy variables</td>
 </tr>
 </tbody>
 </table>
-<p>Notice how we use the pipe operator on the dataset to compute the descriptive statistics with the <em>summarize</em> function and</p>
+<p>Regression Models:</p>
+<p>wage = <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\epsilon\)</span></p>
+<p>Since there is only the intercept, there are no independent variables:</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="multivariate-regression-with-dummy-variables.html#cb342-1" tabindex="-1"></a>null<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span><span class="dv">1</span>, <span class="at">data=</span>sample1)</span>
+<span id="cb342-2"><a href="multivariate-regression-with-dummy-variables.html#cb342-2" tabindex="-1"></a><span class="fu">summary</span>(null)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ 1, data = sample1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.3661 -2.5661 -1.2461  0.9839 19.0839 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    5.896      0.161   36.62   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.693 on 525 degrees of freedom</code></pre>
+<p>This shows the average wage.</p>
+<p>Now, let’s look at when the independent variable is represented by a binary variable (1,0)</p>
+<p>wage = <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\delta_0\)</span>female + <span class="math inline">\(\epsilon\)</span></p>
 <ul>
-<li><p>the <em>n</em> function to calculate the total number of observations;</p></li>
-<li><p>the <em>is.na</em> function to calculate the number of observations with missing values;</p></li>
-<li><p>the <em>!</em> operator combined with the <em>is.na</em> function to calculate the opposite of the number of observations with missing values, i.e., the number of observations with valid values;</p></li>
-<li><p>the <em>mean</em> function to calculate the mean, with the <em>na.rm</em> option set to TRUE to tell R that there are missing values and it should compute the mean without considering the missing values;</p></li>
-<li><p>the <em>median</em> function to calculate the median, with the <em>na.rm</em> option set to TRUE to tell R that there are missing values and it should compute the median without considering the missing values.</p></li>
-<li><p>the <em>sd</em> function to calculate the standard deviation, with the <em>na.rm</em> option set to TRUE to tell R that there are missing values and it should compute the standard deviation without considering the missing values.</p></li>
+<li><p>The coefficient is the difference in wage for females compared to males</p></li>
+<li><p>This model has different intercepts for females (<span class="math inline">\(\beta_0\)</span>+ <span class="math inline">\(\delta_0\)</span>) and males <span class="math inline">\(\beta_0\)</span></p></li>
+<li><p>The intercept for females is the average wage for females and the intercept for males is the average wage for males</p></li>
+<li><p>The regression t-test for significance of the coefficient on female is identical to the t-test for significant differences in wage between the female group and the male group, with the same mean, t-statistic, and p-value.</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="multivariate-regression-with-dummy-variables.html#cb344-1" tabindex="-1"></a>single<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>sample1<span class="sc">$</span>female, <span class="at">data =</span> sample1)</span>
+<span id="cb344-2"><a href="multivariate-regression-with-dummy-variables.html#cb344-2" tabindex="-1"></a><span class="fu">summary</span>(single)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ sample1$female, data = sample1)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.5995 -1.8495 -0.9877  1.4260 17.8805 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      7.0995     0.2100  33.806  &lt; 2e-16 ***
+## sample1$female  -2.5118     0.3034  -8.279 1.04e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.476 on 524 degrees of freedom
+## Multiple R-squared:  0.1157, Adjusted R-squared:  0.114 
+## F-statistic: 68.54 on 1 and 524 DF,  p-value: 1.042e-15</code></pre></li>
 </ul>
-</div>
-<div id="interpretation-of-descriptive-statistics" class="section level2 hasAnchor" number="11.5">
-<h2><span class="header-section-number">11.5</span> Interpretation of Descriptive Statistics:<a href="descriptive-statistics.html#interpretation-of-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Descriptive statistics serve as tools to summarize and organize data into meaningful insights, making it easier to understand and communicate findings. The following are the key aspects of descriptive statistics:</p>
-<div id="definition" class="section level4 hasAnchor" number="11.5.0.1">
-<h4><span class="header-section-number">11.5.0.1</span> <strong>Definition</strong><a href="descriptive-statistics.html#definition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Descriptive statistics involve summarizing, organizing, and simplifying data in a way that is understandable and interpretable. This can include numerical summaries, tables, and graphical representations to describe the distribution, central tendency, and variability of data.</p>
-</div>
-<div id="key-components-of-descriptive-statistics" class="section level3 hasAnchor" number="11.5.1">
-<h3><span class="header-section-number">11.5.1</span> <strong>Key Components of Descriptive Statistics</strong><a href="descriptive-statistics.html#key-components-of-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can plot the regression line;</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="multivariate-regression-with-dummy-variables.html#cb346-1" tabindex="-1"></a>sample1 <span class="sc">%&gt;%</span> </span>
+<span id="cb346-2"><a href="multivariate-regression-with-dummy-variables.html#cb346-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>female, <span class="at">y=</span>wage))<span class="sc">+</span></span>
+<span id="cb346-3"><a href="multivariate-regression-with-dummy-variables.html#cb346-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb346-4"><a href="multivariate-regression-with-dummy-variables.html#cb346-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb346-5"><a href="multivariate-regression-with-dummy-variables.html#cb346-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb346-6"><a href="multivariate-regression-with-dummy-variables.html#cb346-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Gender&quot;</span>, <span class="at">y=</span><span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb346-7"><a href="multivariate-regression-with-dummy-variables.html#cb346-7" tabindex="-1"></a>       <span class="at">title=</span><span class="st">&quot;Scatter Plot with Regression Line&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<p>The figure shows the slope <code>-2.51</code> and the intercepts: 7.10 and 4.59</p>
+<p>Results:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variables</th>
+<th>Wage</th>
+<th>Wage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>female</td>
+<td></td>
+<td><code>-2.51***</code></td>
+</tr>
+<tr class="even">
+<td>intercept</td>
+<td><code>5.90***</code></td>
+<td><code>7.10***</code></td>
+</tr>
+</tbody>
+</table>
+<p>We introduced a female dummy variable (1=female, 0 otherwise (known as <strong>intercept dummy</strong>)</p>
+<p>This specification says that the intercept (or the average difference in wages between females and males) is different.</p>
+<p>Intercept, <span class="math inline">\(\beta_0\)</span> , measures the intercept of the default group (males) and <span class="math inline">\(\beta_0 + \delta_0\)</span> is the intercept for females</p>
+<p><span class="math inline">\(\beta_0 = 5.90\)</span> is the average value of wage.</p>
+<p><span class="math inline">\(\delta_0 = -2.51\)</span> is the effect of the indicator variable female on wage</p>
+<ul>
+<li><p>Females have 2.51 lower wages than males. The interpretation of the coefficient is with respect to the reference/base category of males</p></li>
+<li><p>The intercept or average wage for males is <span class="math inline">\(\beta_0 = 7.10\)</span></p></li>
+<li><p>The average wage for females is <span class="math inline">\(\beta_0+\delta_0 = 7.10 + (-2.51)=4.59\)</span></p></li>
+</ul>
+<div id="dummy-variable-trap" class="section level4 hasAnchor" number="14.1.0.1">
+<h4><span class="header-section-number">14.1.0.1</span> Dummy variable trap<a href="multivariate-regression-with-dummy-variables.html#dummy-variable-trap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>This refers to the problem that not all categories can be included in the regression and one category needs to be left out, which is called a base or reference category.</p></li>
+<li><p>For example, male and female cannot be both included in the regression because of perfect collinearity</p></li>
+<li><p>Including male instead of female in the regression:</p>
+<p>wage = <span class="math inline">\(\beta_0 + \delta_0(1 - male) + \epsilon\)</span> =</p></li>
+<li><p>wage = (<span class="math inline">\(\beta_0 + \delta_0\)</span>) - <span class="math inline">\(\delta_0\)</span>male + <span class="math inline">\(\epsilon\)</span></p></li>
+<li><p>The coefficient <span class="math inline">\(-\delta_0\)</span> on male has the same magnitude and significance, but opposite sign from the coefficient on female.</p></li>
+<li><p>The intercept in the model with male is <span class="math inline">\((\beta_0+\delta_0)\)</span> , which can also be obtained from the model with female (average wage of females)</p></li>
+<li><p>A regression can be estimated with both male and female but with no constant (this approach is not commonly used)</p>
+<h3 id="interactions-with-another-dummy-variable" class="hasAnchor">Interactions with another dummy variable<a href="multivariate-regression-with-dummy-variables.html#interactions-with-another-dummy-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interaction term - multiply variable by dummy variable</p>
+<ul>
+<li>Interaction terms for variables <em>female</em> and <em>married</em> can be done in two different ways.</li>
+</ul>
 <ol style="list-style-type: decimal">
-<li><p><strong>Measures of Central Tendency</strong>:</p>
-<ul>
-<li><p><strong>Mean</strong>: The average value, useful for symmetric distributions without outliers.</p></li>
-<li><p><strong>Median</strong>: The middle value in the data, efficient even with skewness and outliers.</p></li>
-<li><p><strong>Mode</strong>: The most frequent value, helpful for categorical or multimodal distributions.</p></li>
-</ul></li>
-<li><p><strong>Measures of Variability</strong>:</p>
-<ul>
-<li><p><strong>Range</strong>: Difference between the maximum and minimum values.</p></li>
-<li><p><strong>Standard Deviation (SD)</strong>: Indicates the average spread of data around the mean.</p></li>
-<li><p><strong>Interquartile Range (IQR)</strong>: Captures the spread of the middle 50% of the data.</p></li>
-</ul></li>
-<li><p><strong>Data Distribution</strong>:</p>
-<ul>
-<li>Histograms and frequency distributions help identify the shape (e.g., symmetric, skewed, bimodal) and any potential outliers in the dataset.</li>
-</ul></li>
-<li><p><strong>Data Representation</strong>:</p>
-<ul>
-<li>Graphical methods like bar charts, line graphs, pie charts, and boxplots make patterns and trends in the data more visible and easier to interpret.</li>
-</ul></li>
+<li>include <em>female</em> and <em>married</em> and <code>female*married</code> in the regression</li>
 </ol>
-</div>
-<div id="when-to-use-mean-or-median" class="section level3 hasAnchor" number="11.5.2">
-<h3><span class="header-section-number">11.5.2</span> <strong>When to Use Mean or Median</strong><a href="descriptive-statistics.html#when-to-use-mean-or-median" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>The mean is preferred when the data is symmetrically distributed without extreme values.</p></li>
-<li><p>The median is better for skewed distributions or datasets with significant outliers, as it is not affected by extreme values.</p></li>
-<li><p>Example: In income data, where a few individuals earn significantly more than the majority, the median provides a more realistic “typical” income.</p></li>
-</ul>
-</div>
-<div id="purpose-of-descriptive-statistics" class="section level3 hasAnchor" number="11.5.3">
-<h3><span class="header-section-number">11.5.3</span> <strong>Purpose of Descriptive Statistics</strong><a href="descriptive-statistics.html#purpose-of-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>To summarize large datasets into manageable insights.</p></li>
-<li><p>To provide a foundation for inferential statistics, which goes beyond describing the sample to drawing conclusions about the population.</p></li>
-<li><p>To describe relationships between variables, if applicable, through measures like correlation coefficients.</p></li>
-</ul>
-</div>
-<div id="limitations" class="section level3 hasAnchor" number="11.5.4">
-<h3><span class="header-section-number">11.5.4</span> <strong>Limitations</strong><a href="descriptive-statistics.html#limitations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Descriptive statistics only describe the data at hand; they do not infer or predict trends in the population.</p></li>
-<li><p>Without considering measures of variability (e.g., SD or IQR), central tendency measures (mean, median) can be misleading.</p></li>
-<li><p>Descriptive statistics are limited in making generalizations beyond the sample data.</p></li>
-</ul>
-</div>
-</div>
-<div id="practical-descriptive-statistics" class="section level2 hasAnchor" number="11.6">
-<h2><span class="header-section-number">11.6</span> Practical: Descriptive Statistics<a href="descriptive-statistics.html#practical-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will still use the <code>Dataset_CP</code> data for the practical.</p>
-<div id="descriptive-statistics-questions" class="section level3 hasAnchor" number="11.6.1">
-<h3><span class="header-section-number">11.6.1</span> <strong>Descriptive Statistics Questions</strong><a href="descriptive-statistics.html#descriptive-statistics-questions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p><strong>Q37b_HoursWeekHousework</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>What are the mean, median, and standard deviation for the time spent on housework (<code>Q37b_HoursWeekHousework</code>) for the entire dataset?</p></li>
-<li><p>Compare the mean and median for males and females. Is the mean or median a better representation of central tendency? Why?</p></li>
-<li><p>What does the standard deviation tell you about variability in housework hours?</p></li>
+<p>wage = <span class="math inline">\(\beta_0 +\beta_1female+\beta_2married+\beta_3female*married+\epsilon\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Create four categories: <code>female*single</code>, <code>male*single</code>, <code>female*married</code>, and <code>male*married</code>; include 3 of them in the regression model (<code>male*single</code> is the reference category).</li>
 </ol></li>
-<li><p><strong>Q7_HoursWeekWork</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>What is the range of hours worked per week (<code>Q7_HoursWeekWork</code>) for males and females?</p></li>
-<li><p>Are there any noticeable outliers in the data? How could these affect the mean?</p></li>
-</ol></li>
-<li><p><strong>Q37c_HoursWeekElderly</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>Plot a histogram for hours spent caring for the elderly (<code>Q37c_HoursWeekElderly</code>).</p></li>
-<li><p>Is the distribution symmetric, skewed, or bimodal? What might explain the shape of the distribution?</p></li>
-</ol></li>
-<li><p>In the dataset, males and females spend different amounts of time on housework (<code>Q37b_HoursWeekHousework</code>). What societal or cultural factors might explain this difference? How could this information be used to inform policy?</p></li>
-<li><p>How might understanding variability in working hours (<code>Q7_HoursWeekWork</code>) help employers or policymakers design better work-life balance policies?</p></li>
-<li><p>After calculating descriptive statistics and creating visualizations, what challenges did you face in interpreting the data? How did the choice of tools (e.g., <code>psych</code>, <code>gtsummary</code>) affect your approach?</p></li>
+<li><p><strong>Note:</strong> Choice of reference category depends on you but commonly, the most number of observations in the category is chosen.</p>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="multivariate-regression-with-dummy-variables.html#cb348-1" tabindex="-1"></a>sample_modified <span class="ot">&lt;-</span> sample1 <span class="sc">%&gt;%</span></span>
+<span id="cb348-2"><a href="multivariate-regression-with-dummy-variables.html#cb348-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">female_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>), </span>
+<span id="cb348-3"><a href="multivariate-regression-with-dummy-variables.html#cb348-3" tabindex="-1"></a>         <span class="at">male_single =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),  </span>
+<span id="cb348-4"><a href="multivariate-regression-with-dummy-variables.html#cb348-4" tabindex="-1"></a>         <span class="at">male_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb348-5"><a href="multivariate-regression-with-dummy-variables.html#cb348-5" tabindex="-1"></a>         <span class="at">female_single =</span> <span class="fu">if_else</span>(female<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>))  </span>
+<span id="cb348-6"><a href="multivariate-regression-with-dummy-variables.html#cb348-6" tabindex="-1"></a><span class="fu">head</span>(sample_modified)</span></code></pre></div>
+<pre><code>##   wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade
+## 1 3.10   11     2      0        0      1       0      2    1        0     0    1        0       0        0     0
+## 2 3.24   12    22      2        0      1       1      3    1        0     0    1        0       0        0     0
+## 3 3.00   11     2      0        0      0       0      2    0        0     0    1        0       0        0     1
+## 4 6.00    8    44     28        0      0       1      0    1        0     0    1        0       0        0     0
+## 5 5.30   12     7      2        0      0       1      1    0        0     0    1        0       0        0     0
+## 6 8.75   16     9      8        0      0       1      0    1        0     0    1        0       0        0     0
+##   services profserv profocc clerocc servocc    lwage expersq tenursq female_married male_single male_married
+## 1        0        0       0       0       0 1.131402       4       0              0           0            0
+## 2        1        0       0       0       1 1.175573     484       4              1           0            0
+## 3        0        0       0       0       0 1.098612       4       0              0           1            0
+## 4        0        0       0       1       0 1.791759    1936     784              0           0            1
+## 5        0        0       0       0       0 1.667707      49       4              0           0            1
+## 6        0        1       1       0       0 2.169054      81      64              0           0            1
+##   female_single
+## 1             1
+## 2             0
+## 3             0
+## 4             0
+## 5             0
+## 6             0</code></pre></li>
 </ul>
-
+<p>Regression model:</p>
+<p><span class="math inline">\(wage = \beta_0+\beta_1femalesingle+\beta_2femalemarried+\beta_3malemarried+\epsilon\)</span></p>
+<p>You need to drop the reference category variable which we already did when we dropped <code>malesingle</code></p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="multivariate-regression-with-dummy-variables.html#cb350-1" tabindex="-1"></a>interaction<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female_married<span class="sc">+</span>female_single<span class="sc">+</span>male_married, <span class="at">data=</span>sample_modified)</span>
+<span id="cb350-2"><a href="multivariate-regression-with-dummy-variables.html#cb350-2" tabindex="-1"></a><span class="fu">summary</span>(interaction)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ female_married + female_single + male_married, 
+##     data = sample_modified)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7530 -1.7327 -0.9973  1.2566 17.0184 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      5.1680     0.3614  14.299  &lt; 2e-16 ***
+## female_married  -0.6021     0.4645  -1.296    0.195    
+## female_single   -0.5564     0.4736  -1.175    0.241    
+## male_married     2.8150     0.4363   6.451 2.53e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.352 on 522 degrees of freedom
+## Multiple R-squared:  0.181,  Adjusted R-squared:  0.1763 
+## F-statistic: 38.45 on 3 and 522 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Regression model:</p>
+<p><span class="math inline">\(wage = \beta_0+\beta_1female+\beta_2married+\beta_3femalemarried+\epsilon\)</span></p>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="multivariate-regression-with-dummy-variables.html#cb352-1" tabindex="-1"></a>int1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female<span class="sc">+</span>married<span class="sc">+</span>female_married, <span class="at">data=</span>sample_modified)</span>
+<span id="cb352-2"><a href="multivariate-regression-with-dummy-variables.html#cb352-2" tabindex="-1"></a><span class="fu">summary</span>(int1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ female + married + female_married, data = sample_modified)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7530 -1.7327 -0.9973  1.2566 17.0184 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      5.1680     0.3614  14.299  &lt; 2e-16 ***
+## female          -0.5564     0.4736  -1.175    0.241    
+## married          2.8150     0.4363   6.451 2.53e-10 ***
+## female_married  -2.8607     0.6076  -4.708 3.20e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.352 on 522 degrees of freedom
+## Multiple R-squared:  0.181,  Adjusted R-squared:  0.1763 
+## F-statistic: 38.45 on 3 and 522 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Let’s have pretty regression results table:</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="multivariate-regression-with-dummy-variables.html#cb354-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;stargazer&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;stargazer&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="multivariate-regression-with-dummy-variables.html#cb355-1" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb355-2"><a href="multivariate-regression-with-dummy-variables.html#cb355-2" tabindex="-1"></a><span class="co"># Create a regression table</span></span>
+<span id="cb355-3"><a href="multivariate-regression-with-dummy-variables.html#cb355-3" tabindex="-1"></a><span class="fu">stargazer</span>(null, interaction, int1, <span class="co">#regression</span></span>
+<span id="cb355-4"><a href="multivariate-regression-with-dummy-variables.html#cb355-4" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Regression Results&quot;</span>,</span>
+<span id="cb355-5"><a href="multivariate-regression-with-dummy-variables.html#cb355-5" tabindex="-1"></a>          <span class="at">dep.var.labels =</span> <span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb355-6"><a href="multivariate-regression-with-dummy-variables.html#cb355-6" tabindex="-1"></a>          <span class="co">#covariate.labels = c(&quot;B1&quot;, &quot;B2&quot;, &quot;BN&quot;), label your independent variables</span></span>
+<span id="cb355-7"><a href="multivariate-regression-with-dummy-variables.html#cb355-7" tabindex="-1"></a>          <span class="at">omit.stat =</span> <span class="fu">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;ser&quot;</span>), <span class="at">digits =</span> <span class="dv">3</span>) <span class="co"># Omits F-statistic and standard error from the table and sets decimal places to 3</span></span></code></pre></div>
+<pre><code>## 
+## Regression Results
+## ============================================
+##                     Dependent variable:     
+##                -----------------------------
+##                            Wage             
+##                   (1)       (2)       (3)   
+## --------------------------------------------
+## female                              -0.556  
+##                                     (0.474) 
+##                                             
+## married                            2.815*** 
+##                                     (0.436) 
+##                                             
+## female_married            -0.602   -2.861***
+##                           (0.464)   (0.608) 
+##                                             
+## female_single             -0.556            
+##                           (0.474)           
+##                                             
+## male_married             2.815***           
+##                           (0.436)           
+##                                             
+## Constant       5.896***  5.168***  5.168*** 
+##                 (0.161)   (0.361)   (0.361) 
+##                                             
+## --------------------------------------------
+## Observations      526       526       526   
+## R2               0.000     0.181     0.181  
+## Adjusted R2      0.000     0.176     0.176  
+## ============================================
+## Note:            *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p><strong>Interpretation of Results:</strong></p>
+<p>Model 1: The baseline wage when all other variables are absent. The reference group is single males.</p>
+<p>Model 2:</p>
+<ul>
+<li><p>Female, Single: <span class="math inline">\(-0.556\)</span> (not significant) –&gt; Single females earn 0.556 less than single males, but the result is not statistically significant.</p></li>
+<li><p>Male, Married: <span class="math inline">\(2.815\)</span>*** –&gt; Married males earn 2.815 more than single males</p></li>
+<li><p>Constant: <span class="math inline">\(5.168\)</span>*** –&gt; The wage for single males</p></li>
+</ul>
+<p>Model 3:</p>
+<ul>
+<li><p>Female: <span class="math inline">\(-0.556\)</span> (not significant) –&gt; Being female alone does not significantly impact wages</p></li>
+<li><p>Married: <span class="math inline">\(2.815\)</span>*** –&gt; Being married increases wages</p></li>
+<li><p>Female x Married Interaction: <span class="math inline">\(-2.861\)</span>*** –&gt; Being a married female results in a decrease of 2,861 on wages.</p></li>
+<li><p>Constant: <span class="math inline">\(5.168\)</span>*** –&gt; The wage for single males</p></li>
+</ul>
+<p>Model Fit:</p>
+<p>Model 1: No explanatory power</p>
+<p>Model 2 and 3: The models explain 18.1% of the variation in wages.</p>
+</div>
+<div id="several-related-dummy-variables" class="section level3 hasAnchor" number="14.1.1">
+<h3><span class="header-section-number">14.1.1</span> Several related dummy variables<a href="multivariate-regression-with-dummy-variables.html#several-related-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Regression with several related dummy variables needs to have one reference category.</p></li>
+<li><p>For example: Dummies for regions: northcentral, south, west. So, east is the reference category. Thus, <span class="math inline">\(east = 1-northcentral-south-west\)</span></p>
+<p><span class="math inline">\(wage = \beta_0+\beta_1northcentral+\beta_2south+\beta_3west+\epsilon\)</span></p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="multivariate-regression-with-dummy-variables.html#cb357-1" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>northcen<span class="sc">+</span>south<span class="sc">+</span>west, <span class="at">data=</span>sample_modified)</span>
+<span id="cb357-2"><a href="multivariate-regression-with-dummy-variables.html#cb357-2" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ northcen + south + west, data = sample_modified)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -6.083 -2.387 -1.097  1.157 18.610 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   6.3697     0.3380  18.848   &lt;2e-16 ***
+## northcen     -0.6593     0.4651  -1.418   0.1569    
+## south        -0.9828     0.4316  -2.277   0.0232 *  
+## west          0.2436     0.5154   0.473   0.6366    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.671 on 522 degrees of freedom
+## Multiple R-squared:  0.0175, Adjusted R-squared:  0.01185 
+## F-statistic: 3.099 on 3 and 522 DF,  p-value: 0.02646</code></pre></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Average Wage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Northcentral</td>
+<td>5.71</td>
+</tr>
+<tr class="even">
+<td>South</td>
+<td>5.39</td>
+</tr>
+<tr class="odd">
+<td>West</td>
+<td>6.61</td>
+</tr>
+<tr class="even">
+<td>East</td>
+<td>6.37</td>
+</tr>
+</tbody>
+</table>
+<p>Wages in the south are 0.98 lower than wages in the east, and wages in the northcentral and west are not significantly different from those in the east region.</p>
+</div>
+<div id="dummy-variable-and-continuous-variable-in-regression" class="section level3 hasAnchor" number="14.1.2">
+<h3><span class="header-section-number">14.1.2</span> Dummy Variable and Continuous Variable in Regression<a href="multivariate-regression-with-dummy-variables.html#dummy-variable-and-continuous-variable-in-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(wage=\beta_0+\beta_1educ+\epsilon\)</span></p>
+<p>This model has the same intercept and slope on education for females and males</p>
+<p><span class="math inline">\(wage=\beta_0+\beta_1educ+\delta_0female+\epsilon\)</span></p>
+<ul>
+<li><p>The effect of female on wage = <span class="math inline">\(\delta_0\)</span></p></li>
+<li><p>The same slope for females and males = <span class="math inline">\(\beta_1\)</span></p></li>
+<li><p>Intercept for males = <span class="math inline">\(\beta_0\)</span></p></li>
+<li><p>Intercept for females = <span class="math inline">\(\beta_0+\delta_0\)</span></p>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="multivariate-regression-with-dummy-variables.html#cb359-1" tabindex="-1"></a>withedu<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span>
+<span id="cb359-2"><a href="multivariate-regression-with-dummy-variables.html#cb359-2" tabindex="-1"></a><span class="fu">summary</span>(withedu)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ educ + female, data = sample_modified)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.9890 -1.8702 -0.6651  1.0447 15.4998 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.62282    0.67253   0.926    0.355    
+## educ         0.50645    0.05039  10.051  &lt; 2e-16 ***
+## female      -2.27336    0.27904  -8.147 2.76e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.186 on 523 degrees of freedom
+## Multiple R-squared:  0.2588, Adjusted R-squared:  0.256 
+## F-statistic: 91.32 on 2 and 523 DF,  p-value: &lt; 2.2e-16</code></pre></li>
+</ul>
+<p>Results:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variables</th>
+<th>wage</th>
+<th>female dummy wage</th>
+<th>male dummy wage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>educ</td>
+<td>0.54***</td>
+<td>0.51***</td>
+<td>0.51***</td>
+</tr>
+<tr class="even">
+<td>female</td>
+<td></td>
+<td>-2.27***</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>male</td>
+<td></td>
+<td></td>
+<td>2.27***</td>
+</tr>
+<tr class="even">
+<td>Intercept</td>
+<td>-0.91</td>
+<td>0.62</td>
+<td>-1.65**</td>
+</tr>
+</tbody>
+</table>
+<p>Plotting the graph:</p>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="multivariate-regression-with-dummy-variables.html#cb361-1" tabindex="-1"></a><span class="fu">ggplot</span>(sample_modified, <span class="fu">aes</span>(<span class="at">x =</span> educ, <span class="at">y =</span> wage, <span class="at">color =</span> <span class="fu">as.factor</span>(female))) <span class="sc">+</span> <span class="co">#differentiates point by female</span></span>
+<span id="cb361-2"><a href="multivariate-regression-with-dummy-variables.html#cb361-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb361-3"><a href="multivariate-regression-with-dummy-variables.html#cb361-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb361-4"><a href="multivariate-regression-with-dummy-variables.html#cb361-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Gender&quot;</span>) <span class="sc">+</span></span>
+<span id="cb361-5"><a href="multivariate-regression-with-dummy-variables.html#cb361-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb361-6"><a href="multivariate-regression-with-dummy-variables.html#cb361-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Regression of Wage on Education, Differentiated by Gender&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
+</div>
+<div id="interaction-terms-with-non-dummy-variables" class="section level3 hasAnchor" number="14.1.3">
+<h3><span class="header-section-number">14.1.3</span> Interaction terms with non-dummy variables<a href="multivariate-regression-with-dummy-variables.html#interaction-terms-with-non-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(wage=\beta_0+\beta_1educ+\delta_0female+\delta_1female*educ+\epsilon\)</span></p>
+<ul>
+<li><p>This model has different slopes on education and intercepts for females and males</p></li>
+<li><p>slope for males = <span class="math inline">\(\beta_1\)</span></p></li>
+<li><p>slope for females = <span class="math inline">\(\beta_1+\delta_1\)</span></p></li>
+<li><p>intercept for males = <span class="math inline">\(\beta_0\)</span></p></li>
+<li><p>intercept for females = <span class="math inline">\(\beta_0+\delta_0\)</span></p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="multivariate-regression-with-dummy-variables.html#cb362-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ <span class="sc">+</span> female <span class="sc">+</span> female<span class="sc">:</span>educ, <span class="at">data =</span> sample_modified)</span>
+<span id="cb362-2"><a href="multivariate-regression-with-dummy-variables.html#cb362-2" tabindex="-1"></a><span class="fu">summary</span>(model) <span class="co">#you can create interaction term when regressing by using &#39;:&#39;</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ educ + female + female:educ, data = sample_modified)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6.1611 -1.8028 -0.6367  1.0054 15.5258 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.20050    0.84356   0.238    0.812    
+## educ         0.53948    0.06422   8.400 4.24e-16 ***
+## female      -1.19852    1.32504  -0.905    0.366    
+## educ:female -0.08600    0.10364  -0.830    0.407    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.186 on 522 degrees of freedom
+## Multiple R-squared:  0.2598, Adjusted R-squared:  0.2555 
+## F-statistic: 61.07 on 3 and 522 DF,  p-value: &lt; 2.2e-16</code></pre></li>
+</ul>
+<p>Interpretation of Results:</p>
+<ul>
+<li><p>Slope for males is 0.54</p></li>
+<li><p>Slope for females is 0.45</p></li>
+<li><p>Intercept for males is 0.20</p></li>
+<li><p>Intercept for females is <span class="math inline">\(-1.00\)</span></p></li>
+<li><p>The coefficient on female and on the interaction term between female and education are not significant. So, the intercepts and the slopes of returns to education are not significantly different for females and males.</p></li>
+</ul>
+</div>
+<div id="f-test-for-differences-across-groups" class="section level3 hasAnchor" number="14.1.4">
+<h3><span class="header-section-number">14.1.4</span> F-test for differences across groups<a href="multivariate-regression-with-dummy-variables.html#f-test-for-differences-across-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>F-test is used to test whether the returns to education, experience, and tenure are the same for two groups (males and females).</p>
+<p><span class="math inline">\(H_0\)</span> : The coefficients on interaction terms are all zero, meaning that the impact of non-dummy variables on dependent variables is the same for the two groups.</p>
+<p><span class="math inline">\(H_a\)</span> : At least one of the coefficients is not zero, meaning, the impact is different for the two groups.</p>
+<p>Step 1: Fit the Full and Reduced Models</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="multivariate-regression-with-dummy-variables.html#cb364-1" tabindex="-1"></a>full<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female<span class="sc">+</span>female<span class="sc">:</span>educ<span class="sc">+</span>female<span class="sc">:</span>exper<span class="sc">+</span>female<span class="sc">:</span>tenure, <span class="at">data=</span>sample_modified)</span></code></pre></div>
+<p>This model includes interactiono terms, allowing the effects of continuous variables to be different for females.</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="multivariate-regression-with-dummy-variables.html#cb365-1" tabindex="-1"></a>reduced<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span></code></pre></div>
+<p>This model assumes education, experience, and tenure have the same impact for males and females but allows for general difference in wage levels through female coefficient.</p>
+<p>Step 2: Perform the F-Test</p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="multivariate-regression-with-dummy-variables.html#cb366-1" tabindex="-1"></a>result<span class="ot">&lt;-</span><span class="fu">anova</span>(reduced,full)</span>
+<span id="cb366-2"><a href="multivariate-regression-with-dummy-variables.html#cb366-2" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: wage ~ educ + exper + tenure + female
+## Model 2: wage ~ educ + exper + tenure + female + female:educ + female:exper + 
+##     female:tenure
+##   Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    521 4557.3                                  
+## 2    518 4394.2  3    163.06 6.4074 0.0002878 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>This compares the full and reduced model; If the p-value&lt;0.05, reject the null. In this case, Females have significantly different wages than males.</p>
 </div>
 </div>
 </div>
@@ -1141,8 +917,8 @@ The number of male respondents in our dataset is equal to 1723</p>
           </div>
         </div>
       </div>
-<a href="advanced-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ordinary-least-squares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="formal-tests-on-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
