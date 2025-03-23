@@ -418,8 +418,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-time-series"><i class="fa fa-check"></i><b>16.4.1</b> Simulated Time Series</a></li>
 <li class="chapter" data-level="16.4.2" data-path="additional-topics.html"><a href="additional-topics.html#real-data-1"><i class="fa fa-check"></i><b>16.4.2</b> Real Data</a></li>
 </ul></li>
+<li class="chapter" data-level="16.5" data-path="additional-topics.html"><a href="additional-topics.html#the-end"><i class="fa fa-check"></i><b>16.5</b> The End!</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="the-end.html"><a href="the-end.html"><i class="fa fa-check"></i><b>17</b> The End!</a></li>
 </ul>
 
       </nav>
@@ -456,9 +456,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Always remember the first steps: Set Working Directory and Clean the Global Environment.</strong></p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-management---time-series-and-panel-data.html#cb90-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb90-2"><a href="data-management---time-series-and-panel-data.html#cb90-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 4207184 224.7    6381810 340.9  6381810 340.9
-## Vcells 8485681  64.8   14786715 112.9 12435877  94.9</code></pre>
+<pre><code>##            used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells  5655131 302.1    9801260 523.5  9801260 523.5
+## Vcells 11543445  88.1   38668140 295.1 94237569 719.0</code></pre>
 <p>To make sure that you are using the correct directory and that you have all the files you need, use <code>list.files()</code> function.</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-management---time-series-and-panel-data.html#cb92-1" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <p>Now, we load the following packages: <code>dplyr</code>, <code>lubridate</code>, and <code>zoo</code>. Make sure you have all 3 installed; if not, install them.</p>
