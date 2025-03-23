@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-02-23" />
+<meta name="date" content="2025-03-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -392,6 +392,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="formal-tests-on-assumptions.html"><a href="formal-tests-on-assumptions.html#practical-multivariate-dummy-regression-and-formal-tests-of-assumptions"><i class="fa fa-check"></i><b>15.5</b> Practical: Multivariate (Dummy) Regression and Formal Tests of Assumptions</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="additional-topics.html"><a href="additional-topics.html"><i class="fa fa-check"></i><b>16</b> Additional Topics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="additional-topics.html"><a href="additional-topics.html#predicting-outcome-using-ols"><i class="fa fa-check"></i><b>16.1</b> Predicting Outcome using OLS</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-data"><i class="fa fa-check"></i><b>16.1.1</b> Simulated Data</a></li>
+<li class="chapter" data-level="16.1.2" data-path="additional-topics.html"><a href="additional-topics.html#ols-1"><i class="fa fa-check"></i><b>16.1.2</b> OLS</a></li>
+<li class="chapter" data-level="16.1.3" data-path="additional-topics.html"><a href="additional-topics.html#use-predict"><i class="fa fa-check"></i><b>16.1.3</b> Use <code>predict()</code></a></li>
+<li class="chapter" data-level="16.1.4" data-path="additional-topics.html"><a href="additional-topics.html#extra-visualization"><i class="fa fa-check"></i><b>16.1.4</b> Extra: Visualization</a></li>
+<li class="chapter" data-level="16.1.5" data-path="additional-topics.html"><a href="additional-topics.html#real-data"><i class="fa fa-check"></i><b>16.1.5</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="additional-topics.html"><a href="additional-topics.html#designing-and-testing-a-survey"><i class="fa fa-check"></i><b>16.2</b> Designing and Testing a Survey</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="additional-topics.html"><a href="additional-topics.html#calculating-sample-size"><i class="fa fa-check"></i><b>16.2.1</b> Calculating Sample Size</a></li>
+<li class="chapter" data-level="16.2.2" data-path="additional-topics.html"><a href="additional-topics.html#testing-survey-reliability---cronbachs-alpha"><i class="fa fa-check"></i><b>16.2.2</b> Testing Survey Reliability - Cronbach’s Alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="additional-topics.html"><a href="additional-topics.html#panel-data-models-fixed-vs.-random-effects"><i class="fa fa-check"></i><b>16.3</b> Panel Data Models (Fixed vs. Random Effects)</a>
+<ul>
+<li class="chapter" data-level="16.3.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-panel-dataset"><i class="fa fa-check"></i><b>16.3.1</b> Simulated Panel Dataset</a></li>
+<li class="chapter" data-level="16.3.2" data-path="additional-topics.html"><a href="additional-topics.html#fixed-effects-vs.-random-effects"><i class="fa fa-check"></i><b>16.3.2</b> Fixed Effects vs. Random Effects</a></li>
+<li class="chapter" data-level="16.3.3" data-path="additional-topics.html"><a href="additional-topics.html#hausman-test"><i class="fa fa-check"></i><b>16.3.3</b> Hausman Test</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="additional-topics.html"><a href="additional-topics.html#lagged-values-and-preliminaries-in-forecasting"><i class="fa fa-check"></i><b>16.4</b> Lagged Values and Preliminaries in Forecasting</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-time-series"><i class="fa fa-check"></i><b>16.4.1</b> Simulated Time Series</a></li>
+<li class="chapter" data-level="16.4.2" data-path="additional-topics.html"><a href="additional-topics.html#real-data-1"><i class="fa fa-check"></i><b>16.4.2</b> Real Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="the-end.html"><a href="the-end.html"><i class="fa fa-check"></i><b>17</b> The End!</a></li>
 </ul>
 
       </nav>
@@ -453,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We use this test when we want to see if the proportion of a sample is different from the population proportion.</p>
 <p>Example: Unemployment Rate</p>
 <p>A government report claims that 8% of the labor force is unemployed. We collect a sample of 500 workers and find that 50 are unemployed. Is the actual unemployment rate significantly different from 8%?</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="hypothesis-testing.html#cb259-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="hypothesis-testing.html#cb275-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -471,7 +499,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>If the p-value &gt; 0.05, we fail to reject the null hypothesis, meaning we do not have enough evidence to say the unemployment rate differs from 8%.</p></li>
 </ul>
 <p>If we believe the true unemployment rate is higher than 8%</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="hypothesis-testing.html#cb261-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="hypothesis-testing.html#cb277-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -485,7 +513,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 0.1</code></pre>
 <p>Since it is one-tailed, <code>alternative = "greater"</code> tests the direction. The alternative is changed if it is in the opposite direction.</p>
 <p>If we believe the true unemployment rate is lower than 8%</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="hypothesis-testing.html#cb263-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="hypothesis-testing.html#cb279-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -509,7 +537,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>In a rural area, 420 out of 500 people are employed.</p></li>
 </ul>
 <p>We test whether the employment rates are significantly different.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="hypothesis-testing.html#cb265-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="hypothesis-testing.html#cb281-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions without continuity correction
 ## 
@@ -528,7 +556,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>If p-value &gt; 0.05: There is no significant difference in employment rates.</p></li>
 </ul>
 <p>If we believe urban employment rate is higher than rural:</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="hypothesis-testing.html#cb267-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="hypothesis-testing.html#cb283-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions without continuity correction
 ## 
@@ -541,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## prop 1 prop 2 
 ##   0.90   0.84</code></pre>
 <p>If we believe urban employment rate is lower than rural:</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="hypothesis-testing.html#cb269-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="hypothesis-testing.html#cb285-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions without continuity correction
 ## 
@@ -558,11 +586,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="real-world-example" class="section level3 hasAnchor" number="12.3.3">
 <h3><span class="header-section-number">12.3.3</span> Real-World Example:<a href="hypothesis-testing.html#real-world-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are going to use the <code>wage1</code> dataset from Wooldridge package but we do not want to do anything to the original dataset (though technically we can) but, better safe than sorry.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="hypothesis-testing.html#cb271-1" tabindex="-1"></a><span class="fu">library</span>(wooldridge) </span>
-<span id="cb271-2"><a href="hypothesis-testing.html#cb271-2" tabindex="-1"></a><span class="fu">data</span>(wage1)</span></code></pre></div>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="hypothesis-testing.html#cb272-1" tabindex="-1"></a>sample<span class="ot">&lt;-</span>wage1</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="hypothesis-testing.html#cb287-1" tabindex="-1"></a><span class="fu">library</span>(wooldridge) </span>
+<span id="cb287-2"><a href="hypothesis-testing.html#cb287-2" tabindex="-1"></a><span class="fu">data</span>(wage1)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="hypothesis-testing.html#cb288-1" tabindex="-1"></a>sample<span class="ot">&lt;-</span>wage1</span></code></pre></div>
 <p>Is the proportion of female workers greater than 50%?</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="hypothesis-testing.html#cb273-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">sum</span>(sample<span class="sc">$</span>female), <span class="fu">nrow</span>(sample), <span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="hypothesis-testing.html#cb289-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">sum</span>(sample<span class="sc">$</span>female), <span class="fu">nrow</span>(sample), <span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -588,9 +616,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="one-sample-t-test" class="section level3 hasAnchor" number="12.4.1">
 <h3><span class="header-section-number">12.4.1</span> One-Sample T-Test<a href="hypothesis-testing.html#one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A report states that the average monthly wage in a country is 20,500. We take a sample of 100 workers and test if their wages differ.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="hypothesis-testing.html#cb275-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb275-2"><a href="hypothesis-testing.html#cb275-2" tabindex="-1"></a>wages<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean=</span><span class="dv">21000</span>, <span class="at">sd=</span><span class="dv">500</span>)</span>
-<span id="cb275-3"><a href="hypothesis-testing.html#cb275-3" tabindex="-1"></a><span class="fu">t.test</span>(wages, <span class="at">mu=</span><span class="dv">20500</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="hypothesis-testing.html#cb291-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb291-2"><a href="hypothesis-testing.html#cb291-2" tabindex="-1"></a>wages<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean=</span><span class="dv">21000</span>, <span class="at">sd=</span><span class="dv">500</span>)</span>
+<span id="cb291-3"><a href="hypothesis-testing.html#cb291-3" tabindex="-1"></a><span class="fu">t.test</span>(wages, <span class="at">mu=</span><span class="dv">20500</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -612,7 +640,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="real-world-example-1" class="section level3 hasAnchor" number="12.4.2">
 <h3><span class="header-section-number">12.4.2</span> Real-World Example<a href="hypothesis-testing.html#real-world-example-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Is the average hourly wage significantly different from $5 per hour?</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="hypothesis-testing.html#cb277-1" tabindex="-1"></a><span class="fu">t.test</span>(sample<span class="sc">$</span>wage, <span class="at">mu =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="hypothesis-testing.html#cb293-1" tabindex="-1"></a><span class="fu">t.test</span>(sample<span class="sc">$</span>wage, <span class="at">mu =</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -628,11 +656,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="independent-samples-t-test" class="section level3 hasAnchor" number="12.4.3">
 <h3><span class="header-section-number">12.4.3</span> Independent-Samples T-Test<a href="hypothesis-testing.html#independent-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We compare male and female wages in the same industry.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="hypothesis-testing.html#cb279-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb279-2"><a href="hypothesis-testing.html#cb279-2" tabindex="-1"></a>male_wage<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean=</span><span class="dv">23000</span>, <span class="at">sd=</span><span class="dv">600</span>)</span>
-<span id="cb279-3"><a href="hypothesis-testing.html#cb279-3" tabindex="-1"></a>female_wage<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean=</span><span class="dv">22500</span>, <span class="at">sd=</span><span class="dv">500</span>)</span>
-<span id="cb279-4"><a href="hypothesis-testing.html#cb279-4" tabindex="-1"></a></span>
-<span id="cb279-5"><a href="hypothesis-testing.html#cb279-5" tabindex="-1"></a><span class="fu">t.test</span>(male_wage, female_wage, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="hypothesis-testing.html#cb295-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb295-2"><a href="hypothesis-testing.html#cb295-2" tabindex="-1"></a>male_wage<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean=</span><span class="dv">23000</span>, <span class="at">sd=</span><span class="dv">600</span>)</span>
+<span id="cb295-3"><a href="hypothesis-testing.html#cb295-3" tabindex="-1"></a>female_wage<span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean=</span><span class="dv">22500</span>, <span class="at">sd=</span><span class="dv">500</span>)</span>
+<span id="cb295-4"><a href="hypothesis-testing.html#cb295-4" tabindex="-1"></a></span>
+<span id="cb295-5"><a href="hypothesis-testing.html#cb295-5" tabindex="-1"></a><span class="fu">t.test</span>(male_wage, female_wage, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -657,7 +685,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Low variance → Data points are close to the mean.</p></li>
 <li><p>High variance → Data points are spread out from the mean.</p></li>
 </ul>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="hypothesis-testing.html#cb281-1" tabindex="-1"></a><span class="fu">var.test</span>(male_wage, female_wage)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="hypothesis-testing.html#cb297-1" tabindex="-1"></a><span class="fu">var.test</span>(male_wage, female_wage)</span></code></pre></div>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -675,8 +703,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="real-world-example-2" class="section level3 hasAnchor" number="12.4.4">
 <h3><span class="header-section-number">12.4.4</span> Real-World Example<a href="hypothesis-testing.html#real-world-example-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do men and women earn different wages?</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="hypothesis-testing.html#cb283-1" tabindex="-1"></a><span class="co">#check variance</span></span>
-<span id="cb283-2"><a href="hypothesis-testing.html#cb283-2" tabindex="-1"></a><span class="fu">var.test</span>(sample<span class="sc">$</span>wage[sample<span class="sc">$</span>female <span class="sc">==</span> <span class="dv">1</span>], sample<span class="sc">$</span>wage[wage1<span class="sc">$</span>female <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="hypothesis-testing.html#cb299-1" tabindex="-1"></a><span class="co">#check variance</span></span>
+<span id="cb299-2"><a href="hypothesis-testing.html#cb299-2" tabindex="-1"></a><span class="fu">var.test</span>(sample<span class="sc">$</span>wage[sample<span class="sc">$</span>female <span class="sc">==</span> <span class="dv">1</span>], sample<span class="sc">$</span>wage[wage1<span class="sc">$</span>female <span class="sc">==</span> <span class="dv">0</span>])</span></code></pre></div>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -693,7 +721,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Null Hypothesis (H<sub>0</sub>): The variances of male and female wages are equal</p></li>
 <li><p>Alternative Hypothesis (<span class="math inline">\(H_\alpha\)</span>): The variances of male and female wages are not equal</p></li>
 </ul>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="hypothesis-testing.html#cb285-1" tabindex="-1"></a><span class="fu">t.test</span>(sample<span class="sc">$</span>wage <span class="sc">~</span> sample<span class="sc">$</span>female, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="hypothesis-testing.html#cb301-1" tabindex="-1"></a><span class="fu">t.test</span>(sample<span class="sc">$</span>wage <span class="sc">~</span> sample<span class="sc">$</span>female, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -710,11 +738,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="paired-samples-t-test" class="section level3 hasAnchor" number="12.4.5">
 <h3><span class="header-section-number">12.4.5</span> Paired-Samples T-Test<a href="hypothesis-testing.html#paired-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A new minimum wage policy was introduced. We analyze its impact on worker wages before and after implementation.</p>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="hypothesis-testing.html#cb287-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
-<span id="cb287-2"><a href="hypothesis-testing.html#cb287-2" tabindex="-1"></a>wage_before <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">32000</span>, <span class="at">sd =</span> <span class="dv">400</span>)  </span>
-<span id="cb287-3"><a href="hypothesis-testing.html#cb287-3" tabindex="-1"></a>wage_after <span class="ot">&lt;-</span> wage_before <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">2500</span>, <span class="at">sd =</span> <span class="dv">100</span>)  </span>
-<span id="cb287-4"><a href="hypothesis-testing.html#cb287-4" tabindex="-1"></a></span>
-<span id="cb287-5"><a href="hypothesis-testing.html#cb287-5" tabindex="-1"></a><span class="fu">t.test</span>(wage_before, wage_after, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="hypothesis-testing.html#cb303-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb303-2"><a href="hypothesis-testing.html#cb303-2" tabindex="-1"></a>wage_before <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">32000</span>, <span class="at">sd =</span> <span class="dv">400</span>)  </span>
+<span id="cb303-3"><a href="hypothesis-testing.html#cb303-3" tabindex="-1"></a>wage_after <span class="ot">&lt;-</span> wage_before <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">2500</span>, <span class="at">sd =</span> <span class="dv">100</span>)  </span>
+<span id="cb303-4"><a href="hypothesis-testing.html#cb303-4" tabindex="-1"></a></span>
+<span id="cb303-5"><a href="hypothesis-testing.html#cb303-5" tabindex="-1"></a><span class="fu">t.test</span>(wage_before, wage_after, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -733,7 +761,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>If p-value &gt; 0.05: The policy had no significant effect.</p></li>
 </ul>
 <p>Did wages increase?</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="hypothesis-testing.html#cb289-1" tabindex="-1"></a><span class="fu">t.test</span>(wage_before, wage_after, <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="hypothesis-testing.html#cb305-1" tabindex="-1"></a><span class="fu">t.test</span>(wage_before, wage_after, <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 

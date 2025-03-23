@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-02-23" />
+<meta name="date" content="2025-03-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -392,6 +392,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="formal-tests-on-assumptions.html"><a href="formal-tests-on-assumptions.html#practical-multivariate-dummy-regression-and-formal-tests-of-assumptions"><i class="fa fa-check"></i><b>15.5</b> Practical: Multivariate (Dummy) Regression and Formal Tests of Assumptions</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="additional-topics.html"><a href="additional-topics.html"><i class="fa fa-check"></i><b>16</b> Additional Topics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="additional-topics.html"><a href="additional-topics.html#predicting-outcome-using-ols"><i class="fa fa-check"></i><b>16.1</b> Predicting Outcome using OLS</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-data"><i class="fa fa-check"></i><b>16.1.1</b> Simulated Data</a></li>
+<li class="chapter" data-level="16.1.2" data-path="additional-topics.html"><a href="additional-topics.html#ols-1"><i class="fa fa-check"></i><b>16.1.2</b> OLS</a></li>
+<li class="chapter" data-level="16.1.3" data-path="additional-topics.html"><a href="additional-topics.html#use-predict"><i class="fa fa-check"></i><b>16.1.3</b> Use <code>predict()</code></a></li>
+<li class="chapter" data-level="16.1.4" data-path="additional-topics.html"><a href="additional-topics.html#extra-visualization"><i class="fa fa-check"></i><b>16.1.4</b> Extra: Visualization</a></li>
+<li class="chapter" data-level="16.1.5" data-path="additional-topics.html"><a href="additional-topics.html#real-data"><i class="fa fa-check"></i><b>16.1.5</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="additional-topics.html"><a href="additional-topics.html#designing-and-testing-a-survey"><i class="fa fa-check"></i><b>16.2</b> Designing and Testing a Survey</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="additional-topics.html"><a href="additional-topics.html#calculating-sample-size"><i class="fa fa-check"></i><b>16.2.1</b> Calculating Sample Size</a></li>
+<li class="chapter" data-level="16.2.2" data-path="additional-topics.html"><a href="additional-topics.html#testing-survey-reliability---cronbachs-alpha"><i class="fa fa-check"></i><b>16.2.2</b> Testing Survey Reliability - Cronbach’s Alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="additional-topics.html"><a href="additional-topics.html#panel-data-models-fixed-vs.-random-effects"><i class="fa fa-check"></i><b>16.3</b> Panel Data Models (Fixed vs. Random Effects)</a>
+<ul>
+<li class="chapter" data-level="16.3.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-panel-dataset"><i class="fa fa-check"></i><b>16.3.1</b> Simulated Panel Dataset</a></li>
+<li class="chapter" data-level="16.3.2" data-path="additional-topics.html"><a href="additional-topics.html#fixed-effects-vs.-random-effects"><i class="fa fa-check"></i><b>16.3.2</b> Fixed Effects vs. Random Effects</a></li>
+<li class="chapter" data-level="16.3.3" data-path="additional-topics.html"><a href="additional-topics.html#hausman-test"><i class="fa fa-check"></i><b>16.3.3</b> Hausman Test</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="additional-topics.html"><a href="additional-topics.html#lagged-values-and-preliminaries-in-forecasting"><i class="fa fa-check"></i><b>16.4</b> Lagged Values and Preliminaries in Forecasting</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-time-series"><i class="fa fa-check"></i><b>16.4.1</b> Simulated Time Series</a></li>
+<li class="chapter" data-level="16.4.2" data-path="additional-topics.html"><a href="additional-topics.html#real-data-1"><i class="fa fa-check"></i><b>16.4.2</b> Real Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="the-end.html"><a href="the-end.html"><i class="fa fa-check"></i><b>17</b> The End!</a></li>
 </ul>
 
       </nav>
@@ -418,7 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This version of the book was built using R version 4.4.2. See below for the session information:</p>
 <pre><code>## R version 4.4.2 (2024-10-31 ucrt)
 ## Platform: x86_64-w64-mingw32/x64
-## Running under: Windows 11 x64 (build 22631)
+## Running under: Windows 11 x64 (build 26100)
 ## 
 ## Matrix products: default
 ## 
@@ -434,30 +462,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] leaflet_2.2.2       WDI_2.7.8           gifski_1.32.0-1     rnaturalearth_1.0.1 sf_1.0-19          
-##  [6] gganimate_1.0.9     bookdown_0.41       readxl_1.4.3        sandwich_3.1-1      car_3.1-3          
-## [11] carData_3.0-5       stargazer_5.2.3     wooldridge_1.4-4    lmtest_0.9-40       zoo_1.8-12         
-## [16] lubridate_1.9.4     forcats_1.0.0       stringr_1.5.1       dplyr_1.1.4         purrr_1.0.2        
-## [21] readr_2.1.5         tidyr_1.3.1         tibble_3.2.1        ggplot2_3.5.1       tidyverse_2.0.0    
+##  [1] bookdown_0.41    wooldridge_1.4-4 tseries_0.10-58  zoo_1.8-12       forecast_8.23.0  lubridate_1.9.4 
+##  [7] forcats_1.0.0    stringr_1.5.1    dplyr_1.1.4      purrr_1.0.2      readr_2.1.5      tidyr_1.3.1     
+## [13] tibble_3.2.1     ggplot2_3.5.1    tidyverse_2.0.0  plm_2.6-5       
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.2.1        viridisLite_0.4.2       farver_2.1.2            fastmap_1.2.0          
-##  [5] tweenr_2.0.3            digest_0.6.37           timechange_0.3.0        lifecycle_1.0.4        
-##  [9] terra_1.8-5             magrittr_2.0.3          compiler_4.4.2          rlang_1.1.4            
-## [13] sass_0.4.9              progress_1.2.3          tools_4.4.2             utf8_1.2.4             
-## [17] yaml_2.3.10             knitr_1.49              htmlwidgets_1.6.4       prettyunits_1.2.0      
-## [21] labeling_0.4.3          classInt_0.4-10         abind_1.4-8             KernSmooth_2.23-24     
-## [25] withr_3.0.2             grid_4.4.2              e1071_1.7-16            colorspace_2.1-1       
-## [29] scales_1.3.0            cli_3.6.3               rmarkdown_2.29          crayon_1.5.3           
-## [33] generics_0.1.3          rstudioapi_0.17.1       httr_1.4.7              tzdb_0.4.0             
-## [37] DBI_1.2.3               cachem_1.1.0            proxy_0.4-27            splines_4.4.2          
-## [41] cellranger_1.1.0        vctrs_0.6.5             Matrix_1.7-1            jsonlite_1.8.9         
-## [45] hms_1.1.3               Formula_1.2-5           crosstalk_1.2.1         jquerylib_0.1.4        
-## [49] units_0.8-5             glue_1.8.0              codetools_0.2-20        stringi_1.8.4          
-## [53] gtable_0.3.6            munsell_0.5.1           pillar_1.10.0           htmltools_0.5.8.1      
-## [57] rnaturalearthdata_1.0.0 R6_2.5.1                evaluate_1.0.1          lattice_0.22-6         
-## [61] bslib_0.8.0             class_7.3-22            Rcpp_1.0.13-1           nlme_3.1-166           
-## [65] mgcv_1.9-1              xfun_0.49               pkgconfig_2.0.3</code></pre>
+##  [1] gtable_0.3.6      bslib_0.8.0       xfun_0.49         collapse_2.1.0    lattice_0.22-6    tzdb_0.4.0       
+##  [7] quadprog_1.5-8    vctrs_0.6.5       tools_4.4.2       Rdpack_2.6.2      generics_0.1.3    curl_6.0.1       
+## [13] parallel_4.4.2    sandwich_3.1-1    xts_0.14.1        pkgconfig_2.0.3   Matrix_1.7-1      lifecycle_1.0.4  
+## [19] farver_2.1.2      compiler_4.4.2    maxLik_1.5-2.1    munsell_0.5.1     sass_0.4.9        htmltools_0.5.8.1
+## [25] yaml_2.3.10       Formula_1.2-5     jquerylib_0.1.4   pillar_1.10.0     MASS_7.3-61       cachem_1.1.0     
+## [31] nlme_3.1-166      fracdiff_1.5-3    tidyselect_1.2.1  bdsmatrix_1.3-7   digest_0.6.37     stringi_1.8.4    
+## [37] labeling_0.4.3    splines_4.4.2     miscTools_0.6-28  fastmap_1.2.0     grid_4.4.2        colorspace_2.1-1 
+## [43] cli_3.6.3         magrittr_2.0.3    withr_3.0.2       scales_1.3.0      timechange_0.3.0  TTR_0.24.4       
+## [49] rmarkdown_2.29    quantmod_0.4.26   nnet_7.3-19       timeDate_4041.110 hms_1.1.3         urca_1.3-4       
+## [55] evaluate_1.0.1    knitr_1.49        rbibutils_2.3     lmtest_0.9-40     mgcv_1.9-1        rlang_1.1.4      
+## [61] Rcpp_1.0.13-1     glue_1.8.0        jsonlite_1.8.9    rstudioapi_0.17.1 R6_2.5.1</code></pre>
 </div>
 <div id="preliminaries" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Preliminaries<a href="basic-introduction-to-r.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
