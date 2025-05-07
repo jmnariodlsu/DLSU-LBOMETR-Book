@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-05-01" />
+<meta name="date" content="2025-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -188,9 +188,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="grouping-process.html"><a href="grouping-process.html"><i class="fa fa-check"></i><b>4</b> Grouping Process</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="grouping-process.html"><a href="grouping-process.html#survey"><i class="fa fa-check"></i><b>4.1</b> Survey</a></li>
-<li class="chapter" data-level="4.2" data-path="grouping-process.html"><a href="grouping-process.html#how-groups-are-formed"><i class="fa fa-check"></i><b>4.2</b> How Groups Are Formed</a></li>
-<li class="chapter" data-level="4.3" data-path="grouping-process.html"><a href="grouping-process.html#announcement-of-groups"><i class="fa fa-check"></i><b>4.3</b> Announcement of Groups</a></li>
+<li class="chapter" data-level="4.1" data-path="grouping-process.html"><a href="grouping-process.html#how-groups-are-formed"><i class="fa fa-check"></i><b>4.1</b> How Groups Are Formed</a></li>
+<li class="chapter" data-level="4.2" data-path="grouping-process.html"><a href="grouping-process.html#announcement-of-groups"><i class="fa fa-check"></i><b>4.2</b> Announcement of Groups</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-story-research-question.html"><a href="data-story-research-question.html"><i class="fa fa-check"></i><b>5</b> Data Story Research Question</a>
 <ul>
@@ -220,6 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-the-final-report"><i class="fa fa-check"></i><b>6.5.5</b> 5. Rendering the Final Report</a></li>
 <li class="chapter" data-level="6.5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#summary-workflow"><i class="fa fa-check"></i><b>6.5.6</b> Summary Workflow</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#note"><i class="fa fa-check"></i><b>6.6</b> Note:</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>7</b> Data Management - Cross-Sectional Data</a>
 <ul>
@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#replace-with-0"><i class="fa fa-check"></i><b>8.4.2</b> Replace with <code>0</code></a></li>
 <li class="chapter" data-level="8.4.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values"><i class="fa fa-check"></i><b>8.4.3</b> Remove Rows or Columns with Missing Values</a></li>
 <li class="chapter" data-level="8.4.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean"><i class="fa fa-check"></i><b>8.4.4</b> Imputing Missing Values with the Mean</a></li>
-<li class="chapter" data-level="8.4.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#note"><i class="fa fa-check"></i><b>8.4.5</b> Note:</a></li>
+<li class="chapter" data-level="8.4.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#note-1"><i class="fa fa-check"></i><b>8.4.5</b> Note:</a></li>
 <li class="chapter" data-level="8.4.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#best-practice"><i class="fa fa-check"></i><b>8.4.6</b> Best Practice:</a></li>
 <li class="chapter" data-level="8.4.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#next-meeting"><i class="fa fa-check"></i><b>8.4.7</b> Next Meeting:</a></li>
 <li class="chapter" data-level="8.4.8" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#final-note"><i class="fa fa-check"></i><b>8.4.8</b> Final Note:</a></li>
@@ -449,39 +449,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] grid      stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] tseries_0.10-58     forecast_8.23.0     plm_2.6-5           samplingbook_1.2.4  survey_4.4-2       
-##  [6] survival_3.7-0      Matrix_1.7-1        sampling_2.10       pps_1.0             sandwich_3.1-1     
-## [11] car_3.1-3           carData_3.0-5       stargazer_5.2.3     lmtest_0.9-40       wooldridge_1.4-4   
-## [16] gtsummary_2.0.4     psych_2.5.3         av_0.9.4            scales_1.3.0        leaflet_2.2.2      
-## [21] WDI_2.7.8           gifski_1.32.0-1     rnaturalearth_1.0.1 sf_1.0-19           gganimate_1.0.9    
-## [26] forcats_1.0.0       purrr_1.0.2         readr_2.1.5         tibble_3.2.1        ggplot2_3.5.1      
-## [31] tidyverse_2.0.0     readxl_1.4.3        tidyr_1.3.1         zoo_1.8-12          lubridate_1.9.4    
-## [36] stringr_1.5.1       dplyr_1.1.4         bookdown_0.41      
+##  [1] forecast_8.23.0     plm_2.6-5           samplingbook_1.2.4  survey_4.4-2        survival_3.7-0     
+##  [6] Matrix_1.7-1        sampling_2.10       pps_1.0             sandwich_3.1-1      car_3.1-3          
+## [11] carData_3.0-5       stargazer_5.2.3     lmtest_0.9-40       wooldridge_1.4-4    gtsummary_2.0.4    
+## [16] psych_2.5.3         av_0.9.4            scales_1.3.0        leaflet_2.2.2       WDI_2.7.8          
+## [21] gifski_1.32.0-1     rnaturalearth_1.0.1 sf_1.0-19           gganimate_1.0.9     forcats_1.0.0      
+## [26] purrr_1.0.2         readr_2.1.5         tibble_3.2.1        ggplot2_3.5.1       tidyverse_2.0.0    
+## [31] readxl_1.4.3        tidyr_1.3.1         zoo_1.8-12          lubridate_1.9.4     stringr_1.5.1      
+## [36] dplyr_1.1.4         bookdown_0.41      
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rdpack_2.6.2            DBI_1.2.3               mnormt_2.1.1            s2_1.1.7               
-##  [5] rlang_1.1.4             magrittr_2.0.3          e1071_1.7-16            compiler_4.4.2         
-##  [9] mgcv_1.9-1              vctrs_0.6.5             quadprog_1.5-8          pkgconfig_2.0.3        
-## [13] wk_0.9.4                crayon_1.5.3            fastmap_1.2.0           labeling_0.4.3         
-## [17] utf8_1.2.4              rmarkdown_2.29          markdown_1.13           tzdb_0.4.0             
-## [21] miscTools_0.6-28        xfun_0.49               cachem_1.1.0            jsonlite_1.8.9         
-## [25] progress_1.2.3          collapse_2.1.0          tweenr_2.0.3            terra_1.8-5            
-## [29] parallel_4.4.2          prettyunits_1.2.0       R6_2.5.1                bslib_0.8.0            
-## [33] stringi_1.8.4           jquerylib_0.1.4         cellranger_1.1.0        Rcpp_1.0.13-1          
-## [37] knitr_1.49              nnet_7.3-19             splines_4.4.2           timechange_0.3.0       
-## [41] tidyselect_1.2.1        rstudioapi_0.17.1       abind_1.4-8             yaml_2.3.10            
-## [45] timeDate_4041.110       maxLik_1.5-2.1          codetools_0.2-20        curl_6.0.1             
-## [49] lattice_0.22-6          quantmod_0.4.26         withr_3.0.2             urca_1.3-4             
-## [53] evaluate_1.0.1          rnaturalearthdata_1.0.0 units_0.8-5             proxy_0.4-27           
-## [57] xts_0.14.1              xml2_1.3.6              lpSolve_5.6.23          pillar_1.10.0          
-## [61] rsconnect_1.3.4         KernSmooth_2.23-24      TTR_0.24.4              generics_0.1.3         
-## [65] hms_1.1.3               munsell_0.5.1           commonmark_1.9.2        class_7.3-22           
-## [69] glue_1.8.0              tools_4.4.2             mitools_2.4             rbibutils_2.3          
-## [73] crosstalk_1.2.1         bdsmatrix_1.3-7         cards_0.4.0             colorspace_2.1-1       
-## [77] nlme_3.1-166            fracdiff_1.5-3          Formula_1.2-5           cli_3.6.3              
-## [81] viridisLite_0.4.2       gt_0.11.1               gtable_0.3.6            sass_0.4.9             
-## [85] digest_0.6.37           classInt_0.4-10         htmlwidgets_1.6.4       farver_2.1.2           
-## [89] htmltools_0.5.8.1       lifecycle_1.0.4         httr_1.4.7              MASS_7.3-61</code></pre>
+##  [5] rlang_1.1.4             magrittr_2.0.3          tseries_0.10-58         e1071_1.7-16           
+##  [9] compiler_4.4.2          mgcv_1.9-1              vctrs_0.6.5             quadprog_1.5-8         
+## [13] pkgconfig_2.0.3         wk_0.9.4                crayon_1.5.3            fastmap_1.2.0          
+## [17] labeling_0.4.3          utf8_1.2.4              rmarkdown_2.29          markdown_1.13          
+## [21] tzdb_0.4.0              miscTools_0.6-28        xfun_0.49               cachem_1.1.0           
+## [25] jsonlite_1.8.9          progress_1.2.3          collapse_2.1.0          tweenr_2.0.3           
+## [29] terra_1.8-5             parallel_4.4.2          prettyunits_1.2.0       R6_2.5.1               
+## [33] bslib_0.8.0             stringi_1.8.4           jquerylib_0.1.4         cellranger_1.1.0       
+## [37] Rcpp_1.0.13-1           knitr_1.49              nnet_7.3-19             splines_4.4.2          
+## [41] timechange_0.3.0        tidyselect_1.2.1        rstudioapi_0.17.1       abind_1.4-8            
+## [45] yaml_2.3.10             timeDate_4041.110       maxLik_1.5-2.1          codetools_0.2-20       
+## [49] curl_6.0.1              lattice_0.22-6          quantmod_0.4.26         withr_3.0.2            
+## [53] urca_1.3-4              evaluate_1.0.1          rnaturalearthdata_1.0.0 units_0.8-5            
+## [57] proxy_0.4-27            xts_0.14.1              xml2_1.3.6              lpSolve_5.6.23         
+## [61] pillar_1.10.0           rsconnect_1.3.4         KernSmooth_2.23-24      TTR_0.24.4             
+## [65] generics_0.1.3          hms_1.1.3               munsell_0.5.1           commonmark_1.9.2       
+## [69] class_7.3-22            glue_1.8.0              tools_4.4.2             mitools_2.4            
+## [73] rbibutils_2.3           crosstalk_1.2.1         bdsmatrix_1.3-7         cards_0.4.0            
+## [77] colorspace_2.1-1        nlme_3.1-166            fracdiff_1.5-3          Formula_1.2-5          
+## [81] cli_3.6.3               viridisLite_0.4.2       gt_0.11.1               gtable_0.3.6           
+## [85] sass_0.4.9              digest_0.6.37           classInt_0.4-10         htmlwidgets_1.6.4      
+## [89] farver_2.1.2            htmltools_0.5.8.1       lifecycle_1.0.4         httr_1.4.7             
+## [93] MASS_7.3-61</code></pre>
 </div>
 <div id="preliminaries" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Preliminaries<a href="basic-introduction-to-r.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -684,8 +685,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>This ensures an organized and efficient workflow while centralizing all files in the shared Google Drive for easy access and submission.</p>
-
 </div>
+</div>
+<div id="note" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Note:<a href="basic-introduction-to-r.html#note" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For the next chapters, before coming to class, ensure that you have installed the necessary packages. Therefore, please go to the next chapters of the course book then Find codes that have <code>install.packages</code>. Please install all the packages so that you will not have any issues.</p>
+
 </div>
 </div>
             </section>
