@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-05-07" />
+<meta name="date" content="2025-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -428,11 +428,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">14</span> Multivariate Regression with Dummy Variables<a href="multivariate-regression-with-dummy-variables.html#multivariate-regression-with-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="preliminaries-6" class="section level4 hasAnchor" number="14.0.0.1">
 <h4><span class="header-section-number">14.0.0.1</span> Preliminaries<a href="multivariate-regression-with-dummy-variables.html#preliminaries-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="multivariate-regression-with-dummy-variables.html#cb331-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb331-2"><a href="multivariate-regression-with-dummy-variables.html#cb331-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code></pre></div>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="multivariate-regression-with-dummy-variables.html#cb332-1" tabindex="-1"></a><span class="fu">library</span>(wooldridge) </span>
-<span id="cb332-2"><a href="multivariate-regression-with-dummy-variables.html#cb332-2" tabindex="-1"></a><span class="fu">data</span>(wage1)</span>
-<span id="cb332-3"><a href="multivariate-regression-with-dummy-variables.html#cb332-3" tabindex="-1"></a>sample1<span class="ot">&lt;-</span>wage1</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="multivariate-regression-with-dummy-variables.html#cb362-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb362-2"><a href="multivariate-regression-with-dummy-variables.html#cb362-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="multivariate-regression-with-dummy-variables.html#cb363-1" tabindex="-1"></a><span class="fu">library</span>(wooldridge) </span>
+<span id="cb363-2"><a href="multivariate-regression-with-dummy-variables.html#cb363-2" tabindex="-1"></a><span class="fu">data</span>(wage1)</span>
+<span id="cb363-3"><a href="multivariate-regression-with-dummy-variables.html#cb363-3" tabindex="-1"></a>sample1<span class="ot">&lt;-</span>wage1</span></code></pre></div>
 </div>
 <div id="dummy-variables" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> Dummy Variables<a href="multivariate-regression-with-dummy-variables.html#dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -473,8 +473,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Regression Models:</p>
 <p>wage = <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\epsilon\)</span></p>
 <p>Since there is only the intercept, there are no independent variables:</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="multivariate-regression-with-dummy-variables.html#cb333-1" tabindex="-1"></a>null<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span><span class="dv">1</span>, <span class="at">data=</span>sample1)</span>
-<span id="cb333-2"><a href="multivariate-regression-with-dummy-variables.html#cb333-2" tabindex="-1"></a><span class="fu">summary</span>(null)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="multivariate-regression-with-dummy-variables.html#cb364-1" tabindex="-1"></a>null<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span><span class="dv">1</span>, <span class="at">data=</span>sample1)</span>
+<span id="cb364-2"><a href="multivariate-regression-with-dummy-variables.html#cb364-2" tabindex="-1"></a><span class="fu">summary</span>(null)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ 1, data = sample1)
@@ -498,8 +498,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>This model has different intercepts for females (<span class="math inline">\(\beta_0\)</span>+ <span class="math inline">\(\delta_0\)</span>) and males <span class="math inline">\(\beta_0\)</span></p></li>
 <li><p>The intercept for females is the average wage for females and the intercept for males is the average wage for males</p></li>
 <li><p>The regression t-test for significance of the coefficient on female is identical to the t-test for significant differences in wage between the female group and the male group, with the same mean, t-statistic, and p-value.</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="multivariate-regression-with-dummy-variables.html#cb335-1" tabindex="-1"></a>single<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>sample1<span class="sc">$</span>female, <span class="at">data =</span> sample1)</span>
-<span id="cb335-2"><a href="multivariate-regression-with-dummy-variables.html#cb335-2" tabindex="-1"></a><span class="fu">summary</span>(single)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="multivariate-regression-with-dummy-variables.html#cb366-1" tabindex="-1"></a>single<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>sample1<span class="sc">$</span>female, <span class="at">data =</span> sample1)</span>
+<span id="cb366-2"><a href="multivariate-regression-with-dummy-variables.html#cb366-2" tabindex="-1"></a><span class="fu">summary</span>(single)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ sample1$female, data = sample1)
@@ -520,15 +520,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## F-statistic: 68.54 on 1 and 524 DF,  p-value: 1.042e-15</code></pre></li>
 </ul>
 <p>We can plot the regression line;</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="multivariate-regression-with-dummy-variables.html#cb337-1" tabindex="-1"></a>sample1 <span class="sc">%&gt;%</span> </span>
-<span id="cb337-2"><a href="multivariate-regression-with-dummy-variables.html#cb337-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>female, <span class="at">y=</span>wage))<span class="sc">+</span></span>
-<span id="cb337-3"><a href="multivariate-regression-with-dummy-variables.html#cb337-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb337-4"><a href="multivariate-regression-with-dummy-variables.html#cb337-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
-<span id="cb337-5"><a href="multivariate-regression-with-dummy-variables.html#cb337-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb337-6"><a href="multivariate-regression-with-dummy-variables.html#cb337-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Gender&quot;</span>, <span class="at">y=</span><span class="st">&quot;Wage&quot;</span>,</span>
-<span id="cb337-7"><a href="multivariate-regression-with-dummy-variables.html#cb337-7" tabindex="-1"></a>       <span class="at">title=</span><span class="st">&quot;Scatter Plot with Regression Line&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="multivariate-regression-with-dummy-variables.html#cb368-1" tabindex="-1"></a>sample1 <span class="sc">%&gt;%</span> </span>
+<span id="cb368-2"><a href="multivariate-regression-with-dummy-variables.html#cb368-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>female, <span class="at">y=</span>wage))<span class="sc">+</span></span>
+<span id="cb368-3"><a href="multivariate-regression-with-dummy-variables.html#cb368-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb368-4"><a href="multivariate-regression-with-dummy-variables.html#cb368-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb368-5"><a href="multivariate-regression-with-dummy-variables.html#cb368-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb368-6"><a href="multivariate-regression-with-dummy-variables.html#cb368-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Gender&quot;</span>, <span class="at">y=</span><span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb368-7"><a href="multivariate-regression-with-dummy-variables.html#cb368-7" tabindex="-1"></a>       <span class="at">title=</span><span class="st">&quot;Scatter Plot with Regression Line&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
 <p>The figure shows the slope <code>-2.51</code> and the intercepts: 7.10 and 4.59</p>
 <p>Results:</p>
 <table>
@@ -586,39 +586,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Create four categories: <code>female*single</code>, <code>male*single</code>, <code>female*married</code>, and <code>male*married</code>; include 3 of them in the regression model (<code>male*single</code> is the reference category).</li>
 </ol></li>
 <li><p><strong>Note:</strong> Choice of reference category depends on you but commonly, the most number of observations in the category is chosen.</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="multivariate-regression-with-dummy-variables.html#cb339-1" tabindex="-1"></a>sample_modified <span class="ot">&lt;-</span> sample1 <span class="sc">%&gt;%</span></span>
-<span id="cb339-2"><a href="multivariate-regression-with-dummy-variables.html#cb339-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">female_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>), </span>
-<span id="cb339-3"><a href="multivariate-regression-with-dummy-variables.html#cb339-3" tabindex="-1"></a>         <span class="at">male_single =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),  </span>
-<span id="cb339-4"><a href="multivariate-regression-with-dummy-variables.html#cb339-4" tabindex="-1"></a>         <span class="at">male_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb339-5"><a href="multivariate-regression-with-dummy-variables.html#cb339-5" tabindex="-1"></a>         <span class="at">female_single =</span> <span class="fu">if_else</span>(female<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>))  </span>
-<span id="cb339-6"><a href="multivariate-regression-with-dummy-variables.html#cb339-6" tabindex="-1"></a><span class="fu">head</span>(sample_modified)</span></code></pre></div>
-<pre><code>##   wage educ exper tenure nonwhite female married numdep smsa northcen south west construc ndurman trcommpu trade
-## 1 3.10   11     2      0        0      1       0      2    1        0     0    1        0       0        0     0
-## 2 3.24   12    22      2        0      1       1      3    1        0     0    1        0       0        0     0
-## 3 3.00   11     2      0        0      0       0      2    0        0     0    1        0       0        0     1
-## 4 6.00    8    44     28        0      0       1      0    1        0     0    1        0       0        0     0
-## 5 5.30   12     7      2        0      0       1      1    0        0     0    1        0       0        0     0
-## 6 8.75   16     9      8        0      0       1      0    1        0     0    1        0       0        0     0
-##   services profserv profocc clerocc servocc    lwage expersq tenursq female_married male_single male_married
-## 1        0        0       0       0       0 1.131402       4       0              0           0            0
-## 2        1        0       0       0       1 1.175573     484       4              1           0            0
-## 3        0        0       0       0       0 1.098612       4       0              0           1            0
-## 4        0        0       0       1       0 1.791759    1936     784              0           0            1
-## 5        0        0       0       0       0 1.667707      49       4              0           0            1
-## 6        0        1       1       0       0 2.169054      81      64              0           0            1
-##   female_single
-## 1             1
-## 2             0
-## 3             0
-## 4             0
-## 5             0
-## 6             0</code></pre></li>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="multivariate-regression-with-dummy-variables.html#cb370-1" tabindex="-1"></a>sample_modified <span class="ot">&lt;-</span> sample1 <span class="sc">%&gt;%</span></span>
+<span id="cb370-2"><a href="multivariate-regression-with-dummy-variables.html#cb370-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">female_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>), </span>
+<span id="cb370-3"><a href="multivariate-regression-with-dummy-variables.html#cb370-3" tabindex="-1"></a>         <span class="at">male_single =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>),  </span>
+<span id="cb370-4"><a href="multivariate-regression-with-dummy-variables.html#cb370-4" tabindex="-1"></a>         <span class="at">male_married =</span> <span class="fu">if_else</span>(female <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb370-5"><a href="multivariate-regression-with-dummy-variables.html#cb370-5" tabindex="-1"></a>         <span class="at">female_single =</span> <span class="fu">if_else</span>(female<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> married <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>))  </span>
+<span id="cb370-6"><a href="multivariate-regression-with-dummy-variables.html#cb370-6" tabindex="-1"></a><span class="fu">head</span>(sample_modified)</span></code></pre></div>
+<pre><code>##   wage educ exper tenure nonwhite female married numdep smsa northcen south west construc
+## 1 3.10   11     2      0        0      1       0      2    1        0     0    1        0
+## 2 3.24   12    22      2        0      1       1      3    1        0     0    1        0
+## 3 3.00   11     2      0        0      0       0      2    0        0     0    1        0
+## 4 6.00    8    44     28        0      0       1      0    1        0     0    1        0
+## 5 5.30   12     7      2        0      0       1      1    0        0     0    1        0
+## 6 8.75   16     9      8        0      0       1      0    1        0     0    1        0
+##   ndurman trcommpu trade services profserv profocc clerocc servocc    lwage expersq tenursq
+## 1       0        0     0        0        0       0       0       0 1.131402       4       0
+## 2       0        0     0        1        0       0       0       1 1.175573     484       4
+## 3       0        0     1        0        0       0       0       0 1.098612       4       0
+## 4       0        0     0        0        0       0       1       0 1.791759    1936     784
+## 5       0        0     0        0        0       0       0       0 1.667707      49       4
+## 6       0        0     0        0        1       1       0       0 2.169054      81      64
+##   female_married male_single male_married female_single
+## 1              0           0            0             1
+## 2              1           0            0             0
+## 3              0           1            0             0
+## 4              0           0            1             0
+## 5              0           0            1             0
+## 6              0           0            1             0</code></pre></li>
 </ul>
 <p>Regression model:</p>
 <p><span class="math inline">\(wage = \beta_0+\beta_1femalesingle+\beta_2femalemarried+\beta_3malemarried+\epsilon\)</span></p>
 <p>You need to drop the reference category variable which we already did when we dropped <code>malesingle</code></p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="multivariate-regression-with-dummy-variables.html#cb341-1" tabindex="-1"></a>interaction<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female_married<span class="sc">+</span>female_single<span class="sc">+</span>male_married, <span class="at">data=</span>sample_modified)</span>
-<span id="cb341-2"><a href="multivariate-regression-with-dummy-variables.html#cb341-2" tabindex="-1"></a><span class="fu">summary</span>(interaction)</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="multivariate-regression-with-dummy-variables.html#cb372-1" tabindex="-1"></a>interaction<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female_married<span class="sc">+</span>female_single<span class="sc">+</span>male_married, <span class="at">data=</span>sample_modified)</span>
+<span id="cb372-2"><a href="multivariate-regression-with-dummy-variables.html#cb372-2" tabindex="-1"></a><span class="fu">summary</span>(interaction)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ female_married + female_single + male_married, 
@@ -642,8 +642,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## F-statistic: 38.45 on 3 and 522 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Regression model:</p>
 <p><span class="math inline">\(wage = \beta_0+\beta_1female+\beta_2married+\beta_3femalemarried+\epsilon\)</span></p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="multivariate-regression-with-dummy-variables.html#cb343-1" tabindex="-1"></a>int1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female<span class="sc">+</span>married<span class="sc">+</span>female_married, <span class="at">data=</span>sample_modified)</span>
-<span id="cb343-2"><a href="multivariate-regression-with-dummy-variables.html#cb343-2" tabindex="-1"></a><span class="fu">summary</span>(int1)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="multivariate-regression-with-dummy-variables.html#cb374-1" tabindex="-1"></a>int1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>female<span class="sc">+</span>married<span class="sc">+</span>female_married, <span class="at">data=</span>sample_modified)</span>
+<span id="cb374-2"><a href="multivariate-regression-with-dummy-variables.html#cb374-2" tabindex="-1"></a><span class="fu">summary</span>(int1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ female + married + female_married, data = sample_modified)
@@ -665,14 +665,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.181,  Adjusted R-squared:  0.1763 
 ## F-statistic: 38.45 on 3 and 522 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Let’s have pretty regression results table:</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="multivariate-regression-with-dummy-variables.html#cb345-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;stargazer&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;stargazer&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="multivariate-regression-with-dummy-variables.html#cb346-1" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb346-2"><a href="multivariate-regression-with-dummy-variables.html#cb346-2" tabindex="-1"></a><span class="co"># Create a regression table</span></span>
-<span id="cb346-3"><a href="multivariate-regression-with-dummy-variables.html#cb346-3" tabindex="-1"></a><span class="fu">stargazer</span>(null, interaction, int1, <span class="co">#regression</span></span>
-<span id="cb346-4"><a href="multivariate-regression-with-dummy-variables.html#cb346-4" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Regression Results&quot;</span>,</span>
-<span id="cb346-5"><a href="multivariate-regression-with-dummy-variables.html#cb346-5" tabindex="-1"></a>          <span class="at">dep.var.labels =</span> <span class="st">&quot;Wage&quot;</span>,</span>
-<span id="cb346-6"><a href="multivariate-regression-with-dummy-variables.html#cb346-6" tabindex="-1"></a>          <span class="co">#covariate.labels = c(&quot;B1&quot;, &quot;B2&quot;, &quot;BN&quot;), label your independent variables</span></span>
-<span id="cb346-7"><a href="multivariate-regression-with-dummy-variables.html#cb346-7" tabindex="-1"></a>          <span class="at">omit.stat =</span> <span class="fu">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;ser&quot;</span>), <span class="at">digits =</span> <span class="dv">3</span>) <span class="co"># Omits F-statistic and standard error from the table and sets decimal places to 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="multivariate-regression-with-dummy-variables.html#cb376-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;stargazer&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;stargazer&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="multivariate-regression-with-dummy-variables.html#cb377-1" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code></pre></div>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.3. https://CRAN.R-project.org/package=stargazer</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="multivariate-regression-with-dummy-variables.html#cb381-1" tabindex="-1"></a><span class="co"># Create a regression table</span></span>
+<span id="cb381-2"><a href="multivariate-regression-with-dummy-variables.html#cb381-2" tabindex="-1"></a><span class="fu">stargazer</span>(null, interaction, int1, <span class="co">#regression</span></span>
+<span id="cb381-3"><a href="multivariate-regression-with-dummy-variables.html#cb381-3" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Regression Results&quot;</span>,</span>
+<span id="cb381-4"><a href="multivariate-regression-with-dummy-variables.html#cb381-4" tabindex="-1"></a>          <span class="at">dep.var.labels =</span> <span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb381-5"><a href="multivariate-regression-with-dummy-variables.html#cb381-5" tabindex="-1"></a>          <span class="co">#covariate.labels = c(&quot;B1&quot;, &quot;B2&quot;, &quot;BN&quot;), label your independent variables</span></span>
+<span id="cb381-6"><a href="multivariate-regression-with-dummy-variables.html#cb381-6" tabindex="-1"></a>          <span class="at">omit.stat =</span> <span class="fu">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;ser&quot;</span>), <span class="at">digits =</span> <span class="dv">3</span>) <span class="co"># Omits F-statistic and standard error from the table and sets decimal places to 3</span></span></code></pre></div>
 <pre><code>## 
 ## Regression Results
 ## ============================================
@@ -730,8 +734,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Regression with several related dummy variables needs to have one reference category.</p></li>
 <li><p>For example: Dummies for regions: northcentral, south, west. So, east is the reference category. Thus, <span class="math inline">\(east = 1-northcentral-south-west\)</span></p>
 <p><span class="math inline">\(wage = \beta_0+\beta_1northcentral+\beta_2south+\beta_3west+\epsilon\)</span></p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="multivariate-regression-with-dummy-variables.html#cb348-1" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>northcen<span class="sc">+</span>south<span class="sc">+</span>west, <span class="at">data=</span>sample_modified)</span>
-<span id="cb348-2"><a href="multivariate-regression-with-dummy-variables.html#cb348-2" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="multivariate-regression-with-dummy-variables.html#cb383-1" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>northcen<span class="sc">+</span>south<span class="sc">+</span>west, <span class="at">data=</span>sample_modified)</span>
+<span id="cb383-2"><a href="multivariate-regression-with-dummy-variables.html#cb383-2" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ northcen + south + west, data = sample_modified)
@@ -791,8 +795,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The same slope for females and males = <span class="math inline">\(\beta_1\)</span></p></li>
 <li><p>Intercept for males = <span class="math inline">\(\beta_0\)</span></p></li>
 <li><p>Intercept for females = <span class="math inline">\(\beta_0+\delta_0\)</span></p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="multivariate-regression-with-dummy-variables.html#cb350-1" tabindex="-1"></a>withedu<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span>
-<span id="cb350-2"><a href="multivariate-regression-with-dummy-variables.html#cb350-2" tabindex="-1"></a><span class="fu">summary</span>(withedu)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="multivariate-regression-with-dummy-variables.html#cb385-1" tabindex="-1"></a>withedu<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span>
+<span id="cb385-2"><a href="multivariate-regression-with-dummy-variables.html#cb385-2" tabindex="-1"></a><span class="fu">summary</span>(withedu)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ educ + female, data = sample_modified)
@@ -851,13 +855,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Plotting the graph:</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="multivariate-regression-with-dummy-variables.html#cb352-1" tabindex="-1"></a><span class="fu">ggplot</span>(sample_modified, <span class="fu">aes</span>(<span class="at">x =</span> educ, <span class="at">y =</span> wage, <span class="at">color =</span> <span class="fu">as.factor</span>(female))) <span class="sc">+</span> <span class="co">#differentiates point by female</span></span>
-<span id="cb352-2"><a href="multivariate-regression-with-dummy-variables.html#cb352-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb352-3"><a href="multivariate-regression-with-dummy-variables.html#cb352-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb352-4"><a href="multivariate-regression-with-dummy-variables.html#cb352-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Gender&quot;</span>) <span class="sc">+</span></span>
-<span id="cb352-5"><a href="multivariate-regression-with-dummy-variables.html#cb352-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb352-6"><a href="multivariate-regression-with-dummy-variables.html#cb352-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Regression of Wage on Education, Differentiated by Gender&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="multivariate-regression-with-dummy-variables.html#cb387-1" tabindex="-1"></a><span class="fu">ggplot</span>(sample_modified, <span class="fu">aes</span>(<span class="at">x =</span> educ, <span class="at">y =</span> wage, <span class="at">color =</span> <span class="fu">as.factor</span>(female))) <span class="sc">+</span> <span class="co">#differentiates point by female</span></span>
+<span id="cb387-2"><a href="multivariate-regression-with-dummy-variables.html#cb387-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb387-3"><a href="multivariate-regression-with-dummy-variables.html#cb387-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb387-4"><a href="multivariate-regression-with-dummy-variables.html#cb387-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Gender&quot;</span>) <span class="sc">+</span></span>
+<span id="cb387-5"><a href="multivariate-regression-with-dummy-variables.html#cb387-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb387-6"><a href="multivariate-regression-with-dummy-variables.html#cb387-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Regression of Wage on Education, Differentiated by Gender&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-223-1.png" width="672" /></p>
 </div>
 <div id="interaction-terms-with-non-dummy-variables" class="section level3 hasAnchor" number="14.1.3">
 <h3><span class="header-section-number">14.1.3</span> Interaction terms with non-dummy variables<a href="multivariate-regression-with-dummy-variables.html#interaction-terms-with-non-dummy-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -868,8 +872,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>slope for females = <span class="math inline">\(\beta_1+\delta_1\)</span></p></li>
 <li><p>intercept for males = <span class="math inline">\(\beta_0\)</span></p></li>
 <li><p>intercept for females = <span class="math inline">\(\beta_0+\delta_0\)</span></p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="multivariate-regression-with-dummy-variables.html#cb353-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ <span class="sc">+</span> female <span class="sc">+</span> female<span class="sc">:</span>educ, <span class="at">data =</span> sample_modified)</span>
-<span id="cb353-2"><a href="multivariate-regression-with-dummy-variables.html#cb353-2" tabindex="-1"></a><span class="fu">summary</span>(model) <span class="co">#you can create interaction term when regressing by using &#39;:&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="multivariate-regression-with-dummy-variables.html#cb388-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ <span class="sc">+</span> female <span class="sc">+</span> female<span class="sc">:</span>educ, <span class="at">data =</span> sample_modified)</span>
+<span id="cb388-2"><a href="multivariate-regression-with-dummy-variables.html#cb388-2" tabindex="-1"></a><span class="fu">summary</span>(model) <span class="co">#you can create interaction term when regressing by using &#39;:&#39;</span></span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ educ + female + female:educ, data = sample_modified)
@@ -906,13 +910,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\(H_0\)</span> : The coefficients on interaction terms are all zero, meaning that the impact of non-dummy variables on dependent variables is the same for the two groups.</p>
 <p><span class="math inline">\(H_a\)</span> : At least one of the coefficients is not zero, meaning, the impact is different for the two groups.</p>
 <p>Step 1: Fit the Full and Reduced Models</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="multivariate-regression-with-dummy-variables.html#cb355-1" tabindex="-1"></a>full<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female<span class="sc">+</span>female<span class="sc">:</span>educ<span class="sc">+</span>female<span class="sc">:</span>exper<span class="sc">+</span>female<span class="sc">:</span>tenure, <span class="at">data=</span>sample_modified)</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="multivariate-regression-with-dummy-variables.html#cb390-1" tabindex="-1"></a>full<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female<span class="sc">+</span>female<span class="sc">:</span>educ<span class="sc">+</span>female<span class="sc">:</span>exper<span class="sc">+</span>female<span class="sc">:</span>tenure, <span class="at">data=</span>sample_modified)</span></code></pre></div>
 <p>This model includes interactiono terms, allowing the effects of continuous variables to be different for females.</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="multivariate-regression-with-dummy-variables.html#cb356-1" tabindex="-1"></a>reduced<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="multivariate-regression-with-dummy-variables.html#cb391-1" tabindex="-1"></a>reduced<span class="ot">&lt;-</span><span class="fu">lm</span>(wage<span class="sc">~</span>educ<span class="sc">+</span>exper<span class="sc">+</span>tenure<span class="sc">+</span>female, <span class="at">data=</span>sample_modified)</span></code></pre></div>
 <p>This model assumes education, experience, and tenure have the same impact for males and females but allows for general difference in wage levels through female coefficient.</p>
 <p>Step 2: Perform the F-Test</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="multivariate-regression-with-dummy-variables.html#cb357-1" tabindex="-1"></a>result<span class="ot">&lt;-</span><span class="fu">anova</span>(reduced,full)</span>
-<span id="cb357-2"><a href="multivariate-regression-with-dummy-variables.html#cb357-2" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="multivariate-regression-with-dummy-variables.html#cb392-1" tabindex="-1"></a>result<span class="ot">&lt;-</span><span class="fu">anova</span>(reduced,full)</span>
+<span id="cb392-2"><a href="multivariate-regression-with-dummy-variables.html#cb392-2" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: wage ~ educ + exper + tenure + female

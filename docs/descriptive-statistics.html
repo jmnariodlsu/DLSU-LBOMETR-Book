@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-05-07" />
+<meta name="date" content="2025-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -432,25 +432,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="install-packages-1" class="section level3 hasAnchor" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> Install Packages<a href="descriptive-statistics.html#install-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We install and load the “psych” package then load the tidyverse package</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="descriptive-statistics.html#cb239-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;psych&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span>
-<span id="cb239-2"><a href="descriptive-statistics.html#cb239-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;gtsummary&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;gtsummary&quot;</span>)</span>
-<span id="cb239-3"><a href="descriptive-statistics.html#cb239-3" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb239-4"><a href="descriptive-statistics.html#cb239-4" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb239-5"><a href="descriptive-statistics.html#cb239-5" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="descriptive-statistics.html#cb265-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;psych&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span>
+<span id="cb265-2"><a href="descriptive-statistics.html#cb265-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;gtsummary&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;gtsummary&quot;</span>)</span>
+<span id="cb265-3"><a href="descriptive-statistics.html#cb265-3" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code></pre></div>
+<pre><code>## Warning: package &#39;psych&#39; was built under R version 4.4.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:scales&#39;:
+## 
+##     alpha, rescale</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
+## 
+##     %+%, alpha</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="descriptive-statistics.html#cb270-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb270-2"><a href="descriptive-statistics.html#cb270-2" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span></code></pre></div>
 </div>
 <div id="load-the-dataset-1" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Load the dataset<a href="descriptive-statistics.html#load-the-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="descriptive-statistics.html#cb240-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb240-2"><a href="descriptive-statistics.html#cb240-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="descriptive-statistics.html#cb271-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb271-2"><a href="descriptive-statistics.html#cb271-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##            used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells  4714187 251.8    8343625 445.6  8343625 445.6
-## Vcells 14534047 110.9   74462927 568.2 93077959 710.2</code></pre>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="descriptive-statistics.html#cb242-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
+## Ncells  3799730 203.0    6611092 353.1  6611092 353.1
+## Vcells 12736088  97.2   71564849 546.0 89456061 682.5</code></pre>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="descriptive-statistics.html#cb273-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
 <p>We subset the data:</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="descriptive-statistics.html#cb243-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
-<span id="cb243-2"><a href="descriptive-statistics.html#cb243-2" tabindex="-1"></a>Dataset_CP_f <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>)  </span>
-<span id="cb243-3"><a href="descriptive-statistics.html#cb243-3" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only male respondents</span></span>
-<span id="cb243-4"><a href="descriptive-statistics.html#cb243-4" tabindex="-1"></a>Dataset_CP_m <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="descriptive-statistics.html#cb274-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
+<span id="cb274-2"><a href="descriptive-statistics.html#cb274-2" tabindex="-1"></a>Dataset_CP_f <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>)  </span>
+<span id="cb274-3"><a href="descriptive-statistics.html#cb274-3" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only male respondents</span></span>
+<span id="cb274-4"><a href="descriptive-statistics.html#cb274-4" tabindex="-1"></a>Dataset_CP_m <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="frequency-table" class="section level2 hasAnchor" number="11.2">
@@ -459,20 +468,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="male" class="section level3 hasAnchor" number="11.2.1">
 <h3><span class="header-section-number">11.2.1</span> Male<a href="descriptive-statistics.html#male" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Calculate the descriptive statistics for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <em>describe</em> of the package <em>psych</em>:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="descriptive-statistics.html#cb244-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="descriptive-statistics.html#cb275-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren)</span></code></pre></div>
 <pre><code>##    vars   n  mean    sd median trimmed   mad min max range skew kurtosis   se
 ## X1    1 575 16.86 15.53     10   14.36 10.38   1 100    99 1.83     4.65 0.65</code></pre>
 <p>Notice how we directly use the <em>describe</em> function on the variable <strong>Q37a_HoursWeekChildren</strong> (called with the dollar sign operator, <em>$</em>, which works as follows: <em>name_dataset$name_variable</em> - notice that to access a specific variable, some functions can use the pipe operator while others require the dollar sign operator, as in this case). Notice also how we call the function <em>describe</em>: we use the :: operator, which tells R to look for a function within a specific package as follows</p>
 <p><em>name_package::name_function</em></p>
 <p>You could also simply call the function by only using its name, R will then search for that specific function across all the loaded R packages. However, if more packages have functions with the same name, specifying the name of the package with the :: operator helps assuring the usage of the correct function.</p>
 <p>Report the Frequency Table for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <code>tbl_summary</code> of the package <code>gtsummary</code>:</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="descriptive-statistics.html#cb246-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb246-2"><a href="descriptive-statistics.html#cb246-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
-<span id="cb246-3"><a href="descriptive-statistics.html#cb246-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb246-4"><a href="descriptive-statistics.html#cb246-4" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">&quot;{n} ({p}%)&quot;</span>),  <span class="co"># Show count &amp; percentage</span></span>
-<span id="cb246-5"><a href="descriptive-statistics.html#cb246-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
-<span id="cb246-6"><a href="descriptive-statistics.html#cb246-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb246-7"><a href="descriptive-statistics.html#cb246-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="descriptive-statistics.html#cb277-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
+<span id="cb277-2"><a href="descriptive-statistics.html#cb277-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
+<span id="cb277-3"><a href="descriptive-statistics.html#cb277-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb277-4"><a href="descriptive-statistics.html#cb277-4" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">&quot;{n} ({p}%)&quot;</span>),  <span class="co"># Show count &amp; percentage</span></span>
+<span id="cb277-5"><a href="descriptive-statistics.html#cb277-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
+<span id="cb277-6"><a href="descriptive-statistics.html#cb277-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb277-7"><a href="descriptive-statistics.html#cb277-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
 <div id="syyichzgji" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#syyichzgji table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -954,19 +963,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="histogram-1" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> Histogram<a href="descriptive-statistics.html#histogram-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Plot the histogram for the variable <strong>Q37a_HoursWeekChildren</strong></p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="descriptive-statistics.html#cb247-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Dataset_CP_m, <span class="fu">aes</span>(<span class="at">x =</span> Q37a_HoursWeekChildren)) <span class="sc">+</span>      </span>
-<span id="cb247-2"><a href="descriptive-statistics.html#cb247-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
-<span id="cb247-3"><a href="descriptive-statistics.html#cb247-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb247-4"><a href="descriptive-statistics.html#cb247-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
-<span id="cb247-5"><a href="descriptive-statistics.html#cb247-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span>   </span>
-<span id="cb247-6"><a href="descriptive-statistics.html#cb247-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram: Hours per week spent taking care of children&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Only male respondents&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb247-7"><a href="descriptive-statistics.html#cb247-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Hours per week spent taking care of children (Question 37a)&quot;</span>) <span class="sc">+</span>   </span>
-<span id="cb247-8"><a href="descriptive-statistics.html#cb247-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span>      </span>
-<span id="cb247-9"><a href="descriptive-statistics.html#cb247-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb247-10"><a href="descriptive-statistics.html#cb247-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
-<span id="cb247-11"><a href="descriptive-statistics.html#cb247-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
-<span id="cb247-12"><a href="descriptive-statistics.html#cb247-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="descriptive-statistics.html#cb278-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Dataset_CP_m, <span class="fu">aes</span>(<span class="at">x =</span> Q37a_HoursWeekChildren)) <span class="sc">+</span>      </span>
+<span id="cb278-2"><a href="descriptive-statistics.html#cb278-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
+<span id="cb278-3"><a href="descriptive-statistics.html#cb278-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
+<span id="cb278-4"><a href="descriptive-statistics.html#cb278-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
+<span id="cb278-5"><a href="descriptive-statistics.html#cb278-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span>   </span>
+<span id="cb278-6"><a href="descriptive-statistics.html#cb278-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram: Hours per week spent taking care of children&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Only male respondents&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb278-7"><a href="descriptive-statistics.html#cb278-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Hours per week spent taking care of children (Question 37a)&quot;</span>) <span class="sc">+</span>   </span>
+<span id="cb278-8"><a href="descriptive-statistics.html#cb278-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span>      </span>
+<span id="cb278-9"><a href="descriptive-statistics.html#cb278-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
+<span id="cb278-10"><a href="descriptive-statistics.html#cb278-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
+<span id="cb278-11"><a href="descriptive-statistics.html#cb278-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
+<span id="cb278-12"><a href="descriptive-statistics.html#cb278-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 <ul>
 <li><p>Depending on the data, different number of bins are more or less appropriate. In this case, we indicate that we want our data to be split in 50 intervals. You could indicate a different number or you could also leave the <em>bins</em> option out of the code and let R select it (R will give a warning (not error) about the number of bins which has been selected). Each type of graph has its own set of options that can be set, use the help function to learn more about them.</p></li>
 <li><p>Next, we call a pre-defined layout of the graph called <em>theme_minimal</em>. There are many pre-defined layouts and you are free to choose whichever you like the most, or even create your own layout (which is partially what we do with the last layer).</p></li>
@@ -982,7 +991,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A chunk of code, as we have seen so far, is separated from the text of our Quarto document and does not allow us to build a readable text combining words with output from R codes which in one linear sentence. So, if we want to say:<br />
 <br />
 The number of male respondents in our dataset is equal to</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="descriptive-statistics.html#cb248-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="descriptive-statistics.html#cb279-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##       n
 ##   &lt;int&gt;
