@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-05-26" />
+<meta name="date" content="2025-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -431,29 +431,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="install-packages" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Install Packages<a href="advanced-visualizations.html#install-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For this lecture, you need to install a lot of packages. Please do this before our lecture as it will take a long time to install them. Furthermore, there might be issues in installing, such as needing to install other packages. Please let the professor know if you encounter any issues.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="advanced-visualizations.html#cb167-1" tabindex="-1"></a><span class="co"># Install necessary packages</span></span>
-<span id="cb167-2"><a href="advanced-visualizations.html#cb167-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(gganimate)) <span class="fu">install.packages</span>(<span class="st">&quot;gganimate&quot;</span>)</span>
-<span id="cb167-3"><a href="advanced-visualizations.html#cb167-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2)) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb167-4"><a href="advanced-visualizations.html#cb167-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(dplyr)) <span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb167-5"><a href="advanced-visualizations.html#cb167-5" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(sf)) <span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span>
-<span id="cb167-6"><a href="advanced-visualizations.html#cb167-6" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(rnaturalearth)) <span class="fu">install.packages</span>(<span class="st">&quot;rnaturalearth&quot;</span>)</span>
-<span id="cb167-7"><a href="advanced-visualizations.html#cb167-7" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(readr)) <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>)</span>
-<span id="cb167-8"><a href="advanced-visualizations.html#cb167-8" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyr)) <span class="fu">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
-<span id="cb167-9"><a href="advanced-visualizations.html#cb167-9" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(gifski)) <span class="fu">install.packages</span>(<span class="st">&quot;gifski&quot;</span>)</span>
-<span id="cb167-10"><a href="advanced-visualizations.html#cb167-10" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(WDI)) <span class="fu">install.packages</span>(<span class="st">&quot;WDI&quot;</span>)</span>
-<span id="cb167-11"><a href="advanced-visualizations.html#cb167-11" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(leaflet)) <span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span>
-<span id="cb167-12"><a href="advanced-visualizations.html#cb167-12" tabindex="-1"></a></span>
-<span id="cb167-13"><a href="advanced-visualizations.html#cb167-13" tabindex="-1"></a><span class="co">#Load packages</span></span>
-<span id="cb167-14"><a href="advanced-visualizations.html#cb167-14" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb167-15"><a href="advanced-visualizations.html#cb167-15" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb167-16"><a href="advanced-visualizations.html#cb167-16" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb167-17"><a href="advanced-visualizations.html#cb167-17" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb167-18"><a href="advanced-visualizations.html#cb167-18" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb167-19"><a href="advanced-visualizations.html#cb167-19" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb167-20"><a href="advanced-visualizations.html#cb167-20" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb167-21"><a href="advanced-visualizations.html#cb167-21" tabindex="-1"></a><span class="fu">library</span>(gifski)</span>
-<span id="cb167-22"><a href="advanced-visualizations.html#cb167-22" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
-<span id="cb167-23"><a href="advanced-visualizations.html#cb167-23" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="advanced-visualizations.html#cb176-1" tabindex="-1"></a><span class="co"># Install necessary packages</span></span>
+<span id="cb176-2"><a href="advanced-visualizations.html#cb176-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(gganimate)) <span class="fu">install.packages</span>(<span class="st">&quot;gganimate&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: gganimate</code></pre>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="advanced-visualizations.html#cb178-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2)) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb178-2"><a href="advanced-visualizations.html#cb178-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(dplyr)) <span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb178-3"><a href="advanced-visualizations.html#cb178-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(sf)) <span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: sf</code></pre>
+<pre><code>## Linking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="advanced-visualizations.html#cb181-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(rnaturalearth)) <span class="fu">install.packages</span>(<span class="st">&quot;rnaturalearth&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: rnaturalearth</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="advanced-visualizations.html#cb183-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(readr)) <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>)</span>
+<span id="cb183-2"><a href="advanced-visualizations.html#cb183-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyr)) <span class="fu">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
+<span id="cb183-3"><a href="advanced-visualizations.html#cb183-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(gifski)) <span class="fu">install.packages</span>(<span class="st">&quot;gifski&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: gifski</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="advanced-visualizations.html#cb185-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(WDI)) <span class="fu">install.packages</span>(<span class="st">&quot;WDI&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: WDI</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="advanced-visualizations.html#cb187-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(leaflet)) <span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: leaflet</code></pre>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="advanced-visualizations.html#cb189-1" tabindex="-1"></a><span class="co">#Load packages</span></span>
+<span id="cb189-2"><a href="advanced-visualizations.html#cb189-2" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb189-3"><a href="advanced-visualizations.html#cb189-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb189-4"><a href="advanced-visualizations.html#cb189-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb189-5"><a href="advanced-visualizations.html#cb189-5" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb189-6"><a href="advanced-visualizations.html#cb189-6" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb189-7"><a href="advanced-visualizations.html#cb189-7" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb189-8"><a href="advanced-visualizations.html#cb189-8" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb189-9"><a href="advanced-visualizations.html#cb189-9" tabindex="-1"></a><span class="fu">library</span>(gifski)</span>
+<span id="cb189-10"><a href="advanced-visualizations.html#cb189-10" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb189-11"><a href="advanced-visualizations.html#cb189-11" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span></code></pre></div>
 </div>
 </div>
 <div id="animated-visualizations" class="section level2 hasAnchor" number="10.2">
@@ -470,49 +476,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="animated-bar-chart" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Animated Bar Chart<a href="advanced-visualizations.html#animated-bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>At the start, you need to do the same steps as that of when doing the visualizations <em>without</em> animations.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="advanced-visualizations.html#cb168-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb168-2"><a href="advanced-visualizations.html#cb168-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="advanced-visualizations.html#cb190-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb190-2"><a href="advanced-visualizations.html#cb190-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 4270046 228.1    6611092 353.1  6611092 353.1
-## Vcells 8744793  66.8   29905508 228.2 91255576 696.3</code></pre>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="advanced-visualizations.html#cb170-1" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb170-2"><a href="advanced-visualizations.html#cb170-2" tabindex="-1"></a>quotas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;quotas.csv&quot;</span>)</span>
-<span id="cb170-3"><a href="advanced-visualizations.html#cb170-3" tabindex="-1"></a></span>
-<span id="cb170-4"><a href="advanced-visualizations.html#cb170-4" tabindex="-1"></a>ch5<span class="fl">.1</span><span class="ot">&lt;-</span>quotas <span class="sc">%&gt;%</span> </span>
-<span id="cb170-5"><a href="advanced-visualizations.html#cb170-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(AC_type_noST)))<span class="sc">+</span></span>
-<span id="cb170-6"><a href="advanced-visualizations.html#cb170-6" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb170-7"><a href="advanced-visualizations.html#cb170-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Animated Bar Chart: Assembly Constituencies&quot;</span>,</span>
-<span id="cb170-8"><a href="advanced-visualizations.html#cb170-8" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Reservation Status&quot;</span>, <span class="at">y=</span><span class="st">&quot;Count&quot;</span>)<span class="sc">+</span></span>
-<span id="cb170-9"><a href="advanced-visualizations.html#cb170-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb170-10"><a href="advanced-visualizations.html#cb170-10" tabindex="-1"></a>  <span class="fu">transition_states</span>(AC_type_noST, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span></code></pre></div>
+## Ncells 3594602 192.0    6613625 353.3  4893555 261.4
+## Vcells 6436169  49.2   12255594  93.6  8997076  68.7</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="advanced-visualizations.html#cb192-1" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb192-2"><a href="advanced-visualizations.html#cb192-2" tabindex="-1"></a>quotas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;quotas.csv&quot;</span>)</span>
+<span id="cb192-3"><a href="advanced-visualizations.html#cb192-3" tabindex="-1"></a></span>
+<span id="cb192-4"><a href="advanced-visualizations.html#cb192-4" tabindex="-1"></a>ch5<span class="fl">.1</span><span class="ot">&lt;-</span>quotas <span class="sc">%&gt;%</span> </span>
+<span id="cb192-5"><a href="advanced-visualizations.html#cb192-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(AC_type_noST)))<span class="sc">+</span></span>
+<span id="cb192-6"><a href="advanced-visualizations.html#cb192-6" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb192-7"><a href="advanced-visualizations.html#cb192-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Animated Bar Chart: Assembly Constituencies&quot;</span>,</span>
+<span id="cb192-8"><a href="advanced-visualizations.html#cb192-8" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Reservation Status&quot;</span>, <span class="at">y=</span><span class="st">&quot;Count&quot;</span>)<span class="sc">+</span></span>
+<span id="cb192-9"><a href="advanced-visualizations.html#cb192-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb192-10"><a href="advanced-visualizations.html#cb192-10" tabindex="-1"></a>  <span class="fu">transition_states</span>(AC_type_noST, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p>The <code>transition_states</code> animates transitions between different categorical states. The <code>AC_type_noST</code> is the categorical variable that defines different animation states. The <code>transition_length</code> controls how long the transition between states lasts, measured in animation frames. While the <code>state_length</code> defines how long each state remains static before transitioning to the next one.</p>
 <div id="saving-and-embedding-animation" class="section level4 hasAnchor" number="10.2.1.1">
 <h4><span class="header-section-number">10.2.1.1</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This is very important; it is different for Quarto where the gif is automatically rendered; however, later, we will find out how to save in Quarto.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="advanced-visualizations.html#cb171-1" tabindex="-1"></a>anim_file <span class="ot">&lt;-</span> <span class="st">&quot;bar_chart.gif&quot;</span></span>
-<span id="cb171-2"><a href="advanced-visualizations.html#cb171-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.1</span>, <span class="at">duration =</span> <span class="dv">4</span>, <span class="at">fps =</span> <span class="dv">10</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file), </span>
-<span id="cb171-3"><a href="advanced-visualizations.html#cb171-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)  <span class="co"># Preview the animation before rendering  </span></span>
-<span id="cb171-4"><a href="advanced-visualizations.html#cb171-4" tabindex="-1"></a><span class="co"># Save animation as a GIF</span></span>
-<span id="cb171-5"><a href="advanced-visualizations.html#cb171-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="advanced-visualizations.html#cb193-1" tabindex="-1"></a>anim_file <span class="ot">&lt;-</span> <span class="st">&quot;bar_chart.gif&quot;</span></span>
+<span id="cb193-2"><a href="advanced-visualizations.html#cb193-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.1</span>, <span class="at">duration =</span> <span class="dv">4</span>, <span class="at">fps =</span> <span class="dv">10</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file), </span>
+<span id="cb193-3"><a href="advanced-visualizations.html#cb193-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)  <span class="co"># Preview the animation before rendering  </span></span>
+<span id="cb193-4"><a href="advanced-visualizations.html#cb193-4" tabindex="-1"></a><span class="co"># Save animation as a GIF</span></span>
+<span id="cb193-5"><a href="advanced-visualizations.html#cb193-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file)</span></code></pre></div>
 <p>The animate function generates the animation of the ggplot object <code>ch5.1</code>. <code>duration = 4</code>: Specifies that the animation should run for 4 seconds in total. <code>fps = 10</code>: Defines the frame rate, meaning the animation will show 10 frames per second. <code>renderer = gifski_renderer(anim_file)</code>: Uses the <code>gifski_renderer</code> to save the animation as a GIF file named <code>bar_chart.gif</code>. <code>preview = TRUE</code>: Allows you to view the animation immediately in the RStudio Viewer before saving it as a file.</p>
 </div>
 </div>
 <div id="animated-scatter-plot" class="section level3 hasAnchor" number="10.2.2">
 <h3><span class="header-section-number">10.2.2</span> Animated Scatter Plot<a href="advanced-visualizations.html#animated-scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="advanced-visualizations.html#cb172-1" tabindex="-1"></a>ch5<span class="fl">.2</span><span class="ot">&lt;-</span>quotas <span class="sc">%&gt;%</span> </span>
-<span id="cb172-2"><a href="advanced-visualizations.html#cb172-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Plit71, <span class="at">y=</span>P_W71))<span class="sc">+</span></span>
-<span id="cb172-3"><a href="advanced-visualizations.html#cb172-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span><span class="fu">factor</span>(AC_type_noST)))<span class="sc">+</span></span>
-<span id="cb172-4"><a href="advanced-visualizations.html#cb172-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Animated Scatter Plot: Literacy vs. Employment&quot;</span>,</span>
-<span id="cb172-5"><a href="advanced-visualizations.html#cb172-5" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Literacy Rate (1971)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Employment Rate (1971)&quot;</span>, <span class="at">color=</span><span class="st">&quot;Reservation Status&quot;</span>)<span class="sc">+</span></span>
-<span id="cb172-6"><a href="advanced-visualizations.html#cb172-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb172-7"><a href="advanced-visualizations.html#cb172-7" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(Plit71)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="advanced-visualizations.html#cb194-1" tabindex="-1"></a>ch5<span class="fl">.2</span><span class="ot">&lt;-</span>quotas <span class="sc">%&gt;%</span> </span>
+<span id="cb194-2"><a href="advanced-visualizations.html#cb194-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Plit71, <span class="at">y=</span>P_W71))<span class="sc">+</span></span>
+<span id="cb194-3"><a href="advanced-visualizations.html#cb194-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span><span class="fu">factor</span>(AC_type_noST)))<span class="sc">+</span></span>
+<span id="cb194-4"><a href="advanced-visualizations.html#cb194-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Animated Scatter Plot: Literacy vs. Employment&quot;</span>,</span>
+<span id="cb194-5"><a href="advanced-visualizations.html#cb194-5" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Literacy Rate (1971)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Employment Rate (1971)&quot;</span>, <span class="at">color=</span><span class="st">&quot;Reservation Status&quot;</span>)<span class="sc">+</span></span>
+<span id="cb194-6"><a href="advanced-visualizations.html#cb194-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb194-7"><a href="advanced-visualizations.html#cb194-7" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(Plit71)</span></code></pre></div>
 <p>Here, the <code>transition_reveal</code> animates the points to be revealed over literacy rates</p>
 <div id="saving-and-embedding-animation-1" class="section level4 hasAnchor" number="10.2.2.1">
 <h4><span class="header-section-number">10.2.2.1</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="advanced-visualizations.html#cb173-1" tabindex="-1"></a>anim_file2<span class="ot">&lt;-</span><span class="st">&quot;scatter_plot.gif&quot;</span></span>
-<span id="cb173-2"><a href="advanced-visualizations.html#cb173-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.2</span>, <span class="at">duration=</span><span class="dv">20</span>, <span class="at">fps=</span><span class="dv">10</span>, <span class="at">renderer=</span><span class="fu">gifski_renderer</span>(anim_file2),</span>
-<span id="cb173-3"><a href="advanced-visualizations.html#cb173-3" tabindex="-1"></a>        <span class="at">preview=</span><span class="cn">TRUE</span>)</span>
-<span id="cb173-4"><a href="advanced-visualizations.html#cb173-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file2)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="advanced-visualizations.html#cb195-1" tabindex="-1"></a>anim_file2<span class="ot">&lt;-</span><span class="st">&quot;scatter_plot.gif&quot;</span></span>
+<span id="cb195-2"><a href="advanced-visualizations.html#cb195-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.2</span>, <span class="at">duration=</span><span class="dv">20</span>, <span class="at">fps=</span><span class="dv">10</span>, <span class="at">renderer=</span><span class="fu">gifski_renderer</span>(anim_file2),</span>
+<span id="cb195-3"><a href="advanced-visualizations.html#cb195-3" tabindex="-1"></a>        <span class="at">preview=</span><span class="cn">TRUE</span>)</span>
+<span id="cb195-4"><a href="advanced-visualizations.html#cb195-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file2)</span></code></pre></div>
 <p>To slow down the animation, increase the duration and decrease fps.</p>
 </div>
 </div>
@@ -521,20 +527,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="fetching-wdi-data" class="section level4 hasAnchor" number="10.2.3.1">
 <h4><span class="header-section-number">10.2.3.1</span> Fetching WDI Data<a href="advanced-visualizations.html#fetching-wdi-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For this portion, we will make use of the WDI database. To search which indicator you wish to work with, type <code>WDIsearch("keyword")</code></p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="advanced-visualizations.html#cb174-1" tabindex="-1"></a>ch5<span class="ot">&lt;-</span><span class="fu">WDI</span>(</span>
-<span id="cb174-2"><a href="advanced-visualizations.html#cb174-2" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">&quot;USA&quot;</span>,<span class="st">&quot;CHN&quot;</span>, <span class="st">&quot;IND&quot;</span>, <span class="st">&quot;BRA&quot;</span>,<span class="st">&quot;NLD&quot;</span>, <span class="st">&quot;JPN&quot;</span>),</span>
-<span id="cb174-3"><a href="advanced-visualizations.html#cb174-3" tabindex="-1"></a>  <span class="at">indicator =</span> <span class="fu">c</span>(<span class="st">&quot;NY.GDP.PCAP.CD&quot;</span>, <span class="st">&quot;SP.DYN.LE00.IN&quot;</span>),</span>
-<span id="cb174-4"><a href="advanced-visualizations.html#cb174-4" tabindex="-1"></a>  <span class="at">start =</span> <span class="dv">2000</span>,</span>
-<span id="cb174-5"><a href="advanced-visualizations.html#cb174-5" tabindex="-1"></a>  <span class="at">end =</span> <span class="dv">2020</span>,</span>
-<span id="cb174-6"><a href="advanced-visualizations.html#cb174-6" tabindex="-1"></a>  <span class="at">extra =</span> <span class="cn">TRUE</span></span>
-<span id="cb174-7"><a href="advanced-visualizations.html#cb174-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="advanced-visualizations.html#cb196-1" tabindex="-1"></a>ch5<span class="ot">&lt;-</span><span class="fu">WDI</span>(</span>
+<span id="cb196-2"><a href="advanced-visualizations.html#cb196-2" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">&quot;USA&quot;</span>,<span class="st">&quot;CHN&quot;</span>, <span class="st">&quot;IND&quot;</span>, <span class="st">&quot;BRA&quot;</span>,<span class="st">&quot;NLD&quot;</span>, <span class="st">&quot;JPN&quot;</span>),</span>
+<span id="cb196-3"><a href="advanced-visualizations.html#cb196-3" tabindex="-1"></a>  <span class="at">indicator =</span> <span class="fu">c</span>(<span class="st">&quot;NY.GDP.PCAP.CD&quot;</span>, <span class="st">&quot;SP.DYN.LE00.IN&quot;</span>),</span>
+<span id="cb196-4"><a href="advanced-visualizations.html#cb196-4" tabindex="-1"></a>  <span class="at">start =</span> <span class="dv">2000</span>,</span>
+<span id="cb196-5"><a href="advanced-visualizations.html#cb196-5" tabindex="-1"></a>  <span class="at">end =</span> <span class="dv">2020</span>,</span>
+<span id="cb196-6"><a href="advanced-visualizations.html#cb196-6" tabindex="-1"></a>  <span class="at">extra =</span> <span class="cn">TRUE</span></span>
+<span id="cb196-7"><a href="advanced-visualizations.html#cb196-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>This code chunk pulls data from the World Bank WDI database of 6 countries and two indicators (GDP per capita (current US$) and Life Expectancy at Birth (years). It fetches data from 2000 to 2020 and includes extra metadata such as region names and income levels.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="advanced-visualizations.html#cb175-1" tabindex="-1"></a><span class="co">#Cleaning the dataset</span></span>
-<span id="cb175-2"><a href="advanced-visualizations.html#cb175-2" tabindex="-1"></a>ch5 <span class="ot">&lt;-</span> ch5 <span class="sc">%&gt;%</span></span>
-<span id="cb175-3"><a href="advanced-visualizations.html#cb175-3" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">GDPpc =</span> NY.GDP.PCAP.CD, <span class="at">Life_Exp =</span> SP.DYN.LE00.IN)</span>
-<span id="cb175-4"><a href="advanced-visualizations.html#cb175-4" tabindex="-1"></a>ch5<span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
-<span id="cb175-5"><a href="advanced-visualizations.html#cb175-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(GDPpc), <span class="sc">!</span><span class="fu">is.na</span>(Life_Exp))</span>
-<span id="cb175-6"><a href="advanced-visualizations.html#cb175-6" tabindex="-1"></a><span class="fu">head</span>(ch5)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="advanced-visualizations.html#cb197-1" tabindex="-1"></a><span class="co">#Cleaning the dataset</span></span>
+<span id="cb197-2"><a href="advanced-visualizations.html#cb197-2" tabindex="-1"></a>ch5 <span class="ot">&lt;-</span> ch5 <span class="sc">%&gt;%</span></span>
+<span id="cb197-3"><a href="advanced-visualizations.html#cb197-3" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">GDPpc =</span> NY.GDP.PCAP.CD, <span class="at">Life_Exp =</span> SP.DYN.LE00.IN)</span>
+<span id="cb197-4"><a href="advanced-visualizations.html#cb197-4" tabindex="-1"></a>ch5<span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
+<span id="cb197-5"><a href="advanced-visualizations.html#cb197-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(GDPpc), <span class="sc">!</span><span class="fu">is.na</span>(Life_Exp))</span>
+<span id="cb197-6"><a href="advanced-visualizations.html#cb197-6" tabindex="-1"></a><span class="fu">head</span>(ch5)</span></code></pre></div>
 <pre><code>##   country iso2c iso3c year status lastupdated    GDPpc Life_Exp                    region
 ## 1  Brazil    BR   BRA 2000         2025-04-15 3766.548   69.584 Latin America &amp; Caribbean
 ## 2  Brazil    BR   BRA 2001         2025-04-15 3176.289   69.980 Latin America &amp; Caribbean
@@ -549,26 +555,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 Brasilia  -47.9292 -15.7801 Upper middle income    IBRD
 ## 5 Brasilia  -47.9292 -15.7801 Upper middle income    IBRD
 ## 6 Brasilia  -47.9292 -15.7801 Upper middle income    IBRD</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="advanced-visualizations.html#cb177-1" tabindex="-1"></a>ch5<span class="fl">.3</span><span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
-<span id="cb177-2"><a href="advanced-visualizations.html#cb177-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>GDPpc, <span class="at">y=</span>Life_Exp))<span class="sc">+</span></span>
-<span id="cb177-3"><a href="advanced-visualizations.html#cb177-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>region), <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb177-4"><a href="advanced-visualizations.html#cb177-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Faceted Scatter Plot: GDP vs. Life Expectancy&quot;</span>,</span>
-<span id="cb177-5"><a href="advanced-visualizations.html#cb177-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year: 2000-2020&quot;</span>,</span>
-<span id="cb177-6"><a href="advanced-visualizations.html#cb177-6" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;GDP per Capita (USD)&quot;</span>,</span>
-<span id="cb177-7"><a href="advanced-visualizations.html#cb177-7" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Life Expectancy (Years)&quot;</span>,</span>
-<span id="cb177-8"><a href="advanced-visualizations.html#cb177-8" tabindex="-1"></a>       <span class="at">color=</span><span class="st">&quot;Region&quot;</span>)<span class="sc">+</span></span>
-<span id="cb177-9"><a href="advanced-visualizations.html#cb177-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb177-10"><a href="advanced-visualizations.html#cb177-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country, <span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb177-11"><a href="advanced-visualizations.html#cb177-11" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()<span class="sc">+</span> <span class="co">#log scale for better visualization</span></span>
-<span id="cb177-12"><a href="advanced-visualizations.html#cb177-12" tabindex="-1"></a>  <span class="fu">transition_states</span>(year, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="advanced-visualizations.html#cb199-1" tabindex="-1"></a>ch5<span class="fl">.3</span><span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
+<span id="cb199-2"><a href="advanced-visualizations.html#cb199-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>GDPpc, <span class="at">y=</span>Life_Exp))<span class="sc">+</span></span>
+<span id="cb199-3"><a href="advanced-visualizations.html#cb199-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>region), <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb199-4"><a href="advanced-visualizations.html#cb199-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Faceted Scatter Plot: GDP vs. Life Expectancy&quot;</span>,</span>
+<span id="cb199-5"><a href="advanced-visualizations.html#cb199-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year: 2000-2020&quot;</span>,</span>
+<span id="cb199-6"><a href="advanced-visualizations.html#cb199-6" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;GDP per Capita (USD)&quot;</span>,</span>
+<span id="cb199-7"><a href="advanced-visualizations.html#cb199-7" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Life Expectancy (Years)&quot;</span>,</span>
+<span id="cb199-8"><a href="advanced-visualizations.html#cb199-8" tabindex="-1"></a>       <span class="at">color=</span><span class="st">&quot;Region&quot;</span>)<span class="sc">+</span></span>
+<span id="cb199-9"><a href="advanced-visualizations.html#cb199-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb199-10"><a href="advanced-visualizations.html#cb199-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country, <span class="at">ncol=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb199-11"><a href="advanced-visualizations.html#cb199-11" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()<span class="sc">+</span> <span class="co">#log scale for better visualization</span></span>
+<span id="cb199-12"><a href="advanced-visualizations.html#cb199-12" tabindex="-1"></a>  <span class="fu">transition_states</span>(year, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p>There are additional things here like the <code>size=3</code> which changes the size of points. the <code>scale_x_log10()</code> was added because it applies a logarithmic scale to the x-axis since GDP per capital values vary widely, and a log scale makes comparisons clearer. The <code>transition_states</code> has <code>year</code> since each frame would represent a different year.</p>
 </div>
 <div id="saving-and-embedding-animation-2" class="section level4 hasAnchor" number="10.2.3.2">
 <h4><span class="header-section-number">10.2.3.2</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="advanced-visualizations.html#cb178-1" tabindex="-1"></a>anim_file3<span class="ot">&lt;-</span><span class="st">&quot;faceted_scatter_plot.gif&quot;</span></span>
-<span id="cb178-2"><a href="advanced-visualizations.html#cb178-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.3</span>, <span class="at">duration=</span><span class="dv">10</span>, <span class="at">fps=</span><span class="dv">15</span>, <span class="at">renderer=</span><span class="fu">gifski_renderer</span>(anim_file3),</span>
-<span id="cb178-3"><a href="advanced-visualizations.html#cb178-3" tabindex="-1"></a>        <span class="at">preview=</span><span class="cn">TRUE</span>)</span>
-<span id="cb178-4"><a href="advanced-visualizations.html#cb178-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file3)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="advanced-visualizations.html#cb200-1" tabindex="-1"></a>anim_file3<span class="ot">&lt;-</span><span class="st">&quot;faceted_scatter_plot.gif&quot;</span></span>
+<span id="cb200-2"><a href="advanced-visualizations.html#cb200-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.3</span>, <span class="at">duration=</span><span class="dv">10</span>, <span class="at">fps=</span><span class="dv">15</span>, <span class="at">renderer=</span><span class="fu">gifski_renderer</span>(anim_file3),</span>
+<span id="cb200-3"><a href="advanced-visualizations.html#cb200-3" tabindex="-1"></a>        <span class="at">preview=</span><span class="cn">TRUE</span>)</span>
+<span id="cb200-4"><a href="advanced-visualizations.html#cb200-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file3)</span></code></pre></div>
 <p>This does not really provide any information. Let us try visualizing in a different way.</p>
 </div>
 </div>
@@ -576,59 +582,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="animated-time-series" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Animated Time Series<a href="advanced-visualizations.html#animated-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let us just choose USA for this.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="advanced-visualizations.html#cb179-1" tabindex="-1"></a>ch5_1<span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
-<span id="cb179-2"><a href="advanced-visualizations.html#cb179-2" tabindex="-1"></a>  <span class="fu">filter</span>(iso3c<span class="sc">==</span><span class="st">&quot;USA&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="advanced-visualizations.html#cb180-1" tabindex="-1"></a>ch5<span class="fl">.4</span><span class="ot">&lt;-</span>ch5_1 <span class="sc">%&gt;%</span> </span>
-<span id="cb180-2"><a href="advanced-visualizations.html#cb180-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>GDPpc))<span class="sc">+</span></span>
-<span id="cb180-3"><a href="advanced-visualizations.html#cb180-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;green&quot;</span>, <span class="at">size =</span> <span class="fl">1.2</span>)<span class="sc">+</span></span>
-<span id="cb180-4"><a href="advanced-visualizations.html#cb180-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&quot;purple&quot;</span>, <span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb180-5"><a href="advanced-visualizations.html#cb180-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;US GDP per Capita Growth over Time&quot;</span>,</span>
-<span id="cb180-6"><a href="advanced-visualizations.html#cb180-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year:2000-2020&quot;</span>,</span>
-<span id="cb180-7"><a href="advanced-visualizations.html#cb180-7" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb180-8"><a href="advanced-visualizations.html#cb180-8" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;GDP per Capita (Current US$)&quot;</span>)<span class="sc">+</span></span>
-<span id="cb180-9"><a href="advanced-visualizations.html#cb180-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb180-10"><a href="advanced-visualizations.html#cb180-10" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(year)</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="advanced-visualizations.html#cb201-1" tabindex="-1"></a>ch5_1<span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
+<span id="cb201-2"><a href="advanced-visualizations.html#cb201-2" tabindex="-1"></a>  <span class="fu">filter</span>(iso3c<span class="sc">==</span><span class="st">&quot;USA&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="advanced-visualizations.html#cb202-1" tabindex="-1"></a>ch5<span class="fl">.4</span><span class="ot">&lt;-</span>ch5_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb202-2"><a href="advanced-visualizations.html#cb202-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>GDPpc))<span class="sc">+</span></span>
+<span id="cb202-3"><a href="advanced-visualizations.html#cb202-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;green&quot;</span>, <span class="at">size =</span> <span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb202-4"><a href="advanced-visualizations.html#cb202-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">&quot;purple&quot;</span>, <span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb202-5"><a href="advanced-visualizations.html#cb202-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;US GDP per Capita Growth over Time&quot;</span>,</span>
+<span id="cb202-6"><a href="advanced-visualizations.html#cb202-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year:2000-2020&quot;</span>,</span>
+<span id="cb202-7"><a href="advanced-visualizations.html#cb202-7" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb202-8"><a href="advanced-visualizations.html#cb202-8" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;GDP per Capita (Current US$)&quot;</span>)<span class="sc">+</span></span>
+<span id="cb202-9"><a href="advanced-visualizations.html#cb202-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb202-10"><a href="advanced-visualizations.html#cb202-10" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(year)</span></code></pre></div>
 <div id="saving-and-embedding-animation-3" class="section level4 hasAnchor" number="10.3.0.1">
 <h4><span class="header-section-number">10.3.0.1</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="advanced-visualizations.html#cb181-1" tabindex="-1"></a>anim_file4<span class="ot">&lt;-</span><span class="st">&quot;us_timeseries.gif&quot;</span></span>
-<span id="cb181-2"><a href="advanced-visualizations.html#cb181-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.4</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file4), </span>
-<span id="cb181-3"><a href="advanced-visualizations.html#cb181-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb181-4"><a href="advanced-visualizations.html#cb181-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file4)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="advanced-visualizations.html#cb203-1" tabindex="-1"></a>anim_file4<span class="ot">&lt;-</span><span class="st">&quot;us_timeseries.gif&quot;</span></span>
+<span id="cb203-2"><a href="advanced-visualizations.html#cb203-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.4</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file4), </span>
+<span id="cb203-3"><a href="advanced-visualizations.html#cb203-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb203-4"><a href="advanced-visualizations.html#cb203-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file4)</span></code></pre></div>
 </div>
 </div>
 <div id="animated-faceted-time-series" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Animated Faceted Time Series<a href="advanced-visualizations.html#animated-faceted-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="advanced-visualizations.html#cb182-1" tabindex="-1"></a>ch5<span class="fl">.5</span><span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
-<span id="cb182-2"><a href="advanced-visualizations.html#cb182-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>GDPpc, <span class="at">group=</span>country))<span class="sc">+</span></span>
-<span id="cb182-3"><a href="advanced-visualizations.html#cb182-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color=</span>country), <span class="at">size=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
-<span id="cb182-4"><a href="advanced-visualizations.html#cb182-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Faceted Time Series: GDP Growth Over Time&quot;</span>,</span>
-<span id="cb182-5"><a href="advanced-visualizations.html#cb182-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year: 2000-2020&quot;</span>,</span>
-<span id="cb182-6"><a href="advanced-visualizations.html#cb182-6" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb182-7"><a href="advanced-visualizations.html#cb182-7" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;GDP (Current US$)&quot;</span>,</span>
-<span id="cb182-8"><a href="advanced-visualizations.html#cb182-8" tabindex="-1"></a>       <span class="at">color=</span><span class="st">&quot;Country&quot;</span>)<span class="sc">+</span></span>
-<span id="cb182-9"><a href="advanced-visualizations.html#cb182-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb182-10"><a href="advanced-visualizations.html#cb182-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>)<span class="sc">+</span> <span class="co">#allows free-scaling in the y-axis</span></span>
-<span id="cb182-11"><a href="advanced-visualizations.html#cb182-11" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(year)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="advanced-visualizations.html#cb204-1" tabindex="-1"></a>ch5<span class="fl">.5</span><span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
+<span id="cb204-2"><a href="advanced-visualizations.html#cb204-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>GDPpc, <span class="at">group=</span>country))<span class="sc">+</span></span>
+<span id="cb204-3"><a href="advanced-visualizations.html#cb204-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color=</span>country), <span class="at">size=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb204-4"><a href="advanced-visualizations.html#cb204-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Faceted Time Series: GDP Growth Over Time&quot;</span>,</span>
+<span id="cb204-5"><a href="advanced-visualizations.html#cb204-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Year: 2000-2020&quot;</span>,</span>
+<span id="cb204-6"><a href="advanced-visualizations.html#cb204-6" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb204-7"><a href="advanced-visualizations.html#cb204-7" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;GDP (Current US$)&quot;</span>,</span>
+<span id="cb204-8"><a href="advanced-visualizations.html#cb204-8" tabindex="-1"></a>       <span class="at">color=</span><span class="st">&quot;Country&quot;</span>)<span class="sc">+</span></span>
+<span id="cb204-9"><a href="advanced-visualizations.html#cb204-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb204-10"><a href="advanced-visualizations.html#cb204-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>)<span class="sc">+</span> <span class="co">#allows free-scaling in the y-axis</span></span>
+<span id="cb204-11"><a href="advanced-visualizations.html#cb204-11" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(year)</span></code></pre></div>
 <div id="saving-and-embedding-animation-4" class="section level4 hasAnchor" number="10.4.0.1">
 <h4><span class="header-section-number">10.4.0.1</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="advanced-visualizations.html#cb183-1" tabindex="-1"></a>anim_file5<span class="ot">&lt;-</span><span class="st">&quot;timeseries.gif&quot;</span></span>
-<span id="cb183-2"><a href="advanced-visualizations.html#cb183-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.5</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file5), </span>
-<span id="cb183-3"><a href="advanced-visualizations.html#cb183-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb183-4"><a href="advanced-visualizations.html#cb183-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file5)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="advanced-visualizations.html#cb205-1" tabindex="-1"></a>anim_file5<span class="ot">&lt;-</span><span class="st">&quot;timeseries.gif&quot;</span></span>
+<span id="cb205-2"><a href="advanced-visualizations.html#cb205-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.5</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file5), </span>
+<span id="cb205-3"><a href="advanced-visualizations.html#cb205-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb205-4"><a href="advanced-visualizations.html#cb205-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file5)</span></code></pre></div>
 </div>
 <div id="saving-in-quarto" class="section level3 hasAnchor" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Saving in Quarto<a href="advanced-visualizations.html#saving-in-quarto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For Data Presentation, you need to save interactive visualizations so that you can place them in your presentations.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="advanced-visualizations.html#cb184-1" tabindex="-1"></a><span class="co"># Create an animated plot</span></span>
-<span id="cb184-2"><a href="advanced-visualizations.html#cb184-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(MAPPINGS)) <span class="sc">+</span></span>
-<span id="cb184-3"><a href="advanced-visualizations.html#cb184-3" tabindex="-1"></a>  geom_function <span class="sc">+</span></span>
-<span id="cb184-4"><a href="advanced-visualizations.html#cb184-4" tabindex="-1"></a>  <span class="fu">transition_states</span>(gear, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span>
-<span id="cb184-5"><a href="advanced-visualizations.html#cb184-5" tabindex="-1"></a></span>
-<span id="cb184-6"><a href="advanced-visualizations.html#cb184-6" tabindex="-1"></a><span class="co"># Save as GIF</span></span>
-<span id="cb184-7"><a href="advanced-visualizations.html#cb184-7" tabindex="-1"></a><span class="fu">anim_save</span>(<span class="st">&quot;animation.gif&quot;</span>, p)</span>
-<span id="cb184-8"><a href="advanced-visualizations.html#cb184-8" tabindex="-1"></a></span>
-<span id="cb184-9"><a href="advanced-visualizations.html#cb184-9" tabindex="-1"></a><span class="co"># Save as MP4</span></span>
-<span id="cb184-10"><a href="advanced-visualizations.html#cb184-10" tabindex="-1"></a><span class="fu">anim_save</span>(<span class="st">&quot;animation.mp4&quot;</span>, p)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="advanced-visualizations.html#cb206-1" tabindex="-1"></a><span class="co"># Create an animated plot</span></span>
+<span id="cb206-2"><a href="advanced-visualizations.html#cb206-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(MAPPINGS)) <span class="sc">+</span></span>
+<span id="cb206-3"><a href="advanced-visualizations.html#cb206-3" tabindex="-1"></a>  geom_function <span class="sc">+</span></span>
+<span id="cb206-4"><a href="advanced-visualizations.html#cb206-4" tabindex="-1"></a>  <span class="fu">transition_states</span>(gear, <span class="at">transition_length =</span> <span class="dv">2</span>, <span class="at">state_length =</span> <span class="dv">1</span>)</span>
+<span id="cb206-5"><a href="advanced-visualizations.html#cb206-5" tabindex="-1"></a></span>
+<span id="cb206-6"><a href="advanced-visualizations.html#cb206-6" tabindex="-1"></a><span class="co"># Save as GIF</span></span>
+<span id="cb206-7"><a href="advanced-visualizations.html#cb206-7" tabindex="-1"></a><span class="fu">anim_save</span>(<span class="st">&quot;animation.gif&quot;</span>, p)</span>
+<span id="cb206-8"><a href="advanced-visualizations.html#cb206-8" tabindex="-1"></a></span>
+<span id="cb206-9"><a href="advanced-visualizations.html#cb206-9" tabindex="-1"></a><span class="co"># Save as MP4</span></span>
+<span id="cb206-10"><a href="advanced-visualizations.html#cb206-10" tabindex="-1"></a><span class="fu">anim_save</span>(<span class="st">&quot;animation.mp4&quot;</span>, p)</span></code></pre></div>
 </div>
 </div>
 <div id="maps" class="section level2 hasAnchor" number="10.5">
@@ -643,84 +649,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.6</span> Static Maps<a href="advanced-visualizations.html#static-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="fetching-gdp-data-from-wdi" class="section level3 hasAnchor" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Fetching GDP Data from WDI<a href="advanced-visualizations.html#fetching-gdp-data-from-wdi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="advanced-visualizations.html#cb185-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb185-2"><a href="advanced-visualizations.html#cb185-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="advanced-visualizations.html#cb207-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb207-2"><a href="advanced-visualizations.html#cb207-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 4270237 228.1    6611092 353.1  6611092 353.1
-## Vcells 8747430  66.8   29905508 228.2 91255576 696.3</code></pre>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="advanced-visualizations.html#cb187-1" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span><span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
-<span id="cb187-2"><a href="advanced-visualizations.html#cb187-2" tabindex="-1"></a>           <span class="at">indicator =</span> <span class="st">&quot;NY.GDP.MKTP.CD&quot;</span>,</span>
-<span id="cb187-3"><a href="advanced-visualizations.html#cb187-3" tabindex="-1"></a>           <span class="at">start =</span> <span class="dv">2000</span>, </span>
-<span id="cb187-4"><a href="advanced-visualizations.html#cb187-4" tabindex="-1"></a>           <span class="at">end =</span> <span class="dv">2022</span>,</span>
-<span id="cb187-5"><a href="advanced-visualizations.html#cb187-5" tabindex="-1"></a>           <span class="at">extra=</span><span class="cn">TRUE</span>)</span>
-<span id="cb187-6"><a href="advanced-visualizations.html#cb187-6" tabindex="-1"></a></span>
-<span id="cb187-7"><a href="advanced-visualizations.html#cb187-7" tabindex="-1"></a><span class="co">#clean the dataset</span></span>
-<span id="cb187-8"><a href="advanced-visualizations.html#cb187-8" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span>ch5_2 <span class="sc">%&gt;%</span> </span>
-<span id="cb187-9"><a href="advanced-visualizations.html#cb187-9" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">gdp=</span>NY.GDP.MKTP.CD,</span>
-<span id="cb187-10"><a href="advanced-visualizations.html#cb187-10" tabindex="-1"></a>         <span class="at">iso_a3=</span>iso2c) <span class="sc">%&gt;%</span> </span>
-<span id="cb187-11"><a href="advanced-visualizations.html#cb187-11" tabindex="-1"></a>  <span class="fu">drop_na</span>(gdp) <span class="co">#dropping missing values</span></span></code></pre></div>
+## Ncells 3659545 195.5    6613625 353.3  4893555 261.4
+## Vcells 7213907  55.1   14786712 112.9 11040405  84.3</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="advanced-visualizations.html#cb209-1" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span><span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
+<span id="cb209-2"><a href="advanced-visualizations.html#cb209-2" tabindex="-1"></a>           <span class="at">indicator =</span> <span class="st">&quot;NY.GDP.MKTP.CD&quot;</span>,</span>
+<span id="cb209-3"><a href="advanced-visualizations.html#cb209-3" tabindex="-1"></a>           <span class="at">start =</span> <span class="dv">2000</span>, </span>
+<span id="cb209-4"><a href="advanced-visualizations.html#cb209-4" tabindex="-1"></a>           <span class="at">end =</span> <span class="dv">2022</span>,</span>
+<span id="cb209-5"><a href="advanced-visualizations.html#cb209-5" tabindex="-1"></a>           <span class="at">extra=</span><span class="cn">TRUE</span>)</span>
+<span id="cb209-6"><a href="advanced-visualizations.html#cb209-6" tabindex="-1"></a></span>
+<span id="cb209-7"><a href="advanced-visualizations.html#cb209-7" tabindex="-1"></a><span class="co">#clean the dataset</span></span>
+<span id="cb209-8"><a href="advanced-visualizations.html#cb209-8" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span>ch5_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb209-9"><a href="advanced-visualizations.html#cb209-9" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">gdp=</span>NY.GDP.MKTP.CD,</span>
+<span id="cb209-10"><a href="advanced-visualizations.html#cb209-10" tabindex="-1"></a>         <span class="at">iso_a3=</span>iso2c) <span class="sc">%&gt;%</span> </span>
+<span id="cb209-11"><a href="advanced-visualizations.html#cb209-11" tabindex="-1"></a>  <span class="fu">drop_na</span>(gdp) <span class="co">#dropping missing values</span></span></code></pre></div>
 <p>We are retrieving GDP data for all countries from 2000 to 2022 and we are also renaming columns to match with map data found in the <code>rnaturalearth</code>. We also remove missing GDP values</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="advanced-visualizations.html#cb188-1" tabindex="-1"></a>ch5map<span class="ot">&lt;-</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">&quot;medium&quot;</span>, <span class="at">returnclass =</span> <span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="advanced-visualizations.html#cb210-1" tabindex="-1"></a>ch5map<span class="ot">&lt;-</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">&quot;medium&quot;</span>, <span class="at">returnclass =</span> <span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
 <p>This fetches the world map with country boundaries in <code>sf</code> (simple features) format to visualize the GDP data. We fetch medium-scale country boundaries in spatial data format and the <code>returnclass="sf"</code> ensures it can be used with <code>ggplot2</code></p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="advanced-visualizations.html#cb189-1" tabindex="-1"></a><span class="co">#Merge</span></span>
-<span id="cb189-2"><a href="advanced-visualizations.html#cb189-2" tabindex="-1"></a>wgdp<span class="ot">&lt;-</span>ch5map <span class="sc">%&gt;%</span> </span>
-<span id="cb189-3"><a href="advanced-visualizations.html#cb189-3" tabindex="-1"></a>  <span class="fu">left_join</span>(ch5_2, <span class="at">by=</span><span class="st">&quot;iso_a3&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="advanced-visualizations.html#cb211-1" tabindex="-1"></a><span class="co">#Merge</span></span>
+<span id="cb211-2"><a href="advanced-visualizations.html#cb211-2" tabindex="-1"></a>wgdp<span class="ot">&lt;-</span>ch5map <span class="sc">%&gt;%</span> </span>
+<span id="cb211-3"><a href="advanced-visualizations.html#cb211-3" tabindex="-1"></a>  <span class="fu">left_join</span>(ch5_2, <span class="at">by=</span><span class="st">&quot;iso_a3&quot;</span>)</span></code></pre></div>
 <p>We need to match the GDP data with the corresponding country for visualization. You can opt to retrieve the world map to find out how to merge both.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="advanced-visualizations.html#cb190-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wgdp) <span class="sc">+</span></span>
-<span id="cb190-2"><a href="advanced-visualizations.html#cb190-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gdp_md)) <span class="sc">+</span></span>
-<span id="cb190-3"><a href="advanced-visualizations.html#cb190-3" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>, <span class="at">trans =</span> <span class="st">&quot;log&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
-<span id="cb190-4"><a href="advanced-visualizations.html#cb190-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb190-5"><a href="advanced-visualizations.html#cb190-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GDP by Country&quot;</span>,</span>
-<span id="cb190-6"><a href="advanced-visualizations.html#cb190-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from WDI&quot;</span>,</span>
-<span id="cb190-7"><a href="advanced-visualizations.html#cb190-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="advanced-visualizations.html#cb212-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wgdp) <span class="sc">+</span></span>
+<span id="cb212-2"><a href="advanced-visualizations.html#cb212-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gdp_md)) <span class="sc">+</span></span>
+<span id="cb212-3"><a href="advanced-visualizations.html#cb212-3" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>, <span class="at">trans =</span> <span class="st">&quot;log&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb212-4"><a href="advanced-visualizations.html#cb212-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb212-5"><a href="advanced-visualizations.html#cb212-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GDP by Country&quot;</span>,</span>
+<span id="cb212-6"><a href="advanced-visualizations.html#cb212-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from WDI&quot;</span>,</span>
+<span id="cb212-7"><a href="advanced-visualizations.html#cb212-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
 <p>We use the merged map and GDP data and <code>geom_sf(aes(fill=gdp_md))</code> filles countries based on GDP. The <code>scale_fill_viridis_c</code> uses “plasma” which is best used for maps. The log scale transformation is used to better differentiate large economies and small economies and grey fill for missing data.</p>
 <div id="animated-world-map-for-gdp" class="section level4 hasAnchor" number="10.6.1.1">
 <h4><span class="header-section-number">10.6.1.1</span> Animated World Map for GDP<a href="advanced-visualizations.html#animated-world-map-for-gdp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Now we create an animated version of the map. You need to check that your time variable does not have any NA. It would be better to choose the years that are available consecutively so we will filter the data to only include from 2009-2019.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="advanced-visualizations.html#cb191-1" tabindex="-1"></a><span class="fu">unique</span>(wgdp<span class="sc">$</span>gdp_year)</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="advanced-visualizations.html#cb213-1" tabindex="-1"></a><span class="fu">unique</span>(wgdp<span class="sc">$</span>gdp_year)</span></code></pre></div>
 <pre><code>##  [1] 2019 2014 2018 2017 2016 2013 2010 2009 2012 2006 2015 2003 2007 2011</code></pre>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="advanced-visualizations.html#cb193-1" tabindex="-1"></a><span class="co"># Filter for years 2009-2019 </span></span>
-<span id="cb193-2"><a href="advanced-visualizations.html#cb193-2" tabindex="-1"></a>wgdp_filtered <span class="ot">&lt;-</span> wgdp <span class="sc">%&gt;%</span>    </span>
-<span id="cb193-3"><a href="advanced-visualizations.html#cb193-3" tabindex="-1"></a>  <span class="fu">filter</span>(gdp_year <span class="sc">%in%</span> <span class="dv">2009</span><span class="sc">:</span><span class="dv">2019</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="advanced-visualizations.html#cb194-1" tabindex="-1"></a>ch5<span class="fl">.6</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> wgdp_filtered) <span class="sc">+</span>   </span>
-<span id="cb194-2"><a href="advanced-visualizations.html#cb194-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gdp_md)) <span class="sc">+</span>   </span>
-<span id="cb194-3"><a href="advanced-visualizations.html#cb194-3" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>, <span class="at">trans =</span> <span class="st">&quot;log&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;grey50&quot;</span>) <span class="sc">+</span>   </span>
-<span id="cb194-4"><a href="advanced-visualizations.html#cb194-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>   </span>
-<span id="cb194-5"><a href="advanced-visualizations.html#cb194-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;World GDP by Country: {closest_state}&quot;</span>,        </span>
-<span id="cb194-6"><a href="advanced-visualizations.html#cb194-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from World Development Indicators&quot;</span>,        </span>
-<span id="cb194-7"><a href="advanced-visualizations.html#cb194-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>) <span class="sc">+</span>   </span>
-<span id="cb194-8"><a href="advanced-visualizations.html#cb194-8" tabindex="-1"></a>  <span class="fu">transition_states</span>(gdp_year) <span class="sc">+</span>     </span>
-<span id="cb194-9"><a href="advanced-visualizations.html#cb194-9" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="advanced-visualizations.html#cb215-1" tabindex="-1"></a><span class="co"># Filter for years 2009-2019 </span></span>
+<span id="cb215-2"><a href="advanced-visualizations.html#cb215-2" tabindex="-1"></a>wgdp_filtered <span class="ot">&lt;-</span> wgdp <span class="sc">%&gt;%</span>    </span>
+<span id="cb215-3"><a href="advanced-visualizations.html#cb215-3" tabindex="-1"></a>  <span class="fu">filter</span>(gdp_year <span class="sc">%in%</span> <span class="dv">2009</span><span class="sc">:</span><span class="dv">2019</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="advanced-visualizations.html#cb216-1" tabindex="-1"></a>ch5<span class="fl">.6</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> wgdp_filtered) <span class="sc">+</span>   </span>
+<span id="cb216-2"><a href="advanced-visualizations.html#cb216-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> gdp_md)) <span class="sc">+</span>   </span>
+<span id="cb216-3"><a href="advanced-visualizations.html#cb216-3" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;plasma&quot;</span>, <span class="at">trans =</span> <span class="st">&quot;log&quot;</span>, <span class="at">na.value =</span> <span class="st">&quot;grey50&quot;</span>) <span class="sc">+</span>   </span>
+<span id="cb216-4"><a href="advanced-visualizations.html#cb216-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span>   </span>
+<span id="cb216-5"><a href="advanced-visualizations.html#cb216-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;World GDP by Country: {closest_state}&quot;</span>,        </span>
+<span id="cb216-6"><a href="advanced-visualizations.html#cb216-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from World Development Indicators&quot;</span>,        </span>
+<span id="cb216-7"><a href="advanced-visualizations.html#cb216-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>) <span class="sc">+</span>   </span>
+<span id="cb216-8"><a href="advanced-visualizations.html#cb216-8" tabindex="-1"></a>  <span class="fu">transition_states</span>(gdp_year) <span class="sc">+</span>     </span>
+<span id="cb216-9"><a href="advanced-visualizations.html#cb216-9" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
 </div>
 <div id="saving-and-embedding-animation-5" class="section level4 hasAnchor" number="10.6.1.2">
 <h4><span class="header-section-number">10.6.1.2</span> Saving and Embedding Animation<a href="advanced-visualizations.html#saving-and-embedding-animation-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="advanced-visualizations.html#cb195-1" tabindex="-1"></a>anim_file6<span class="ot">&lt;-</span><span class="st">&quot;worldgdp.gif&quot;</span></span>
-<span id="cb195-2"><a href="advanced-visualizations.html#cb195-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.6</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file6), </span>
-<span id="cb195-3"><a href="advanced-visualizations.html#cb195-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb195-4"><a href="advanced-visualizations.html#cb195-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file6)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="advanced-visualizations.html#cb217-1" tabindex="-1"></a>anim_file6<span class="ot">&lt;-</span><span class="st">&quot;worldgdp.gif&quot;</span></span>
+<span id="cb217-2"><a href="advanced-visualizations.html#cb217-2" tabindex="-1"></a><span class="fu">animate</span>(ch5<span class="fl">.6</span>, <span class="at">duration =</span> <span class="dv">10</span>, <span class="at">fps =</span> <span class="dv">15</span>, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(anim_file6), </span>
+<span id="cb217-3"><a href="advanced-visualizations.html#cb217-3" tabindex="-1"></a>        <span class="at">preview =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb217-4"><a href="advanced-visualizations.html#cb217-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(anim_file6)</span></code></pre></div>
 </div>
 </div>
 </div>
 <div id="philippine-regional-map" class="section level2 hasAnchor" number="10.7">
 <h2><span class="header-section-number">10.7</span> Philippine Regional Map<a href="advanced-visualizations.html#philippine-regional-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will use <code>Ch6.xlsx</code> containing Regional GDP and use the Philippine Regions shapefile.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="advanced-visualizations.html#cb196-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb196-2"><a href="advanced-visualizations.html#cb196-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="advanced-visualizations.html#cb218-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb218-2"><a href="advanced-visualizations.html#cb218-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 4270980 228.1    6611092 353.1  6611092 353.1
-## Vcells 8787400  67.1   29905508 228.2 91255576 696.3</code></pre>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="advanced-visualizations.html#cb198-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb198-2"><a href="advanced-visualizations.html#cb198-2" tabindex="-1"></a>layers<span class="ot">&lt;-</span><span class="fu">st_layers</span>(<span class="st">&quot;PH_Adm1_Regions.shp&quot;</span>)</span>
-<span id="cb198-3"><a href="advanced-visualizations.html#cb198-3" tabindex="-1"></a><span class="fu">print</span>(layers)</span></code></pre></div>
+## Ncells 3729601 199.2    6613625 353.3  5484836 293.0
+## Vcells 7633379  58.3   14786712 112.9 14785395 112.9</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="advanced-visualizations.html#cb220-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb220-2"><a href="advanced-visualizations.html#cb220-2" tabindex="-1"></a>layers<span class="ot">&lt;-</span><span class="fu">st_layers</span>(<span class="st">&quot;PH_Adm1_Regions.shp&quot;</span>)</span>
+<span id="cb220-3"><a href="advanced-visualizations.html#cb220-3" tabindex="-1"></a><span class="fu">print</span>(layers)</span></code></pre></div>
 <pre><code>## Driver: ESRI Shapefile 
 ## Available layers:
 ##            layer_name geometry_type features fields              crs_name
 ## 1 PH_Adm1_Regions.shp       Polygon       17      7 WGS 84 / UTM zone 51N
 ## 2         Regions.shp       Polygon       17     19                WGS 84</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="advanced-visualizations.html#cb200-1" tabindex="-1"></a>sp_df <span class="ot">=</span> sf<span class="sc">::</span><span class="fu">st_read</span>( </span>
-<span id="cb200-2"><a href="advanced-visualizations.html#cb200-2" tabindex="-1"></a>  <span class="at">dsn=</span> <span class="st">&#39;PH_Adm1_Regions.shp&#39;</span>, </span>
-<span id="cb200-3"><a href="advanced-visualizations.html#cb200-3" tabindex="-1"></a>  <span class="at">layer=</span><span class="st">&quot;Regions.shp&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="advanced-visualizations.html#cb222-1" tabindex="-1"></a>sp_df <span class="ot">=</span> sf<span class="sc">::</span><span class="fu">st_read</span>( </span>
+<span id="cb222-2"><a href="advanced-visualizations.html#cb222-2" tabindex="-1"></a>  <span class="at">dsn=</span> <span class="st">&#39;PH_Adm1_Regions.shp&#39;</span>, </span>
+<span id="cb222-3"><a href="advanced-visualizations.html#cb222-3" tabindex="-1"></a>  <span class="at">layer=</span><span class="st">&quot;Regions.shp&quot;</span>)</span></code></pre></div>
 <pre><code>## Reading layer `Regions.shp&#39; from data source 
 ##   `C:\Users\jemma\OneDrive\Documents\DLSU\LBOMETR_Book\PH_Adm1_Regions.shp&#39; 
 ##   using driver `ESRI Shapefile&#39;
@@ -731,7 +737,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Geodetic CRS:  WGS 84</code></pre>
 <p>The code loads the <code>sf</code> package then <code>st_layers</code> checks all available layers in the shapefile because some shapefiles contains multiple layers like administrative boundaries, water bodies, etc. so we display the available layers in the console. The <code>st_read(dsn "PH_Adm1_Regions.shp")</code> specifies the data source and the <code>layer = "Regions.shp"</code> specifies the layer name to read (the one we will use and need).</p>
 <p>Let us check if the shapefile was loaded correctly.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="advanced-visualizations.html#cb202-1" tabindex="-1"></a><span class="fu">print</span>(sp_df) <span class="co">#check structure</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="advanced-visualizations.html#cb224-1" tabindex="-1"></a><span class="fu">print</span>(sp_df) <span class="co">#check structure</span></span></code></pre></div>
 <pre><code>## Simple feature collection with 17 features and 19 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -783,11 +789,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 9  MULTIPOLYGON (((123.4129 8....
 ## 10 MULTIPOLYGON (((124.6987 9....</code></pre>
 <p>We then check available attributes and also check the region names so that we can merge the shapefile with our GDP data.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="advanced-visualizations.html#cb204-1" tabindex="-1"></a><span class="fu">colnames</span>(sp_df)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="advanced-visualizations.html#cb226-1" tabindex="-1"></a><span class="fu">colnames</span>(sp_df)</span></code></pre></div>
 <pre><code>##  [1] &quot;psgc_code&quot;  &quot;name&quot;       &quot;corr_code&quot;  &quot;geo_level&quot;  &quot;city_class&quot; &quot;inc_class&quot;  &quot;urb_rur&quot;   
 ##  [8] &quot;pop_2015&quot;   &quot;pop_2020&quot;   &quot;status&quot;     &quot;adm1_pcode&quot; &quot;adm1_en&quot;    &quot;adm1_alt&quot;   &quot;adm0_pcode&quot;
 ## [15] &quot;adm0_en&quot;    &quot;date&quot;       &quot;shape_len&quot;  &quot;shape_area&quot; &quot;shape_sqkm&quot; &quot;geometry&quot;</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="advanced-visualizations.html#cb206-1" tabindex="-1"></a><span class="fu">head</span>(sp_df)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="advanced-visualizations.html#cb228-1" tabindex="-1"></a><span class="fu">head</span>(sp_df)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 19 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -814,7 +820,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 Philippines (the) 2022-11-09  27.62549   1.326720   15846.63 MULTIPOLYGON (((122.3079 14...
 ## 5 Philippines (the) 2022-11-09  44.92324   1.446324   17338.38 MULTIPOLYGON (((122.9882 11...
 ## 6 Philippines (the) 2022-11-09  27.77415   1.657591   20047.63 MULTIPOLYGON (((121.4341 12...</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="advanced-visualizations.html#cb208-1" tabindex="-1"></a><span class="fu">unique</span>(sp_df<span class="sc">$</span>name)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="advanced-visualizations.html#cb230-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb230-2"><a href="advanced-visualizations.html#cb230-2" tabindex="-1"></a><span class="fu">unique</span>(sp_df<span class="sc">$</span>name)</span></code></pre></div>
 <pre><code>##  [1] &quot;Region I (Ilocos Region)&quot;                               
 ##  [2] &quot;Region II (Cagayan Valley)&quot;                             
 ##  [3] &quot;Region III (Central Luzon)&quot;                             
@@ -832,15 +839,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [15] &quot;Region XIII (Caraga)&quot;                                   
 ## [16] &quot;MIMAROPA Region&quot;                                        
 ## [17] &quot;Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)&quot;</code></pre>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="advanced-visualizations.html#cb210-1" tabindex="-1"></a>sp_df <span class="ot">&lt;-</span> sp_df <span class="sc">%&gt;%</span></span>
-<span id="cb210-2"><a href="advanced-visualizations.html#cb210-2" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region =</span> name)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="advanced-visualizations.html#cb232-1" tabindex="-1"></a>sp_df <span class="ot">&lt;-</span> sp_df <span class="sc">%&gt;%</span></span>
+<span id="cb232-2"><a href="advanced-visualizations.html#cb232-2" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region =</span> name)</span></code></pre></div>
 <p>Now, we load our Regional GDP package;</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="advanced-visualizations.html#cb211-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb211-2"><a href="advanced-visualizations.html#cb211-2" tabindex="-1"></a>rgdp<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">&quot;Ch5PracticeB.xlsx&quot;</span>,</span>
-<span id="cb211-3"><a href="advanced-visualizations.html#cb211-3" tabindex="-1"></a>                 <span class="at">sheet =</span> <span class="st">&quot;Sheet1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="advanced-visualizations.html#cb233-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb233-2"><a href="advanced-visualizations.html#cb233-2" tabindex="-1"></a>rgdp<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">&quot;Ch5PracticeB.xlsx&quot;</span>,</span>
+<span id="cb233-3"><a href="advanced-visualizations.html#cb233-3" tabindex="-1"></a>                 <span class="at">sheet =</span> <span class="st">&quot;Sheet1&quot;</span>)</span></code></pre></div>
 <pre><code>## New names:
 ## • `` -&gt; `...1`</code></pre>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="advanced-visualizations.html#cb213-1" tabindex="-1"></a><span class="fu">head</span>(rgdp)</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="advanced-visualizations.html#cb235-1" tabindex="-1"></a><span class="fu">head</span>(rgdp)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 26
 ##   ...1  region     `2000` `2001` `2002` `2003` `2004` `2005` `2006` `2007` `2008` `2009` `2010`
 ##   &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -854,14 +861,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;,
 ## #   `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;</code></pre>
 <p>We need to convert the columns to have the same format first so that we can edit all of them later on when we transform to long format since different formats cannot be combined when modifying to long format.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="advanced-visualizations.html#cb215-1" tabindex="-1"></a><span class="fu">colnames</span>(rgdp)<span class="ot">&lt;-</span><span class="fu">as.character</span>(<span class="fu">colnames</span>(rgdp))</span>
-<span id="cb215-2"><a href="advanced-visualizations.html#cb215-2" tabindex="-1"></a>rgdp<span class="ot">&lt;-</span>rgdp <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">&quot;...1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="advanced-visualizations.html#cb237-1" tabindex="-1"></a><span class="fu">colnames</span>(rgdp)<span class="ot">&lt;-</span><span class="fu">as.character</span>(<span class="fu">colnames</span>(rgdp))</span>
+<span id="cb237-2"><a href="advanced-visualizations.html#cb237-2" tabindex="-1"></a>rgdp<span class="ot">&lt;-</span>rgdp <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">&quot;...1&quot;</span>)</span></code></pre></div>
 <p>Now, we can modify</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="advanced-visualizations.html#cb216-1" tabindex="-1"></a>rgdpl<span class="ot">&lt;-</span>rgdp <span class="sc">%&gt;%</span> </span>
-<span id="cb216-2"><a href="advanced-visualizations.html#cb216-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>region, <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;GDP&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb216-3"><a href="advanced-visualizations.html#cb216-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year=</span><span class="fu">as.numeric</span>(Year),</span>
-<span id="cb216-4"><a href="advanced-visualizations.html#cb216-4" tabindex="-1"></a>         <span class="at">GDP=</span><span class="fu">as.numeric</span>(GDP))</span>
-<span id="cb216-5"><a href="advanced-visualizations.html#cb216-5" tabindex="-1"></a><span class="fu">head</span>(rgdpl)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="advanced-visualizations.html#cb238-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb238-2"><a href="advanced-visualizations.html#cb238-2" tabindex="-1"></a>rgdpl<span class="ot">&lt;-</span>rgdp <span class="sc">%&gt;%</span> </span>
+<span id="cb238-3"><a href="advanced-visualizations.html#cb238-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>region, <span class="at">names_to =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;GDP&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb238-4"><a href="advanced-visualizations.html#cb238-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year=</span><span class="fu">as.numeric</span>(Year),</span>
+<span id="cb238-5"><a href="advanced-visualizations.html#cb238-5" tabindex="-1"></a>         <span class="at">GDP=</span><span class="fu">as.numeric</span>(GDP))</span>
+<span id="cb238-6"><a href="advanced-visualizations.html#cb238-6" tabindex="-1"></a><span class="fu">head</span>(rgdpl)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   region                   Year         GDP
 ##   &lt;chr&gt;                   &lt;dbl&gt;       &lt;dbl&gt;
@@ -871,130 +879,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 National Capital Region  2003 2624052475.
 ## 5 National Capital Region  2004 2841837836.
 ## 6 National Capital Region  2005 2988546218.</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="advanced-visualizations.html#cb218-1" tabindex="-1"></a><span class="fu">unique</span>(rgdpl<span class="sc">$</span>region)</span></code></pre></div>
-<pre><code>##  [1] &quot;National Capital Region&quot;                           
-##  [2] &quot;Cordillera Administrative Region&quot;                  
-##  [3] &quot;Ilocos Region&quot;                                     
-##  [4] &quot;Cagayan Valley&quot;                                    
-##  [5] &quot;Central Luzon&quot;                                     
-##  [6] &quot;CALABARZON&quot;                                        
-##  [7] &quot;MIMAROPA Region&quot;                                   
-##  [8] &quot;Bicol Region&quot;                                      
-##  [9] &quot;Western Visayas&quot;                                   
-## [10] &quot;Central Visayas&quot;                                   
-## [11] &quot;Eastern Visayas&quot;                                   
-## [12] &quot;Zamboanga Peninsula&quot;                               
-## [13] &quot;Northern Mindanao&quot;                                 
-## [14] &quot;Davao Region&quot;                                      
-## [15] &quot;SOCCSKSARGEN&quot;                                      
-## [16] &quot;Caraga&quot;                                            
-## [17] &quot;Bangsamoro Autonomous Region\r\nin Muslim Mindanao&quot;</code></pre>
-<p>Since we know that the names are different in the shapefile, we rename the regions in the <code>rgdpl</code>. I create a mapping table for this. You can use this again when you do your own mapping.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="advanced-visualizations.html#cb220-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb220-2"><a href="advanced-visualizations.html#cb220-2" tabindex="-1"></a></span>
-<span id="cb220-3"><a href="advanced-visualizations.html#cb220-3" tabindex="-1"></a><span class="co"># Create a mapping table for inconsistent region names</span></span>
-<span id="cb220-4"><a href="advanced-visualizations.html#cb220-4" tabindex="-1"></a>region_mapping <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb220-5"><a href="advanced-visualizations.html#cb220-5" tabindex="-1"></a>  <span class="st">&quot;National Capital Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;National Capital Region (NCR)&quot;</span>,</span>
-<span id="cb220-6"><a href="advanced-visualizations.html#cb220-6" tabindex="-1"></a>  <span class="st">&quot;Cordillera Administrative Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Cordillera Administrative Region (CAR)&quot;</span>,</span>
-<span id="cb220-7"><a href="advanced-visualizations.html#cb220-7" tabindex="-1"></a>  <span class="st">&quot;Ilocos Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region I (Ilocos Region)&quot;</span>,</span>
-<span id="cb220-8"><a href="advanced-visualizations.html#cb220-8" tabindex="-1"></a>  <span class="st">&quot;Cagayan Valley&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region II (Cagayan Valley)&quot;</span>,</span>
-<span id="cb220-9"><a href="advanced-visualizations.html#cb220-9" tabindex="-1"></a>  <span class="st">&quot;Central Luzon&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region III (Central Luzon)&quot;</span>,</span>
-<span id="cb220-10"><a href="advanced-visualizations.html#cb220-10" tabindex="-1"></a>  <span class="st">&quot;CALABARZON&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region IV-A (CALABARZON)&quot;</span>,</span>
-<span id="cb220-11"><a href="advanced-visualizations.html#cb220-11" tabindex="-1"></a>  <span class="st">&quot;MIMAROPA Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;MIMAROPA Region&quot;</span>,</span>
-<span id="cb220-12"><a href="advanced-visualizations.html#cb220-12" tabindex="-1"></a>  <span class="st">&quot;Bicol Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region V (Bicol Region)&quot;</span>,</span>
-<span id="cb220-13"><a href="advanced-visualizations.html#cb220-13" tabindex="-1"></a>  <span class="st">&quot;Western Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VI (Western Visayas)&quot;</span>,</span>
-<span id="cb220-14"><a href="advanced-visualizations.html#cb220-14" tabindex="-1"></a>  <span class="st">&quot;Central Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VII (Central Visayas)&quot;</span>,</span>
-<span id="cb220-15"><a href="advanced-visualizations.html#cb220-15" tabindex="-1"></a>  <span class="st">&quot;Eastern Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VIII (Eastern Visayas)&quot;</span>,</span>
-<span id="cb220-16"><a href="advanced-visualizations.html#cb220-16" tabindex="-1"></a>  <span class="st">&quot;Zamboanga Peninsula&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region IX (Zamboanga Peninsula)&quot;</span>,</span>
-<span id="cb220-17"><a href="advanced-visualizations.html#cb220-17" tabindex="-1"></a>  <span class="st">&quot;Northern Mindanao&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region X (Northern Mindanao)&quot;</span>,</span>
-<span id="cb220-18"><a href="advanced-visualizations.html#cb220-18" tabindex="-1"></a>  <span class="st">&quot;Davao Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XI (Davao Region)&quot;</span>,</span>
-<span id="cb220-19"><a href="advanced-visualizations.html#cb220-19" tabindex="-1"></a>  <span class="st">&quot;SOCCSKSARGEN&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XII (SOCCSKSARGEN)&quot;</span>,</span>
-<span id="cb220-20"><a href="advanced-visualizations.html#cb220-20" tabindex="-1"></a>  <span class="st">&quot;Caraga&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XIII (Caraga)&quot;</span>,</span>
-<span id="cb220-21"><a href="advanced-visualizations.html#cb220-21" tabindex="-1"></a>  <span class="st">&quot;Bangsamoro Autonomous Region</span><span class="sc">\r\n</span><span class="st">in Muslim Mindanao&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)&quot;</span>  <span class="co"># Fix line break issue</span></span>
-<span id="cb220-22"><a href="advanced-visualizations.html#cb220-22" tabindex="-1"></a>)</span>
-<span id="cb220-23"><a href="advanced-visualizations.html#cb220-23" tabindex="-1"></a></span>
-<span id="cb220-24"><a href="advanced-visualizations.html#cb220-24" tabindex="-1"></a><span class="co"># Apply corrections to GDP dataset</span></span>
-<span id="cb220-25"><a href="advanced-visualizations.html#cb220-25" tabindex="-1"></a>rgdpl<span class="sc">$</span>region <span class="ot">&lt;-</span> <span class="fu">recode</span>(rgdpl<span class="sc">$</span>region, <span class="sc">!!!</span>region_mapping)</span>
-<span id="cb220-26"><a href="advanced-visualizations.html#cb220-26" tabindex="-1"></a></span>
-<span id="cb220-27"><a href="advanced-visualizations.html#cb220-27" tabindex="-1"></a><span class="co"># Check if all regions now match</span></span>
-<span id="cb220-28"><a href="advanced-visualizations.html#cb220-28" tabindex="-1"></a><span class="fu">setdiff</span>(rgdpl<span class="sc">$</span>region, sp_df<span class="sc">$</span>region)  <span class="co"># Should return an empty set if all match</span></span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="advanced-visualizations.html#cb240-1" tabindex="-1"></a><span class="fu">unique</span>(rgdpl<span class="sc">$</span>region)</span></code></pre></div>
+<pre><code>##  [1] &quot;National Capital Region&quot;          &quot;Cordillera Administrative Region&quot;
+##  [3] &quot;Ilocos Region&quot;                    &quot;Cagayan Valley&quot;                  
+##  [5] &quot;Central Luzon&quot;                    &quot;CALABARZON&quot;                      
+##  [7] &quot;MIMAROPA Region&quot;                  &quot;Bicol Region&quot;                    
+##  [9] &quot;Western Visayas&quot;                  &quot;Central Visayas&quot;                 
+## [11] &quot;Eastern Visayas&quot;                  &quot;Zamboanga Peninsula&quot;             
+## [13] &quot;Northern Mindanao&quot;                &quot;Davao Region&quot;                    
+## [15] &quot;SOCCSKSARGEN&quot;                     &quot;Caraga&quot;                          
+## [17] &quot;BARMM&quot;</code></pre>
+<p>Since we know that the names are different in the shapefile, we rename the regions so that they match through mapping.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="advanced-visualizations.html#cb242-1" tabindex="-1"></a>region_mapping <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb242-2"><a href="advanced-visualizations.html#cb242-2" tabindex="-1"></a>  <span class="st">&quot;Ilocos Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region I (Ilocos Region)&quot;</span>,</span>
+<span id="cb242-3"><a href="advanced-visualizations.html#cb242-3" tabindex="-1"></a>  <span class="st">&quot;Cagayan Valley&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region II (Cagayan Valley)&quot;</span>,</span>
+<span id="cb242-4"><a href="advanced-visualizations.html#cb242-4" tabindex="-1"></a>  <span class="st">&quot;Central Luzon&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region III (Central Luzon)&quot;</span>,</span>
+<span id="cb242-5"><a href="advanced-visualizations.html#cb242-5" tabindex="-1"></a>  <span class="st">&quot;CALABARZON&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region IV-A (CALABARZON)&quot;</span>,</span>
+<span id="cb242-6"><a href="advanced-visualizations.html#cb242-6" tabindex="-1"></a>  <span class="st">&quot;Bicol Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region V (Bicol Region)&quot;</span>,</span>
+<span id="cb242-7"><a href="advanced-visualizations.html#cb242-7" tabindex="-1"></a>  <span class="st">&quot;Western Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VI (Western Visayas)&quot;</span>,</span>
+<span id="cb242-8"><a href="advanced-visualizations.html#cb242-8" tabindex="-1"></a>  <span class="st">&quot;Central Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VII (Central Visayas)&quot;</span>,</span>
+<span id="cb242-9"><a href="advanced-visualizations.html#cb242-9" tabindex="-1"></a>  <span class="st">&quot;Eastern Visayas&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region VIII (Eastern Visayas)&quot;</span>,</span>
+<span id="cb242-10"><a href="advanced-visualizations.html#cb242-10" tabindex="-1"></a>  <span class="st">&quot;Zamboanga Peninsula&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region IX (Zamboanga Peninsula)&quot;</span>,</span>
+<span id="cb242-11"><a href="advanced-visualizations.html#cb242-11" tabindex="-1"></a>  <span class="st">&quot;Northern Mindanao&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region X (Northern Mindanao)&quot;</span>,</span>
+<span id="cb242-12"><a href="advanced-visualizations.html#cb242-12" tabindex="-1"></a>  <span class="st">&quot;Davao Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XI (Davao Region)&quot;</span>,</span>
+<span id="cb242-13"><a href="advanced-visualizations.html#cb242-13" tabindex="-1"></a>  <span class="st">&quot;SOCCSKSARGEN&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XII (SOCCSKSARGEN)&quot;</span>,</span>
+<span id="cb242-14"><a href="advanced-visualizations.html#cb242-14" tabindex="-1"></a>  <span class="st">&quot;National Capital Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;National Capital Region (NCR)&quot;</span>,</span>
+<span id="cb242-15"><a href="advanced-visualizations.html#cb242-15" tabindex="-1"></a>  <span class="st">&quot;Cordillera Administrative Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Cordillera Administrative Region (CAR)&quot;</span>,</span>
+<span id="cb242-16"><a href="advanced-visualizations.html#cb242-16" tabindex="-1"></a>  <span class="st">&quot;Caraga&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region XIII (Caraga)&quot;</span>,</span>
+<span id="cb242-17"><a href="advanced-visualizations.html#cb242-17" tabindex="-1"></a>  <span class="st">&quot;BARMM&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)&quot;</span>,</span>
+<span id="cb242-18"><a href="advanced-visualizations.html#cb242-18" tabindex="-1"></a>  <span class="st">&quot;MIMAROPA Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;MIMAROPA Region&quot;</span></span>
+<span id="cb242-19"><a href="advanced-visualizations.html#cb242-19" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="advanced-visualizations.html#cb243-1" tabindex="-1"></a>rgdpl<span class="sc">$</span>region <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(rgdpl<span class="sc">$</span>region, <span class="sc">!!!</span>region_mapping)</span>
+<span id="cb243-2"><a href="advanced-visualizations.html#cb243-2" tabindex="-1"></a><span class="fu">setdiff</span>(sp_df<span class="sc">$</span>region, rgdpl<span class="sc">$</span>region)  <span class="co"># Should be (0)</span></span></code></pre></div>
+<pre><code>## character(0)</code></pre>
 <p>Now, we can merge.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="advanced-visualizations.html#cb221-1" tabindex="-1"></a>rgdp_map<span class="ot">&lt;-</span>sp_df <span class="sc">%&gt;%</span> </span>
-<span id="cb221-2"><a href="advanced-visualizations.html#cb221-2" tabindex="-1"></a>  <span class="fu">left_join</span>(rgdpl, <span class="at">by =</span> <span class="st">&quot;region&quot;</span>)</span>
-<span id="cb221-3"><a href="advanced-visualizations.html#cb221-3" tabindex="-1"></a><span class="fu">setdiff</span>(rgdpl<span class="sc">$</span>region, sp_df<span class="sc">$</span>region)</span></code></pre></div>
-<pre><code>##  [1] &quot;National Capital Region&quot;                           
-##  [2] &quot;Cordillera Administrative Region&quot;                  
-##  [3] &quot;Ilocos Region&quot;                                     
-##  [4] &quot;Cagayan Valley&quot;                                    
-##  [5] &quot;Central Luzon&quot;                                     
-##  [6] &quot;CALABARZON&quot;                                        
-##  [7] &quot;Bicol Region&quot;                                      
-##  [8] &quot;Western Visayas&quot;                                   
-##  [9] &quot;Central Visayas&quot;                                   
-## [10] &quot;Eastern Visayas&quot;                                   
-## [11] &quot;Zamboanga Peninsula&quot;                               
-## [12] &quot;Northern Mindanao&quot;                                 
-## [13] &quot;Davao Region&quot;                                      
-## [14] &quot;SOCCSKSARGEN&quot;                                      
-## [15] &quot;Caraga&quot;                                            
-## [16] &quot;Bangsamoro Autonomous Region\r\nin Muslim Mindanao&quot;</code></pre>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="advanced-visualizations.html#cb223-1" tabindex="-1"></a><span class="co">#remove unnecessary columns and mutate GDP to billions</span></span>
-<span id="cb223-2"><a href="advanced-visualizations.html#cb223-2" tabindex="-1"></a>rgdp_map <span class="ot">&lt;-</span> rgdp_map <span class="sc">%&gt;%</span></span>
-<span id="cb223-3"><a href="advanced-visualizations.html#cb223-3" tabindex="-1"></a>  <span class="fu">select</span>(region, Year, GDP, geometry) <span class="sc">%&gt;%</span></span>
-<span id="cb223-4"><a href="advanced-visualizations.html#cb223-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">GDP =</span> GDP <span class="sc">/</span> <span class="fl">1e9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="advanced-visualizations.html#cb245-1" tabindex="-1"></a>rgdp_map<span class="ot">&lt;-</span>sp_df <span class="sc">%&gt;%</span> </span>
+<span id="cb245-2"><a href="advanced-visualizations.html#cb245-2" tabindex="-1"></a>  <span class="fu">left_join</span>(rgdpl, <span class="at">by =</span> <span class="st">&quot;region&quot;</span>)</span>
+<span id="cb245-3"><a href="advanced-visualizations.html#cb245-3" tabindex="-1"></a><span class="fu">setdiff</span>(rgdpl<span class="sc">$</span>region, sp_df<span class="sc">$</span>region)</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="advanced-visualizations.html#cb247-1" tabindex="-1"></a><span class="co">#remove unnecessary columns and mutate GDP to billions</span></span>
+<span id="cb247-2"><a href="advanced-visualizations.html#cb247-2" tabindex="-1"></a>rgdp_map <span class="ot">&lt;-</span> rgdp_map <span class="sc">%&gt;%</span></span>
+<span id="cb247-3"><a href="advanced-visualizations.html#cb247-3" tabindex="-1"></a>  <span class="fu">select</span>(region, Year, GDP, geometry) <span class="sc">%&gt;%</span></span>
+<span id="cb247-4"><a href="advanced-visualizations.html#cb247-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">GDP =</span> GDP <span class="sc">/</span> <span class="fl">1e9</span>)</span></code></pre></div>
 <div id="choropleth-map" class="section level4 hasAnchor" number="10.7.0.1">
 <h4><span class="header-section-number">10.7.0.1</span> Choropleth Map<a href="advanced-visualizations.html#choropleth-map" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A Choropleth Map is a type of thematic map where regions are color-coded based on a statistical value (e.g., GDP, population, unemployment rate, etc.). It is commonly used in geographic data visualization to show spatial variations across different regions. For the static map, let us choose the latest year, 2023;</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="advanced-visualizations.html#cb224-1" tabindex="-1"></a>rgdp2023<span class="ot">&lt;-</span>rgdp_map <span class="sc">%&gt;%</span> </span>
-<span id="cb224-2"><a href="advanced-visualizations.html#cb224-2" tabindex="-1"></a>  <span class="fu">filter</span>(Year<span class="sc">==</span><span class="dv">2023</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="advanced-visualizations.html#cb225-1" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb225-2"><a href="advanced-visualizations.html#cb225-2" tabindex="-1"></a></span>
-<span id="cb225-3"><a href="advanced-visualizations.html#cb225-3" tabindex="-1"></a><span class="co"># Modify the Choropleth Map</span></span>
-<span id="cb225-4"><a href="advanced-visualizations.html#cb225-4" tabindex="-1"></a><span class="fu">ggplot</span>(rgdp2023) <span class="sc">+</span></span>
-<span id="cb225-5"><a href="advanced-visualizations.html#cb225-5" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> GDP), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span>  <span class="co"># Fill regions based on GDP</span></span>
-<span id="cb225-6"><a href="advanced-visualizations.html#cb225-6" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
-<span id="cb225-7"><a href="advanced-visualizations.html#cb225-7" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">&quot;magma&quot;</span>, </span>
-<span id="cb225-8"><a href="advanced-visualizations.html#cb225-8" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>, </span>
-<span id="cb225-9"><a href="advanced-visualizations.html#cb225-9" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)  <span class="co"># Fix rounding issue</span></span>
-<span id="cb225-10"><a href="advanced-visualizations.html#cb225-10" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
-<span id="cb225-11"><a href="advanced-visualizations.html#cb225-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb225-12"><a href="advanced-visualizations.html#cb225-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-187-1.png" width="672" /></p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="advanced-visualizations.html#cb226-1" tabindex="-1"></a><span class="co">#Saving the images</span></span>
-<span id="cb226-2"><a href="advanced-visualizations.html#cb226-2" tabindex="-1"></a><span class="co">#ggsave(&quot;rgdp2023.jpg&quot;, plot = last_plot(), width = 10, height = 8, dpi = 300)</span></span>
-<span id="cb226-3"><a href="advanced-visualizations.html#cb226-3" tabindex="-1"></a><span class="co">#or plot = nameofplot, width and height are in inches and for high quality image, dpi = 300</span></span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="advanced-visualizations.html#cb248-1" tabindex="-1"></a>rgdp2023<span class="ot">&lt;-</span>rgdp_map <span class="sc">%&gt;%</span> </span>
+<span id="cb248-2"><a href="advanced-visualizations.html#cb248-2" tabindex="-1"></a>  <span class="fu">filter</span>(Year<span class="sc">==</span><span class="dv">2023</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="advanced-visualizations.html#cb249-1" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;scales&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     discard</code></pre>
+<pre><code>## The following object is masked from &#39;package:readr&#39;:
+## 
+##     col_factor</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="advanced-visualizations.html#cb253-1" tabindex="-1"></a><span class="co"># Modify the Choropleth Map</span></span>
+<span id="cb253-2"><a href="advanced-visualizations.html#cb253-2" tabindex="-1"></a><span class="fu">ggplot</span>(rgdp2023) <span class="sc">+</span></span>
+<span id="cb253-3"><a href="advanced-visualizations.html#cb253-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> GDP), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span>  <span class="co"># Fill regions based on GDP</span></span>
+<span id="cb253-4"><a href="advanced-visualizations.html#cb253-4" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb253-5"><a href="advanced-visualizations.html#cb253-5" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">&quot;magma&quot;</span>, </span>
+<span id="cb253-6"><a href="advanced-visualizations.html#cb253-6" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>, </span>
+<span id="cb253-7"><a href="advanced-visualizations.html#cb253-7" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)  <span class="co"># Fix rounding issue</span></span>
+<span id="cb253-8"><a href="advanced-visualizations.html#cb253-8" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
+<span id="cb253-9"><a href="advanced-visualizations.html#cb253-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb253-10"><a href="advanced-visualizations.html#cb253-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="advanced-visualizations.html#cb254-1" tabindex="-1"></a><span class="co">#Saving the images</span></span>
+<span id="cb254-2"><a href="advanced-visualizations.html#cb254-2" tabindex="-1"></a><span class="co">#ggsave(&quot;rgdp2023.jpg&quot;, plot = last_plot(), width = 10, height = 8, dpi = 300)</span></span>
+<span id="cb254-3"><a href="advanced-visualizations.html#cb254-3" tabindex="-1"></a><span class="co">#or plot = nameofplot, width and height are in inches and for high quality image, dpi = 300</span></span></code></pre></div>
 </div>
 <div id="bubble-map" class="section level4 hasAnchor" number="10.7.0.2">
 <h4><span class="header-section-number">10.7.0.2</span> Bubble Map<a href="advanced-visualizations.html#bubble-map" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A Bubble Map is a type of thematic map that represents data values using circles (bubbles) placed over specific locations. The size of the bubble corresponds to the magnitude of the variable being visualized (e.g., GDP, population, sales, etc.). We use 2023 again.</p>
 <p>The first step that we need to do is calculate the <code>centroids</code> using <code>st_centroid</code> from the <code>sf</code> package because this calculates the geometric center of each polygon region in the shapefile. These will be used as our bubble locations and to ensure that there will be no overlapping with borders.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="advanced-visualizations.html#cb227-1" tabindex="-1"></a>phr_centroids<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(rgdp2023)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="advanced-visualizations.html#cb255-1" tabindex="-1"></a>phr_centroids<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(rgdp2023)</span></code></pre></div>
 <pre><code>## Warning: st_centroid assumes attributes are constant over geometries</code></pre>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="advanced-visualizations.html#cb229-1" tabindex="-1"></a><span class="fu">print</span>(phr_centroids)</span></code></pre></div>
-<pre><code>## Simple feature collection with 1 feature and 3 fields
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="advanced-visualizations.html#cb257-1" tabindex="-1"></a><span class="fu">print</span>(phr_centroids)</span></code></pre></div>
+<pre><code>## Simple feature collection with 17 features and 3 fields
 ## Geometry type: POINT
 ## Dimension:     XY
-## Bounding box:  xmin: 119.8902 ymin: 11.35282 xmax: 119.8902 ymax: 11.35282
+## Bounding box:  xmin: 119.8902 ymin: 6.580654 xmax: 125.8263 ymax: 17.35385
 ## Geodetic CRS:  WGS 84
-##            region Year      GDP                  geometry
-## 1 MIMAROPA Region 2023 0.411435 POINT (119.8902 11.35282)</code></pre>
+## First 10 features:
+##                             region Year       GDP                  geometry
+## 1         Region I (Ilocos Region) 2023 0.7014687 POINT (120.4827 16.90283)
+## 2       Region II (Cagayan Valley) 2023 0.4470732 POINT (121.7316 17.20396)
+## 3       Region III (Central Luzon) 2023 2.3184283  POINT (120.8223 15.3919)
+## 4         Region IV-A (CALABARZON) 2023 3.0952557  POINT (121.568 14.16225)
+## 5          Region V (Bicol Region) 2023 0.6103399 POINT (123.4734 13.27216)
+## 6      Region VI (Western Visayas) 2023 1.0242699  POINT (122.652 10.84319)
+## 7     Region VII (Central Visayas) 2023 1.3811721 POINT (123.6147 9.921139)
+## 8    Region VIII (Eastern Visayas) 2023 0.5235611 POINT (124.9534 11.53574)
+## 9  Region IX (Zamboanga Peninsula) 2023 0.4473210 POINT (122.8477 7.825902)
+## 10    Region X (Northern Mindanao) 2023 0.9847503 POINT (124.6742 8.187355)</code></pre>
 <p>We now create our Bubble Map</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="advanced-visualizations.html#cb231-1" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb231-2"><a href="advanced-visualizations.html#cb231-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>rgdp2023, <span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span><span class="co">#base map</span></span>
-<span id="cb231-3"><a href="advanced-visualizations.html#cb231-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> phr_centroids, </span>
-<span id="cb231-4"><a href="advanced-visualizations.html#cb231-4" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(geometry)[,<span class="dv">1</span>], </span>
-<span id="cb231-5"><a href="advanced-visualizations.html#cb231-5" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">st_coordinates</span>(geometry)[,<span class="dv">2</span>], </span>
-<span id="cb231-6"><a href="advanced-visualizations.html#cb231-6" tabindex="-1"></a>                 <span class="at">size =</span> GDP, </span>
-<span id="cb231-7"><a href="advanced-visualizations.html#cb231-7" tabindex="-1"></a>                 <span class="at">color =</span> GDP), </span>
-<span id="cb231-8"><a href="advanced-visualizations.html#cb231-8" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb231-9"><a href="advanced-visualizations.html#cb231-9" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">15</span>), <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>) <span class="sc">+</span>  <span class="co"># Adjust bubble size</span></span>
-<span id="cb231-10"><a href="advanced-visualizations.html#cb231-10" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;magma&quot;</span>, <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>, <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)) <span class="sc">+</span> </span>
-<span id="cb231-11"><a href="advanced-visualizations.html#cb231-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>,</span>
-<span id="cb231-12"><a href="advanced-visualizations.html#cb231-12" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Bubble Size Represents GDP&quot;</span>,</span>
-<span id="cb231-13"><a href="advanced-visualizations.html#cb231-13" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Coordinates&quot;</span>,</span>
-<span id="cb231-14"><a href="advanced-visualizations.html#cb231-14" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Coordinates&quot;</span>)<span class="sc">+</span></span>
-<span id="cb231-15"><a href="advanced-visualizations.html#cb231-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="advanced-visualizations.html#cb259-1" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb259-2"><a href="advanced-visualizations.html#cb259-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>rgdp2023, <span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span><span class="co">#base map</span></span>
+<span id="cb259-3"><a href="advanced-visualizations.html#cb259-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> phr_centroids, </span>
+<span id="cb259-4"><a href="advanced-visualizations.html#cb259-4" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">st_coordinates</span>(geometry)[,<span class="dv">1</span>], </span>
+<span id="cb259-5"><a href="advanced-visualizations.html#cb259-5" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">st_coordinates</span>(geometry)[,<span class="dv">2</span>], </span>
+<span id="cb259-6"><a href="advanced-visualizations.html#cb259-6" tabindex="-1"></a>                 <span class="at">size =</span> GDP, </span>
+<span id="cb259-7"><a href="advanced-visualizations.html#cb259-7" tabindex="-1"></a>                 <span class="at">color =</span> GDP), </span>
+<span id="cb259-8"><a href="advanced-visualizations.html#cb259-8" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb259-9"><a href="advanced-visualizations.html#cb259-9" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">15</span>), <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>) <span class="sc">+</span>  <span class="co"># Adjust bubble size</span></span>
+<span id="cb259-10"><a href="advanced-visualizations.html#cb259-10" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;magma&quot;</span>, <span class="at">name =</span> <span class="st">&quot;GDP (2023)&quot;</span>, <span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb259-11"><a href="advanced-visualizations.html#cb259-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>,</span>
+<span id="cb259-12"><a href="advanced-visualizations.html#cb259-12" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Bubble Size Represents GDP&quot;</span>,</span>
+<span id="cb259-13"><a href="advanced-visualizations.html#cb259-13" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Coordinates&quot;</span>,</span>
+<span id="cb259-14"><a href="advanced-visualizations.html#cb259-14" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Coordinates&quot;</span>)<span class="sc">+</span></span>
+<span id="cb259-15"><a href="advanced-visualizations.html#cb259-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
 <p>As you can see, the base map is drawn using <code>geom_sf()</code> then the bubbles represent the GDP values. The bubble size and color represent GDP magnitude.</p>
 <p>You will notice that <code>ggplot()</code> is empty, this creates an empty ggplot canvas where the map layers will be added using the <code>geom_sf</code>.</p>
 <p>In the <code>aes</code> there’s <code>x = st_coordinates(geometry)[,1]</code> same for y. These extract the longitude and latitude of each centroid.</p>
@@ -1008,56 +1004,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">10.8.0.1</span> Animated Philippine Regional GDP Choropleth Map<a href="advanced-visualizations.html#animated-philippine-regional-gdp-choropleth-map" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will now make an animated version of the Regional GDP Choropleth Map since we have data from 2000 to 2023. Let’s convert to billions like what we did for the 2023.</p>
 <p>It takes really long to render (it depends on the memory you have in your laptops) so, I will place the best strategy, that is creating static maps and combining them to form a video. Notice that when cleaning the environment, I chose to keep <code>rgdp_map</code> since we will still use this.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="advanced-visualizations.html#cb232-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;rgdp_map&quot;</span>))</span>
-<span id="cb232-2"><a href="advanced-visualizations.html#cb232-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells  4286059  229    6611092 353.1  6611092 353.1
-## Vcells 34852662  266   91812573 700.5 91812573 700.5</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="advanced-visualizations.html#cb234-1" tabindex="-1"></a><span class="co">#for mp4</span></span>
-<span id="cb234-2"><a href="advanced-visualizations.html#cb234-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(av)) <span class="fu">install.packages</span>(<span class="st">&quot;av&quot;</span>)</span>
-<span id="cb234-3"><a href="advanced-visualizations.html#cb234-3" tabindex="-1"></a><span class="fu">library</span>(av)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="advanced-visualizations.html#cb260-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;rgdp_map&quot;</span>))</span>
+<span id="cb260-2"><a href="advanced-visualizations.html#cb260-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+## Ncells  3785921 202.2    6613625  353.3   6613625  353.3
+## Vcells 33771155 257.7  154841740 1181.4 201506150 1537.4</code></pre>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="advanced-visualizations.html#cb262-1" tabindex="-1"></a><span class="co">#for mp4</span></span>
+<span id="cb262-2"><a href="advanced-visualizations.html#cb262-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(av)) <span class="fu">install.packages</span>(<span class="st">&quot;av&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: av</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="advanced-visualizations.html#cb264-1" tabindex="-1"></a><span class="fu">library</span>(av)</span></code></pre></div>
 <p>We need to create a directory <em>within</em> our working directory where the images will be saved.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="advanced-visualizations.html#cb235-1" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;ch_gdp_frames&quot;</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="advanced-visualizations.html#cb265-1" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;ch_gdp_frames&quot;</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>We now generate static maps; this requires us to create a function/loop. You will notice that the <code>plot.background</code> was set twice. It is because when we use the <code>av</code>, the default is a black setting so it’s better to have a white background set for the plot and the entire canvas.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="advanced-visualizations.html#cb236-1" tabindex="-1"></a><span class="cf">for</span>(year <span class="cf">in</span> <span class="dv">2000</span><span class="sc">:</span><span class="dv">2023</span>){</span>
-<span id="cb236-2"><a href="advanced-visualizations.html#cb236-2" tabindex="-1"></a>  <span class="co">#filter data for the specific year</span></span>
-<span id="cb236-3"><a href="advanced-visualizations.html#cb236-3" tabindex="-1"></a>  data_year<span class="ot">&lt;-</span>rgdp_map <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year<span class="sc">==</span>year)</span>
-<span id="cb236-4"><a href="advanced-visualizations.html#cb236-4" tabindex="-1"></a>  </span>
-<span id="cb236-5"><a href="advanced-visualizations.html#cb236-5" tabindex="-1"></a>  <span class="co">#Generate the plot</span></span>
-<span id="cb236-6"><a href="advanced-visualizations.html#cb236-6" tabindex="-1"></a>  ip<span class="ot">&lt;-</span><span class="fu">ggplot</span>(data_year) <span class="sc">+</span></span>
-<span id="cb236-7"><a href="advanced-visualizations.html#cb236-7" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> GDP), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb236-8"><a href="advanced-visualizations.html#cb236-8" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
-<span id="cb236-9"><a href="advanced-visualizations.html#cb236-9" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">&quot;magma&quot;</span>,</span>
-<span id="cb236-10"><a href="advanced-visualizations.html#cb236-10" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;GDP&quot;</span>,</span>
-<span id="cb236-11"><a href="advanced-visualizations.html#cb236-11" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb236-12"><a href="advanced-visualizations.html#cb236-12" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb236-13"><a href="advanced-visualizations.html#cb236-13" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb236-14"><a href="advanced-visualizations.html#cb236-14" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Regional GDP of the Philippines&quot;</span>),</span>
-<span id="cb236-15"><a href="advanced-visualizations.html#cb236-15" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;Year:&quot;</span>, year),</span>
-<span id="cb236-16"><a href="advanced-visualizations.html#cb236-16" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;GDP (Billion $)&quot;</span></span>
-<span id="cb236-17"><a href="advanced-visualizations.html#cb236-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb236-18"><a href="advanced-visualizations.html#cb236-18" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb236-19"><a href="advanced-visualizations.html#cb236-19" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb236-20"><a href="advanced-visualizations.html#cb236-20" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb236-21"><a href="advanced-visualizations.html#cb236-21" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb236-22"><a href="advanced-visualizations.html#cb236-22" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),  <span class="co"># Set white background</span></span>
-<span id="cb236-23"><a href="advanced-visualizations.html#cb236-23" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>)   <span class="co"># Set white background</span></span>
-<span id="cb236-24"><a href="advanced-visualizations.html#cb236-24" tabindex="-1"></a>  )</span>
-<span id="cb236-25"><a href="advanced-visualizations.html#cb236-25" tabindex="-1"></a></span>
-<span id="cb236-26"><a href="advanced-visualizations.html#cb236-26" tabindex="-1"></a>  </span>
-<span id="cb236-27"><a href="advanced-visualizations.html#cb236-27" tabindex="-1"></a>  <span class="co"># Save the plot as an image</span></span>
-<span id="cb236-28"><a href="advanced-visualizations.html#cb236-28" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">paste0</span>(<span class="st">&quot;ch_gdp_frames/gdp_&quot;</span>, year, <span class="st">&quot;.png&quot;</span>), <span class="at">plot =</span> ip, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb236-29"><a href="advanced-visualizations.html#cb236-29" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="advanced-visualizations.html#cb266-1" tabindex="-1"></a><span class="cf">for</span>(year <span class="cf">in</span> <span class="dv">2000</span><span class="sc">:</span><span class="dv">2023</span>){</span>
+<span id="cb266-2"><a href="advanced-visualizations.html#cb266-2" tabindex="-1"></a>  <span class="co">#filter data for the specific year</span></span>
+<span id="cb266-3"><a href="advanced-visualizations.html#cb266-3" tabindex="-1"></a>  data_year<span class="ot">&lt;-</span>rgdp_map <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year<span class="sc">==</span>year)</span>
+<span id="cb266-4"><a href="advanced-visualizations.html#cb266-4" tabindex="-1"></a>  </span>
+<span id="cb266-5"><a href="advanced-visualizations.html#cb266-5" tabindex="-1"></a>  <span class="co">#Generate the plot</span></span>
+<span id="cb266-6"><a href="advanced-visualizations.html#cb266-6" tabindex="-1"></a>  ip<span class="ot">&lt;-</span><span class="fu">ggplot</span>(data_year) <span class="sc">+</span></span>
+<span id="cb266-7"><a href="advanced-visualizations.html#cb266-7" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> GDP), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb266-8"><a href="advanced-visualizations.html#cb266-8" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb266-9"><a href="advanced-visualizations.html#cb266-9" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">&quot;magma&quot;</span>,</span>
+<span id="cb266-10"><a href="advanced-visualizations.html#cb266-10" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;GDP&quot;</span>,</span>
+<span id="cb266-11"><a href="advanced-visualizations.html#cb266-11" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>, <span class="at">suffix =</span> <span class="st">&quot;B&quot;</span>, <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb266-12"><a href="advanced-visualizations.html#cb266-12" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb266-13"><a href="advanced-visualizations.html#cb266-13" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb266-14"><a href="advanced-visualizations.html#cb266-14" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Regional GDP of the Philippines&quot;</span>),</span>
+<span id="cb266-15"><a href="advanced-visualizations.html#cb266-15" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;Year:&quot;</span>, year),</span>
+<span id="cb266-16"><a href="advanced-visualizations.html#cb266-16" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;GDP (Billion $)&quot;</span></span>
+<span id="cb266-17"><a href="advanced-visualizations.html#cb266-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb266-18"><a href="advanced-visualizations.html#cb266-18" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb266-19"><a href="advanced-visualizations.html#cb266-19" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb266-20"><a href="advanced-visualizations.html#cb266-20" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb266-21"><a href="advanced-visualizations.html#cb266-21" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb266-22"><a href="advanced-visualizations.html#cb266-22" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>),  <span class="co"># Set white background</span></span>
+<span id="cb266-23"><a href="advanced-visualizations.html#cb266-23" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="cn">NA</span>)   <span class="co"># Set white background</span></span>
+<span id="cb266-24"><a href="advanced-visualizations.html#cb266-24" tabindex="-1"></a>  )</span>
+<span id="cb266-25"><a href="advanced-visualizations.html#cb266-25" tabindex="-1"></a></span>
+<span id="cb266-26"><a href="advanced-visualizations.html#cb266-26" tabindex="-1"></a>  </span>
+<span id="cb266-27"><a href="advanced-visualizations.html#cb266-27" tabindex="-1"></a>  <span class="co"># Save the plot as an image</span></span>
+<span id="cb266-28"><a href="advanced-visualizations.html#cb266-28" tabindex="-1"></a>  <span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">paste0</span>(<span class="st">&quot;ch_gdp_frames/gdp_&quot;</span>, year, <span class="st">&quot;.png&quot;</span>), <span class="at">plot =</span> ip, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb266-29"><a href="advanced-visualizations.html#cb266-29" tabindex="-1"></a>}</span></code></pre></div>
 <p>You need to edit some parts, such as the <code>2000:2023</code> with whatever years you have; you need to filter data depending on how you called the time column. Then edit the <code>fill</code> and other things.</p>
 <p>We now combine our static maps into MP4. If you want the transition for each year to be seen clearly, the framerate is set at 1 to have 1 frame per second and the frame is repeated twice. the <code>vfilter</code> makes the video HD</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="advanced-visualizations.html#cb237-1" tabindex="-1"></a>file_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">&quot;ch_gdp_frames&quot;</span>, <span class="at">pattern =</span> <span class="st">&quot;gdp_.*</span><span class="sc">\\</span><span class="st">.png&quot;</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb237-2"><a href="advanced-visualizations.html#cb237-2" tabindex="-1"></a>rep_files <span class="ot">&lt;-</span> <span class="fu">rep</span>(file_list, <span class="at">each =</span> <span class="dv">2</span>)  <span class="co"># Repeat each frame twice</span></span>
-<span id="cb237-3"><a href="advanced-visualizations.html#cb237-3" tabindex="-1"></a>av<span class="sc">::</span><span class="fu">av_encode_video</span>(</span>
-<span id="cb237-4"><a href="advanced-visualizations.html#cb237-4" tabindex="-1"></a>  <span class="at">input =</span> rep_files,</span>
-<span id="cb237-5"><a href="advanced-visualizations.html#cb237-5" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;ch_rgdp_time.mp4&quot;</span>,</span>
-<span id="cb237-6"><a href="advanced-visualizations.html#cb237-6" tabindex="-1"></a>  <span class="at">framerate =</span> <span class="dv">1</span>,</span>
-<span id="cb237-7"><a href="advanced-visualizations.html#cb237-7" tabindex="-1"></a>  <span class="at">vfilter =</span> <span class="st">&quot;scale=1280:720&quot;</span></span>
-<span id="cb237-8"><a href="advanced-visualizations.html#cb237-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="advanced-visualizations.html#cb267-1" tabindex="-1"></a>file_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">&quot;ch_gdp_frames&quot;</span>, <span class="at">pattern =</span> <span class="st">&quot;gdp_.*</span><span class="sc">\\</span><span class="st">.png&quot;</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb267-2"><a href="advanced-visualizations.html#cb267-2" tabindex="-1"></a>rep_files <span class="ot">&lt;-</span> <span class="fu">rep</span>(file_list, <span class="at">each =</span> <span class="dv">2</span>)  <span class="co"># Repeat each frame twice</span></span>
+<span id="cb267-3"><a href="advanced-visualizations.html#cb267-3" tabindex="-1"></a>av<span class="sc">::</span><span class="fu">av_encode_video</span>(</span>
+<span id="cb267-4"><a href="advanced-visualizations.html#cb267-4" tabindex="-1"></a>  <span class="at">input =</span> rep_files,</span>
+<span id="cb267-5"><a href="advanced-visualizations.html#cb267-5" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;ch_rgdp_time.mp4&quot;</span>,</span>
+<span id="cb267-6"><a href="advanced-visualizations.html#cb267-6" tabindex="-1"></a>  <span class="at">framerate =</span> <span class="dv">1</span>,</span>
+<span id="cb267-7"><a href="advanced-visualizations.html#cb267-7" tabindex="-1"></a>  <span class="at">vfilter =</span> <span class="st">&quot;scale=1280:720&quot;</span></span>
+<span id="cb267-8"><a href="advanced-visualizations.html#cb267-8" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 </div>
 <div id="practical-advanced-visualizations" class="section level2 hasAnchor" number="10.9">
