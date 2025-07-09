@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-06-03" />
+<meta name="date" content="2025-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -407,6 +407,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="formal-tests-on-assumptions.html"><a href="formal-tests-on-assumptions.html#practical-multivariate-dummy-regression-and-formal-tests-of-assumptions"><i class="fa fa-check"></i><b>15.5</b> Practical: Multivariate (Dummy) Regression and Formal Tests of Assumptions</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="additional-topics.html"><a href="additional-topics.html"><i class="fa fa-check"></i><b>16</b> Additional Topics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="additional-topics.html"><a href="additional-topics.html#predicting-outcome-using-ols"><i class="fa fa-check"></i><b>16.1</b> Predicting Outcome using OLS</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-data"><i class="fa fa-check"></i><b>16.1.1</b> Simulated Data</a></li>
+<li class="chapter" data-level="16.1.2" data-path="additional-topics.html"><a href="additional-topics.html#ols-1"><i class="fa fa-check"></i><b>16.1.2</b> OLS</a></li>
+<li class="chapter" data-level="16.1.3" data-path="additional-topics.html"><a href="additional-topics.html#use-predict"><i class="fa fa-check"></i><b>16.1.3</b> Use <code>predict()</code></a></li>
+<li class="chapter" data-level="16.1.4" data-path="additional-topics.html"><a href="additional-topics.html#extra-visualization"><i class="fa fa-check"></i><b>16.1.4</b> Extra: Visualization</a></li>
+<li class="chapter" data-level="16.1.5" data-path="additional-topics.html"><a href="additional-topics.html#real-data"><i class="fa fa-check"></i><b>16.1.5</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="additional-topics.html"><a href="additional-topics.html#designing-and-testing-a-survey"><i class="fa fa-check"></i><b>16.2</b> Designing and Testing a Survey</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="additional-topics.html"><a href="additional-topics.html#calculating-sample-size"><i class="fa fa-check"></i><b>16.2.1</b> Calculating Sample Size</a></li>
+<li class="chapter" data-level="16.2.2" data-path="additional-topics.html"><a href="additional-topics.html#testing-survey-reliability---cronbachs-alpha"><i class="fa fa-check"></i><b>16.2.2</b> Testing Survey Reliability - Cronbach’s Alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="additional-topics.html"><a href="additional-topics.html#panel-data-models-fixed-vs.-random-effects"><i class="fa fa-check"></i><b>16.3</b> Panel Data Models (Fixed vs. Random Effects)</a>
+<ul>
+<li class="chapter" data-level="16.3.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-panel-dataset"><i class="fa fa-check"></i><b>16.3.1</b> Simulated Panel Dataset</a></li>
+<li class="chapter" data-level="16.3.2" data-path="additional-topics.html"><a href="additional-topics.html#fixed-effects-vs.-random-effects"><i class="fa fa-check"></i><b>16.3.2</b> Fixed Effects vs. Random Effects</a></li>
+<li class="chapter" data-level="16.3.3" data-path="additional-topics.html"><a href="additional-topics.html#hausman-test"><i class="fa fa-check"></i><b>16.3.3</b> Hausman Test</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="additional-topics.html"><a href="additional-topics.html#lagged-values-and-preliminaries-in-forecasting"><i class="fa fa-check"></i><b>16.4</b> Lagged Values and Preliminaries in Forecasting</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-time-series"><i class="fa fa-check"></i><b>16.4.1</b> Simulated Time Series</a></li>
+<li class="chapter" data-level="16.4.2" data-path="additional-topics.html"><a href="additional-topics.html#real-data-1"><i class="fa fa-check"></i><b>16.4.2</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="additional-topics.html"><a href="additional-topics.html#the-end"><i class="fa fa-check"></i><b>16.5</b> The End!</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -503,9 +531,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-3"><a href="data-management---cross-sectional-data.html#cb14-3" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="data-management---cross-sectional-data.html#cb14-4" tabindex="-1"></a><span class="co"># Perform garbage collection to free up memory</span></span>
 <span id="cb14-5"><a href="data-management---cross-sectional-data.html#cb14-5" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used (Mb) gc trigger  (Mb) max used (Mb)
-## Ncells  973422 52.0    1952397 104.3  1314658 70.3
-## Vcells 2367100 18.1    8388608  64.0  3336677 25.5</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4790449 255.9    8260645 441.2   8260645  441.2
+## Vcells 9625292  73.5  101052010 771.0 246655674 1881.9</code></pre>
 </div>
 <div id="importing-the-dataset" class="section level3 hasAnchor" number="7.2.5">
 <h3><span class="header-section-number">7.2.5</span> Importing the Dataset<a href="data-management---cross-sectional-data.html#importing-the-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -541,22 +569,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.3</span> Data Cleaning<a href="data-management---cross-sectional-data.html#data-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As you can see, there are 22 columns. Let’s simplify by only choosing the following: WAGE, URBAN, X17TUITION, X18TUITION and EXPER.2. We can do this using the <code>select()</code> function in <code>dplyr</code>. We will save them into a new data frame, <code>ch2_p1.1.</code></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-management---cross-sectional-data.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-management---cross-sectional-data.html#cb23-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">select</span>(ch2_p1, <span class="co">#the original dataset </span></span>
-<span id="cb23-2"><a href="data-management---cross-sectional-data.html#cb23-2" tabindex="-1"></a>       WAGE, URBAN, X17TUITION, X18TUITION, EXPER<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-management---cross-sectional-data.html#cb20-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">select</span>(ch2_p1, <span class="co">#the original dataset </span></span>
+<span id="cb20-2"><a href="data-management---cross-sectional-data.html#cb20-2" tabindex="-1"></a>       WAGE, URBAN, X17TUITION, X18TUITION, EXPER<span class="fl">.2</span>)</span></code></pre></div>
 <div id="renaming-the-variables" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Renaming the Variables<a href="data-management---cross-sectional-data.html#renaming-the-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will edit the names to much easier conventions. First, let us say that we just want to change them to lowercase names.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-management---cross-sectional-data.html#cb24-1" tabindex="-1"></a><span class="fu">names</span>(ch2_p1<span class="fl">.1</span>)<span class="ot">&lt;-</span><span class="fu">tolower</span>(<span class="fu">names</span>(ch2_p1<span class="fl">.1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-management---cross-sectional-data.html#cb21-1" tabindex="-1"></a><span class="fu">names</span>(ch2_p1<span class="fl">.1</span>)<span class="ot">&lt;-</span><span class="fu">tolower</span>(<span class="fu">names</span>(ch2_p1<span class="fl">.1</span>))</span></code></pre></div>
 <p>Inspect:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-management---cross-sectional-data.html#cb25-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-management---cross-sectional-data.html#cb22-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>##        wage urban x17tuition x18tuition exper.2
 ## 1 12.019231   yes   7.582914   7.260242      81
 ## 2  8.912656   yes   8.595144   9.499537      64
@@ -565,14 +585,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 11.070110   yes   7.311346   7.311346     225
 ## 6 17.482517   yes   7.311346   7.311346      64</code></pre>
 <p>Let us change the names of <code>x17tuition, x18tuition,</code>and<code>exper.2</code> to the names similar to what is found in the ‘htv’ dataset: <code>x17tuition</code> to <code>tuit17</code>, <code>x18tuition</code> to <code>tuit18</code> and <code>exper.2</code> to <code>expersq</code> . To do this, we will use the <code>rename()</code> in <code>dplyr</code>. We will also use the (<code>%&gt;%</code>) for this.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-management---cross-sectional-data.html#cb27-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="data-management---cross-sectional-data.html#cb27-2" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb27-3"><a href="data-management---cross-sectional-data.html#cb27-3" tabindex="-1"></a>    <span class="at">tuit17 =</span> x17tuition,</span>
-<span id="cb27-4"><a href="data-management---cross-sectional-data.html#cb27-4" tabindex="-1"></a>    <span class="at">tuit18 =</span> x18tuition, </span>
-<span id="cb27-5"><a href="data-management---cross-sectional-data.html#cb27-5" tabindex="-1"></a>    <span class="at">expersq =</span> exper<span class="fl">.2</span></span>
-<span id="cb27-6"><a href="data-management---cross-sectional-data.html#cb27-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-management---cross-sectional-data.html#cb24-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="data-management---cross-sectional-data.html#cb24-2" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb24-3"><a href="data-management---cross-sectional-data.html#cb24-3" tabindex="-1"></a>    <span class="at">tuit17 =</span> x17tuition,</span>
+<span id="cb24-4"><a href="data-management---cross-sectional-data.html#cb24-4" tabindex="-1"></a>    <span class="at">tuit18 =</span> x18tuition, </span>
+<span id="cb24-5"><a href="data-management---cross-sectional-data.html#cb24-5" tabindex="-1"></a>    <span class="at">expersq =</span> exper<span class="fl">.2</span></span>
+<span id="cb24-6"><a href="data-management---cross-sectional-data.html#cb24-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Inspect again:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-management---cross-sectional-data.html#cb28-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-management---cross-sectional-data.html#cb25-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>##        wage urban   tuit17    tuit18 expersq
 ## 1 12.019231   yes 7.582914  7.260242      81
 ## 2  8.912656   yes 8.595144  9.499537      64
@@ -584,10 +604,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sorting-certain-values" class="section level3 hasAnchor" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Sorting certain values<a href="data-management---cross-sectional-data.html#sorting-certain-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s say, we want to arrange <code>wage</code>. We will create a different data for this. We use <code>arrange</code> in <code>dplyr</code> package.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-management---cross-sectional-data.html#cb30-1" tabindex="-1"></a>ch2_p1sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p1<span class="fl">.1</span>,</span>
-<span id="cb30-2"><a href="data-management---cross-sectional-data.html#cb30-2" tabindex="-1"></a>                    wage)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-management---cross-sectional-data.html#cb27-1" tabindex="-1"></a>ch2_p1sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p1<span class="fl">.1</span>,</span>
+<span id="cb27-2"><a href="data-management---cross-sectional-data.html#cb27-2" tabindex="-1"></a>                    wage)</span></code></pre></div>
 <p>Inspect:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-management---cross-sectional-data.html#cb31-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1sort)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-management---cross-sectional-data.html#cb28-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1sort)</span></code></pre></div>
 <pre><code>##       wage urban    tuit17    tuit18 expersq
 ## 1 1.023529   yes  2.088957  2.251239     169
 ## 2 1.073345    no  7.520245  7.520245     196
@@ -596,7 +616,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 1.373626   yes  9.692757  9.692757     225
 ## 6 1.442308    no 11.280367 11.280367      NA</code></pre>
 <p>What if you have this kind of data?</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-management---cross-sectional-data.html#cb33-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-management---cross-sectional-data.html#cb30-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
 <pre><code>##    ch2_p2
 ## 1 $10,000
 ## 2 $20,500
@@ -604,8 +624,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 $30,000
 ## 5 $50,750</code></pre>
 <p>Let’s sort this:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-management---cross-sectional-data.html#cb35-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p2)</span>
-<span id="cb35-2"><a href="data-management---cross-sectional-data.html#cb35-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-management---cross-sectional-data.html#cb32-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p2)</span>
+<span id="cb32-2"><a href="data-management---cross-sectional-data.html#cb32-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
 <pre><code>##    ch2_p2
 ## 1 $10,000
 ## 2 $20,500
@@ -613,16 +633,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 $30,000
 ## 5 $50,750</code></pre>
 <p>It did not work. The problem is, <code>ch2_p2</code> is not numeric. We can check:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-management---cross-sectional-data.html#cb37-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-management---cross-sectional-data.html#cb34-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
 <p>We need to make it into a numeric value but we have a <code>,</code> and $. We need to remove them. We use the <code>str_replace</code> function in the <code>stringr</code> package.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-management---cross-sectional-data.html#cb39-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management---cross-sectional-data.html#cb40-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
-<span id="cb40-2"><a href="data-management---cross-sectional-data.html#cb40-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, <span class="co">#column we want to edit</span></span>
-<span id="cb40-3"><a href="data-management---cross-sectional-data.html#cb40-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;,&#39;</span>, <span class="co">#what to find</span></span>
-<span id="cb40-4"><a href="data-management---cross-sectional-data.html#cb40-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span> <span class="co">#what to replace it with</span></span>
-<span id="cb40-5"><a href="data-management---cross-sectional-data.html#cb40-5" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-management---cross-sectional-data.html#cb41-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-management---cross-sectional-data.html#cb36-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-management---cross-sectional-data.html#cb37-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
+<span id="cb37-2"><a href="data-management---cross-sectional-data.html#cb37-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, <span class="co">#column we want to edit</span></span>
+<span id="cb37-3"><a href="data-management---cross-sectional-data.html#cb37-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;,&#39;</span>, <span class="co">#what to find</span></span>
+<span id="cb37-4"><a href="data-management---cross-sectional-data.html#cb37-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span> <span class="co">#what to replace it with</span></span>
+<span id="cb37-5"><a href="data-management---cross-sectional-data.html#cb37-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-management---cross-sectional-data.html#cb38-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
 <pre><code>##   ch2_p2
 ## 1 $10000
 ## 2 $20500
@@ -630,19 +650,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 $30000
 ## 5 $50750</code></pre>
 <p>Now, let us remove the dollar sign; usually, simply doing the same thing we did with the comma works, but, there are some symbols that are used as “special character”. To “force” R to replace the presence of ‘$’, we add two backslashes before the dollar sign.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-management---cross-sectional-data.html#cb43-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
-<span id="cb43-2"><a href="data-management---cross-sectional-data.html#cb43-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, </span>
-<span id="cb43-3"><a href="data-management---cross-sectional-data.html#cb43-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;</span><span class="sc">\\</span><span class="st">$&#39;</span>,</span>
-<span id="cb43-4"><a href="data-management---cross-sectional-data.html#cb43-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb43-5"><a href="data-management---cross-sectional-data.html#cb43-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management---cross-sectional-data.html#cb40-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
+<span id="cb40-2"><a href="data-management---cross-sectional-data.html#cb40-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, </span>
+<span id="cb40-3"><a href="data-management---cross-sectional-data.html#cb40-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;</span><span class="sc">\\</span><span class="st">$&#39;</span>,</span>
+<span id="cb40-4"><a href="data-management---cross-sectional-data.html#cb40-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb40-5"><a href="data-management---cross-sectional-data.html#cb40-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>Can you inspect it on your own?</p>
 <p>Simply type the code in the empty code chunk then run it by pressing <strong>Ctrl+Enter</strong> or <strong>Cmd+Enter</strong></p>
 <p>Now, sort <code>ch2_p2</code></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-management---cross-sectional-data.html#cb44-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(</span>
-<span id="cb44-2"><a href="data-management---cross-sectional-data.html#cb44-2" tabindex="-1"></a>  ch2_p2,</span>
-<span id="cb44-3"><a href="data-management---cross-sectional-data.html#cb44-3" tabindex="-1"></a>  ch2_p2</span>
-<span id="cb44-4"><a href="data-management---cross-sectional-data.html#cb44-4" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-management---cross-sectional-data.html#cb45-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2sort)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-management---cross-sectional-data.html#cb41-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(</span>
+<span id="cb41-2"><a href="data-management---cross-sectional-data.html#cb41-2" tabindex="-1"></a>  ch2_p2,</span>
+<span id="cb41-3"><a href="data-management---cross-sectional-data.html#cb41-3" tabindex="-1"></a>  ch2_p2</span>
+<span id="cb41-4"><a href="data-management---cross-sectional-data.html#cb41-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-management---cross-sectional-data.html#cb42-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2sort)</span></code></pre></div>
 <pre><code>##   ch2_p2
 ## 1  10000
 ## 2  15250
@@ -650,10 +670,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  30000
 ## 5  50750</code></pre>
 <p>We can see that it was arranged, however, take a look at the way ch2_p2 was encoded; it is not numeric. So, we need to change this.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management---cross-sectional-data.html#cb47-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-management---cross-sectional-data.html#cb44-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Change to numeric through <code>as.numeric()</code></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-management---cross-sectional-data.html#cb49-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-management---cross-sectional-data.html#cb46-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
 <p>Inspect on your own:</p>
 </div>
 <div id="pipe-operator" class="section level3 hasAnchor" number="7.3.3">
@@ -663,26 +683,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="adding-columns" class="section level3 hasAnchor" number="7.3.4">
 <h3><span class="header-section-number">7.3.4</span> Adding columns<a href="data-management---cross-sectional-data.html#adding-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will be using the pipe operator and the <code>mutate</code> to add a new column to <code>ch2_p1.1</code> based from details found in <code>ch2_p1</code>, particularly, NORTHEAST, NORTHCENTRAL, WEST, and SOUTH. We will call this new column as <code>location</code></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-management---cross-sectional-data.html#cb50-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
-<span id="cb50-2"><a href="data-management---cross-sectional-data.html#cb50-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb50-3"><a href="data-management---cross-sectional-data.html#cb50-3" tabindex="-1"></a>    <span class="at">location =</span> <span class="fu">case_when</span>( <span class="co">#creates conditional statements</span></span>
-<span id="cb50-4"><a href="data-management---cross-sectional-data.html#cb50-4" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>NORTHEAST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span> <span class="sc">~</span> <span class="st">&quot;northeast&quot;</span>, <span class="co">#If NE is &quot;yes&quot;, location is &quot;northeast&quot;</span></span>
-<span id="cb50-5"><a href="data-management---cross-sectional-data.html#cb50-5" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>WEST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span><span class="st">&quot;west&quot;</span>, <span class="co">#If WEST is &quot;yes&quot;, location is &quot;west&quot;</span></span>
-<span id="cb50-6"><a href="data-management---cross-sectional-data.html#cb50-6" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>NORTHCENTRAL <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;northcen&quot;</span>,</span>
-<span id="cb50-7"><a href="data-management---cross-sectional-data.html#cb50-7" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>SOUTH <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;south&quot;</span>,</span>
-<span id="cb50-8"><a href="data-management---cross-sectional-data.html#cb50-8" tabindex="-1"></a>    <span class="cn">TRUE</span><span class="sc">~</span><span class="st">&quot;other&quot;</span>)</span>
-<span id="cb50-9"><a href="data-management---cross-sectional-data.html#cb50-9" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management---cross-sectional-data.html#cb47-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="data-management---cross-sectional-data.html#cb47-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb47-3"><a href="data-management---cross-sectional-data.html#cb47-3" tabindex="-1"></a>    <span class="at">location =</span> <span class="fu">case_when</span>( <span class="co">#creates conditional statements</span></span>
+<span id="cb47-4"><a href="data-management---cross-sectional-data.html#cb47-4" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>NORTHEAST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span> <span class="sc">~</span> <span class="st">&quot;northeast&quot;</span>, <span class="co">#If NE is &quot;yes&quot;, location is &quot;northeast&quot;</span></span>
+<span id="cb47-5"><a href="data-management---cross-sectional-data.html#cb47-5" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>WEST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span><span class="st">&quot;west&quot;</span>, <span class="co">#If WEST is &quot;yes&quot;, location is &quot;west&quot;</span></span>
+<span id="cb47-6"><a href="data-management---cross-sectional-data.html#cb47-6" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>NORTHCENTRAL <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;northcen&quot;</span>,</span>
+<span id="cb47-7"><a href="data-management---cross-sectional-data.html#cb47-7" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>SOUTH <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;south&quot;</span>,</span>
+<span id="cb47-8"><a href="data-management---cross-sectional-data.html#cb47-8" tabindex="-1"></a>    <span class="cn">TRUE</span><span class="sc">~</span><span class="st">&quot;other&quot;</span>)</span>
+<span id="cb47-9"><a href="data-management---cross-sectional-data.html#cb47-9" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Inspect the data:</p>
 <p>Now I want you to create a new column called, <code>tuit_diff</code> wherein it is the difference between <code>tuit18</code> and <code>tuit17</code>. In this case, there is no need to use <code>case_when</code> since there is no conditional statements to be used. It is straightforward that you simply need to subtract <code>tuit17</code> from <code>tuit18</code>. You will need to use <code>mutate</code> still. How will you create that?</p>
 </div>
 <div id="transforming-values" class="section level3 hasAnchor" number="7.3.5">
 <h3><span class="header-section-number">7.3.5</span> Transforming values<a href="data-management---cross-sectional-data.html#transforming-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now, you can see that urban is a <code>character</code> that is “yes/no”. We need to change that to numeric value. This is particularly useful when we use dummy variables later on. We will not use <code>case_when</code> as it is not necessary; rather, we will use <code>ifelse</code>:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-management---cross-sectional-data.html#cb51-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
-<span id="cb51-2"><a href="data-management---cross-sectional-data.html#cb51-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb51-3"><a href="data-management---cross-sectional-data.html#cb51-3" tabindex="-1"></a>    <span class="at">urban =</span> <span class="fu">ifelse</span>(urban<span class="sc">==</span><span class="st">&quot;yes&quot;</span>, <span class="dv">1</span>,<span class="dv">0</span>) <span class="co">#replace &quot;yes&quot; with 1 and &quot;no&quot; with 0</span></span>
-<span id="cb51-4"><a href="data-management---cross-sectional-data.html#cb51-4" tabindex="-1"></a>  )</span>
-<span id="cb51-5"><a href="data-management---cross-sectional-data.html#cb51-5" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>) <span class="co">#default is first 6 rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-management---cross-sectional-data.html#cb48-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="data-management---cross-sectional-data.html#cb48-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb48-3"><a href="data-management---cross-sectional-data.html#cb48-3" tabindex="-1"></a>    <span class="at">urban =</span> <span class="fu">ifelse</span>(urban<span class="sc">==</span><span class="st">&quot;yes&quot;</span>, <span class="dv">1</span>,<span class="dv">0</span>) <span class="co">#replace &quot;yes&quot; with 1 and &quot;no&quot; with 0</span></span>
+<span id="cb48-4"><a href="data-management---cross-sectional-data.html#cb48-4" tabindex="-1"></a>  )</span>
+<span id="cb48-5"><a href="data-management---cross-sectional-data.html#cb48-5" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>) <span class="co">#default is first 6 rows</span></span></code></pre></div>
 <pre><code>##        wage urban   tuit17    tuit18 expersq  location
 ## 1 12.019231     1 7.582914  7.260242      81      west
 ## 2  8.912656     1 8.595144  9.499537      64 northeast
@@ -705,10 +725,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="summarizing" class="section level3 hasAnchor" number="7.3.6">
 <h3><span class="header-section-number">7.3.6</span> Summarizing<a href="data-management---cross-sectional-data.html#summarizing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us get the average of wages by location, which we’ll call <code>ave.wage</code>, by using the <code>group_by()</code> and <code>summarise()</code> functions in dplyr</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-management---cross-sectional-data.html#cb54-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
-<span id="cb54-2"><a href="data-management---cross-sectional-data.html#cb54-2" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">%&gt;%</span> <span class="co">#group by location, THEN</span></span>
-<span id="cb54-3"><a href="data-management---cross-sectional-data.html#cb54-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ave.wage=</span><span class="fu">mean</span>(wage)) <span class="co">#calculate the mean of wages for each location</span></span>
-<span id="cb54-4"><a href="data-management---cross-sectional-data.html#cb54-4" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>ave)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-management---cross-sectional-data.html#cb51-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="data-management---cross-sectional-data.html#cb51-2" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">%&gt;%</span> <span class="co">#group by location, THEN</span></span>
+<span id="cb51-3"><a href="data-management---cross-sectional-data.html#cb51-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ave.wage=</span><span class="fu">mean</span>(wage)) <span class="co">#calculate the mean of wages for each location</span></span>
+<span id="cb51-4"><a href="data-management---cross-sectional-data.html#cb51-4" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>ave)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   location  ave.wage
 ##   &lt;chr&gt;        &lt;dbl&gt;
@@ -717,7 +737,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 south         12.4
 ## 4 west          14.1</code></pre>
 <p>Say that you want to see the average wage in the south area. We can do this by using <code>filter()</code></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-management---cross-sectional-data.html#cb56-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;south&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-management---cross-sectional-data.html#cb53-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;south&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 2
 ##   location ave.wage
 ##   &lt;chr&gt;       &lt;dbl&gt;
@@ -728,8 +748,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">7.3.7</span> Merging datasets<a href="data-management---cross-sectional-data.html#merging-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We have two main datasets, <code>ch2_p1.1</code> and <code>ch2_p1.1ave</code>. By doing this, we could compare side-by-side each observation compared to the average per location.</p>
 <p>We will join the datasets by <code>location</code> variable, since that is consistent across both datasets. We name the new file as <code>ch2_p1merged</code>:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-management---cross-sectional-data.html#cb58-1" tabindex="-1"></a>ch2_p1merged<span class="ot">&lt;-</span><span class="fu">merge</span>(<span class="at">x=</span>ch2_p1<span class="fl">.1</span>, <span class="at">y=</span>ch2_p1<span class="fl">.1</span>ave, <span class="at">by=</span><span class="st">&quot;location&quot;</span>)</span>
-<span id="cb58-2"><a href="data-management---cross-sectional-data.html#cb58-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p1merged)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-management---cross-sectional-data.html#cb55-1" tabindex="-1"></a>ch2_p1merged<span class="ot">&lt;-</span><span class="fu">merge</span>(<span class="at">x=</span>ch2_p1<span class="fl">.1</span>, <span class="at">y=</span>ch2_p1<span class="fl">.1</span>ave, <span class="at">by=</span><span class="st">&quot;location&quot;</span>)</span>
+<span id="cb55-2"><a href="data-management---cross-sectional-data.html#cb55-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p1merged)</span></code></pre></div>
 <pre><code>##   location      wage urban   tuit17   tuit18 expersq ave.wage
 ## 1 northcen 15.294118     1 8.334936 8.334936       3 12.54078
 ## 2 northcen 17.006804     1 8.334936 8.334936       0 12.54078
@@ -741,9 +761,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="splitting-datasets" class="section level3 hasAnchor" number="7.3.8">
 <h3><span class="header-section-number">7.3.8</span> Splitting datasets<a href="data-management---cross-sectional-data.html#splitting-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Say I want to save different datasets based on the <code>location</code> column.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-management---cross-sectional-data.html#cb60-1" tabindex="-1"></a>northcen_data<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;northcen&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-management---cross-sectional-data.html#cb57-1" tabindex="-1"></a>northcen_data<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;northcen&quot;</span>)</span></code></pre></div>
 <p>You can save it as a <code>.csv</code> file:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-management---cross-sectional-data.html#cb61-1" tabindex="-1"></a><span class="fu">write.csv</span>(northcen_data, <span class="st">&quot;northcentral.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-management---cross-sectional-data.html#cb58-1" tabindex="-1"></a><span class="fu">write.csv</span>(northcen_data, <span class="st">&quot;northcentral.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Can you do the others?</p>
 </div>
 <div id="dates" class="section level3 hasAnchor" number="7.3.9">
@@ -759,9 +779,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ ID           : int  1 2 3 4 5
 ##  $ date_of_birth: chr  &quot;15-05-1990&quot; &quot;20-08-1985&quot; &quot;01-12-2000&quot; &quot;10-03-1995&quot; ...</code></pre>
 <p>To convert the <code>character</code> format to date format, we do this:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-management---cross-sectional-data.html#cb64-1" tabindex="-1"></a>date_data<span class="sc">$</span>date_of_birth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(date_data<span class="sc">$</span>date_of_birth, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
-<span id="cb64-2"><a href="data-management---cross-sectional-data.html#cb64-2" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="data-management---cross-sectional-data.html#cb64-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-management---cross-sectional-data.html#cb61-1" tabindex="-1"></a>date_data<span class="sc">$</span>date_of_birth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(date_data<span class="sc">$</span>date_of_birth, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
+<span id="cb61-2"><a href="data-management---cross-sectional-data.html#cb61-2" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="data-management---cross-sectional-data.html#cb61-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
 <pre><code>##   ID date_of_birth
 ## 1  1    1990-05-15
 ## 2  2    1985-08-20
@@ -769,8 +789,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  4    1995-03-10
 ## 5  5    2010-07-25</code></pre>
 <p>Say you want to calculate the age:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-management---cross-sectional-data.html#cb66-1" tabindex="-1"></a>date_data<span class="sc">$</span>age <span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((<span class="fu">Sys.Date</span>()<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
-<span id="cb66-2"><a href="data-management---cross-sectional-data.html#cb66-2" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-management---cross-sectional-data.html#cb63-1" tabindex="-1"></a>date_data<span class="sc">$</span>age <span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((<span class="fu">Sys.Date</span>()<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
+<span id="cb63-2"><a href="data-management---cross-sectional-data.html#cb63-2" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
 <pre><code>##   ID date_of_birth age
 ## 1  1    1990-05-15  35
 ## 2  2    1985-08-20  39
@@ -779,9 +799,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  5    2010-07-25  14</code></pre>
 <div id="custom-reference-date" class="section level4 hasAnchor" number="7.3.9.1">
 <h4><span class="header-section-number">7.3.9.1</span> Custom Reference Date:<a href="data-management---cross-sectional-data.html#custom-reference-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-management---cross-sectional-data.html#cb68-1" tabindex="-1"></a>ref_date<span class="ot">&lt;-</span><span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>)</span>
-<span id="cb68-2"><a href="data-management---cross-sectional-data.html#cb68-2" tabindex="-1"></a>date_data<span class="sc">$</span>age2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((ref_date<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
-<span id="cb68-3"><a href="data-management---cross-sectional-data.html#cb68-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-management---cross-sectional-data.html#cb65-1" tabindex="-1"></a>ref_date<span class="ot">&lt;-</span><span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>)</span>
+<span id="cb65-2"><a href="data-management---cross-sectional-data.html#cb65-2" tabindex="-1"></a>date_data<span class="sc">$</span>age2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((ref_date<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
+<span id="cb65-3"><a href="data-management---cross-sectional-data.html#cb65-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
 <pre><code>##   ID date_of_birth age age2
 ## 1  1    1990-05-15  35   29
 ## 2  2    1985-08-20  39   34
@@ -848,11 +868,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Loading the dataset and loading the needed libraries: <code>dplyr</code> and <code>lubridate</code></li>
 </ol>
-<pre><code>## 
-## Attaching package: &#39;lubridate&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     date, intersect, setdiff, union</code></pre>
 <pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name
 ## 1               Taeyeon         Kim Taeyeon                  김태연
 ## 2                 Sunny          Lee Sunkyu                  이순규
@@ -953,7 +968,7 @@ THEN, after you select the columns to keep, you can rename. Note that you need t
 <ol start="4" style="list-style-type: decimal">
 <li><p>Count the Number of Males and Females</p>
 <p>As mentioned, use <code>nrow</code>. Now, I will introduce you to the <code>cat</code> function, The <code>cat</code> function will print in the result some text and what will be seen when you include the object you created that reveals the number of males (or females). We should all have the same number. If not, something is wrong.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="data-management---cross-sectional-data.html#cb76-1" tabindex="-1"></a><span class="co">#cat(&quot;Number of males:&quot;, nummale,&quot;\n&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-management---cross-sectional-data.html#cb71-1" tabindex="-1"></a><span class="co">#cat(&quot;Number of males:&quot;, nummale,&quot;\n&quot;)</span></span></code></pre></div>
 <pre><code>## Number of males: 843</code></pre>
 <pre><code>## Number of females: 823</code></pre></li>
 <li><p>Create a binary variable <code>not_seoul</code></p>
@@ -987,36 +1002,36 @@ THEN, after you select the columns to keep, you can rename. Note that you need t
 <p>My hypothesis is that older idols earn more since they have been in the industry much longer. I also hypothesize that females earn less than males.</p>
 <p>I introduce a new function here, it is the <code>runif(n(), value, value)</code>. This function is to just create income values which will be in-line with the number of rows in the dataset. However, I am amenable in any strategy you employ to generate income here. I just need to know your hypothesis and how you plan to do the income column. In fact, if you want, you can even create the income column in Excel already. Just let me know.</p>
 <p>Another strategy is to still do <code>case_when</code> and have smaller increments in <code>Age</code> then have income values. Another, have the same income for each generation, that is also fine. Again, this is for practice purposes.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-management---cross-sectional-data.html#cb90-1" tabindex="-1"></a><span class="co"># Generate income values based on age group directly</span></span>
-<span id="cb90-2"><a href="data-management---cross-sectional-data.html#cb90-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb90-3"><a href="data-management---cross-sectional-data.html#cb90-3" tabindex="-1"></a></span>
-<span id="cb90-4"><a href="data-management---cross-sectional-data.html#cb90-4" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span></span>
-<span id="cb90-5"><a href="data-management---cross-sectional-data.html#cb90-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
-<span id="cb90-6"><a href="data-management---cross-sectional-data.html#cb90-6" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
-<span id="cb90-7"><a href="data-management---cross-sectional-data.html#cb90-7" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
-<span id="cb90-8"><a href="data-management---cross-sectional-data.html#cb90-8" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
-<span id="cb90-9"><a href="data-management---cross-sectional-data.html#cb90-9" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
-<span id="cb90-10"><a href="data-management---cross-sectional-data.html#cb90-10" tabindex="-1"></a>  ))</span>
-<span id="cb90-11"><a href="data-management---cross-sectional-data.html#cb90-11" tabindex="-1"></a></span>
-<span id="cb90-12"><a href="data-management---cross-sectional-data.html#cb90-12" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span></span>
-<span id="cb90-13"><a href="data-management---cross-sectional-data.html#cb90-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
-<span id="cb90-14"><a href="data-management---cross-sectional-data.html#cb90-14" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
-<span id="cb90-15"><a href="data-management---cross-sectional-data.html#cb90-15" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
-<span id="cb90-16"><a href="data-management---cross-sectional-data.html#cb90-16" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
-<span id="cb90-17"><a href="data-management---cross-sectional-data.html#cb90-17" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
-<span id="cb90-18"><a href="data-management---cross-sectional-data.html#cb90-18" tabindex="-1"></a>  ))</span></code></pre></div></li>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-management---cross-sectional-data.html#cb85-1" tabindex="-1"></a><span class="co"># Generate income values based on age group directly</span></span>
+<span id="cb85-2"><a href="data-management---cross-sectional-data.html#cb85-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb85-3"><a href="data-management---cross-sectional-data.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="data-management---cross-sectional-data.html#cb85-4" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span></span>
+<span id="cb85-5"><a href="data-management---cross-sectional-data.html#cb85-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-6"><a href="data-management---cross-sectional-data.html#cb85-6" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-7"><a href="data-management---cross-sectional-data.html#cb85-7" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-8"><a href="data-management---cross-sectional-data.html#cb85-8" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-9"><a href="data-management---cross-sectional-data.html#cb85-9" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-10"><a href="data-management---cross-sectional-data.html#cb85-10" tabindex="-1"></a>  ))</span>
+<span id="cb85-11"><a href="data-management---cross-sectional-data.html#cb85-11" tabindex="-1"></a></span>
+<span id="cb85-12"><a href="data-management---cross-sectional-data.html#cb85-12" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span></span>
+<span id="cb85-13"><a href="data-management---cross-sectional-data.html#cb85-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-14"><a href="data-management---cross-sectional-data.html#cb85-14" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-15"><a href="data-management---cross-sectional-data.html#cb85-15" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-16"><a href="data-management---cross-sectional-data.html#cb85-16" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-17"><a href="data-management---cross-sectional-data.html#cb85-17" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-18"><a href="data-management---cross-sectional-data.html#cb85-18" tabindex="-1"></a>  ))</span></code></pre></div></li>
 <li><p>Combine datasets</p>
 <p>So, I taught you how to merge the datasets. You can do that as well, however, it is important to determine which came from the males, which came from the females so, you need to create a new column in the males and the females that would include the Gender.</p>
 <p>I also show a different way of merging datasets. I use <code>bind_rows</code> since males and females have the same columns. However, if you view the <code>combined</code> dataset, you will notice that the females will appear after the males. This is fine.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="data-management---cross-sectional-data.html#cb91-1" tabindex="-1"></a><span class="co"># Ensure column names match and add a Gender column</span></span>
-<span id="cb91-2"><a href="data-management---cross-sectional-data.html#cb91-2" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Male&quot;</span>)</span>
-<span id="cb91-3"><a href="data-management---cross-sectional-data.html#cb91-3" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Female&quot;</span>)</span>
-<span id="cb91-4"><a href="data-management---cross-sectional-data.html#cb91-4" tabindex="-1"></a></span>
-<span id="cb91-5"><a href="data-management---cross-sectional-data.html#cb91-5" tabindex="-1"></a><span class="co"># Combine the datasets</span></span>
-<span id="cb91-6"><a href="data-management---cross-sectional-data.html#cb91-6" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(males, females)</span>
-<span id="cb91-7"><a href="data-management---cross-sectional-data.html#cb91-7" tabindex="-1"></a></span>
-<span id="cb91-8"><a href="data-management---cross-sectional-data.html#cb91-8" tabindex="-1"></a><span class="co"># View the combined dataset</span></span>
-<span id="cb91-9"><a href="data-management---cross-sectional-data.html#cb91-9" tabindex="-1"></a><span class="fu">View</span>(combined)</span></code></pre></div></li>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-management---cross-sectional-data.html#cb86-1" tabindex="-1"></a><span class="co"># Ensure column names match and add a Gender column</span></span>
+<span id="cb86-2"><a href="data-management---cross-sectional-data.html#cb86-2" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb86-3"><a href="data-management---cross-sectional-data.html#cb86-3" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Female&quot;</span>)</span>
+<span id="cb86-4"><a href="data-management---cross-sectional-data.html#cb86-4" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="data-management---cross-sectional-data.html#cb86-5" tabindex="-1"></a><span class="co"># Combine the datasets</span></span>
+<span id="cb86-6"><a href="data-management---cross-sectional-data.html#cb86-6" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(males, females)</span>
+<span id="cb86-7"><a href="data-management---cross-sectional-data.html#cb86-7" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="data-management---cross-sectional-data.html#cb86-8" tabindex="-1"></a><span class="co"># View the combined dataset</span></span>
+<span id="cb86-9"><a href="data-management---cross-sectional-data.html#cb86-9" tabindex="-1"></a><span class="fu">View</span>(combined)</span></code></pre></div></li>
 </ol>
 <p>Calculate the Income Difference</p>
 <p>I use the <code>group_by</code> function and the <code>summarise</code> function. I got the Mean and the Median. Later on, I will discuss the difference between getting the mean and the median or when best to use the mean or the median.</p>

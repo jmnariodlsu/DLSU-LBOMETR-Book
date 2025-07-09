@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2025-06-03" />
+<meta name="date" content="2025-07-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="multivariate-regression-with-dummy-variables.html"/>
-
+<link rel="next" href="additional-topics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -407,6 +407,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="formal-tests-on-assumptions.html"><a href="formal-tests-on-assumptions.html#practical-multivariate-dummy-regression-and-formal-tests-of-assumptions"><i class="fa fa-check"></i><b>15.5</b> Practical: Multivariate (Dummy) Regression and Formal Tests of Assumptions</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="additional-topics.html"><a href="additional-topics.html"><i class="fa fa-check"></i><b>16</b> Additional Topics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="additional-topics.html"><a href="additional-topics.html#predicting-outcome-using-ols"><i class="fa fa-check"></i><b>16.1</b> Predicting Outcome using OLS</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-data"><i class="fa fa-check"></i><b>16.1.1</b> Simulated Data</a></li>
+<li class="chapter" data-level="16.1.2" data-path="additional-topics.html"><a href="additional-topics.html#ols-1"><i class="fa fa-check"></i><b>16.1.2</b> OLS</a></li>
+<li class="chapter" data-level="16.1.3" data-path="additional-topics.html"><a href="additional-topics.html#use-predict"><i class="fa fa-check"></i><b>16.1.3</b> Use <code>predict()</code></a></li>
+<li class="chapter" data-level="16.1.4" data-path="additional-topics.html"><a href="additional-topics.html#extra-visualization"><i class="fa fa-check"></i><b>16.1.4</b> Extra: Visualization</a></li>
+<li class="chapter" data-level="16.1.5" data-path="additional-topics.html"><a href="additional-topics.html#real-data"><i class="fa fa-check"></i><b>16.1.5</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="additional-topics.html"><a href="additional-topics.html#designing-and-testing-a-survey"><i class="fa fa-check"></i><b>16.2</b> Designing and Testing a Survey</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="additional-topics.html"><a href="additional-topics.html#calculating-sample-size"><i class="fa fa-check"></i><b>16.2.1</b> Calculating Sample Size</a></li>
+<li class="chapter" data-level="16.2.2" data-path="additional-topics.html"><a href="additional-topics.html#testing-survey-reliability---cronbachs-alpha"><i class="fa fa-check"></i><b>16.2.2</b> Testing Survey Reliability - Cronbach’s Alpha</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="additional-topics.html"><a href="additional-topics.html#panel-data-models-fixed-vs.-random-effects"><i class="fa fa-check"></i><b>16.3</b> Panel Data Models (Fixed vs. Random Effects)</a>
+<ul>
+<li class="chapter" data-level="16.3.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-panel-dataset"><i class="fa fa-check"></i><b>16.3.1</b> Simulated Panel Dataset</a></li>
+<li class="chapter" data-level="16.3.2" data-path="additional-topics.html"><a href="additional-topics.html#fixed-effects-vs.-random-effects"><i class="fa fa-check"></i><b>16.3.2</b> Fixed Effects vs. Random Effects</a></li>
+<li class="chapter" data-level="16.3.3" data-path="additional-topics.html"><a href="additional-topics.html#hausman-test"><i class="fa fa-check"></i><b>16.3.3</b> Hausman Test</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="additional-topics.html"><a href="additional-topics.html#lagged-values-and-preliminaries-in-forecasting"><i class="fa fa-check"></i><b>16.4</b> Lagged Values and Preliminaries in Forecasting</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="additional-topics.html"><a href="additional-topics.html#simulated-time-series"><i class="fa fa-check"></i><b>16.4.1</b> Simulated Time Series</a></li>
+<li class="chapter" data-level="16.4.2" data-path="additional-topics.html"><a href="additional-topics.html#real-data-1"><i class="fa fa-check"></i><b>16.4.2</b> Real Data</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="additional-topics.html"><a href="additional-topics.html#the-end"><i class="fa fa-check"></i><b>16.5</b> The End!</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -435,21 +463,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If VIF &gt; 10, multicollinearity may be a problem.</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="formal-tests-on-assumptions.html#cb397-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;car&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="formal-tests-on-assumptions.html#cb398-1" tabindex="-1"></a><span class="fu">library</span>(car)</span></code></pre></div>
-<pre><code>## Loading required package: carData</code></pre>
-<pre><code>## 
-## Attaching package: &#39;car&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:psych&#39;:
-## 
-##     logit</code></pre>
-<pre><code>## The following object is masked from &#39;package:purrr&#39;:
-## 
-##     some</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     recode</code></pre>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="formal-tests-on-assumptions.html#cb404-1" tabindex="-1"></a><span class="fu">vif</span>(full)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="formal-tests-on-assumptions.html#cb360-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;car&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="formal-tests-on-assumptions.html#cb361-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb361-2"><a href="formal-tests-on-assumptions.html#cb361-2" tabindex="-1"></a><span class="fu">vif</span>(full)</span></code></pre></div>
 <pre><code>## there are higher-order terms (interactions) in this model
 ## consider setting type = &#39;predictor&#39;; see ?vif</code></pre>
 <pre><code>##          educ         exper        tenure        female   educ:female  exper:female 
@@ -476,18 +492,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Detects both heteroscedasticity and model misspecification</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="formal-tests-on-assumptions.html#cb407-1" tabindex="-1"></a><span class="co">#Breusch-Pagan Test</span></span>
-<span id="cb407-2"><a href="formal-tests-on-assumptions.html#cb407-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
-<span id="cb407-3"><a href="formal-tests-on-assumptions.html#cb407-3" tabindex="-1"></a><span class="fu">bptest</span>(full)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="formal-tests-on-assumptions.html#cb364-1" tabindex="-1"></a><span class="co">#Breusch-Pagan Test</span></span>
+<span id="cb364-2"><a href="formal-tests-on-assumptions.html#cb364-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb364-3"><a href="formal-tests-on-assumptions.html#cb364-3" tabindex="-1"></a><span class="fu">bptest</span>(full)</span></code></pre></div>
 <pre><code>## 
 ##  studentized Breusch-Pagan test
 ## 
 ## data:  full
 ## BP = 46.768, df = 7, p-value = 6.195e-08</code></pre>
 <p>Heteroscedasticity present.</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="formal-tests-on-assumptions.html#cb409-1" tabindex="-1"></a><span class="co">#White Test</span></span>
-<span id="cb409-2"><a href="formal-tests-on-assumptions.html#cb409-2" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb409-3"><a href="formal-tests-on-assumptions.html#cb409-3" tabindex="-1"></a><span class="fu">ncvTest</span>(full)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="formal-tests-on-assumptions.html#cb366-1" tabindex="-1"></a><span class="co">#White Test</span></span>
+<span id="cb366-2"><a href="formal-tests-on-assumptions.html#cb366-2" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb366-3"><a href="formal-tests-on-assumptions.html#cb366-3" tabindex="-1"></a><span class="fu">ncvTest</span>(full)</span></code></pre></div>
 <pre><code>## Non-constant Variance Score Test 
 ## Variance formula: ~ fitted.values 
 ## Chisquare = 158.2722, Df = 1, p = &lt; 2.22e-16</code></pre>
@@ -495,12 +511,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>How to fix?</p>
 <ol style="list-style-type: decimal">
 <li><p>Use robust standard errors.</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="formal-tests-on-assumptions.html#cb411-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;sandwich&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;sandwich&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="formal-tests-on-assumptions.html#cb368-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;sandwich&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;sandwich&quot;</span>)</span></code></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="formal-tests-on-assumptions.html#cb412-1" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
-<span id="cb412-2"><a href="formal-tests-on-assumptions.html#cb412-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
-<span id="cb412-3"><a href="formal-tests-on-assumptions.html#cb412-3" tabindex="-1"></a></span>
-<span id="cb412-4"><a href="formal-tests-on-assumptions.html#cb412-4" tabindex="-1"></a><span class="fu">coeftest</span>(full, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(model, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>))  <span class="co"># Huber-White robust SEs)</span></span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="formal-tests-on-assumptions.html#cb369-1" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb369-2"><a href="formal-tests-on-assumptions.html#cb369-2" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb369-3"><a href="formal-tests-on-assumptions.html#cb369-3" tabindex="-1"></a></span>
+<span id="cb369-4"><a href="formal-tests-on-assumptions.html#cb369-4" tabindex="-1"></a><span class="fu">coeftest</span>(full, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(model, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>))  <span class="co"># Huber-White robust SEs)</span></span></code></pre></div>
 <pre><code>## 
 ## t test of coefficients:
 ## 
@@ -527,8 +543,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><span class="math inline">\(H_a\)</span> : The model may be misspecified</p></li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="formal-tests-on-assumptions.html#cb414-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
-<span id="cb414-2"><a href="formal-tests-on-assumptions.html#cb414-2" tabindex="-1"></a><span class="fu">resettest</span>(full, <span class="at">power =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="co">#tests for quadratic and cubic functional form errors. Helps check if other functional forms are necessary while checking for omitted variables</span></span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="formal-tests-on-assumptions.html#cb371-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb371-2"><a href="formal-tests-on-assumptions.html#cb371-2" tabindex="-1"></a><span class="fu">resettest</span>(full, <span class="at">power =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="co">#tests for quadratic and cubic functional form errors. Helps check if other functional forms are necessary while checking for omitted variables</span></span></code></pre></div>
 <pre><code>## 
 ##  RESET test
 ## 
@@ -551,15 +567,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The percentage change in Y for a given percentage change in X.</p></li>
 <li><p>The simplest way to decide whether the log-log model fits the data is to plot the scatterplot of <code>lnY</code> against <code>X</code> and see if the points lie approx. on a straight line.</p></li>
 </ul>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="formal-tests-on-assumptions.html#cb416-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb416-2"><a href="formal-tests-on-assumptions.html#cb416-2" tabindex="-1"></a>CEOSAL1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;CEOSAL1.xls&quot;</span>)</span>
-<span id="cb416-3"><a href="formal-tests-on-assumptions.html#cb416-3" tabindex="-1"></a>ceovars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;salary&quot;</span>,<span class="st">&quot;sales&quot;</span>)</span>
-<span id="cb416-4"><a href="formal-tests-on-assumptions.html#cb416-4" tabindex="-1"></a>CEOSAL2<span class="ot">&lt;-</span>CEOSAL1[ceovars]</span>
-<span id="cb416-5"><a href="formal-tests-on-assumptions.html#cb416-5" tabindex="-1"></a></span>
-<span id="cb416-6"><a href="formal-tests-on-assumptions.html#cb416-6" tabindex="-1"></a><span class="co">#Create the log of a variable using the log function</span></span>
-<span id="cb416-7"><a href="formal-tests-on-assumptions.html#cb416-7" tabindex="-1"></a>CEOSAL2<span class="ot">&lt;-</span>CEOSAL2<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">lsales=</span><span class="fu">log</span>(sales),<span class="at">lsalary=</span><span class="fu">log</span>(salary))</span>
-<span id="cb416-8"><a href="formal-tests-on-assumptions.html#cb416-8" tabindex="-1"></a>log2<span class="ot">&lt;-</span><span class="fu">lm</span>(lsalary<span class="sc">~</span>lsales, <span class="at">data=</span>CEOSAL2)</span>
-<span id="cb416-9"><a href="formal-tests-on-assumptions.html#cb416-9" tabindex="-1"></a><span class="fu">summary</span>(log2)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="formal-tests-on-assumptions.html#cb373-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb373-2"><a href="formal-tests-on-assumptions.html#cb373-2" tabindex="-1"></a>CEOSAL1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;CEOSAL1.xls&quot;</span>)</span>
+<span id="cb373-3"><a href="formal-tests-on-assumptions.html#cb373-3" tabindex="-1"></a>ceovars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;salary&quot;</span>,<span class="st">&quot;sales&quot;</span>)</span>
+<span id="cb373-4"><a href="formal-tests-on-assumptions.html#cb373-4" tabindex="-1"></a>CEOSAL2<span class="ot">&lt;-</span>CEOSAL1[ceovars]</span>
+<span id="cb373-5"><a href="formal-tests-on-assumptions.html#cb373-5" tabindex="-1"></a></span>
+<span id="cb373-6"><a href="formal-tests-on-assumptions.html#cb373-6" tabindex="-1"></a><span class="co">#Create the log of a variable using the log function</span></span>
+<span id="cb373-7"><a href="formal-tests-on-assumptions.html#cb373-7" tabindex="-1"></a>CEOSAL2<span class="ot">&lt;-</span>CEOSAL2<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">lsales=</span><span class="fu">log</span>(sales),<span class="at">lsalary=</span><span class="fu">log</span>(salary))</span>
+<span id="cb373-8"><a href="formal-tests-on-assumptions.html#cb373-8" tabindex="-1"></a>log2<span class="ot">&lt;-</span><span class="fu">lm</span>(lsalary<span class="sc">~</span>lsales, <span class="at">data=</span>CEOSAL2)</span>
+<span id="cb373-9"><a href="formal-tests-on-assumptions.html#cb373-9" tabindex="-1"></a><span class="fu">summary</span>(log2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lsalary ~ lsales, data = CEOSAL2)
@@ -578,8 +594,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 0.5044 on 207 degrees of freedom
 ## Multiple R-squared:  0.2108, Adjusted R-squared:  0.207 
 ## F-statistic:  55.3 on 1 and 207 DF,  p-value: 2.703e-12</code></pre>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="formal-tests-on-assumptions.html#cb418-1" tabindex="-1"></a><span class="co">#You can also do it in the regression</span></span>
-<span id="cb418-2"><a href="formal-tests-on-assumptions.html#cb418-2" tabindex="-1"></a><span class="co">#log2&lt;-lm(log(salary)~log(sales),data=CEOSAL2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="formal-tests-on-assumptions.html#cb375-1" tabindex="-1"></a><span class="co">#You can also do it in the regression</span></span>
+<span id="cb375-2"><a href="formal-tests-on-assumptions.html#cb375-2" tabindex="-1"></a><span class="co">#log2&lt;-lm(log(salary)~log(sales),data=CEOSAL2)</span></span></code></pre></div>
 </div>
 <div id="log-lin-model" class="section level3 hasAnchor" number="15.4.2">
 <h3><span class="header-section-number">15.4.2</span> Log-Lin Model<a href="formal-tests-on-assumptions.html#log-lin-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -589,8 +605,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>$\beta_1 = \frac{\text{relative change in regressand}}{\text{absolute change in regressor}}$</p></li>
 <li><p>If we multiply the relative change in Y by 100, it will give the percentage change or growth rate</p></li>
 </ul>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="formal-tests-on-assumptions.html#cb419-1" tabindex="-1"></a>loglin<span class="ot">&lt;-</span><span class="fu">lm</span>(lsalary<span class="sc">~</span>sales,<span class="at">data =</span> CEOSAL2)</span>
-<span id="cb419-2"><a href="formal-tests-on-assumptions.html#cb419-2" tabindex="-1"></a><span class="fu">summary</span>(loglin)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="formal-tests-on-assumptions.html#cb376-1" tabindex="-1"></a>loglin<span class="ot">&lt;-</span><span class="fu">lm</span>(lsalary<span class="sc">~</span>sales,<span class="at">data =</span> CEOSAL2)</span>
+<span id="cb376-2"><a href="formal-tests-on-assumptions.html#cb376-2" tabindex="-1"></a><span class="fu">summary</span>(loglin)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lsalary ~ sales, data = CEOSAL2)
@@ -615,8 +631,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>The absolute change in Y is equal to the slope times the relative change in X. If the relative change in X is multiplied by 100, then the equation above gives the absolute change in Y for a percentage change in X.</li>
 </ul>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="formal-tests-on-assumptions.html#cb421-1" tabindex="-1"></a>linlog<span class="ot">&lt;-</span><span class="fu">lm</span>(salary<span class="sc">~</span>lsales, <span class="at">data=</span>CEOSAL2)</span>
-<span id="cb421-2"><a href="formal-tests-on-assumptions.html#cb421-2" tabindex="-1"></a><span class="fu">summary</span>(linlog)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="formal-tests-on-assumptions.html#cb378-1" tabindex="-1"></a>linlog<span class="ot">&lt;-</span><span class="fu">lm</span>(salary<span class="sc">~</span>lsales, <span class="at">data=</span>CEOSAL2)</span>
+<span id="cb378-2"><a href="formal-tests-on-assumptions.html#cb378-2" tabindex="-1"></a><span class="fu">summary</span>(linlog)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = salary ~ lsales, data = CEOSAL2)
@@ -661,8 +677,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="multivariate-regression-with-dummy-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="multivariate-regression-with-dummy-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="additional-topics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
