@@ -311,9 +311,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Always remember the first steps: Set Working Directory and Clean the Global Environment.</strong></p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="data-management---time-series-and-panel-data.html#cb79-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb79-2"><a href="data-management---time-series-and-panel-data.html#cb79-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 3181736  170    5413337 289.2  5413337 289.2
-## Vcells 6153186   47   12255594  93.6 10711744  81.8</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 3278487 175.1    5390748 287.9  5390748 287.9
+## Vcells 6373007  48.7   12255594  93.6 11002664  84.0</code></pre>
 <p>To make sure that you are using the correct directory and that you have all the files you need, use <code>list.files()</code> function.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-management---time-series-and-panel-data.html#cb81-1" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <p>Now, we load the following packages: <code>dplyr</code>, <code>lubridate</code>, and <code>zoo</code>. Make sure you have all 3 installed; if not, install them.</p>
@@ -395,7 +395,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As you can see, our <code>ds</code> is what our date column is, however, it is in the <code>character</code> format. We need to convert it to the <code>Date</code> class. We also need to do this to a copy of the raw data for further modifications.</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data-management---time-series-and-panel-data.html#cb98-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p1</span>
 <span id="cb98-2"><a href="data-management---time-series-and-panel-data.html#cb98-2" tabindex="-1"></a><span class="fu">head</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
-<pre><code>## [1] &quot;2015-06-13&quot; &quot;2015-06-14&quot; &quot;2015-06-15&quot; &quot;2015-06-16&quot; &quot;2015-06-17&quot; &quot;2015-06-18&quot;</code></pre>
+<pre><code>## [1] &quot;2015-06-13&quot; &quot;2015-06-14&quot; &quot;2015-06-15&quot; &quot;2015-06-16&quot;
+## [5] &quot;2015-06-17&quot; &quot;2015-06-18&quot;</code></pre>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="data-management---time-series-and-panel-data.html#cb100-1" tabindex="-1"></a><span class="fu">class</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data-management---time-series-and-panel-data.html#cb102-1" tabindex="-1"></a>ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(ch3_p1<span class="fl">.1</span><span class="sc">$</span>ds, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
@@ -561,20 +562,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="data-management---time-series-and-panel-data.html#cb120-1" tabindex="-1"></a>ch3_p2<span class="ot">&lt;-</span>ch3_p2 <span class="sc">%&gt;%</span> </span>
 <span id="cb120-2"><a href="data-management---time-series-and-panel-data.html#cb120-2" tabindex="-1"></a>  <span class="fu">arrange</span>(nr, year)</span></code></pre></div>
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="data-management---time-series-and-panel-data.html#cb121-1" tabindex="-1"></a><span class="fu">head</span>(ch3_p2)</span></code></pre></div>
-<pre><code>##   nr year agric black bus construc ent exper fin hisp poorhlth hours manuf married min nrthcen
-## 1 13 1980     0     0   1        0   0     1   0    0        0  2672     0       0   0       0
-## 2 13 1981     0     0   0        0   0     2   0    0        0  2320     0       0   0       0
-## 3 13 1982     0     0   1        0   0     3   0    0        0  2940     0       0   0       0
-## 4 13 1983     0     0   1        0   0     4   0    0        0  2960     0       0   0       0
-## 5 13 1984     0     0   0        0   0     5   0    0        0  3071     0       0   0       0
-## 6 13 1985     0     0   1        0   0     6   0    0        0  2864     0       0   0       0
-##   nrtheast occ1 occ2 occ3 occ4 occ5 occ6 occ7 occ8 occ9 per pro pub rur south educ tra trad
-## 1        1    0    0    0    0    0    0    0    0    1   0   0   0   0     0   14   0    0
-## 2        1    0    0    0    0    0    0    0    0    1   1   0   0   0     0   14   0    0
-## 3        1    0    0    0    0    0    0    0    0    1   0   0   0   0     0   14   0    0
-## 4        1    0    0    0    0    0    0    0    0    1   0   0   0   0     0   14   0    0
-## 5        1    0    0    0    0    1    0    0    0    0   1   0   0   0     0   14   0    0
-## 6        1    0    1    0    0    0    0    0    0    0   0   0   0   0     0   14   0    0
+<pre><code>##   nr year agric black bus construc ent exper fin hisp poorhlth
+## 1 13 1980     0     0   1        0   0     1   0    0        0
+## 2 13 1981     0     0   0        0   0     2   0    0        0
+## 3 13 1982     0     0   1        0   0     3   0    0        0
+## 4 13 1983     0     0   1        0   0     4   0    0        0
+## 5 13 1984     0     0   0        0   0     5   0    0        0
+## 6 13 1985     0     0   1        0   0     6   0    0        0
+##   hours manuf married min nrthcen nrtheast occ1 occ2 occ3 occ4
+## 1  2672     0       0   0       0        1    0    0    0    0
+## 2  2320     0       0   0       0        1    0    0    0    0
+## 3  2940     0       0   0       0        1    0    0    0    0
+## 4  2960     0       0   0       0        1    0    0    0    0
+## 5  3071     0       0   0       0        1    0    0    0    0
+## 6  2864     0       0   0       0        1    0    1    0    0
+##   occ5 occ6 occ7 occ8 occ9 per pro pub rur south educ tra trad
+## 1    0    0    0    0    1   0   0   0   0     0   14   0    0
+## 2    0    0    0    0    1   1   0   0   0     0   14   0    0
+## 3    0    0    0    0    1   0   0   0   0     0   14   0    0
+## 4    0    0    0    0    1   0   0   0   0     0   14   0    0
+## 5    1    0    0    0    0   1   0   0   0     0   14   0    0
+## 6    0    0    0    0    0   0   0   0   0     0   14   0    0
 ##   union    lwage d81 d82 d83 d84 d85 d86 d87 expersq
 ## 1     0 1.197540   0   0   0   0   0   0   0       1
 ## 2     1 1.853060   1   0   0   0   0   0   0       4
@@ -606,34 +614,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb125-4"><a href="data-management---time-series-and-panel-data.html#cb125-4" tabindex="-1"></a><span class="fu">head</span>(ch3_p2)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 45
 ## # Groups:   nr [1]
-##      nr  year agric black   bus construc   ent exper   fin  hisp poorhlth hours manuf married
-##   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;
-## 1    13  1980     0     0     1        0     0     1     0     0        0  2672     0       0
-## 2    13  1981     0     0     0        0     0     2     0     0        0  2320     0       0
-## 3    13  1982     0     0     1        0     0     3     0     0        0  2940     0       0
-## 4    13  1983     0     0     1        0     0     4     0     0        0  2960     0       0
-## 5    13  1984     0     0     0        0     0     5     0     0        0  3071     0       0
-## 6    13  1985     0     0     1        0     0     6     0     0        0  2864     0       0
-## # ℹ 31 more variables: min &lt;int&gt;, nrthcen &lt;int&gt;, nrtheast &lt;int&gt;, occ1 &lt;int&gt;, occ2 &lt;int&gt;,
-## #   occ3 &lt;int&gt;, occ4 &lt;int&gt;, occ5 &lt;int&gt;, occ6 &lt;int&gt;, occ7 &lt;int&gt;, occ8 &lt;int&gt;, occ9 &lt;int&gt;,
-## #   per &lt;int&gt;, pro &lt;int&gt;, pub &lt;int&gt;, rur &lt;int&gt;, south &lt;int&gt;, educ &lt;int&gt;, tra &lt;int&gt;, trad &lt;int&gt;,
-## #   union &lt;int&gt;, lwage &lt;dbl&gt;, d81 &lt;int&gt;, d82 &lt;int&gt;, d83 &lt;int&gt;, d84 &lt;int&gt;, d85 &lt;int&gt;, d86 &lt;int&gt;,
-## #   d87 &lt;int&gt;, expersq &lt;int&gt;, lwage_lag &lt;dbl&gt;</code></pre>
+##      nr  year agric black   bus construc   ent exper   fin  hisp
+##   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1    13  1980     0     0     1        0     0     1     0     0
+## 2    13  1981     0     0     0        0     0     2     0     0
+## 3    13  1982     0     0     1        0     0     3     0     0
+## 4    13  1983     0     0     1        0     0     4     0     0
+## 5    13  1984     0     0     0        0     0     5     0     0
+## 6    13  1985     0     0     1        0     0     6     0     0
+## # ℹ 35 more variables: poorhlth &lt;int&gt;, hours &lt;int&gt;, manuf &lt;int&gt;,
+## #   married &lt;int&gt;, min &lt;int&gt;, nrthcen &lt;int&gt;, nrtheast &lt;int&gt;,
+## #   occ1 &lt;int&gt;, occ2 &lt;int&gt;, occ3 &lt;int&gt;, occ4 &lt;int&gt;, occ5 &lt;int&gt;,
+## #   occ6 &lt;int&gt;, occ7 &lt;int&gt;, occ8 &lt;int&gt;, occ9 &lt;int&gt;, per &lt;int&gt;,
+## #   pro &lt;int&gt;, pub &lt;int&gt;, rur &lt;int&gt;, south &lt;int&gt;, educ &lt;int&gt;,
+## #   tra &lt;int&gt;, trad &lt;int&gt;, union &lt;int&gt;, lwage &lt;dbl&gt;, d81 &lt;int&gt;,
+## #   d82 &lt;int&gt;, d83 &lt;int&gt;, d84 &lt;int&gt;, d85 &lt;int&gt;, d86 &lt;int&gt;, …</code></pre>
 <p>It is important to do <code>group_by</code> because each individual has their own time line and the lags stay within individuals. Therefore, what this does is treating each individual as separate time series.</p>
 </div>
 <div id="missing-data-in-panels" class="section level3 hasAnchor" number="7.2.4">
 <h3><span class="header-section-number">7.2.4</span> Missing Data in Panels<a href="data-management---time-series-and-panel-data.html#missing-data-in-panels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="data-management---time-series-and-panel-data.html#cb127-1" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(ch3_p2))</span></code></pre></div>
-<pre><code>##        nr      year     agric     black       bus  construc       ent     exper       fin 
-##         0         0         0         0         0         0         0         0         0 
-##      hisp  poorhlth     hours     manuf   married       min   nrthcen  nrtheast      occ1 
-##         0         0         0         0         0         0         0         0         0 
-##      occ2      occ3      occ4      occ5      occ6      occ7      occ8      occ9       per 
-##         0         0         0         0         0         0         0         0         0 
-##       pro       pub       rur     south      educ       tra      trad     union     lwage 
-##         0         0         0         0         0         0         0         0         0 
-##       d81       d82       d83       d84       d85       d86       d87   expersq lwage_lag 
-##         0         0         0         0         0         0         0         0       545</code></pre>
+<pre><code>##        nr      year     agric     black       bus  construc 
+##         0         0         0         0         0         0 
+##       ent     exper       fin      hisp  poorhlth     hours 
+##         0         0         0         0         0         0 
+##     manuf   married       min   nrthcen  nrtheast      occ1 
+##         0         0         0         0         0         0 
+##      occ2      occ3      occ4      occ5      occ6      occ7 
+##         0         0         0         0         0         0 
+##      occ8      occ9       per       pro       pub       rur 
+##         0         0         0         0         0         0 
+##     south      educ       tra      trad     union     lwage 
+##         0         0         0         0         0         0 
+##       d81       d82       d83       d84       d85       d86 
+##         0         0         0         0         0         0 
+##       d87   expersq lwage_lag 
+##         0         0       545</code></pre>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="data-management---time-series-and-panel-data.html#cb129-1" tabindex="-1"></a>ch3_p2<span class="fl">.1</span><span class="ot">&lt;-</span>ch3_p2 <span class="sc">%&gt;%</span> </span>
 <span id="cb129-2"><a href="data-management---time-series-and-panel-data.html#cb129-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lwage_lag))</span></code></pre></div>
 </div>
@@ -645,8 +661,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb130-4"><a href="data-management---time-series-and-panel-data.html#cb130-4" tabindex="-1"></a>    <span class="at">wg =</span> lwage <span class="sc">-</span> <span class="fu">lag</span>(lwage)</span>
 <span id="cb130-5"><a href="data-management---time-series-and-panel-data.html#cb130-5" tabindex="-1"></a>  )</span>
 <span id="cb130-6"><a href="data-management---time-series-and-panel-data.html#cb130-6" tabindex="-1"></a><span class="fu">head</span>(ch3_p2<span class="sc">$</span>wg, <span class="dv">10</span>) <span class="co">#due to number of cols, chose the one we just created and specified 10 observations</span></span></code></pre></div>
-<pre><code>##  [1]          NA  0.65551984 -0.50859833  0.08875167  0.13491178  0.13176584 -2.42015356
-##  [8]  2.38945049          NA -0.15756428</code></pre>
+<pre><code>##  [1]          NA  0.65551984 -0.50859833  0.08875167  0.13491178
+##  [6]  0.13176584 -2.42015356  2.38945049          NA -0.15756428</code></pre>
 <p>What we did was create <em>within-individual wage growth over time</em>.</p>
 <p>Remember our discussion on lag?</p>
 <p>It will answer: “How much did this individual’s wage change from the previous period?”</p>
