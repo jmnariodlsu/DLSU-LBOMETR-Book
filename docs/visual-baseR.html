@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Visualizations using Base R | LBOMETR Course Book</title>
+  <meta name="description" content="An introduction to the LBOMETR Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Visualizations using Base R | LBOMETR Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Visualizations using Base R | LBOMETR Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-01-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualizations-using-ggplot2.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBOMETR Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#general-course-description"><i class="fa fa-check"></i><b>2.1</b> General Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#specific-course-description"><i class="fa fa-check"></i><b>2.2</b> Specific Course Description</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.3</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.4</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.5" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.5</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.5.1</b> EXCUSED ABSENCES POLICY:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="course-assessments.html"><a href="course-assessments.html"><i class="fa fa-check"></i><b>3</b> Course Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="course-assessments.html"><a href="course-assessments.html#short-quizzes"><i class="fa fa-check"></i><b>3.1</b> Short Quizzes</a></li>
+<li class="chapter" data-level="3.2" data-path="course-assessments.html"><a href="course-assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets (1 and 2)</a></li>
+<li class="chapter" data-level="3.3" data-path="course-assessments.html"><a href="course-assessments.html#data-storytelling"><i class="fa fa-check"></i><b>3.3</b> Data Storytelling</a></li>
+<li class="chapter" data-level="3.4" data-path="course-assessments.html"><a href="course-assessments.html#data-story-archive"><i class="fa fa-check"></i><b>3.4</b> Data Story Archive</a></li>
+<li class="chapter" data-level="3.5" data-path="course-assessments.html"><a href="course-assessments.html#participation"><i class="fa fa-check"></i><b>3.5</b> Participation</a></li>
+<li class="chapter" data-level="3.6" data-path="course-assessments.html"><a href="course-assessments.html#grading-system"><i class="fa fa-check"></i><b>3.6</b> Grading System</a></li>
+<li class="chapter" data-level="3.7" data-path="course-assessments.html"><a href="course-assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.7</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="problem-sets.html"><a href="problem-sets.html"><i class="fa fa-check"></i><b>4</b> Problem Sets</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="problem-sets.html"><a href="problem-sets.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="problem-sets.html"><a href="problem-sets.html#assigned-topics-list-general-and-specific"><i class="fa fa-check"></i><b>4.2</b> Assigned Topics List (General and Specific)</a></li>
+<li class="chapter" data-level="4.3" data-path="problem-sets.html"><a href="problem-sets.html#problem-set-1---data-management-to-descriptive-statistics-and-conceptual-endogeneity"><i class="fa fa-check"></i><b>4.3</b> Problem Set 1 - Data Management to Descriptive Statistics and Conceptual Endogeneity</a></li>
+<li class="chapter" data-level="4.4" data-path="problem-sets.html"><a href="problem-sets.html#problem-set-2---testable-hypotheses-ols-diagnostics-robustness"><i class="fa fa-check"></i><b>4.4</b> Problem Set 2 - Testable Hypotheses, OLS, Diagnostics, Robustness</a></li>
+<li class="chapter" data-level="4.5" data-path="problem-sets.html"><a href="problem-sets.html#reminders"><i class="fa fa-check"></i><b>4.5</b> Reminders:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>5</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>5.1</b> Session Information</a></li>
+<li class="chapter" data-level="5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>5.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>5.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>5.3</b> Packages</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>5.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>5.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="5.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>5.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="5.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>5.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="5.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>5.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>5.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>5.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>5.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="5.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>5.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="5.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>5.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="5.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>5.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="5.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>5.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="5.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>5.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>5.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>5.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>5.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>6</b> Data Management - Cross-Sectional Data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#where-to-get-data"><i class="fa fa-check"></i><b>6.1</b> Where to Get Data?</a></li>
+<li class="chapter" data-level="6.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#preliminaries-1"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#packages-1"><i class="fa fa-check"></i><b>6.2.1</b> Packages</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#clean-everything"><i class="fa fa-check"></i><b>6.2.2</b> Clean Everything</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#importing-the-datasets"><i class="fa fa-check"></i><b>6.2.3</b> Importing the Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#renaming-the-variables"><i class="fa fa-check"></i><b>6.3.1</b> Renaming the Variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#sorting-variables"><i class="fa fa-check"></i><b>6.3.2</b> Sorting Variables</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#pipe-operator"><i class="fa fa-check"></i><b>6.3.3</b> Pipe Operator</a></li>
+<li class="chapter" data-level="6.3.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#adding-columns"><i class="fa fa-check"></i><b>6.3.4</b> Adding columns</a></li>
+<li class="chapter" data-level="6.3.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#transforming-values"><i class="fa fa-check"></i><b>6.3.5</b> Transforming Values</a></li>
+<li class="chapter" data-level="6.3.6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#categorizing-into-groups"><i class="fa fa-check"></i><b>6.3.6</b> Categorizing into groups</a></li>
+<li class="chapter" data-level="6.3.7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#summarizing"><i class="fa fa-check"></i><b>6.3.7</b> Summarizing</a></li>
+<li class="chapter" data-level="6.3.8" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#merging-datasets"><i class="fa fa-check"></i><b>6.3.8</b> Merging datasets</a></li>
+<li class="chapter" data-level="6.3.9" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#splitting-datasets"><i class="fa fa-check"></i><b>6.3.9</b> Splitting datasets</a></li>
+<li class="chapter" data-level="6.3.10" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#reshaping-datasets"><i class="fa fa-check"></i><b>6.3.10</b> Reshaping Datasets</a></li>
+<li class="chapter" data-level="6.3.11" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#missing-values"><i class="fa fa-check"></i><b>6.3.11</b> Missing Values</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#closing"><i class="fa fa-check"></i><b>6.4</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html"><i class="fa fa-check"></i><b>7</b> Data Management - Time Series and Panel Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#time-series-data"><i class="fa fa-check"></i><b>7.1</b> Time Series Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#preliminaries-2"><i class="fa fa-check"></i><b>7.1.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#create-a-simple-date-dataset"><i class="fa fa-check"></i><b>7.1.2</b> Create a Simple Date Dataset</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#converting-character-dates-to-date-format"><i class="fa fa-check"></i><b>7.1.3</b> Converting Character Dates to Date Format</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#calculate-age"><i class="fa fa-check"></i><b>7.1.4</b> Calculate Age:</a></li>
+<li class="chapter" data-level="7.1.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#using-time-series-data"><i class="fa fa-check"></i><b>7.1.5</b> Using Time Series Data</a></li>
+<li class="chapter" data-level="7.1.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#convert-to-date-format"><i class="fa fa-check"></i><b>7.1.6</b> Convert to Date Format</a></li>
+<li class="chapter" data-level="7.1.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#aggregate-data"><i class="fa fa-check"></i><b>7.1.7</b> Aggregate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#panel-data"><i class="fa fa-check"></i><b>7.2</b> Panel Data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#sorting-panel-data"><i class="fa fa-check"></i><b>7.2.1</b> Sorting Panel Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#checking-panel-balance"><i class="fa fa-check"></i><b>7.2.2</b> Checking Panel Balance</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#creating-lagged-variables"><i class="fa fa-check"></i><b>7.2.3</b> Creating Lagged Variables</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#missing-data-in-panels"><i class="fa fa-check"></i><b>7.2.4</b> Missing Data in Panels</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#creating-growth-rates"><i class="fa fa-check"></i><b>7.2.5</b> Creating Growth Rates</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#closing-1"><i class="fa fa-check"></i><b>7.3</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html"><i class="fa fa-check"></i><b>8</b> Visualizations using ggplot2</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#preliminaries-3"><i class="fa fa-check"></i><b>8.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#load-the-dataset"><i class="fa fa-check"></i><b>8.1.1</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pre-plotting-check"><i class="fa fa-check"></i><b>8.2</b> Pre-plotting Check</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#template"><i class="fa fa-check"></i><b>8.2.1</b> Template</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-data-using-geom"><i class="fa fa-check"></i><b>8.3</b> Visualizing Data using <code>geom</code></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#scatterplots"><i class="fa fa-check"></i><b>8.3.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#boxplots"><i class="fa fa-check"></i><b>8.3.2</b> Boxplots</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#bar-plots"><i class="fa fa-check"></i><b>8.3.3</b> Bar plots</a></li>
+<li class="chapter" data-level="8.3.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#faceting"><i class="fa fa-check"></i><b>8.3.4</b> Faceting</a></li>
+<li class="chapter" data-level="8.3.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart"><i class="fa fa-check"></i><b>8.3.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="8.3.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram"><i class="fa fa-check"></i><b>8.3.6</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>8.4</b> Visualizing Time Series Data</a></li>
+<li class="chapter" data-level="8.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#closing-2"><i class="fa fa-check"></i><b>8.5</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="visual-baseR.html"><a href="visual-baseR.html"><i class="fa fa-check"></i><b>9</b> Visualizations using Base R</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="visual-baseR.html"><a href="visual-baseR.html#scatterplots-1"><i class="fa fa-check"></i><b>9.0.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="9.0.2" data-path="visual-baseR.html"><a href="visual-baseR.html#boxplots-1"><i class="fa fa-check"></i><b>9.0.2</b> Boxplots</a></li>
+<li class="chapter" data-level="9.0.3" data-path="visual-baseR.html"><a href="visual-baseR.html#bar-plots-1"><i class="fa fa-check"></i><b>9.0.3</b> Bar Plots</a></li>
+<li class="chapter" data-level="9.0.4" data-path="visual-baseR.html"><a href="visual-baseR.html#faceting-1"><i class="fa fa-check"></i><b>9.0.4</b> Faceting</a></li>
+<li class="chapter" data-level="9.0.5" data-path="visual-baseR.html"><a href="visual-baseR.html#pie-chart-1"><i class="fa fa-check"></i><b>9.0.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="9.0.6" data-path="visual-baseR.html"><a href="visual-baseR.html#histogram-1"><i class="fa fa-check"></i><b>9.0.6</b> Histogram</a></li>
+<li class="chapter" data-level="9.0.7" data-path="visual-baseR.html"><a href="visual-baseR.html#time-series"><i class="fa fa-check"></i><b>9.0.7</b> Time Series</a></li>
+<li class="chapter" data-level="9.1" data-path="visual-baseR.html"><a href="visual-baseR.html#closing-3"><i class="fa fa-check"></i><b>9.1</b> Closing</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBOMETR Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visual-baseR" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Visualizations using Base R<a href="visual-baseR.html#visual-baseR" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="visual-baseR.html#cb162-1" tabindex="-1"></a><span class="fu">library</span>(readxl) </span>
+<span id="cb162-2"><a href="visual-baseR.html#cb162-2" tabindex="-1"></a>ch4_p1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Ch4PracticeA.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;base&quot;</span>)</span>
+<span id="cb162-3"><a href="visual-baseR.html#cb162-3" tabindex="-1"></a>fch4_p1 <span class="ot">&lt;-</span> <span class="fu">head</span>(ch4_p1, <span class="dv">500</span>)</span></code></pre></div>
+<div id="scatterplots-1" class="section level3 hasAnchor" number="9.0.1">
+<h3><span class="header-section-number">9.0.1</span> Scatterplots<a href="visual-baseR.html#scatterplots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="visual-baseR.html#cb163-1" tabindex="-1"></a><span class="fu">plot</span>(fch4_p1<span class="sc">$</span>poverty_index, fch4_p1<span class="sc">$</span>health_expenditures, <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-120-1.png" alt="" width="672" /></p>
+<p><strong>Transparency</strong></p>
+<p>In ggplot2, we use <code>alpha</code> but in Base R, we use <code>rgb()</code></p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="visual-baseR.html#cb164-1" tabindex="-1"></a><span class="fu">plot</span>(fch4_p1<span class="sc">$</span>poverty_index, fch4_p1<span class="sc">$</span>health_expenditures, </span>
+<span id="cb164-2"><a href="visual-baseR.html#cb164-2" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>),</span>
+<span id="cb164-3"><a href="visual-baseR.html#cb164-3" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb164-4"><a href="visual-baseR.html#cb164-4" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-121-1.png" alt="" width="672" /></p>
+<p><code>rgb</code> for black is <code>r=0, g=0, b=0</code> then the last is alpha 50% transparency.</p>
+<p><code>pch = 16</code> is solid filled circle, if it is 1, it is a hollow circle.</p>
+<p><strong>Jitter</strong></p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="visual-baseR.html#cb165-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(fch4_p1<span class="sc">$</span>poverty_index, <span class="at">amount =</span> <span class="fl">0.3</span>),</span>
+<span id="cb165-2"><a href="visual-baseR.html#cb165-2" tabindex="-1"></a>     <span class="fu">jitter</span>(fch4_p1<span class="sc">$</span>health_expenditures, <span class="at">amount=</span><span class="fl">0.3</span>),</span>
+<span id="cb165-3"><a href="visual-baseR.html#cb165-3" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">0</span>, <span class="fl">0.5</span>), </span>
+<span id="cb165-4"><a href="visual-baseR.html#cb165-4" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb165-5"><a href="visual-baseR.html#cb165-5" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-122-1.png" alt="" width="672" /></p>
+<p>The amount is <code>0.3</code> which is the width and height equivalent of the jitter using ggplot2. We changed the color to green so <code>g=0.5</code>.</p>
+<p><strong>Color by group (<code>aes(color=enrolled)</code></strong>)</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="visual-baseR.html#cb166-1" tabindex="-1"></a>colors<span class="ot">&lt;-</span><span class="fu">as.factor</span>(fch4_p1<span class="sc">$</span>enrolled)</span>
+<span id="cb166-2"><a href="visual-baseR.html#cb166-2" tabindex="-1"></a></span>
+<span id="cb166-3"><a href="visual-baseR.html#cb166-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(fch4_p1<span class="sc">$</span>poverty_index, <span class="at">amount =</span> <span class="fl">0.3</span>),</span>
+<span id="cb166-4"><a href="visual-baseR.html#cb166-4" tabindex="-1"></a>     <span class="fu">jitter</span>(fch4_p1<span class="sc">$</span>health_expenditures, <span class="at">amount=</span><span class="fl">0.3</span>),</span>
+<span id="cb166-5"><a href="visual-baseR.html#cb166-5" tabindex="-1"></a>     <span class="at">col=</span> colors,</span>
+<span id="cb166-6"><a href="visual-baseR.html#cb166-6" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb166-7"><a href="visual-baseR.html#cb166-7" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span>
+<span id="cb166-8"><a href="visual-baseR.html#cb166-8" tabindex="-1"></a></span>
+<span id="cb166-9"><a href="visual-baseR.html#cb166-9" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, </span>
+<span id="cb166-10"><a href="visual-baseR.html#cb166-10" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">levels</span>(colors),</span>
+<span id="cb166-11"><a href="visual-baseR.html#cb166-11" tabindex="-1"></a>       <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">levels</span>(colors)),</span>
+<span id="cb166-12"><a href="visual-baseR.html#cb166-12" tabindex="-1"></a>       <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb166-13"><a href="visual-baseR.html#cb166-13" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Enrolled&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-123-1.png" alt="" width="672" /></p>
+<p>We need to convert enrolled into categorical variable so that each value becomes a group. Base R automatically decides on the colors to each factor.</p>
+<p>In the legend, we manually tell R to provide it, and we set <code>legend = levels(colors),</code> as factor levels being their legend, <code>col=1:length(levels(colors))</code> assigns legend colors then <code>pch=16</code> for matching the plot symbols.</p>
+</div>
+<div id="boxplots-1" class="section level3 hasAnchor" number="9.0.2">
+<h3><span class="header-section-number">9.0.2</span> Boxplots<a href="visual-baseR.html#boxplots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="visual-baseR.html#cb167-1" tabindex="-1"></a><span class="fu">boxplot</span>(health_expenditures <span class="sc">~</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">data=</span>fch4_p1)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-124-1.png" alt="" width="672" /></p>
+<p>If you want to change color, just add <code>col =</code></p>
+<p><strong>Adding jittered points</strong></p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="visual-baseR.html#cb168-1" tabindex="-1"></a><span class="fu">boxplot</span>(health_expenditures <span class="sc">~</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">data=</span>fch4_p1,</span>
+<span id="cb168-2"><a href="visual-baseR.html#cb168-2" tabindex="-1"></a>        <span class="at">col=</span><span class="st">&quot;green&quot;</span>,</span>
+<span id="cb168-3"><a href="visual-baseR.html#cb168-3" tabindex="-1"></a>        <span class="at">outline=</span><span class="cn">FALSE</span>)</span>
+<span id="cb168-4"><a href="visual-baseR.html#cb168-4" tabindex="-1"></a><span class="fu">stripchart</span>(health_expenditures <span class="sc">~</span> <span class="fu">as.factor</span>(treatment_locality),</span>
+<span id="cb168-5"><a href="visual-baseR.html#cb168-5" tabindex="-1"></a>           <span class="at">data=</span>fch4_p1,</span>
+<span id="cb168-6"><a href="visual-baseR.html#cb168-6" tabindex="-1"></a>           <span class="at">vertical =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb168-7"><a href="visual-baseR.html#cb168-7" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&quot;jitter&quot;</span>,</span>
+<span id="cb168-8"><a href="visual-baseR.html#cb168-8" tabindex="-1"></a>           <span class="at">jitter =</span> <span class="fl">0.2</span>,</span>
+<span id="cb168-9"><a href="visual-baseR.html#cb168-9" tabindex="-1"></a>           <span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb168-10"><a href="visual-baseR.html#cb168-10" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">1</span>,<span class="fl">0.2</span>,<span class="fl">0.2</span>,<span class="fl">0.5</span>), <span class="co">#similar to tomato color with transparency</span></span>
+<span id="cb168-11"><a href="visual-baseR.html#cb168-11" tabindex="-1"></a>           <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-125-1.png" alt="" width="672" /></p>
+<p>We need to draw the boxplot before we add the jitter. <code>outline = FALSE</code> prevents double-plotting, <code>stripchart()</code> overlays the individual observations on the boxplot with jittering to avoid overlap, <code>vertical = TRUE</code> aligns points with the boxplots.</p>
+</div>
+<div id="bar-plots-1" class="section level3 hasAnchor" number="9.0.3">
+<h3><span class="header-section-number">9.0.3</span> Bar Plots<a href="visual-baseR.html#bar-plots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="visual-baseR.html#cb169-1" tabindex="-1"></a>counts<span class="ot">&lt;-</span><span class="fu">table</span>(fch4_p1<span class="sc">$</span>treatment_locality)</span>
+<span id="cb169-2"><a href="visual-baseR.html#cb169-2" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-126-1.png" alt="" width="672" /></p>
+<p>We need to count the values while <code>barplot</code> visualizes the counts</p>
+<p><strong>Stacked Bar Plots</strong></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="visual-baseR.html#cb170-1" tabindex="-1"></a>counts_matrix <span class="ot">&lt;-</span> <span class="fu">with</span>(fch4_p1, <span class="fu">table</span>(treatment_locality, locality_identifier))</span></code></pre></div>
+<p>In the stacked bar plots, rows are the <code>treatment_locality</code> while columns are <code>locality_identifier</code></p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="visual-baseR.html#cb171-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">t</span>(counts_matrix), </span>
+<span id="cb171-2"><a href="visual-baseR.html#cb171-2" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">ncol</span>(counts_matrix)), <span class="co">#color per row</span></span>
+<span id="cb171-3"><a href="visual-baseR.html#cb171-3" tabindex="-1"></a>        <span class="at">legend=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-128-1.png" alt="" width="672" /></p>
+<p><strong>Side-by-Side Bars</strong></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="visual-baseR.html#cb172-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">t</span>(counts_matrix),</span>
+<span id="cb172-2"><a href="visual-baseR.html#cb172-2" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,              <span class="co"># side-by-side</span></span>
+<span id="cb172-3"><a href="visual-baseR.html#cb172-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">ncol</span>(counts_matrix)),</span>
+<span id="cb172-4"><a href="visual-baseR.html#cb172-4" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-129-1.png" alt="" width="672" /></p>
+</div>
+<div id="faceting-1" class="section level3 hasAnchor" number="9.0.4">
+<h3><span class="header-section-number">9.0.4</span> Faceting<a href="visual-baseR.html#faceting-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create the locality_group again</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="visual-baseR.html#cb173-1" tabindex="-1"></a>fch4_p1 <span class="ot">&lt;-</span> fch4_p1 <span class="sc">%&gt;%</span></span>
+<span id="cb173-2"><a href="visual-baseR.html#cb173-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">locality_group =</span> <span class="fu">cut</span>(locality_identifier, </span>
+<span id="cb173-3"><a href="visual-baseR.html#cb173-3" tabindex="-1"></a>                              <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">100</span>), </span>
+<span id="cb173-4"><a href="visual-baseR.html#cb173-4" tabindex="-1"></a>                              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;20-40&quot;</span>, <span class="st">&quot;40-60&quot;</span>, <span class="st">&quot;60-80&quot;</span>, <span class="st">&quot;80-100&quot;</span>),</span>
+<span id="cb173-5"><a href="visual-baseR.html#cb173-5" tabindex="-1"></a>                              <span class="at">include.lowest =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb173-6"><a href="visual-baseR.html#cb173-6" tabindex="-1"></a></span>
+<span id="cb173-7"><a href="visual-baseR.html#cb173-7" tabindex="-1"></a><span class="fu">table</span>(fch4_p1<span class="sc">$</span>locality_group)</span></code></pre></div>
+<pre><code>## 
+##  20-40  40-60  60-80 80-100 
+##    197     42     66     51</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="visual-baseR.html#cb175-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb175-2"><a href="visual-baseR.html#cb175-2" tabindex="-1"></a></span>
+<span id="cb175-3"><a href="visual-baseR.html#cb175-3" tabindex="-1"></a><span class="cf">for</span> (g <span class="cf">in</span> <span class="fu">levels</span>(fch4_p1<span class="sc">$</span>locality_group)) {</span>
+<span id="cb175-4"><a href="visual-baseR.html#cb175-4" tabindex="-1"></a>  subset_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(fch4_p1, locality_group <span class="sc">==</span> g) </span>
+<span id="cb175-5"><a href="visual-baseR.html#cb175-5" tabindex="-1"></a>  <span class="fu">plot</span>(subset_data<span class="sc">$</span>poverty_index,</span>
+<span id="cb175-6"><a href="visual-baseR.html#cb175-6" tabindex="-1"></a>       subset_data<span class="sc">$</span>health_expenditures,</span>
+<span id="cb175-7"><a href="visual-baseR.html#cb175-7" tabindex="-1"></a>       <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;Locality Group:&quot;</span>, g),</span>
+<span id="cb175-8"><a href="visual-baseR.html#cb175-8" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">&quot;Poverty Index&quot;</span>,</span>
+<span id="cb175-9"><a href="visual-baseR.html#cb175-9" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">&quot;Health Expenditures&quot;</span>,</span>
+<span id="cb175-10"><a href="visual-baseR.html#cb175-10" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb175-11"><a href="visual-baseR.html#cb175-11" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.6</span>))  </span>
+<span id="cb175-12"><a href="visual-baseR.html#cb175-12" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-131-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="visual-baseR.html#cb176-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p>You will notice that unlike <code>ggplot2</code>, Base R skips the missing. To avoid this, you have to create a separate category for missing.</p>
+<p><code>par(mfrow=c(nrows, ncols))</code> splits the plotting area then we created a function that loops each <code>locality_group</code> to have a different plot. Then, we reset the plotting layout with <code>par(mfrow=c(1,1))</code> for succeeding plots.</p>
+</div>
+<div id="pie-chart-1" class="section level3 hasAnchor" number="9.0.5">
+<h3><span class="header-section-number">9.0.5</span> Pie Chart<a href="visual-baseR.html#pie-chart-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="visual-baseR.html#cb177-1" tabindex="-1"></a>tcounts <span class="ot">&lt;-</span> <span class="fu">table</span>(fch4_p1<span class="sc">$</span>treatment_locality)</span>
+<span id="cb177-2"><a href="visual-baseR.html#cb177-2" tabindex="-1"></a></span>
+<span id="cb177-3"><a href="visual-baseR.html#cb177-3" tabindex="-1"></a><span class="fu">pie</span>(tcounts,</span>
+<span id="cb177-4"><a href="visual-baseR.html#cb177-4" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(tcounts)), </span>
+<span id="cb177-5"><a href="visual-baseR.html#cb177-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>) </span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-132-1.png" alt="" width="672" /></p>
+<p>Again, <code>table()</code> counts instances per category, while <code>rainbow</code> assigns a color to each category</p>
+<p><strong>Adding Percentages per slice</strong></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="visual-baseR.html#cb178-1" tabindex="-1"></a>pslice <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> tcounts <span class="sc">/</span> <span class="fu">sum</span>(tcounts), <span class="dv">1</span>)</span>
+<span id="cb178-2"><a href="visual-baseR.html#cb178-2" tabindex="-1"></a></span>
+<span id="cb178-3"><a href="visual-baseR.html#cb178-3" tabindex="-1"></a><span class="co">#We create labels that includes the name of slice with the percent of each slice</span></span>
+<span id="cb178-4"><a href="visual-baseR.html#cb178-4" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">names</span>(tcounts), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, pslice, <span class="st">&quot;%&quot;</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb178-5"><a href="visual-baseR.html#cb178-5" tabindex="-1"></a></span>
+<span id="cb178-6"><a href="visual-baseR.html#cb178-6" tabindex="-1"></a><span class="fu">pie</span>(tcounts,</span>
+<span id="cb178-7"><a href="visual-baseR.html#cb178-7" tabindex="-1"></a>    <span class="at">labels =</span> labels,</span>
+<span id="cb178-8"><a href="visual-baseR.html#cb178-8" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(tcounts)),</span>
+<span id="cb178-9"><a href="visual-baseR.html#cb178-9" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-133-1.png" alt="" width="672" /></p>
+</div>
+<div id="histogram-1" class="section level3 hasAnchor" number="9.0.6">
+<h3><span class="header-section-number">9.0.6</span> Histogram<a href="visual-baseR.html#histogram-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="visual-baseR.html#cb179-1" tabindex="-1"></a><span class="fu">hist</span>(fch4_p1<span class="sc">$</span>poverty_index,</span>
+<span id="cb179-2"><a href="visual-baseR.html#cb179-2" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;green&quot;</span>,                 </span>
+<span id="cb179-3"><a href="visual-baseR.html#cb179-3" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">&quot;black&quot;</span>,              </span>
+<span id="cb179-4"><a href="visual-baseR.html#cb179-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Poverty Index&quot;</span>,</span>
+<span id="cb179-5"><a href="visual-baseR.html#cb179-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Histogram of Poverty Index&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-134-1.png" alt="" width="672" /></p>
+<p>R automatically chooses breaks.</p>
+</div>
+<div id="time-series" class="section level3 hasAnchor" number="9.0.7">
+<h3><span class="header-section-number">9.0.7</span> Time Series<a href="visual-baseR.html#time-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="visual-baseR.html#cb180-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb180-2"><a href="visual-baseR.html#cb180-2" tabindex="-1"></a><span class="fu">plot</span>(ch4_p2<span class="sc">$</span>year,</span>
+<span id="cb180-3"><a href="visual-baseR.html#cb180-3" tabindex="-1"></a>     ch4_p2<span class="sc">$</span>nominal_gdp_current,</span>
+<span id="cb180-4"><a href="visual-baseR.html#cb180-4" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,           </span>
+<span id="cb180-5"><a href="visual-baseR.html#cb180-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb180-6"><a href="visual-baseR.html#cb180-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb180-7"><a href="visual-baseR.html#cb180-7" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Nominal GDP (Current)&quot;</span>,</span>
+<span id="cb180-8"><a href="visual-baseR.html#cb180-8" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Time Series Plot of Nominal GDP (Current)&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-135-1.png" alt="" width="672" /></p>
+<p>To make the line, the type is small letter L, not 1. To add points:</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="visual-baseR.html#cb181-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb181-2"><a href="visual-baseR.html#cb181-2" tabindex="-1"></a><span class="fu">plot</span>(ch4_p2<span class="sc">$</span>year,</span>
+<span id="cb181-3"><a href="visual-baseR.html#cb181-3" tabindex="-1"></a>     ch4_p2<span class="sc">$</span>nominal_gdp_current,</span>
+<span id="cb181-4"><a href="visual-baseR.html#cb181-4" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,           </span>
+<span id="cb181-5"><a href="visual-baseR.html#cb181-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>,</span>
+<span id="cb181-6"><a href="visual-baseR.html#cb181-6" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb181-7"><a href="visual-baseR.html#cb181-7" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb181-8"><a href="visual-baseR.html#cb181-8" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Nominal GDP (Current)&quot;</span>,</span>
+<span id="cb181-9"><a href="visual-baseR.html#cb181-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Time Series Plot of Nominal GDP (Current)&quot;</span>)</span>
+<span id="cb181-10"><a href="visual-baseR.html#cb181-10" tabindex="-1"></a><span class="fu">points</span>(ch4_p2<span class="sc">$</span>year,</span>
+<span id="cb181-11"><a href="visual-baseR.html#cb181-11" tabindex="-1"></a>       ch4_p2<span class="sc">$</span>nominal_gdp_current,</span>
+<span id="cb181-12"><a href="visual-baseR.html#cb181-12" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>,</span>
+<span id="cb181-13"><a href="visual-baseR.html#cb181-13" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>) </span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-136-1.png" alt="" width="672" /></p>
+</div>
+<div id="closing-3" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Closing<a href="visual-baseR.html#closing-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Quiz will be done for 15 minutes</p></li>
+<li><p>Clean the environment BEFORE the quiz.</p></li>
+<li><p>You will have a different dataset for the quiz.</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualizations-using-ggplot2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBOMETR_Course_Book.pdf", "LBOMETR_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
