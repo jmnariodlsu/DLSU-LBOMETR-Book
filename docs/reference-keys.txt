@@ -158,6 +158,7 @@ what-is-a-confounding-variable
 difference-between-control-variables-and-confounding-variables
 descriptive-statistics-of-control-and-confounding-variables
 results
+descriptive-statistics-of-categoricalcharacter-variables
 importance-of-descriptive-statistics
 definition
 key-components-of-descriptive-statistics
