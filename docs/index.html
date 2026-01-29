@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-01-24" />
+<meta name="date" content="2026-01-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -269,7 +271,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart"><i class="fa fa-check"></i><b>8.3.5</b> Pie Chart</a></li>
 <li class="chapter" data-level="8.3.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram"><i class="fa fa-check"></i><b>8.3.6</b> Histogram</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>8.4</b> Visualizing Time Series Data</a></li>
+<li class="chapter" data-level="8.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>8.4</b> Visualizing Time Series Data</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#save-graphs-using-ggplot2"><i class="fa fa-check"></i><b>8.4.1</b> Save Graphs using ggplot2</a></li>
+</ul></li>
 <li class="chapter" data-level="8.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#closing-2"><i class="fa fa-check"></i><b>8.5</b> Closing</a></li>
 <li class="chapter" data-level="8.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visual-baseR"><i class="fa fa-check"></i><b>8.6</b> Visualizations using Base R</a>
 <ul>
@@ -280,6 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.6.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart-1"><i class="fa fa-check"></i><b>8.6.5</b> Pie Chart</a></li>
 <li class="chapter" data-level="8.6.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram-1"><i class="fa fa-check"></i><b>8.6.6</b> Histogram</a></li>
 <li class="chapter" data-level="8.6.7" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#time-series"><i class="fa fa-check"></i><b>8.6.7</b> Time Series</a></li>
+<li class="chapter" data-level="8.6.8" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#save-graphs-using-base-r"><i class="fa fa-check"></i><b>8.6.8</b> Save Graphs using Base R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.7" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#closing-3"><i class="fa fa-check"></i><b>8.7</b> Closing</a></li>
 </ul></li>
@@ -312,6 +318,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>9.8</b> Animated Map</a></li>
 <li class="chapter" data-level="9.9" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#practical-advanced-visualizations"><i class="fa fa-check"></i><b>9.9</b> Practical: Advanced Visualizations</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>10.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>10.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="10.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>10.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>10.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>10.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-2"><i class="fa fa-check"></i><b>10.3</b> Histogram</a></li>
+<li class="chapter" data-level="10.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>10.4</b> Summary Table</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table-using-stargazer"><i class="fa fa-check"></i><b>10.4.1</b> Summary Table using Stargazer</a></li>
+<li class="chapter" data-level="10.4.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table-with-grouping-and-stargazer"><i class="fa fa-check"></i><b>10.4.2</b> Summary Table with Grouping and Stargazer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#control-variables"><i class="fa fa-check"></i><b>10.5</b> Control Variables</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#what-is-a-control-variable"><i class="fa fa-check"></i><b>10.5.1</b> What is a Control Variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#confounding-variables"><i class="fa fa-check"></i><b>10.6</b> Confounding Variables</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#what-is-a-confounding-variable"><i class="fa fa-check"></i><b>10.6.1</b> What is a Confounding Variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#difference-between-control-variables-and-confounding-variables"><i class="fa fa-check"></i><b>10.7</b> Difference between Control Variables and Confounding Variables</a></li>
+<li class="chapter" data-level="10.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#descriptive-statistics-of-control-and-confounding-variables"><i class="fa fa-check"></i><b>10.8</b> Descriptive Statistics of Control and Confounding Variables</a></li>
+<li class="chapter" data-level="10.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>10.9</b> Importance of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>10.9.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="10.9.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>10.9.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="10.9.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#how-descriptive-statistics-help-in-regression"><i class="fa fa-check"></i><b>10.9.3</b> How Descriptive Statistics Help in Regression</a></li>
+<li class="chapter" data-level="10.9.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>10.9.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#closing-4"><i class="fa fa-check"></i><b>10.10</b> Closing</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -332,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">LBOMETR Course Book</h1>
 <p class="author"><em>Jem Marie M. Nario</em></p>
-<p class="date"><em>2026-01-24</em></p>
+<p class="date"><em>2026-01-29</em></p>
 </div>
 <div id="introduction" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
