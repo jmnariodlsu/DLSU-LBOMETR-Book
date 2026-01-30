@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-01-29" />
+<meta name="date" content="2026-01-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -435,8 +435,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="advanced-visualizations.html#cb211-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
 <span id="cb211-2"><a href="advanced-visualizations.html#cb211-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 3932973 210.1    6945420 371.0  6945420 371.0
-## Vcells 7943052  60.7   14786712 112.9 12686473  96.8</code></pre>
+## Ncells 3910519 208.9    7007921 374.3  7007921 374.3
+## Vcells 7893624  60.3   14786712 112.9 13172292 100.5</code></pre>
 <div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="advanced-visualizations.html#cb213-1" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
 <span id="cb213-2"><a href="advanced-visualizations.html#cb213-2" tabindex="-1"></a>quotas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;quotas.csv&quot;</span>)</span>
 <span id="cb213-3"><a href="advanced-visualizations.html#cb213-3" tabindex="-1"></a></span>
@@ -592,9 +592,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">9.6.1</span> Fetching GDP Data from WDI<a href="advanced-visualizations.html#fetching-gdp-data-from-wdi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="advanced-visualizations.html#cb228-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb228-2"><a href="advanced-visualizations.html#cb228-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger (Mb) max used  (Mb)
-## Ncells 4017215 214.6    6945420  371  6945420 371.0
-## Vcells 8935024  68.2   17824054  136 13382340 102.1</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 3994761 213.4    7007921 374.3  7007921 374.3
+## Vcells 8885596  67.8   17824054 136.0 13332904 101.8</code></pre>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="advanced-visualizations.html#cb230-1" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span><span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
 <span id="cb230-2"><a href="advanced-visualizations.html#cb230-2" tabindex="-1"></a>           <span class="at">indicator =</span> <span class="st">&quot;NY.GDP.MKTP.CD&quot;</span>,</span>
 <span id="cb230-3"><a href="advanced-visualizations.html#cb230-3" tabindex="-1"></a>           <span class="at">start =</span> <span class="dv">2000</span>, </span>
@@ -620,7 +620,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb233-5"><a href="advanced-visualizations.html#cb233-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GDP by Country&quot;</span>,</span>
 <span id="cb233-6"><a href="advanced-visualizations.html#cb233-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from WDI&quot;</span>,</span>
 <span id="cb233-7"><a href="advanced-visualizations.html#cb233-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-190-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-186-1.png" alt="" width="672" /></p>
 <p>We use the merged map and GDP data and <code>geom_sf(aes(fill=gdp_md))</code> filles countries based on GDP. The <code>scale_fill_viridis_c</code> uses “plasma” which is best used for maps. The log scale transformation is used to better differentiate large economies and small economies and grey fill for missing data.</p>
 <div id="animated-world-map-for-gdp" class="section level4 hasAnchor" number="9.6.1.1">
 <h4><span class="header-section-number">9.6.1.1</span> Animated World Map for GDP<a href="advanced-visualizations.html#animated-world-map-for-gdp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -651,9 +651,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We will use <code>Ch6.xlsx</code> containing Regional GDP and use the Philippine Regions shapefile.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="advanced-visualizations.html#cb239-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb239-2"><a href="advanced-visualizations.html#cb239-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger (Mb) max used  (Mb)
-## Ncells 4078694 217.9    6945420  371  6945420 371.0
-## Vcells 9326716  71.2   17824054  136 17743985 135.4</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 4054894 216.6    7007921 374.3  7007921 374.3
+## Vcells 9274893  70.8   17824054 136.0 17787129 135.8</code></pre>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="advanced-visualizations.html#cb241-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb241-2"><a href="advanced-visualizations.html#cb241-2" tabindex="-1"></a>layers<span class="ot">&lt;-</span><span class="fu">st_layers</span>(<span class="st">&quot;PH_Adm1_Regions.shp&quot;</span>)</span>
 <span id="cb241-3"><a href="advanced-visualizations.html#cb241-3" tabindex="-1"></a><span class="fu">print</span>(layers)</span></code></pre></div>
@@ -859,7 +859,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb275-8"><a href="advanced-visualizations.html#cb275-8" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
 <span id="cb275-9"><a href="advanced-visualizations.html#cb275-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb275-10"><a href="advanced-visualizations.html#cb275-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-208-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-204-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="advanced-visualizations.html#cb276-1" tabindex="-1"></a><span class="co">#Saving the images</span></span>
 <span id="cb276-2"><a href="advanced-visualizations.html#cb276-2" tabindex="-1"></a><span class="co">#ggsave(&quot;rgdp2023.jpg&quot;, plot = last_plot(), width = 10, height = 8, dpi = 300)</span></span>
 <span id="cb276-3"><a href="advanced-visualizations.html#cb276-3" tabindex="-1"></a><span class="co">#or plot = nameofplot, width and height are in inches and for high quality image, dpi = 300</span></span></code></pre></div>
@@ -903,7 +903,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb279-13"><a href="advanced-visualizations.html#cb279-13" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Coordinates&quot;</span>,</span>
 <span id="cb279-14"><a href="advanced-visualizations.html#cb279-14" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Coordinates&quot;</span>)<span class="sc">+</span></span>
 <span id="cb279-15"><a href="advanced-visualizations.html#cb279-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-210-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-206-1.png" alt="" width="672" /></p>
 <p>As you can see, the base map is drawn using <code>geom_sf()</code> then the bubbles represent the GDP values. The bubble size and color represent GDP magnitude.</p>
 <p>You will notice that <code>ggplot()</code> is empty, this creates an empty ggplot canvas where the map layers will be added using the <code>geom_sf</code>.</p>
 <p>In the <code>aes</code> there’s <code>x = st_coordinates(geometry)[,1]</code> same for y. These extract the longitude and latitude of each centroid.</p>
@@ -920,8 +920,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="advanced-visualizations.html#cb280-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;rgdp_map&quot;</span>))</span>
 <span id="cb280-2"><a href="advanced-visualizations.html#cb280-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  4134919 220.9    6945420  371.0   6945420  371.0
-## Vcells 35464268 270.6  177884171 1357.2 222355213 1696.5</code></pre>
+## Ncells  4111036 219.6    7007921  374.3   7007921  374.3
+## Vcells 35412230 270.2  175702971 1340.6 219628712 1675.7</code></pre>
 <div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="advanced-visualizations.html#cb282-1" tabindex="-1"></a><span class="co">#for mp4</span></span>
 <span id="cb282-2"><a href="advanced-visualizations.html#cb282-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(av)) <span class="fu">install.packages</span>(<span class="st">&quot;av&quot;</span>)</span></code></pre></div>
 <pre><code>## Loading required package: av</code></pre>

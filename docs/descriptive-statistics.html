@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-01-29" />
+<meta name="date" content="2026-01-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -396,8 +396,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="descriptive-statistics.html#cb289-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb289-2"><a href="descriptive-statistics.html#cb289-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  4136156 220.9    6945420  371.0   6945420  371.0
-## Vcells 35464329 270.6  142307337 1085.8 222355213 1696.5</code></pre>
+## Ncells  4112273 219.7    7007921  374.3   7007921  374.3
+## Vcells 35412291 270.2  140562377 1072.5 219628712 1675.7</code></pre>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="descriptive-statistics.html#cb291-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
 <p>We subset the data:</p>
 <div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="descriptive-statistics.html#cb292-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
@@ -480,6 +480,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Notice how we directly use the <em>describe</em> function on the variable <strong>Q37a_HoursWeekChildren</strong> (called with the dollar sign operator, <em>$</em>, which works as follows: <em>name_dataset$name_variable</em> - notice that to access a specific variable, some functions can use the pipe operator while others require the dollar sign operator, as in this case). Notice also how we call the function <em>describe</em>: we use the :: operator, which tells R to look for a function within a specific package as follows</p>
 <p><em>name_package::name_function</em></p>
 <p>You could also simply call the function by only using its name, R will then search for that specific function across all the loaded R packages. However, if more packages have functions with the same name, specifying the name of the package with the :: operator helps assuring the usage of the correct function.</p>
+<p>There are 575 non-missing observations for <strong>Q37a_HoursWeekChildren</strong>. <code>psych::describe</code> ignores the missing observations.</p>
 <p>Report the Frequency Table for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <code>tbl_summary</code> of the package <code>gtsummary</code>:</p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="descriptive-statistics.html#cb296-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
 <span id="cb296-2"><a href="descriptive-statistics.html#cb296-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
@@ -488,23 +489,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb296-5"><a href="descriptive-statistics.html#cb296-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
 <span id="cb296-6"><a href="descriptive-statistics.html#cb296-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb296-7"><a href="descriptive-statistics.html#cb296-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
-<div id="ciqfwvzkno" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ciqfwvzkno table {
+<div id="jihqfagryn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jihqfagryn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ciqfwvzkno thead, #ciqfwvzkno tbody, #ciqfwvzkno tfoot, #ciqfwvzkno tr, #ciqfwvzkno td, #ciqfwvzkno th {
+#jihqfagryn thead, #jihqfagryn tbody, #jihqfagryn tfoot, #jihqfagryn tr, #jihqfagryn td, #jihqfagryn th {
   border-style: none;
 }
 
-#ciqfwvzkno p {
+#jihqfagryn p {
   margin: 0;
   padding: 0;
 }
 
-#ciqfwvzkno .gt_table {
+#jihqfagryn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -530,12 +531,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_caption {
+#jihqfagryn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ciqfwvzkno .gt_title {
+#jihqfagryn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -547,7 +548,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#ciqfwvzkno .gt_subtitle {
+#jihqfagryn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -559,7 +560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#ciqfwvzkno .gt_heading {
+#jihqfagryn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -571,13 +572,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_bottom_border {
+#jihqfagryn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_col_headings {
+#jihqfagryn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -592,7 +593,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_col_heading {
+#jihqfagryn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -612,7 +613,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ciqfwvzkno .gt_column_spanner_outer {
+#jihqfagryn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -624,15 +625,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#ciqfwvzkno .gt_column_spanner_outer:first-child {
+#jihqfagryn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ciqfwvzkno .gt_column_spanner_outer:last-child {
+#jihqfagryn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ciqfwvzkno .gt_column_spanner {
+#jihqfagryn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -644,11 +645,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#ciqfwvzkno .gt_spanner_row {
+#jihqfagryn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ciqfwvzkno .gt_group_heading {
+#jihqfagryn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -674,7 +675,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#ciqfwvzkno .gt_empty_group_heading {
+#jihqfagryn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -689,15 +690,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#ciqfwvzkno .gt_from_md > :first-child {
+#jihqfagryn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ciqfwvzkno .gt_from_md > :last-child {
+#jihqfagryn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ciqfwvzkno .gt_row {
+#jihqfagryn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -716,7 +717,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ciqfwvzkno .gt_stub {
+#jihqfagryn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -729,7 +730,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ciqfwvzkno .gt_stub_row_group {
+#jihqfagryn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -743,15 +744,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#ciqfwvzkno .gt_row_group_first td {
+#jihqfagryn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ciqfwvzkno .gt_row_group_first th {
+#jihqfagryn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ciqfwvzkno .gt_summary_row {
+#jihqfagryn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -761,16 +762,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ciqfwvzkno .gt_first_summary_row {
+#jihqfagryn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_first_summary_row.thick {
+#jihqfagryn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ciqfwvzkno .gt_last_summary_row {
+#jihqfagryn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -780,7 +781,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_grand_summary_row {
+#jihqfagryn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -790,7 +791,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ciqfwvzkno .gt_first_grand_summary_row {
+#jihqfagryn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -800,7 +801,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_last_grand_summary_row_top {
+#jihqfagryn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -810,11 +811,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_striped {
+#jihqfagryn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ciqfwvzkno .gt_table_body {
+#jihqfagryn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -823,7 +824,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_footnotes {
+#jihqfagryn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -837,7 +838,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_footnote {
+#jihqfagryn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -846,7 +847,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ciqfwvzkno .gt_sourcenotes {
+#jihqfagryn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -860,7 +861,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ciqfwvzkno .gt_sourcenote {
+#jihqfagryn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -868,72 +869,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ciqfwvzkno .gt_left {
+#jihqfagryn .gt_left {
   text-align: left;
 }
 
-#ciqfwvzkno .gt_center {
+#jihqfagryn .gt_center {
   text-align: center;
 }
 
-#ciqfwvzkno .gt_right {
+#jihqfagryn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ciqfwvzkno .gt_font_normal {
+#jihqfagryn .gt_font_normal {
   font-weight: normal;
 }
 
-#ciqfwvzkno .gt_font_bold {
+#jihqfagryn .gt_font_bold {
   font-weight: bold;
 }
 
-#ciqfwvzkno .gt_font_italic {
+#jihqfagryn .gt_font_italic {
   font-style: italic;
 }
 
-#ciqfwvzkno .gt_super {
+#jihqfagryn .gt_super {
   font-size: 65%;
 }
 
-#ciqfwvzkno .gt_footnote_marks {
+#jihqfagryn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ciqfwvzkno .gt_asterisk {
+#jihqfagryn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ciqfwvzkno .gt_indent_1 {
+#jihqfagryn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ciqfwvzkno .gt_indent_2 {
+#jihqfagryn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ciqfwvzkno .gt_indent_3 {
+#jihqfagryn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ciqfwvzkno .gt_indent_4 {
+#jihqfagryn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ciqfwvzkno .gt_indent_5 {
+#jihqfagryn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ciqfwvzkno .katex-display {
+#jihqfagryn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ciqfwvzkno div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jihqfagryn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -955,7 +956,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tfoot>
 </table>
 </div>
-<p>The table shows that there are 1, 723 non-missing observations for the variable, <code>Q37a_HoursWeekChildren</code></p>
+<p>The table shows that there are 1, 723 non-missing observations for males, this shows the entire sample, not just variable-specific number.</p>
+<blockquote>
+<p>You need to explain the different Ns from <code>psych::describe</code> and <code>gtsummary</code></p>
+</blockquote>
 <p>The median value of hours per week with children is 10 hours. (5,24) represents the interquartile range. Q1 (5): The first quartile (25th percentile) and the third quartile (75th percentile) are 5 and 24 hours respectively. This simply means that 50% of the responses lie between 5 and 24 hours per week.</p>
 <p>When interpreting:</p>
 <p>“The median hours per week spent with children of males is 10 hours, with half of the respondents reporting values between 5 and 24 hours. The total sample size is 1,723.”</p>
@@ -980,7 +984,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb297-10"><a href="descriptive-statistics.html#cb297-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
 <span id="cb297-11"><a href="descriptive-statistics.html#cb297-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
 <span id="cb297-12"><a href="descriptive-statistics.html#cb297-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-222-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-218-1.png" alt="" width="672" /></p>
 <ul>
 <li><p>Depending on the data, different number of bins are more or less appropriate. In this case, we indicate that we want our data to be split in 50 intervals. You could indicate a different number or you could also leave the <em>bins</em> option out of the code and let R select it (R will give a warning (not error) about the number of bins which has been selected). Each type of graph has its own set of options that can be set, use the help function to learn more about them.</p></li>
 <li><p>Next, we call a pre-defined layout of the graph called <em>theme_minimal</em>. There are many pre-defined layouts and you are free to choose whichever you like the most, or even create your own layout (which is partially what we do with the last layer).</p></li>
@@ -1160,12 +1164,12 @@ The number of male respondents in our dataset is equal to 1723</p>
 </div>
 <div id="difference-between-control-variables-and-confounding-variables" class="section level2 hasAnchor" number="10.7">
 <h2><span class="header-section-number">10.7</span> Difference between Control Variables and Confounding Variables<a href="descriptive-statistics.html#difference-between-control-variables-and-confounding-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<table style="width:100%;">
+<table>
 <colgroup>
 <col width="23%" />
-<col width="22%" />
-<col width="31%" />
-<col width="22%" />
+<col width="23%" />
+<col width="30%" />
+<col width="23%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1465,23 +1469,23 @@ Q7_HoursWeekWork
 <div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="descriptive-statistics.html#cb312-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
 <span id="cb312-2"><a href="descriptive-statistics.html#cb312-2" tabindex="-1"></a>  <span class="fu">select</span>(HH2d_EmploymentSituation) <span class="sc">%&gt;%</span></span>
 <span id="cb312-3"><a href="descriptive-statistics.html#cb312-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code></pre></div>
-<div id="zmaxvdmuzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zmaxvdmuzw table {
+<div id="akvfdqxpqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#akvfdqxpqy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zmaxvdmuzw thead, #zmaxvdmuzw tbody, #zmaxvdmuzw tfoot, #zmaxvdmuzw tr, #zmaxvdmuzw td, #zmaxvdmuzw th {
+#akvfdqxpqy thead, #akvfdqxpqy tbody, #akvfdqxpqy tfoot, #akvfdqxpqy tr, #akvfdqxpqy td, #akvfdqxpqy th {
   border-style: none;
 }
 
-#zmaxvdmuzw p {
+#akvfdqxpqy p {
   margin: 0;
   padding: 0;
 }
 
-#zmaxvdmuzw .gt_table {
+#akvfdqxpqy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1507,12 +1511,12 @@ Q7_HoursWeekWork
   border-left-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_caption {
+#akvfdqxpqy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zmaxvdmuzw .gt_title {
+#akvfdqxpqy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1524,7 +1528,7 @@ Q7_HoursWeekWork
   border-bottom-width: 0;
 }
 
-#zmaxvdmuzw .gt_subtitle {
+#akvfdqxpqy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1536,7 +1540,7 @@ Q7_HoursWeekWork
   border-top-width: 0;
 }
 
-#zmaxvdmuzw .gt_heading {
+#akvfdqxpqy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1548,13 +1552,13 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_bottom_border {
+#akvfdqxpqy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_col_headings {
+#akvfdqxpqy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1569,7 +1573,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_col_heading {
+#akvfdqxpqy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1589,7 +1593,7 @@ Q7_HoursWeekWork
   overflow-x: hidden;
 }
 
-#zmaxvdmuzw .gt_column_spanner_outer {
+#akvfdqxpqy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1601,15 +1605,15 @@ Q7_HoursWeekWork
   padding-right: 4px;
 }
 
-#zmaxvdmuzw .gt_column_spanner_outer:first-child {
+#akvfdqxpqy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zmaxvdmuzw .gt_column_spanner_outer:last-child {
+#akvfdqxpqy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zmaxvdmuzw .gt_column_spanner {
+#akvfdqxpqy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1621,11 +1625,11 @@ Q7_HoursWeekWork
   width: 100%;
 }
 
-#zmaxvdmuzw .gt_spanner_row {
+#akvfdqxpqy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zmaxvdmuzw .gt_group_heading {
+#akvfdqxpqy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1651,7 +1655,7 @@ Q7_HoursWeekWork
   text-align: left;
 }
 
-#zmaxvdmuzw .gt_empty_group_heading {
+#akvfdqxpqy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1666,15 +1670,15 @@ Q7_HoursWeekWork
   vertical-align: middle;
 }
 
-#zmaxvdmuzw .gt_from_md > :first-child {
+#akvfdqxpqy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zmaxvdmuzw .gt_from_md > :last-child {
+#akvfdqxpqy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zmaxvdmuzw .gt_row {
+#akvfdqxpqy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1693,7 +1697,7 @@ Q7_HoursWeekWork
   overflow-x: hidden;
 }
 
-#zmaxvdmuzw .gt_stub {
+#akvfdqxpqy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1706,7 +1710,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#zmaxvdmuzw .gt_stub_row_group {
+#akvfdqxpqy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1720,15 +1724,15 @@ Q7_HoursWeekWork
   vertical-align: top;
 }
 
-#zmaxvdmuzw .gt_row_group_first td {
+#akvfdqxpqy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zmaxvdmuzw .gt_row_group_first th {
+#akvfdqxpqy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zmaxvdmuzw .gt_summary_row {
+#akvfdqxpqy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1738,16 +1742,16 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#zmaxvdmuzw .gt_first_summary_row {
+#akvfdqxpqy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_first_summary_row.thick {
+#akvfdqxpqy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zmaxvdmuzw .gt_last_summary_row {
+#akvfdqxpqy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1757,7 +1761,7 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_grand_summary_row {
+#akvfdqxpqy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1767,7 +1771,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#zmaxvdmuzw .gt_first_grand_summary_row {
+#akvfdqxpqy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1777,7 +1781,7 @@ Q7_HoursWeekWork
   border-top-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_last_grand_summary_row_top {
+#akvfdqxpqy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1787,11 +1791,11 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_striped {
+#akvfdqxpqy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zmaxvdmuzw .gt_table_body {
+#akvfdqxpqy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1800,7 +1804,7 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_footnotes {
+#akvfdqxpqy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1814,7 +1818,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_footnote {
+#akvfdqxpqy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1823,7 +1827,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#zmaxvdmuzw .gt_sourcenotes {
+#akvfdqxpqy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1837,7 +1841,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#zmaxvdmuzw .gt_sourcenote {
+#akvfdqxpqy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1845,72 +1849,72 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#zmaxvdmuzw .gt_left {
+#akvfdqxpqy .gt_left {
   text-align: left;
 }
 
-#zmaxvdmuzw .gt_center {
+#akvfdqxpqy .gt_center {
   text-align: center;
 }
 
-#zmaxvdmuzw .gt_right {
+#akvfdqxpqy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zmaxvdmuzw .gt_font_normal {
+#akvfdqxpqy .gt_font_normal {
   font-weight: normal;
 }
 
-#zmaxvdmuzw .gt_font_bold {
+#akvfdqxpqy .gt_font_bold {
   font-weight: bold;
 }
 
-#zmaxvdmuzw .gt_font_italic {
+#akvfdqxpqy .gt_font_italic {
   font-style: italic;
 }
 
-#zmaxvdmuzw .gt_super {
+#akvfdqxpqy .gt_super {
   font-size: 65%;
 }
 
-#zmaxvdmuzw .gt_footnote_marks {
+#akvfdqxpqy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zmaxvdmuzw .gt_asterisk {
+#akvfdqxpqy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zmaxvdmuzw .gt_indent_1 {
+#akvfdqxpqy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zmaxvdmuzw .gt_indent_2 {
+#akvfdqxpqy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zmaxvdmuzw .gt_indent_3 {
+#akvfdqxpqy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zmaxvdmuzw .gt_indent_4 {
+#akvfdqxpqy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zmaxvdmuzw .gt_indent_5 {
+#akvfdqxpqy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zmaxvdmuzw .katex-display {
+#akvfdqxpqy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zmaxvdmuzw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#akvfdqxpqy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
