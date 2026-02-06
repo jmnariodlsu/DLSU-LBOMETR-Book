@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Descriptive Statistics Continuation | LBOMETR Course Book</title>
+  <meta name="description" content="An introduction to the LBOMETR Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Descriptive Statistics Continuation | LBOMETR Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Descriptive Statistics Continuation | LBOMETR Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-02-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptive-statistics.html"/>
+<link rel="next" href="hypothesis-testing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBOMETR Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#general-course-description"><i class="fa fa-check"></i><b>2.1</b> General Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#specific-course-description"><i class="fa fa-check"></i><b>2.2</b> Specific Course Description</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.3</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.4</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.5" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.5</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.5.1</b> EXCUSED ABSENCES POLICY:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="course-assessments.html"><a href="course-assessments.html"><i class="fa fa-check"></i><b>3</b> Course Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="course-assessments.html"><a href="course-assessments.html#short-quizzes"><i class="fa fa-check"></i><b>3.1</b> Short Quizzes</a></li>
+<li class="chapter" data-level="3.2" data-path="course-assessments.html"><a href="course-assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets (1 and 2)</a></li>
+<li class="chapter" data-level="3.3" data-path="course-assessments.html"><a href="course-assessments.html#data-storytelling"><i class="fa fa-check"></i><b>3.3</b> Data Storytelling</a></li>
+<li class="chapter" data-level="3.4" data-path="course-assessments.html"><a href="course-assessments.html#data-story-archive"><i class="fa fa-check"></i><b>3.4</b> Data Story Archive</a></li>
+<li class="chapter" data-level="3.5" data-path="course-assessments.html"><a href="course-assessments.html#participation"><i class="fa fa-check"></i><b>3.5</b> Participation</a></li>
+<li class="chapter" data-level="3.6" data-path="course-assessments.html"><a href="course-assessments.html#grading-system"><i class="fa fa-check"></i><b>3.6</b> Grading System</a></li>
+<li class="chapter" data-level="3.7" data-path="course-assessments.html"><a href="course-assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.7</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="problem-sets.html"><a href="problem-sets.html"><i class="fa fa-check"></i><b>4</b> Problem Sets</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="problem-sets.html"><a href="problem-sets.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="problem-sets.html"><a href="problem-sets.html#assigned-topics-list-general-and-specific"><i class="fa fa-check"></i><b>4.2</b> Assigned Topics List (General and Specific)</a></li>
+<li class="chapter" data-level="4.3" data-path="problem-sets.html"><a href="problem-sets.html#problem-set-1---data-management-to-descriptive-statistics-and-conceptual-endogeneity"><i class="fa fa-check"></i><b>4.3</b> Problem Set 1 - Data Management to Descriptive Statistics and Conceptual Endogeneity</a></li>
+<li class="chapter" data-level="4.4" data-path="problem-sets.html"><a href="problem-sets.html#problem-set-2---testable-hypotheses-ols-diagnostics-robustness"><i class="fa fa-check"></i><b>4.4</b> Problem Set 2 - Testable Hypotheses, OLS, Diagnostics, Robustness</a></li>
+<li class="chapter" data-level="4.5" data-path="problem-sets.html"><a href="problem-sets.html#reminders"><i class="fa fa-check"></i><b>4.5</b> Reminders:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>5</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>5.1</b> Session Information</a></li>
+<li class="chapter" data-level="5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>5.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>5.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>5.3</b> Packages</a></li>
+<li class="chapter" data-level="5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>5.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>5.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="5.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>5.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="5.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>5.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="5.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>5.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>5.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>5.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>5.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="5.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>5.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="5.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>5.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="5.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>5.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="5.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>5.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="5.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>5.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>5.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>5.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>5.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>6</b> Data Management - Cross-Sectional Data</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#where-to-get-data"><i class="fa fa-check"></i><b>6.1</b> Where to Get Data?</a></li>
+<li class="chapter" data-level="6.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#preliminaries-1"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#packages-1"><i class="fa fa-check"></i><b>6.2.1</b> Packages</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#clean-everything"><i class="fa fa-check"></i><b>6.2.2</b> Clean Everything</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#importing-the-datasets"><i class="fa fa-check"></i><b>6.2.3</b> Importing the Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#renaming-the-variables"><i class="fa fa-check"></i><b>6.3.1</b> Renaming the Variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#sorting-variables"><i class="fa fa-check"></i><b>6.3.2</b> Sorting Variables</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#pipe-operator"><i class="fa fa-check"></i><b>6.3.3</b> Pipe Operator</a></li>
+<li class="chapter" data-level="6.3.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#adding-columns"><i class="fa fa-check"></i><b>6.3.4</b> Adding columns</a></li>
+<li class="chapter" data-level="6.3.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#transforming-values"><i class="fa fa-check"></i><b>6.3.5</b> Transforming Values</a></li>
+<li class="chapter" data-level="6.3.6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#categorizing-into-groups"><i class="fa fa-check"></i><b>6.3.6</b> Categorizing into groups</a></li>
+<li class="chapter" data-level="6.3.7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#summarizing"><i class="fa fa-check"></i><b>6.3.7</b> Summarizing</a></li>
+<li class="chapter" data-level="6.3.8" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#merging-datasets"><i class="fa fa-check"></i><b>6.3.8</b> Merging datasets</a></li>
+<li class="chapter" data-level="6.3.9" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#splitting-datasets"><i class="fa fa-check"></i><b>6.3.9</b> Splitting datasets</a></li>
+<li class="chapter" data-level="6.3.10" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#reshaping-datasets"><i class="fa fa-check"></i><b>6.3.10</b> Reshaping Datasets</a></li>
+<li class="chapter" data-level="6.3.11" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#missing-values"><i class="fa fa-check"></i><b>6.3.11</b> Missing Values</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#closing"><i class="fa fa-check"></i><b>6.4</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html"><i class="fa fa-check"></i><b>7</b> Data Management - Time Series and Panel Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#time-series-data"><i class="fa fa-check"></i><b>7.1</b> Time Series Data</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#preliminaries-2"><i class="fa fa-check"></i><b>7.1.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#create-a-simple-date-dataset"><i class="fa fa-check"></i><b>7.1.2</b> Create a Simple Date Dataset</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#converting-character-dates-to-date-format"><i class="fa fa-check"></i><b>7.1.3</b> Converting Character Dates to Date Format</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#calculate-age"><i class="fa fa-check"></i><b>7.1.4</b> Calculate Age:</a></li>
+<li class="chapter" data-level="7.1.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#using-time-series-data"><i class="fa fa-check"></i><b>7.1.5</b> Using Time Series Data</a></li>
+<li class="chapter" data-level="7.1.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#convert-to-date-format"><i class="fa fa-check"></i><b>7.1.6</b> Convert to Date Format</a></li>
+<li class="chapter" data-level="7.1.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#aggregate-data"><i class="fa fa-check"></i><b>7.1.7</b> Aggregate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#panel-data"><i class="fa fa-check"></i><b>7.2</b> Panel Data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#sorting-panel-data"><i class="fa fa-check"></i><b>7.2.1</b> Sorting Panel Data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#checking-panel-balance"><i class="fa fa-check"></i><b>7.2.2</b> Checking Panel Balance</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#creating-lagged-variables"><i class="fa fa-check"></i><b>7.2.3</b> Creating Lagged Variables</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#missing-data-in-panels"><i class="fa fa-check"></i><b>7.2.4</b> Missing Data in Panels</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#creating-growth-rates"><i class="fa fa-check"></i><b>7.2.5</b> Creating Growth Rates</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#closing-1"><i class="fa fa-check"></i><b>7.3</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html"><i class="fa fa-check"></i><b>8</b> Visualizations using ggplot2</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#preliminaries-3"><i class="fa fa-check"></i><b>8.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#load-the-dataset"><i class="fa fa-check"></i><b>8.1.1</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pre-plotting-check"><i class="fa fa-check"></i><b>8.2</b> Pre-plotting Check</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#template"><i class="fa fa-check"></i><b>8.2.1</b> Template</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-data-using-geom"><i class="fa fa-check"></i><b>8.3</b> Visualizing Data using <code>geom</code></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#scatterplots"><i class="fa fa-check"></i><b>8.3.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#boxplots"><i class="fa fa-check"></i><b>8.3.2</b> Boxplots</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#bar-plots"><i class="fa fa-check"></i><b>8.3.3</b> Bar plots</a></li>
+<li class="chapter" data-level="8.3.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#faceting"><i class="fa fa-check"></i><b>8.3.4</b> Faceting</a></li>
+<li class="chapter" data-level="8.3.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart"><i class="fa fa-check"></i><b>8.3.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="8.3.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram"><i class="fa fa-check"></i><b>8.3.6</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>8.4</b> Visualizing Time Series Data</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#save-graphs-using-ggplot2"><i class="fa fa-check"></i><b>8.4.1</b> Save Graphs using ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#closing-2"><i class="fa fa-check"></i><b>8.5</b> Closing</a></li>
+<li class="chapter" data-level="8.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visual-baseR"><i class="fa fa-check"></i><b>8.6</b> Visualizations using Base R</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#scatterplots-1"><i class="fa fa-check"></i><b>8.6.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="8.6.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#boxplots-1"><i class="fa fa-check"></i><b>8.6.2</b> Boxplots</a></li>
+<li class="chapter" data-level="8.6.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#bar-plots-1"><i class="fa fa-check"></i><b>8.6.3</b> Bar Plots</a></li>
+<li class="chapter" data-level="8.6.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#faceting-1"><i class="fa fa-check"></i><b>8.6.4</b> Faceting</a></li>
+<li class="chapter" data-level="8.6.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart-1"><i class="fa fa-check"></i><b>8.6.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="8.6.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram-1"><i class="fa fa-check"></i><b>8.6.6</b> Histogram</a></li>
+<li class="chapter" data-level="8.6.7" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#time-series"><i class="fa fa-check"></i><b>8.6.7</b> Time Series</a></li>
+<li class="chapter" data-level="8.6.8" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#save-graphs-using-base-r"><i class="fa fa-check"></i><b>8.6.8</b> Save Graphs using Base R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#closing-3"><i class="fa fa-check"></i><b>8.7</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html"><i class="fa fa-check"></i><b>9</b> Advanced Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#preliminaries-4"><i class="fa fa-check"></i><b>9.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#install-packages"><i class="fa fa-check"></i><b>9.1.1</b> Install Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-visualizations"><i class="fa fa-check"></i><b>9.2</b> Animated Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-bar-chart"><i class="fa fa-check"></i><b>9.2.1</b> Animated Bar Chart</a></li>
+<li class="chapter" data-level="9.2.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-scatter-plot"><i class="fa fa-check"></i><b>9.2.2</b> Animated Scatter Plot</a></li>
+<li class="chapter" data-level="9.2.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-scatter-plot"><i class="fa fa-check"></i><b>9.2.3</b> Animated Faceted Scatter Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-time-series"><i class="fa fa-check"></i><b>9.3</b> Animated Time Series</a></li>
+<li class="chapter" data-level="9.4" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-time-series"><i class="fa fa-check"></i><b>9.4</b> Animated Faceted Time Series</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#saving-in-quarto"><i class="fa fa-check"></i><b>9.4.1</b> Saving in Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#maps"><i class="fa fa-check"></i><b>9.5</b> Maps</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#where-to-get-shapefiles"><i class="fa fa-check"></i><b>9.5.1</b> Where to get shapefiles?</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#static-maps"><i class="fa fa-check"></i><b>9.6</b> Static Maps</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>9.6.1</b> Fetching GDP Data from WDI</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#philippine-regional-map"><i class="fa fa-check"></i><b>9.7</b> Philippine Regional Map</a></li>
+<li class="chapter" data-level="9.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>9.8</b> Animated Map</a></li>
+<li class="chapter" data-level="9.9" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#practical-advanced-visualizations"><i class="fa fa-check"></i><b>9.9</b> Practical: Advanced Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>10.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>10.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="10.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>10.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>10.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>10.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-2"><i class="fa fa-check"></i><b>10.3</b> Histogram</a></li>
+<li class="chapter" data-level="10.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>10.4</b> Summary Table</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table-using-stargazer"><i class="fa fa-check"></i><b>10.4.1</b> Summary Table using Stargazer</a></li>
+<li class="chapter" data-level="10.4.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table-with-grouping-and-stargazer"><i class="fa fa-check"></i><b>10.4.2</b> Summary Table with Grouping and Stargazer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#control-variables"><i class="fa fa-check"></i><b>10.5</b> Control Variables</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#what-is-a-control-variable"><i class="fa fa-check"></i><b>10.5.1</b> What is a Control Variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#confounding-variables"><i class="fa fa-check"></i><b>10.6</b> Confounding Variables</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#what-is-a-confounding-variable"><i class="fa fa-check"></i><b>10.6.1</b> What is a Confounding Variable?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#difference-between-control-variables-and-confounding-variables"><i class="fa fa-check"></i><b>10.7</b> Difference between Control Variables and Confounding Variables</a></li>
+<li class="chapter" data-level="10.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#descriptive-statistics-of-control-and-confounding-variables"><i class="fa fa-check"></i><b>10.8</b> Descriptive Statistics of Control and Confounding Variables</a></li>
+<li class="chapter" data-level="10.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#descriptive-statistics-of-categoricalcharacter-variables"><i class="fa fa-check"></i><b>10.9</b> Descriptive Statistics of Categorical/Character Variables</a></li>
+<li class="chapter" data-level="10.10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>10.10</b> Importance of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>10.10.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="10.10.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>10.10.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="10.10.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#how-descriptive-statistics-help-in-regression"><i class="fa fa-check"></i><b>10.10.3</b> How Descriptive Statistics Help in Regression</a></li>
+<li class="chapter" data-level="10.10.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>10.10.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#closing-4"><i class="fa fa-check"></i><b>10.11</b> Closing</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html"><i class="fa fa-check"></i><b>11</b> Descriptive Statistics Continuation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html#time-series-descriptive-statistics"><i class="fa fa-check"></i><b>11.1</b> Time Series Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html#descriptive-statistics-using-psych"><i class="fa fa-check"></i><b>11.1.1</b> 1. Descriptive Statistics using psych</a></li>
+<li class="chapter" data-level="11.1.2" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html#plot-time-series"><i class="fa fa-check"></i><b>11.1.2</b> 2. Plot Time Series</a></li>
+<li class="chapter" data-level="11.1.3" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html#autocorrelation"><i class="fa fa-check"></i><b>11.1.3</b> 3. Autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="descriptive-statistics-continuation.html"><a href="descriptive-statistics-continuation.html#panel-data-within-vs-between-variation"><i class="fa fa-check"></i><b>11.2</b> Panel Data: Within vs Between Variation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>12</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#writing-a-hypothesis-for-a-study"><i class="fa fa-check"></i><b>12.1</b> Writing a Hypothesis for a Study</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#steps"><i class="fa fa-check"></i><b>12.1.1</b> Steps:</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#test-of-proportions"><i class="fa fa-check"></i><b>12.2</b> Test of Proportions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-test-of-proportion"><i class="fa fa-check"></i><b>12.2.1</b> <strong>One-Sample Test of Proportion</strong></a></li>
+<li class="chapter" data-level="12.2.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-test-of-proportion"><i class="fa fa-check"></i><b>12.2.2</b> <strong>Two-Sample Test of Proportion</strong></a></li>
+<li class="chapter" data-level="12.2.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example"><i class="fa fa-check"></i><b>12.2.3</b> Real-World Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-tests"><i class="fa fa-check"></i><b>12.3</b> T-Tests</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>12.3.1</b> One-Sample T-Test</a></li>
+<li class="chapter" data-level="12.3.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example-1"><i class="fa fa-check"></i><b>12.3.2</b> Real-World Example</a></li>
+<li class="chapter" data-level="12.3.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#independent-samples-t-test"><i class="fa fa-check"></i><b>12.3.3</b> Independent-Samples T-Test</a></li>
+<li class="chapter" data-level="12.3.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example-2"><i class="fa fa-check"></i><b>12.3.4</b> Real-World Example</a></li>
+<li class="chapter" data-level="12.3.5" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#paired-samples-t-test"><i class="fa fa-check"></i><b>12.3.5</b> Paired-Samples T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>12.4</b> Chi-Square Test</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#steps-in-hypothesis-testing"><i class="fa fa-check"></i><b>12.4.1</b> Steps in Hypothesis Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>13</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#key-assumptions-behind-ols"><i class="fa fa-check"></i><b>13.0.1</b> Key Assumptions Behind OLS</a></li>
+<li class="chapter" data-level="13.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#bias-in-ols"><i class="fa fa-check"></i><b>13.1</b> Bias in OLS</a></li>
+<li class="chapter" data-level="13.2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#endogeneity"><i class="fa fa-check"></i><b>13.2</b> Endogeneity</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#sources-of-endogeneity"><i class="fa fa-check"></i><b>13.2.1</b> Sources of Endogeneity</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#consequence-ols-is-misleading"><i class="fa fa-check"></i><b>13.2.2</b> Consequence: OLS is misleading!</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#how-everything-works"><i class="fa fa-check"></i><b>13.2.3</b> How Everything Works</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#general-description-and-notation-of-a-linear-regression"><i class="fa fa-check"></i><b>13.3</b> General Description and notation of a Linear Regression</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#the-notation"><i class="fa fa-check"></i><b>13.3.1</b> The notation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#running-and-reporting-ols-regression"><i class="fa fa-check"></i><b>13.4</b> Running and reporting OLS Regression</a></li>
+<li class="chapter" data-level="13.5" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#interpretation-of-coefficients"><i class="fa fa-check"></i><b>13.5</b> Interpretation of Coefficients</a></li>
+<li class="chapter" data-level="13.6" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#goodness-of-fit-f-statistics-and-adjusted-r-squared"><i class="fa fa-check"></i><b>13.6</b> Goodness of Fit (F-Statistics and Adjusted R-squared)</a></li>
+<li class="chapter" data-level="13.7" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#assumption-diagnostics"><i class="fa fa-check"></i><b>13.7</b> Assumption Diagnostics</a></li>
+<li class="chapter" data-level="13.8" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#real-world-example-3"><i class="fa fa-check"></i><b>13.8</b> Real-World Example</a></li>
+<li class="chapter" data-level="13.9" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#detecting-endogeneity"><i class="fa fa-check"></i><b>13.9</b> Detecting Endogeneity</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="introduction-to-instrumental-variables.html"><a href="introduction-to-instrumental-variables.html"><i class="fa fa-check"></i><b>14</b> Introduction to Instrumental Variables</a>
+<ul>
+<li class="chapter" data-level="14.0.1" data-path="introduction-to-instrumental-variables.html"><a href="introduction-to-instrumental-variables.html#idea"><i class="fa fa-check"></i><b>14.0.1</b> Idea:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBOMETR Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descriptive-statistics-continuation" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Descriptive Statistics Continuation<a href="descriptive-statistics-continuation.html#descriptive-statistics-continuation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>For this section, we use built-in datasets in R.</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="descriptive-statistics-continuation.html#cb289-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb289-2"><a href="descriptive-statistics-continuation.html#cb289-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells  4650417 248.4    7314684 390.7   7314684  390.7
+## Vcells 10298982  78.6   83798019 639.4 245517968 1873.2</code></pre>
+<div id="built-in-datasets" class="section level5 hasAnchor" number="11.0.0.0.1">
+<h5><span class="header-section-number">11.0.0.0.1</span> Built-in Datasets<a href="descriptive-statistics-continuation.html#built-in-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The packages you download sometimes have datasets built-in them to serve as practice.</p>
+</div>
+<div id="install-packages-2" class="section level5 hasAnchor" number="11.0.0.0.2">
+<h5><span class="header-section-number">11.0.0.0.2</span> Install Packages<a href="descriptive-statistics-continuation.html#install-packages-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Some of the packages are already installed; but, just in case, they are included in the code chunk.</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="descriptive-statistics-continuation.html#cb291-1" tabindex="-1"></a>ch7p <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb291-2"><a href="descriptive-statistics-continuation.html#cb291-2" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span>,</span>
+<span id="cb291-3"><a href="descriptive-statistics-continuation.html#cb291-3" tabindex="-1"></a>  <span class="st">&quot;psych&quot;</span>,</span>
+<span id="cb291-4"><a href="descriptive-statistics-continuation.html#cb291-4" tabindex="-1"></a>  <span class="st">&quot;plm&quot;</span>,</span>
+<span id="cb291-5"><a href="descriptive-statistics-continuation.html#cb291-5" tabindex="-1"></a>  <span class="st">&quot;AER&quot;</span>,</span>
+<span id="cb291-6"><a href="descriptive-statistics-continuation.html#cb291-6" tabindex="-1"></a>  <span class="st">&quot;lmtest&quot;</span>,</span>
+<span id="cb291-7"><a href="descriptive-statistics-continuation.html#cb291-7" tabindex="-1"></a>  <span class="st">&quot;sandwich&quot;</span>,</span>
+<span id="cb291-8"><a href="descriptive-statistics-continuation.html#cb291-8" tabindex="-1"></a>  <span class="st">&quot;forecast&quot;</span>,</span>
+<span id="cb291-9"><a href="descriptive-statistics-continuation.html#cb291-9" tabindex="-1"></a>  <span class="st">&quot;wooldridge&quot;</span></span>
+<span id="cb291-10"><a href="descriptive-statistics-continuation.html#cb291-10" tabindex="-1"></a>)</span>
+<span id="cb291-11"><a href="descriptive-statistics-continuation.html#cb291-11" tabindex="-1"></a></span>
+<span id="cb291-12"><a href="descriptive-statistics-continuation.html#cb291-12" tabindex="-1"></a>ch7mp <span class="ot">&lt;-</span> ch7p[</span>
+<span id="cb291-13"><a href="descriptive-statistics-continuation.html#cb291-13" tabindex="-1"></a>  <span class="sc">!</span>(ch7p <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])</span>
+<span id="cb291-14"><a href="descriptive-statistics-continuation.html#cb291-14" tabindex="-1"></a>]</span>
+<span id="cb291-15"><a href="descriptive-statistics-continuation.html#cb291-15" tabindex="-1"></a></span>
+<span id="cb291-16"><a href="descriptive-statistics-continuation.html#cb291-16" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(ch7mp)) {</span>
+<span id="cb291-17"><a href="descriptive-statistics-continuation.html#cb291-17" tabindex="-1"></a>  <span class="fu">install.packages</span>(ch7mp)</span>
+<span id="cb291-18"><a href="descriptive-statistics-continuation.html#cb291-18" tabindex="-1"></a>}</span></code></pre></div>
+<p>We list the packages we need, then, we locate the missing packages then install them. Finally, we load the libraries of the packages we installed. There will be a lot of warning messages when you install. Always double-check in the Packages list whether the packages were installed.</p>
+</div>
+<div id="load-packages" class="section level5 hasAnchor" number="11.0.0.0.3">
+<h5><span class="header-section-number">11.0.0.0.3</span> Load Packages<a href="descriptive-statistics-continuation.html#load-packages" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="descriptive-statistics-continuation.html#cb292-1" tabindex="-1"></a><span class="fu">lapply</span>(ch7p, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>The packages are listed;</p>
+</div>
+<div id="time-series-descriptive-statistics" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Time Series Descriptive Statistics<a href="descriptive-statistics-continuation.html#time-series-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As a continuation, let us do a deep-dive of Descriptive Statistics focusing on time series data. In a time series, before you do any modeling, you need to understand the structure, trends and stationarity of the series.</p>
+<div id="key-things-to-look-for" class="section level4 hasAnchor" number="11.1.0.1">
+<h4><span class="header-section-number">11.1.0.1</span> Key Things to Look For:<a href="descriptive-statistics-continuation.html#key-things-to-look-for" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p><strong>Trend</strong>: Is the series increasing/decreasing over time?</p></li>
+<li><p><strong>Seasonality</strong>: Are there repeating patterns?</p></li>
+<li><p><strong>Volatility or Variance Changes</strong>: Look for periods of high/low variability.</p></li>
+<li><p><strong>Autocorrelation</strong>: Are observations correlated with past values?</p></li>
+</ul>
+<p>The patterns inform whether simple OLS is valid or if we need to do transformations (e.g., differencing, logs)</p>
+<div id="example" class="section level5 hasAnchor" number="11.1.0.1.1">
+<h5><span class="header-section-number">11.1.0.1.1</span> Example:<a href="descriptive-statistics-continuation.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We use the built-in <code>AirPassengers</code> dataset. This dataset is the monthly airline passenger numbers.</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="descriptive-statistics-continuation.html#cb293-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)</span>
+<span id="cb293-2"><a href="descriptive-statistics-continuation.html#cb293-2" tabindex="-1"></a>ch7.ts_data<span class="ot">&lt;-</span>AirPassengers</span>
+<span id="cb293-3"><a href="descriptive-statistics-continuation.html#cb293-3" tabindex="-1"></a>ch7.ts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb293-4"><a href="descriptive-statistics-continuation.html#cb293-4" tabindex="-1"></a>  <span class="at">Month =</span> <span class="fu">time</span>(ch7.ts_data),</span>
+<span id="cb293-5"><a href="descriptive-statistics-continuation.html#cb293-5" tabindex="-1"></a>  <span class="at">Air_Passengers =</span> <span class="fu">as.numeric</span>(ch7.ts_data)</span>
+<span id="cb293-6"><a href="descriptive-statistics-continuation.html#cb293-6" tabindex="-1"></a>)</span></code></pre></div>
+<p>The dataset is loaded through the <code>data</code> command. We are using tidyverse, it expects data frames so we have to change the object (now it is in Values) to data frame.</p>
+<p>You notice that we extracted the time; it is because we are going to plot and detect trend and seasonality. We also have the number of Air Passengers per month so we set that as numeric.</p>
+</div>
+<div id="inspect-data" class="section level5 hasAnchor" number="11.1.0.1.2">
+<h5><span class="header-section-number">11.1.0.1.2</span> Inspect data<a href="descriptive-statistics-continuation.html#inspect-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="descriptive-statistics-continuation.html#cb294-1" tabindex="-1"></a><span class="fu">str</span>(ch7.ts)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    144 obs. of  2 variables:
+##  $ Month         : Time-Series  from 1949 to 1961: 1949 1949 1949 1949 1949 ...
+##  $ Air_Passengers: num  112 118 132 129 121 135 148 148 136 119 ...</code></pre>
+</div>
+</div>
+<div id="descriptive-statistics-using-psych" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> 1. Descriptive Statistics using psych<a href="descriptive-statistics-continuation.html#descriptive-statistics-using-psych" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="use-describe-function" class="section level5 hasAnchor" number="11.1.1.0.1">
+<h5><span class="header-section-number">11.1.1.0.1</span> Use describe function<a href="descriptive-statistics-continuation.html#use-describe-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="descriptive-statistics-continuation.html#cb296-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(ch7.ts<span class="sc">$</span>Air_Passengers)</span></code></pre></div>
+<pre><code>##    vars   n  mean     sd median trimmed    mad min max range skew kurtosis se
+## X1    1 144 280.3 119.97  265.5  271.45 133.43 104 622   518 0.57    -0.43 10</code></pre>
+<p>We need to look at the data, whether it is skewed, highly volatile, or has unusual values. We look at <strong>Skewness</strong> aside from the central tendency measures.</p>
+<p>If skewness is 1: it is highly skewed. In this case, it is moderately skewed. Usually, the rule of thumb for skewness interpretations is between -0.5 and 0.5 (roughly symmetric).</p>
+</div>
+</div>
+<div id="plot-time-series" class="section level3 hasAnchor" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> 2. Plot Time Series<a href="descriptive-statistics-continuation.html#plot-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="descriptive-statistics-continuation.html#cb298-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
+<span id="cb298-2"><a href="descriptive-statistics-continuation.html#cb298-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Month, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
+<span id="cb298-3"><a href="descriptive-statistics-continuation.html#cb298-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb298-4"><a href="descriptive-statistics-continuation.html#cb298-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
+<span id="cb298-5"><a href="descriptive-statistics-continuation.html#cb298-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Smooth Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>)</span></code></pre></div>
+<pre><code>## Don&#39;t know how to automatically pick scale for object of type &lt;ts&gt;. Defaulting to continuous.
+## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-214-1.png" alt="" width="672" /></p>
+<p>Let us improve the graph;</p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="descriptive-statistics-continuation.html#cb300-1" tabindex="-1"></a>ch7.ts<span class="ot">&lt;-</span>ch7.ts <span class="sc">%&gt;%</span> </span>
+<span id="cb300-2"><a href="descriptive-statistics-continuation.html#cb300-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb300-3"><a href="descriptive-statistics-continuation.html#cb300-3" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">floor</span>(Month),</span>
+<span id="cb300-4"><a href="descriptive-statistics-continuation.html#cb300-4" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">round</span>((Month <span class="sc">-</span> year)<span class="sc">*</span><span class="dv">12</span><span class="sc">+</span><span class="dv">1</span>),</span>
+<span id="cb300-5"><a href="descriptive-statistics-continuation.html#cb300-5" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">make_date</span>(<span class="at">year=</span>year, <span class="at">month =</span> month, <span class="at">day =</span> <span class="dv">1</span>)</span>
+<span id="cb300-6"><a href="descriptive-statistics-continuation.html#cb300-6" tabindex="-1"></a>  )</span></code></pre></div>
+<p>We round off the Month to only have the year then, we convert the decimal to months by multiplying by 12 and add 1 because January counts as month 1. Unlike what we used before, <code>as.Date</code>, we use <code>make_date</code> because unlike character strings, this time, it is numeric.</p>
+<div id="improved-plot" class="section level6 hasAnchor" number="11.1.2.0.0.1">
+<h6><span class="header-section-number">11.1.2.0.0.1</span> Improved Plot<a href="descriptive-statistics-continuation.html#improved-plot" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="descriptive-statistics-continuation.html#cb301-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
+<span id="cb301-2"><a href="descriptive-statistics-continuation.html#cb301-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
+<span id="cb301-3"><a href="descriptive-statistics-continuation.html#cb301-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb301-4"><a href="descriptive-statistics-continuation.html#cb301-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
+<span id="cb301-5"><a href="descriptive-statistics-continuation.html#cb301-5" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;1 year&quot;</span>) <span class="sc">+</span></span>
+<span id="cb301-6"><a href="descriptive-statistics-continuation.html#cb301-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>,</span>
+<span id="cb301-7"><a href="descriptive-statistics-continuation.html#cb301-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb301-8"><a href="descriptive-statistics-continuation.html#cb301-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Passengers&quot;</span>)<span class="sc">+</span></span>
+<span id="cb301-9"><a href="descriptive-statistics-continuation.html#cb301-9" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-216-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="descriptive-statistics-continuation.html#cb303-1" tabindex="-1"></a><span class="co">#for base R plotting</span></span>
+<span id="cb303-2"><a href="descriptive-statistics-continuation.html#cb303-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(y <span class="sc">~</span> x)</span>
+<span id="cb303-3"><a href="descriptive-statistics-continuation.html#cb303-3" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">order</span>(x)</span>
+<span id="cb303-4"><a href="descriptive-statistics-continuation.html#cb303-4" tabindex="-1"></a><span class="fu">lines</span>(x[ord], <span class="fu">fitted</span>(fit)[ord], <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<ul>
+<li><p><code>geom_line</code> shows raw counts of Air Passengers</p></li>
+<li><p><code>geom_smooth(method = "loess")</code> fits a smooth curve to highlight trend, ignoring short-term fluctuations</p>
+<ul>
+<li>LOESS is local regression wherein what happens is that, it can capture curves, trends and nonlinearity. It can be seen that the trend in Air Passengers accelerates then slows down. You can see peaks/troughs, therefore, LOESS is better over linear regression.</li>
+</ul></li>
+<li><p><code>scale_x_date</code> is just to show every year, not just some years in x-axis. You can add months here by putting inside the parenthesis, <code>%b</code> but it looks cluttered so I did not put it.</p></li>
+</ul>
+</div>
+</div>
+<div id="autocorrelation" class="section level3 hasAnchor" number="11.1.3">
+<h3><span class="header-section-number">11.1.3</span> 3. Autocorrelation<a href="descriptive-statistics-continuation.html#autocorrelation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Detect if observations are correlated over time, which violates OLS independence assumption.</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="descriptive-statistics-continuation.html#cb304-1" tabindex="-1"></a><span class="fu">acf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;ACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-218-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="descriptive-statistics-continuation.html#cb305-1" tabindex="-1"></a><span class="fu">pacf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;PACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-218-2.png" alt="" width="672" /></p>
+<p>How to Interpret:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot</th>
+<th>Significant?</th>
+<th>Implication for OLS/modeling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ACF</td>
+<td>Spike outside blue dashed lines</td>
+<td>Residuals may be autocorrelated so this violates OLS independence assumption</td>
+</tr>
+<tr class="even">
+<td>PACF</td>
+<td>Spike outside blue dashed lines</td>
+<td>Direct lagged effect so we may need to lag regressors in OLS</td>
+</tr>
+<tr class="odd">
+<td>Multiple PACF Lags</td>
+<td>Multiple spikes beyond bounds</td>
+<td>OLS residuals are correlated so we have to consider other models like ARIMA, dynamic regression or IV</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>In summary, Spikes in PACF of residuals -&gt; OLS standard errors may be invalid so, need to lag variables or do IV.</p>
+</blockquote>
+</div>
+</div>
+<div id="panel-data-within-vs-between-variation" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Panel Data: Within vs Between Variation<a href="descriptive-statistics-continuation.html#panel-data-within-vs-between-variation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You might wonder why we have the within vs between variation; Note the following:</p>
+<ul>
+<li><p>Within:</p>
+<ul>
+<li><p>Variation of an individual over time</p></li>
+<li><p>Example: NCR GDP changes from year to year</p></li>
+<li><p>Useful when estimating <strong>fixed-effects models</strong> because we want to isolate how changes within an individual/entity affect the dependent variable</p></li>
+</ul></li>
+<li><p>Between:</p>
+<ul>
+<li><p>Variation across individuals over time</p></li>
+<li><p>Example: Average GDP differs across NCR, CAR, BARMM</p></li>
+<li><p>Useful when estimating <strong>random-effects models</strong> or when comparing differences across individuals/entities</p></li>
+</ul>
+<blockquote>
+<p>Note: If you ignore within vs between variation, OLS estimates will be biased.<br />
+Fixed-effects OLS = controls for unobserved, time-invariant heterogeneity so uses within variation only.</p>
+</blockquote>
+<blockquote>
+<p>What is time-invariant heterogeneity? A constant, hidden characteristic of entities in panel data that do not change over time.</p>
+</blockquote></li>
+</ul>
+<div id="example-1" class="section level5 hasAnchor" number="11.2.0.0.1">
+<h5><span class="header-section-number">11.2.0.0.1</span> Example:<a href="descriptive-statistics-continuation.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We use the Grunfeld Dataset which is built-in the <code>plm</code> package that is used for Panel Data modeling</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="descriptive-statistics-continuation.html#cb306-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Grunfeld&quot;</span>, <span class="at">package=</span>)</span></code></pre></div>
+</div>
+<div id="inspect-data-1" class="section level5 hasAnchor" number="11.2.0.0.2">
+<h5><span class="header-section-number">11.2.0.0.2</span> Inspect data<a href="descriptive-statistics-continuation.html#inspect-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="descriptive-statistics-continuation.html#cb307-1" tabindex="-1"></a><span class="fu">str</span>(Grunfeld)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    220 obs. of  5 variables:
+##  $ invest : num  318 392 411 258 331 ...
+##  $ value  : num  3078 4662 5387 2792 4313 ...
+##  $ capital: num  2.8 52.6 156.9 209.2 203.4 ...
+##  $ firm   : Factor w/ 11 levels &quot;General Motors&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ year   : int  1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 ...</code></pre>
+</div>
+<div id="plot-panel-data" class="section level4 hasAnchor" number="11.2.0.1">
+<h4><span class="header-section-number">11.2.0.1</span> 1. Plot Panel Data<a href="descriptive-statistics-continuation.html#plot-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="a.-within-variation-investment-over-time-per-firm" class="section level5 hasAnchor" number="11.2.0.1.1">
+<h5><span class="header-section-number">11.2.0.1.1</span> a. Within variation: investment over time per firm<a href="descriptive-statistics-continuation.html#a.-within-variation-investment-over-time-per-firm" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="descriptive-statistics-continuation.html#cb309-1" tabindex="-1"></a><span class="fu">ggplot</span>(Grunfeld,</span>
+<span id="cb309-2"><a href="descriptive-statistics-continuation.html#cb309-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>invest, <span class="at">group=</span>firm, <span class="at">color=</span><span class="fu">factor</span>(firm)))<span class="sc">+</span></span>
+<span id="cb309-3"><a href="descriptive-statistics-continuation.html#cb309-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb309-4"><a href="descriptive-statistics-continuation.html#cb309-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Within variation: investment over time by firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Investment&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Firm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb309-5"><a href="descriptive-statistics-continuation.html#cb309-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
+<ul>
+<li>Some firms show large changes but most of them show little variation. For these firms, it shows changes within the firm but for the others, not really.</li>
+</ul>
+</div>
+<div id="b.-between-variation" class="section level5 hasAnchor" number="11.2.0.1.2">
+<h5><span class="header-section-number">11.2.0.1.2</span> b. Between variation<a href="descriptive-statistics-continuation.html#b.-between-variation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="descriptive-statistics-continuation.html#cb310-1" tabindex="-1"></a>Grunfeld <span class="sc">%&gt;%</span></span>
+<span id="cb310-2"><a href="descriptive-statistics-continuation.html#cb310-2" tabindex="-1"></a>  <span class="fu">group_by</span>(firm) <span class="sc">%&gt;%</span></span>
+<span id="cb310-3"><a href="descriptive-statistics-continuation.html#cb310-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_invest =</span> <span class="fu">mean</span>(invest)) <span class="sc">%&gt;%</span></span>
+<span id="cb310-4"><a href="descriptive-statistics-continuation.html#cb310-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>firm, <span class="at">y=</span>mean_invest)) <span class="sc">+</span></span>
+<span id="cb310-5"><a href="descriptive-statistics-continuation.html#cb310-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&quot;purple&quot;</span>) <span class="sc">+</span></span>
+<span id="cb310-6"><a href="descriptive-statistics-continuation.html#cb310-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Between Variation: Average Investment by Firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Firm&quot;</span>, <span class="at">y=</span><span class="st">&quot;Avg Investment&quot;</span>)<span class="sc">+</span></span>
+<span id="cb310-7"><a href="descriptive-statistics-continuation.html#cb310-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-222-1.png" alt="" width="672" /></p>
+<ul>
+<li>Shows how firms 1 and 2 have much higher average investment than the others. Unlike before, the between variation here looks at differences in average across firms, ignoring time.</li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> Choosing the right model (FE vs RE) depends on whether your research question is about changes within entities or differences across entities.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBOMETR_Course_Book.pdf", "LBOMETR_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 6
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
