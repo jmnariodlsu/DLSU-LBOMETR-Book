@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -445,9 +445,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Unlike previous datasets that we loaded, we are now loading an Excel file. We will need the <code>readxl</code> package for this. Also, it is important to check if there are additional sheets and which sheet you will need. There are actually two sheets in the Excel file, but we will only use the first sheet named <code>base</code>.</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="visualizations-using-ggplot2.html#cb130-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb130-2"><a href="visualizations-using-ggplot2.html#cb130-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4633222 247.5    7314684 390.7   7314684  390.7
-## Vcells 10194392  77.8   41191433 314.3 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4007114 214.1    7240020 386.7   7240020  386.7
+## Vcells 8861890  67.7   53291264 406.6 218319393 1665.7</code></pre>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="visualizations-using-ggplot2.html#cb132-1" tabindex="-1"></a><span class="fu">library</span>(readxl) </span>
 <span id="cb132-2"><a href="visualizations-using-ggplot2.html#cb132-2" tabindex="-1"></a>ch4_p1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Ch4PracticeA.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;base&quot;</span>)</span></code></pre></div>
 <p>I will not delve deeply in the description. Please read up on it. The description can be found in the last sheet of the Excel file. Next, we load the following package: <code>tidyverse</code> and <code>ggplot2</code>.</p>
@@ -511,7 +511,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb138-2"><a href="visualizations-using-ggplot2.html#cb138-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poverty_index,</span>
 <span id="cb138-3"><a href="visualizations-using-ggplot2.html#cb138-3" tabindex="-1"></a>             <span class="at">y=</span>health_expenditures)) <span class="sc">+</span></span>
 <span id="cb138-4"><a href="visualizations-using-ggplot2.html#cb138-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-96-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-99-1.png" alt="" width="672" /></p>
 <p>This visualization is so unclear; this is due to the number of observations being more than 9,000. Let’s just use the first 500 rows as this is for our practice and for visualization purposes.</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="visualizations-using-ggplot2.html#cb139-1" tabindex="-1"></a>fch4_p1 <span class="ot">&lt;-</span> <span class="fu">head</span>(ch4_p1, <span class="dv">500</span>)</span>
 <span id="cb139-2"><a href="visualizations-using-ggplot2.html#cb139-2" tabindex="-1"></a><span class="fu">View</span>(fch4_p1)</span></code></pre></div>
@@ -520,14 +520,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb140-2"><a href="visualizations-using-ggplot2.html#cb140-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poverty_index,</span>
 <span id="cb140-3"><a href="visualizations-using-ggplot2.html#cb140-3" tabindex="-1"></a>             <span class="at">y=</span>health_expenditures)) <span class="sc">+</span></span>
 <span id="cb140-4"><a href="visualizations-using-ggplot2.html#cb140-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-98-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-101-1.png" alt="" width="672" /></p>
 <p>This is more visible; There are some points that overlap with each other. Let us incorporate some strategies to try and ensure that there will be no overplotting issues.</p>
 <p>The first strategy is changing the transparency of the points. To control the transparency of points, we add the <code>alpha</code> argument. The range of transparency is from 0 to 1, with lower values corresponding to more transparency. The default value is 1. Let’s try to change the <code>alpha</code> to 0.5.</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="visualizations-using-ggplot2.html#cb141-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb141-2"><a href="visualizations-using-ggplot2.html#cb141-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poverty_index,</span>
 <span id="cb141-3"><a href="visualizations-using-ggplot2.html#cb141-3" tabindex="-1"></a>             <span class="at">y=</span>health_expenditures)) <span class="sc">+</span></span>
 <span id="cb141-4"><a href="visualizations-using-ggplot2.html#cb141-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.5</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-99-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-102-1.png" alt="" width="672" /></p>
 <p>Some of the points are gray while the others are much darker, then we can see (<em>slightly</em>) the difference.</p>
 <p>Another method that we can do is jittering the points on the plot to see the locations where there are overplotting points. Jittering adds randomness into the position of the points. To do this, we add <code>geom_jitter()</code> rather than <code>geom_point()</code>. Also, we need to edit the <code>width</code> and <code>height</code>. You can experiment but if you want less spread, pick values between 0.1 and 0.4.</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="visualizations-using-ggplot2.html#cb142-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
@@ -536,7 +536,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb142-4"><a href="visualizations-using-ggplot2.html#cb142-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
 <span id="cb142-5"><a href="visualizations-using-ggplot2.html#cb142-5" tabindex="-1"></a>              <span class="at">width=</span> <span class="fl">0.3</span>,</span>
 <span id="cb142-6"><a href="visualizations-using-ggplot2.html#cb142-6" tabindex="-1"></a>              <span class="at">height=</span> <span class="fl">0.3</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-100-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-103-1.png" alt="" width="672" /></p>
 <p>Let us add color to <code>geom_jitter()</code></p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="visualizations-using-ggplot2.html#cb143-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb143-2"><a href="visualizations-using-ggplot2.html#cb143-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poverty_index,</span>
@@ -545,7 +545,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb143-5"><a href="visualizations-using-ggplot2.html#cb143-5" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
 <span id="cb143-6"><a href="visualizations-using-ggplot2.html#cb143-6" tabindex="-1"></a>              <span class="at">width=</span> <span class="fl">0.3</span>,</span>
 <span id="cb143-7"><a href="visualizations-using-ggplot2.html#cb143-7" tabindex="-1"></a>              <span class="at">height=</span> <span class="fl">0.3</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-101-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-104-1.png" alt="" width="672" /></p>
 <p>If you want to have different colors depending on a certain variable, we need to use a vector as an input in the argument <code>color</code>. Here though, we map features of the data to a certain color. When we map a variable in our data to the color of the points, ggplot2 will provide a different color corresponding to the different values of the variable. We will continue to specify the value of alpha, width, and height outside of the aes function because we are using the same value for every point.</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="visualizations-using-ggplot2.html#cb144-1" tabindex="-1"></a>fch4_p1<span class="sc">$</span>enrolled<span class="ot">&lt;-</span><span class="fu">as.factor</span>(fch4_p1<span class="sc">$</span>enrolled)</span>
 <span id="cb144-2"><a href="visualizations-using-ggplot2.html#cb144-2" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
@@ -555,7 +555,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb144-6"><a href="visualizations-using-ggplot2.html#cb144-6" tabindex="-1"></a>              <span class="at">alpha=</span><span class="fl">0.5</span>,</span>
 <span id="cb144-7"><a href="visualizations-using-ggplot2.html#cb144-7" tabindex="-1"></a>              <span class="at">width=</span><span class="fl">0.3</span>,</span>
 <span id="cb144-8"><a href="visualizations-using-ggplot2.html#cb144-8" tabindex="-1"></a>              <span class="at">height=</span><span class="fl">0.3</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-102-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-105-1.png" alt="" width="672" /></p>
 <p>We can add a regression line to the plot. The line helps us summarize and predict the relationship between our two variables. To add, it is <code>geom_smooth(method="lm",...)</code> you can edit the design and you can remove the confidence interval (gray area) with placing inside the parenthesis <code>se=FALSE</code>.</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="visualizations-using-ggplot2.html#cb145-1" tabindex="-1"></a>fch4_p1<span class="sc">$</span>enrolled<span class="ot">&lt;-</span><span class="fu">as.factor</span>(fch4_p1<span class="sc">$</span>enrolled)</span>
 <span id="cb145-2"><a href="visualizations-using-ggplot2.html#cb145-2" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
@@ -567,7 +567,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb145-8"><a href="visualizations-using-ggplot2.html#cb145-8" tabindex="-1"></a>              <span class="at">height=</span><span class="fl">0.3</span>)<span class="sc">+</span></span>
 <span id="cb145-9"><a href="visualizations-using-ggplot2.html#cb145-9" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-103-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-106-1.png" alt="" width="672" /></p>
 </div>
 <div id="boxplots" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Boxplots<a href="visualizations-using-ggplot2.html#boxplots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -606,7 +606,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb147-5"><a href="visualizations-using-ggplot2.html#cb147-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Treatment Locality&quot;</span>,</span>
 <span id="cb147-6"><a href="visualizations-using-ggplot2.html#cb147-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Health Expenditures&quot;</span>) <span class="sc">+</span></span>
 <span id="cb147-7"><a href="visualizations-using-ggplot2.html#cb147-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-104-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-107-1.png" alt="" width="672" /></p>
 <p>You can also add some points in the box plot by adding <code>geom_jitter</code></p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="visualizations-using-ggplot2.html#cb148-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb148-2"><a href="visualizations-using-ggplot2.html#cb148-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">y =</span> health_expenditures)) <span class="sc">+</span></span>
@@ -619,7 +619,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb148-9"><a href="visualizations-using-ggplot2.html#cb148-9" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Treatment Locality&quot;</span>,</span>
 <span id="cb148-10"><a href="visualizations-using-ggplot2.html#cb148-10" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Health Expenditures&quot;</span>) <span class="sc">+</span></span>
 <span id="cb148-11"><a href="visualizations-using-ggplot2.html#cb148-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-105-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-108-1.png" alt="" width="672" /></p>
 </div>
 </div>
 <div id="bar-plots" class="section level3 hasAnchor" number="8.3.3">
@@ -632,7 +632,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb149-5"><a href="visualizations-using-ggplot2.html#cb149-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Treatment Locality&quot;</span>,</span>
 <span id="cb149-6"><a href="visualizations-using-ggplot2.html#cb149-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>) <span class="sc">+</span></span>
 <span id="cb149-7"><a href="visualizations-using-ggplot2.html#cb149-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-106-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-109-1.png" alt="" width="672" /></p>
 <p>Let us change the fill to be <code>locality_identifier</code>. Note, we will have a lot of colors here but this is done for visualization purposes and practice.</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="visualizations-using-ggplot2.html#cb150-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb150-2"><a href="visualizations-using-ggplot2.html#cb150-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">fill =</span> <span class="fu">as.factor</span>(locality_identifier))) <span class="sc">+</span></span>
@@ -642,7 +642,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb150-6"><a href="visualizations-using-ggplot2.html#cb150-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
 <span id="cb150-7"><a href="visualizations-using-ggplot2.html#cb150-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Locality&quot;</span>) <span class="sc">+</span></span>
 <span id="cb150-8"><a href="visualizations-using-ggplot2.html#cb150-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-107-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-110-1.png" alt="" width="672" /></p>
 <p>This creates a stacked bar chart. These are generally more difficult to read than side-by-side bars. We can separate the portions of the stacked bar that correspond to each locality and put them side-by-side by using the position argument for <code>geom_bar()</code> and setting it to “dodge”.</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="visualizations-using-ggplot2.html#cb151-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb151-2"><a href="visualizations-using-ggplot2.html#cb151-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">fill =</span> <span class="fu">as.factor</span>(locality_identifier))) <span class="sc">+</span></span>
@@ -652,7 +652,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb151-6"><a href="visualizations-using-ggplot2.html#cb151-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
 <span id="cb151-7"><a href="visualizations-using-ggplot2.html#cb151-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Locality&quot;</span>) <span class="sc">+</span></span>
 <span id="cb151-8"><a href="visualizations-using-ggplot2.html#cb151-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-108-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-111-1.png" alt="" width="672" /></p>
 <p>What if you want to visualize a numeric value for each category? <code>geom_bar()</code> only visualizes the number of observations for a categorical x-variable. We use <code>geom_col()</code> which allows us to visualize numeric values. I will create 4 groups for <code>locality_group</code> so that we have better-looking bars.</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="visualizations-using-ggplot2.html#cb152-1" tabindex="-1"></a>fch4_p1 <span class="ot">&lt;-</span> fch4_p1 <span class="sc">%&gt;%</span></span>
 <span id="cb152-2"><a href="visualizations-using-ggplot2.html#cb152-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">locality_group =</span> <span class="fu">cut</span>(locality_identifier, </span>
@@ -672,7 +672,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb154-6"><a href="visualizations-using-ggplot2.html#cb154-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Health Expenditures&quot;</span>,</span>
 <span id="cb154-7"><a href="visualizations-using-ggplot2.html#cb154-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Locality&quot;</span>) <span class="sc">+</span></span>
 <span id="cb154-8"><a href="visualizations-using-ggplot2.html#cb154-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-110-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-113-1.png" alt="" width="672" /></p>
 <p>Want to have height arrangement? Since <code>locality_group</code> appears multiple times, we have to calculate for the mean expenditures per locality_group or total expenditures per locality_group using the <code>.fun=mean</code> or <code>.fun=sum</code> then, from largest to smallest height, we say <code>.desc = TRUE</code>. The <code>fct_reorder</code> is used because we have the calculations per group and the bars are reordered based on the calculations.</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="visualizations-using-ggplot2.html#cb155-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span></span>
 <span id="cb155-2"><a href="visualizations-using-ggplot2.html#cb155-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">locality_group =</span> <span class="fu">fct_reorder</span>(locality_group, health_expenditures, <span class="at">.fun =</span> sum, <span class="at">.desc =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
@@ -685,7 +685,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb155-9"><a href="visualizations-using-ggplot2.html#cb155-9" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;Locality Group&quot;</span></span>
 <span id="cb155-10"><a href="visualizations-using-ggplot2.html#cb155-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb155-11"><a href="visualizations-using-ggplot2.html#cb155-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-111-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-114-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="visualizations-using-ggplot2.html#cb156-1" tabindex="-1"></a> <span class="co"># + coord_flip() if names are too long</span></span></code></pre></div>
 </div>
 <div id="faceting" class="section level3 hasAnchor" number="8.3.4">
@@ -699,7 +699,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb157-6"><a href="visualizations-using-ggplot2.html#cb157-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Poverty Index&quot;</span>,</span>
 <span id="cb157-7"><a href="visualizations-using-ggplot2.html#cb157-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Health Expenditures&quot;</span>) <span class="sc">+</span></span>
 <span id="cb157-8"><a href="visualizations-using-ggplot2.html#cb157-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-112-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-115-1.png" alt="" width="672" /></p>
 <p>It doesn’t look that nice; let’s use the locality_group we created before.</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="visualizations-using-ggplot2.html#cb158-1" tabindex="-1"></a>fch4_p1 <span class="sc">%&gt;%</span> </span>
 <span id="cb158-2"><a href="visualizations-using-ggplot2.html#cb158-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> poverty_index, <span class="at">y =</span> health_expenditures)) <span class="sc">+</span></span>
@@ -709,7 +709,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb158-6"><a href="visualizations-using-ggplot2.html#cb158-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Poverty Index&quot;</span>,</span>
 <span id="cb158-7"><a href="visualizations-using-ggplot2.html#cb158-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Health Expenditures&quot;</span>) <span class="sc">+</span></span>
 <span id="cb158-8"><a href="visualizations-using-ggplot2.html#cb158-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-113-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-116-1.png" alt="" width="672" /></p>
 </div>
 <div id="pie-chart" class="section level3 hasAnchor" number="8.3.5">
 <h3><span class="header-section-number">8.3.5</span> Pie Chart<a href="visualizations-using-ggplot2.html#pie-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -723,7 +723,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb159-7"><a href="visualizations-using-ggplot2.html#cb159-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>,</span>
 <span id="cb159-8"><a href="visualizations-using-ggplot2.html#cb159-8" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Treatment Locality&quot;</span>) <span class="sc">+</span></span>
 <span id="cb159-9"><a href="visualizations-using-ggplot2.html#cb159-9" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="co">#another way to have a nice background</span></span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-114-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-117-1.png" alt="" width="672" /></p>
 <p>If you want to put labels to each slice and let’s say you want the percentage for it, this is the code:</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="visualizations-using-ggplot2.html#cb160-1" tabindex="-1"></a>treatment_counts <span class="ot">&lt;-</span> fch4_p1 <span class="sc">%&gt;%</span></span>
 <span id="cb160-2"><a href="visualizations-using-ggplot2.html#cb160-2" tabindex="-1"></a>  <span class="fu">count</span>(treatment_locality) <span class="sc">%&gt;%</span> <span class="co">#for count</span></span>
@@ -738,7 +738,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb160-11"><a href="visualizations-using-ggplot2.html#cb160-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>,</span>
 <span id="cb160-12"><a href="visualizations-using-ggplot2.html#cb160-12" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Treatment Locality&quot;</span>) <span class="sc">+</span></span>
 <span id="cb160-13"><a href="visualizations-using-ggplot2.html#cb160-13" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-115-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-118-1.png" alt="" width="672" /></p>
 </div>
 <div id="histogram" class="section level3 hasAnchor" number="8.3.6">
 <h3><span class="header-section-number">8.3.6</span> Histogram<a href="visualizations-using-ggplot2.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -747,26 +747,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb161-2"><a href="visualizations-using-ggplot2.html#cb161-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poverty_index))<span class="sc">+</span></span>
 <span id="cb161-3"><a href="visualizations-using-ggplot2.html#cb161-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">&quot;green&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
 <span id="cb161-4"><a href="visualizations-using-ggplot2.html#cb161-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-116-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-119-1.png" alt="" width="672" /></p>
 <p>Here is a cheat sheet for ggplot2 from the ones who developed the package: <a href="%22C:/Users/jemma/OneDrive/Documents/DLSU/LBOMETR_Book/data-visualization-2.1.pdf%22">ggplot2 Cheat Sheet</a></p>
 </div>
 </div>
 <div id="visualizing-time-series-data" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Visualizing Time Series Data<a href="visualizations-using-ggplot2.html#visualizing-time-series-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When visualizing time series data, it is important to ensure that the time variable is formatted as Date. For this portion of the lecture, we use <code>Ch4PracticeB.xlsx</code> which is found in the Modules. Make sure to clean the environment, load the file and rename the columns since they are quite long. I will not show the codes for this portion anymore as I am sure you already know how.</p>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4647618 248.3    7314684 390.7   7314684  390.7
-## Vcells 10224872  78.1   32953147 251.5 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4022586 214.9    7240020 386.7   7240020  386.7
+## Vcells 8885712  67.8   34106410 260.3 218319393 1665.7</code></pre>
 <pre><code>## # A tibble: 6 × 12
-##   year  nominal_gdp_current nominal_gdp_constant gdp_growth_current gdp_growth_constant total_debt debt_to_gdp interest_payments
-##   &lt;chr&gt;               &lt;dbl&gt;                &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;             &lt;dbl&gt;
-## 1 1986               692852              4298952              0.065               0.035     528347       0.783             21612
-## 2 1987               777283              4486464              0.122               0.044     566447       0.749             36905
-## 3 1988               910280              4786920              0.171               0.067     580682       0.656             45865
-## 4 1989              1054529              5082939              0.158               0.062     605106       0.59              54714
-## 5 1990              1227882              5239629              0.164               0.031     701129       0.587             71114
-## 6 1991              1422958              5216764              0.159              -0.004     768469       0.556             74922
-## # ℹ 4 more variables: amortization_payments &lt;dbl&gt;, phil_us_exchange_rate &lt;dbl&gt;, inflation &lt;dbl&gt;, fdi_net &lt;dbl&gt;</code></pre>
+##   year  nominal_gdp_current nominal_gdp_constant
+##   &lt;chr&gt;               &lt;dbl&gt;                &lt;dbl&gt;
+## 1 1986               692852              4298952
+## 2 1987               777283              4486464
+## 3 1988               910280              4786920
+## 4 1989              1054529              5082939
+## 5 1990              1227882              5239629
+## 6 1991              1422958              5216764
+## # ℹ 9 more variables: gdp_growth_current &lt;dbl&gt;,
+## #   gdp_growth_constant &lt;dbl&gt;, total_debt &lt;dbl&gt;,
+## #   debt_to_gdp &lt;dbl&gt;, interest_payments &lt;dbl&gt;,
+## #   amortization_payments &lt;dbl&gt;, phil_us_exchange_rate &lt;dbl&gt;,
+## #   inflation &lt;dbl&gt;, fdi_net &lt;dbl&gt;</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Ensure the time variable is formatted as <code>Date</code></p>
 <p>I will not show the code for this since this has been done in previous lectures.</p>
@@ -784,7 +788,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb165-4"><a href="visualizations-using-ggplot2.html#cb165-4" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
 <span id="cb165-5"><a href="visualizations-using-ggplot2.html#cb165-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Time Series Plot of Nominal GDP (Current)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Nominal GDP (Current)&quot;</span>) <span class="sc">+</span>   </span>
 <span id="cb165-6"><a href="visualizations-using-ggplot2.html#cb165-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-120-1.png" alt="" width="672" /></p></li>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-123-1.png" alt="" width="672" /></p></li>
 </ol>
 <p>We can add points for clarity and change size of line to be thicker.</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="visualizations-using-ggplot2.html#cb166-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
@@ -793,7 +797,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb166-4"><a href="visualizations-using-ggplot2.html#cb166-4" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;pink&quot;</span>, <span class="at">size=</span><span class="dv">1</span>)<span class="sc">+</span></span>
 <span id="cb166-5"><a href="visualizations-using-ggplot2.html#cb166-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span> <span class="st">&quot;purple&quot;</span>)<span class="sc">+</span></span>
 <span id="cb166-6"><a href="visualizations-using-ggplot2.html#cb166-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Time Series Plot of Nominal GDP (Current)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Nominal GDP (Current)&quot;</span>) </span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-121-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-124-1.png" alt="" width="672" /></p>
 <div id="save-graphs-using-ggplot2" class="section level3 hasAnchor" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Save Graphs using ggplot2<a href="visualizations-using-ggplot2.html#save-graphs-using-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Every time you plot, you create an object so it should be like <code>p&lt;-ggplot(...)</code> so you can save the plots.</p>
@@ -817,14 +821,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="scatterplots-1" class="section level3 hasAnchor" number="8.6.1">
 <h3><span class="header-section-number">8.6.1</span> Scatterplots<a href="visualizations-using-ggplot2.html#scatterplots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="visualizations-using-ggplot2.html#cb169-1" tabindex="-1"></a><span class="fu">plot</span>(fch4_p1<span class="sc">$</span>poverty_index, fch4_p1<span class="sc">$</span>health_expenditures, <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-124-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-127-1.png" alt="" width="672" /></p>
 <p><strong>Transparency</strong></p>
 <p>In ggplot2, we use <code>alpha</code> but in Base R, we use <code>rgb()</code></p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="visualizations-using-ggplot2.html#cb170-1" tabindex="-1"></a><span class="fu">plot</span>(fch4_p1<span class="sc">$</span>poverty_index, fch4_p1<span class="sc">$</span>health_expenditures, </span>
 <span id="cb170-2"><a href="visualizations-using-ggplot2.html#cb170-2" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>),</span>
 <span id="cb170-3"><a href="visualizations-using-ggplot2.html#cb170-3" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
 <span id="cb170-4"><a href="visualizations-using-ggplot2.html#cb170-4" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-125-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-128-1.png" alt="" width="672" /></p>
 <p><code>rgb</code> for black is <code>r=0, g=0, b=0</code> then the last is alpha 50% transparency.</p>
 <p><code>pch = 16</code> is solid filled circle, if it is 1, it is a hollow circle.</p>
 <p><strong>Jitter</strong></p>
@@ -833,7 +837,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb171-3"><a href="visualizations-using-ggplot2.html#cb171-3" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">0</span>, <span class="fl">0.5</span>), </span>
 <span id="cb171-4"><a href="visualizations-using-ggplot2.html#cb171-4" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">16</span>,</span>
 <span id="cb171-5"><a href="visualizations-using-ggplot2.html#cb171-5" tabindex="-1"></a>     <span class="at">xlab=</span> <span class="st">&quot;Poverty Index&quot;</span>, <span class="at">ylab=</span> <span class="st">&quot;Health Expenditures&quot;</span>, <span class="at">main=</span><span class="st">&quot;Scatterplot of Poverty Index vs Health Expenditures&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-126-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-129-1.png" alt="" width="672" /></p>
 <p>The amount is <code>0.3</code> which is the width and height equivalent of the jitter using ggplot2. We changed the color to green so <code>g=0.5</code>.</p>
 <p><strong>Color by group (<code>aes(color=enrolled)</code></strong>)</p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="visualizations-using-ggplot2.html#cb172-1" tabindex="-1"></a>colors<span class="ot">&lt;-</span><span class="fu">as.factor</span>(fch4_p1<span class="sc">$</span>enrolled)</span>
@@ -849,7 +853,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb172-11"><a href="visualizations-using-ggplot2.html#cb172-11" tabindex="-1"></a>       <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">levels</span>(colors)),</span>
 <span id="cb172-12"><a href="visualizations-using-ggplot2.html#cb172-12" tabindex="-1"></a>       <span class="at">pch=</span><span class="dv">16</span>,</span>
 <span id="cb172-13"><a href="visualizations-using-ggplot2.html#cb172-13" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Enrolled&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-127-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-130-1.png" alt="" width="672" /></p>
 <p>We need to convert enrolled into categorical variable so that each value becomes a group. Base R automatically decides on the colors to each factor.</p>
 <p>In the legend, we manually tell R to provide it, and we set <code>legend = levels(colors),</code> as factor levels being their legend, <code>col=1:length(levels(colors))</code> assigns legend colors then <code>pch=16</code> for matching the plot symbols.</p>
 <p><strong>Adding Regression Line</strong></p>
@@ -868,12 +872,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb173-12"><a href="visualizations-using-ggplot2.html#cb173-12" tabindex="-1"></a>       <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">levels</span>(colors)),</span>
 <span id="cb173-13"><a href="visualizations-using-ggplot2.html#cb173-13" tabindex="-1"></a>       <span class="at">pch=</span><span class="dv">16</span>,</span>
 <span id="cb173-14"><a href="visualizations-using-ggplot2.html#cb173-14" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Enrolled&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-128-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-131-1.png" alt="" width="672" /></p>
 </div>
 <div id="boxplots-1" class="section level3 hasAnchor" number="8.6.2">
 <h3><span class="header-section-number">8.6.2</span> Boxplots<a href="visualizations-using-ggplot2.html#boxplots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="visualizations-using-ggplot2.html#cb174-1" tabindex="-1"></a><span class="fu">boxplot</span>(health_expenditures <span class="sc">~</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">data=</span>fch4_p1)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-129-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-132-1.png" alt="" width="672" /></p>
 <p>If you want to change color, just add <code>col =</code></p>
 <p><strong>Adding jittered points</strong></p>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="visualizations-using-ggplot2.html#cb175-1" tabindex="-1"></a><span class="fu">boxplot</span>(health_expenditures <span class="sc">~</span> <span class="fu">as.factor</span>(treatment_locality), <span class="at">data=</span>fch4_p1,</span>
@@ -887,14 +891,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb175-9"><a href="visualizations-using-ggplot2.html#cb175-9" tabindex="-1"></a>           <span class="at">pch=</span><span class="dv">16</span>,</span>
 <span id="cb175-10"><a href="visualizations-using-ggplot2.html#cb175-10" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">1</span>,<span class="fl">0.2</span>,<span class="fl">0.2</span>,<span class="fl">0.5</span>), <span class="co">#similar to tomato color with transparency</span></span>
 <span id="cb175-11"><a href="visualizations-using-ggplot2.html#cb175-11" tabindex="-1"></a>           <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-130-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-133-1.png" alt="" width="672" /></p>
 <p>We need to draw the boxplot before we add the jitter. <code>outline = FALSE</code> prevents double-plotting, <code>stripchart()</code> overlays the individual observations on the boxplot with jittering to avoid overlap, <code>vertical = TRUE</code> aligns points with the boxplots.</p>
 </div>
 <div id="bar-plots-1" class="section level3 hasAnchor" number="8.6.3">
 <h3><span class="header-section-number">8.6.3</span> Bar Plots<a href="visualizations-using-ggplot2.html#bar-plots-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="visualizations-using-ggplot2.html#cb176-1" tabindex="-1"></a>counts<span class="ot">&lt;-</span><span class="fu">table</span>(fch4_p1<span class="sc">$</span>treatment_locality)</span>
 <span id="cb176-2"><a href="visualizations-using-ggplot2.html#cb176-2" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-131-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-134-1.png" alt="" width="672" /></p>
 <p>We need to count the values while <code>barplot</code> visualizes the counts</p>
 <p><strong>Stacked Bar Plots</strong></p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="visualizations-using-ggplot2.html#cb177-1" tabindex="-1"></a>counts_matrix <span class="ot">&lt;-</span> <span class="fu">with</span>(fch4_p1, <span class="fu">table</span>(treatment_locality, locality_identifier))</span></code></pre></div>
@@ -902,13 +906,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="visualizations-using-ggplot2.html#cb178-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">t</span>(counts_matrix), </span>
 <span id="cb178-2"><a href="visualizations-using-ggplot2.html#cb178-2" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">ncol</span>(counts_matrix)), <span class="co">#color per row</span></span>
 <span id="cb178-3"><a href="visualizations-using-ggplot2.html#cb178-3" tabindex="-1"></a>        <span class="at">legend=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-133-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-136-1.png" alt="" width="672" /></p>
 <p><strong>Side-by-Side Bars</strong></p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="visualizations-using-ggplot2.html#cb179-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">t</span>(counts_matrix),</span>
 <span id="cb179-2"><a href="visualizations-using-ggplot2.html#cb179-2" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,              <span class="co"># side-by-side</span></span>
 <span id="cb179-3"><a href="visualizations-using-ggplot2.html#cb179-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">ncol</span>(counts_matrix)),</span>
 <span id="cb179-4"><a href="visualizations-using-ggplot2.html#cb179-4" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-134-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-137-1.png" alt="" width="672" /></p>
 <p><strong>Reordering bars/when specified numeric value</strong></p>
 <p>Unlike ggplot2, in base R, we need to calculate first.</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="visualizations-using-ggplot2.html#cb180-1" tabindex="-1"></a>fch4_p1 <span class="ot">&lt;-</span> fch4_p1 <span class="sc">%&gt;%</span></span>
@@ -934,7 +938,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb182-11"><a href="visualizations-using-ggplot2.html#cb182-11" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Health Expenditures&quot;</span>,</span>
 <span id="cb182-12"><a href="visualizations-using-ggplot2.html#cb182-12" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span>  <span class="co"># rotate axis labels for readability</span></span>
 <span id="cb182-13"><a href="visualizations-using-ggplot2.html#cb182-13" tabindex="-1"></a>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-136-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-139-1.png" alt="" width="672" /></p>
 </div>
 <div id="faceting-1" class="section level3 hasAnchor" number="8.6.4">
 <h3><span class="header-section-number">8.6.4</span> Faceting<a href="visualizations-using-ggplot2.html#faceting-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -950,7 +954,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb183-10"><a href="visualizations-using-ggplot2.html#cb183-10" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>,</span>
 <span id="cb183-11"><a href="visualizations-using-ggplot2.html#cb183-11" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="fl">0.6</span>))  </span>
 <span id="cb183-12"><a href="visualizations-using-ggplot2.html#cb183-12" tabindex="-1"></a>}</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-137-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-140-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="visualizations-using-ggplot2.html#cb184-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p>You will notice that unlike <code>ggplot2</code>, Base R skips the missing. To avoid this, you have to create a separate category for missing.</p>
 <p><code>par(mfrow=c(nrows, ncols))</code> splits the plotting area then we created a function that loops each <code>locality_group</code> to have a different plot. Then, we reset the plotting layout with <code>par(mfrow=c(1,1))</code> for succeeding plots.</p>
@@ -962,7 +966,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb185-3"><a href="visualizations-using-ggplot2.html#cb185-3" tabindex="-1"></a><span class="fu">pie</span>(tcounts,</span>
 <span id="cb185-4"><a href="visualizations-using-ggplot2.html#cb185-4" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(tcounts)), </span>
 <span id="cb185-5"><a href="visualizations-using-ggplot2.html#cb185-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>) </span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-138-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-141-1.png" alt="" width="672" /></p>
 <p>Again, <code>table()</code> counts instances per category, while <code>rainbow</code> assigns a color to each category</p>
 <p><strong>Adding Percentages per slice</strong></p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="visualizations-using-ggplot2.html#cb186-1" tabindex="-1"></a>pslice <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> tcounts <span class="sc">/</span> <span class="fu">sum</span>(tcounts), <span class="dv">1</span>)</span>
@@ -974,7 +978,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb186-7"><a href="visualizations-using-ggplot2.html#cb186-7" tabindex="-1"></a>    <span class="at">labels =</span> labels,</span>
 <span id="cb186-8"><a href="visualizations-using-ggplot2.html#cb186-8" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(tcounts)),</span>
 <span id="cb186-9"><a href="visualizations-using-ggplot2.html#cb186-9" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Pie Chart: Proportion of Treatment Localities&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-139-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-142-1.png" alt="" width="672" /></p>
 </div>
 <div id="histogram-1" class="section level3 hasAnchor" number="8.6.6">
 <h3><span class="header-section-number">8.6.6</span> Histogram<a href="visualizations-using-ggplot2.html#histogram-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -983,7 +987,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb187-3"><a href="visualizations-using-ggplot2.html#cb187-3" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">&quot;black&quot;</span>,              </span>
 <span id="cb187-4"><a href="visualizations-using-ggplot2.html#cb187-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Poverty Index&quot;</span>,</span>
 <span id="cb187-5"><a href="visualizations-using-ggplot2.html#cb187-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Histogram of Poverty Index&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-140-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-143-1.png" alt="" width="672" /></p>
 <p>R automatically chooses breaks.</p>
 </div>
 <div id="time-series" class="section level3 hasAnchor" number="8.6.7">
@@ -996,7 +1000,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb188-6"><a href="visualizations-using-ggplot2.html#cb188-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Year&quot;</span>,</span>
 <span id="cb188-7"><a href="visualizations-using-ggplot2.html#cb188-7" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Nominal GDP (Current)&quot;</span>,</span>
 <span id="cb188-8"><a href="visualizations-using-ggplot2.html#cb188-8" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Time Series Plot of Nominal GDP (Current)&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-141-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-144-1.png" alt="" width="672" /></p>
 <p>To make the line, the type is small letter L, not 1. To add points:</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="visualizations-using-ggplot2.html#cb189-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
 <span id="cb189-2"><a href="visualizations-using-ggplot2.html#cb189-2" tabindex="-1"></a><span class="fu">plot</span>(ch4_p2<span class="sc">$</span>year,</span>
@@ -1011,7 +1015,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb189-11"><a href="visualizations-using-ggplot2.html#cb189-11" tabindex="-1"></a>       ch4_p2<span class="sc">$</span>nominal_gdp_current,</span>
 <span id="cb189-12"><a href="visualizations-using-ggplot2.html#cb189-12" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>,</span>
 <span id="cb189-13"><a href="visualizations-using-ggplot2.html#cb189-13" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>) </span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-142-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-145-1.png" alt="" width="672" /></p>
 </div>
 <div id="save-graphs-using-base-r" class="section level3 hasAnchor" number="8.6.8">
 <h3><span class="header-section-number">8.6.8</span> Save Graphs using Base R<a href="visualizations-using-ggplot2.html#save-graphs-using-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>

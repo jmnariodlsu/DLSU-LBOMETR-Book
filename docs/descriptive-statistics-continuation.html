@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -439,9 +439,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For this section, we use built-in datasets in R.</p>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="descriptive-statistics-continuation.html#cb289-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb289-2"><a href="descriptive-statistics-continuation.html#cb289-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4650417 248.4    7314684 390.7   7314684  390.7
-## Vcells 10298982  78.6   83798019 639.4 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4025400 215.0    7240020 386.7   7240020  386.7
+## Vcells 8960036  68.4  111888721 853.7 218532577 1667.3</code></pre>
 <div id="built-in-datasets" class="section level5 hasAnchor" number="11.0.0.0.1">
 <h5><span class="header-section-number">11.0.0.0.1</span> Built-in Datasets<a href="descriptive-statistics-continuation.html#built-in-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The packages you download sometimes have datasets built-in them to serve as practice.</p>
@@ -511,8 +511,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="use-describe-function" class="section level5 hasAnchor" number="11.1.1.0.1">
 <h5><span class="header-section-number">11.1.1.0.1</span> Use describe function<a href="descriptive-statistics-continuation.html#use-describe-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="descriptive-statistics-continuation.html#cb296-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(ch7.ts<span class="sc">$</span>Air_Passengers)</span></code></pre></div>
-<pre><code>##    vars   n  mean     sd median trimmed    mad min max range skew kurtosis se
-## X1    1 144 280.3 119.97  265.5  271.45 133.43 104 622   518 0.57    -0.43 10</code></pre>
+<pre><code>##    vars   n  mean     sd median trimmed    mad min max range
+## X1    1 144 280.3 119.97  265.5  271.45 133.43 104 622   518
+##    skew kurtosis se
+## X1 0.57    -0.43 10</code></pre>
 <p>We need to look at the data, whether it is skewed, highly volatile, or has unusual values. We look at <strong>Skewness</strong> aside from the central tendency measures.</p>
 <p>If skewness is 1: it is highly skewed. In this case, it is moderately skewed. Usually, the rule of thumb for skewness interpretations is between -0.5 and 0.5 (roughly symmetric).</p>
 </div>
@@ -524,9 +526,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb298-3"><a href="descriptive-statistics-continuation.html#cb298-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
 <span id="cb298-4"><a href="descriptive-statistics-continuation.html#cb298-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
 <span id="cb298-5"><a href="descriptive-statistics-continuation.html#cb298-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Smooth Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>)</span></code></pre></div>
-<pre><code>## Don&#39;t know how to automatically pick scale for object of type &lt;ts&gt;. Defaulting to continuous.
+<pre><code>## Don&#39;t know how to automatically pick scale for object of type
+## &lt;ts&gt;. Defaulting to continuous.
 ## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-214-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-217-1.png" alt="" width="672" /></p>
 <p>Let us improve the graph;</p>
 <div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="descriptive-statistics-continuation.html#cb300-1" tabindex="-1"></a>ch7.ts<span class="ot">&lt;-</span>ch7.ts <span class="sc">%&gt;%</span> </span>
 <span id="cb300-2"><a href="descriptive-statistics-continuation.html#cb300-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -547,7 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb301-8"><a href="descriptive-statistics-continuation.html#cb301-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Passengers&quot;</span>)<span class="sc">+</span></span>
 <span id="cb301-9"><a href="descriptive-statistics-continuation.html#cb301-9" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-216-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-219-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="descriptive-statistics-continuation.html#cb303-1" tabindex="-1"></a><span class="co">#for base R plotting</span></span>
 <span id="cb303-2"><a href="descriptive-statistics-continuation.html#cb303-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(y <span class="sc">~</span> x)</span>
 <span id="cb303-3"><a href="descriptive-statistics-continuation.html#cb303-3" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">order</span>(x)</span>
@@ -566,9 +569,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">11.1.3</span> 3. Autocorrelation<a href="descriptive-statistics-continuation.html#autocorrelation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Detect if observations are correlated over time, which violates OLS independence assumption.</p>
 <div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="descriptive-statistics-continuation.html#cb304-1" tabindex="-1"></a><span class="fu">acf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;ACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-218-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="descriptive-statistics-continuation.html#cb305-1" tabindex="-1"></a><span class="fu">pacf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;PACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-218-2.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-2.png" alt="" width="672" /></p>
 <p>How to Interpret:</p>
 <table>
 <colgroup>
@@ -633,28 +636,28 @@ Fixed-effects OLS = controls for unobserved, time-invariant heterogeneity so use
 <div id="example-1" class="section level5 hasAnchor" number="11.2.0.0.1">
 <h5><span class="header-section-number">11.2.0.0.1</span> Example:<a href="descriptive-statistics-continuation.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We use the Grunfeld Dataset which is built-in the <code>plm</code> package that is used for Panel Data modeling</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="descriptive-statistics-continuation.html#cb306-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Grunfeld&quot;</span>, <span class="at">package=</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="descriptive-statistics-continuation.html#cb306-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Grunfeld&quot;</span>, <span class="at">package=</span><span class="st">&quot;plm&quot;</span>)</span></code></pre></div>
 </div>
 <div id="inspect-data-1" class="section level5 hasAnchor" number="11.2.0.0.2">
 <h5><span class="header-section-number">11.2.0.0.2</span> Inspect data<a href="descriptive-statistics-continuation.html#inspect-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="descriptive-statistics-continuation.html#cb307-1" tabindex="-1"></a><span class="fu">str</span>(Grunfeld)</span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    220 obs. of  5 variables:
-##  $ invest : num  318 392 411 258 331 ...
+<pre><code>## &#39;data.frame&#39;:    200 obs. of  5 variables:
+##  $ firm   : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ year   : int  1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 ...
+##  $ inv    : num  318 392 411 258 331 ...
 ##  $ value  : num  3078 4662 5387 2792 4313 ...
-##  $ capital: num  2.8 52.6 156.9 209.2 203.4 ...
-##  $ firm   : Factor w/ 11 levels &quot;General Motors&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ year   : int  1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 ...</code></pre>
+##  $ capital: num  2.8 52.6 156.9 209.2 203.4 ...</code></pre>
 </div>
 <div id="plot-panel-data" class="section level4 hasAnchor" number="11.2.0.1">
 <h4><span class="header-section-number">11.2.0.1</span> 1. Plot Panel Data<a href="descriptive-statistics-continuation.html#plot-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="a.-within-variation-investment-over-time-per-firm" class="section level5 hasAnchor" number="11.2.0.1.1">
 <h5><span class="header-section-number">11.2.0.1.1</span> a. Within variation: investment over time per firm<a href="descriptive-statistics-continuation.html#a.-within-variation-investment-over-time-per-firm" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="descriptive-statistics-continuation.html#cb309-1" tabindex="-1"></a><span class="fu">ggplot</span>(Grunfeld,</span>
-<span id="cb309-2"><a href="descriptive-statistics-continuation.html#cb309-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>invest, <span class="at">group=</span>firm, <span class="at">color=</span><span class="fu">factor</span>(firm)))<span class="sc">+</span></span>
+<span id="cb309-2"><a href="descriptive-statistics-continuation.html#cb309-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>inv, <span class="at">group=</span>firm, <span class="at">color=</span><span class="fu">factor</span>(firm)))<span class="sc">+</span></span>
 <span id="cb309-3"><a href="descriptive-statistics-continuation.html#cb309-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
 <span id="cb309-4"><a href="descriptive-statistics-continuation.html#cb309-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Within variation: investment over time by firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Investment&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Firm&quot;</span>)<span class="sc">+</span></span>
 <span id="cb309-5"><a href="descriptive-statistics-continuation.html#cb309-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-224-1.png" alt="" width="672" /></p>
 <ul>
 <li>Some firms show large changes but most of them show little variation. For these firms, it shows changes within the firm but for the others, not really.</li>
 </ul>
@@ -663,12 +666,12 @@ Fixed-effects OLS = controls for unobserved, time-invariant heterogeneity so use
 <h5><span class="header-section-number">11.2.0.1.2</span> b. Between variation<a href="descriptive-statistics-continuation.html#b.-between-variation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="descriptive-statistics-continuation.html#cb310-1" tabindex="-1"></a>Grunfeld <span class="sc">%&gt;%</span></span>
 <span id="cb310-2"><a href="descriptive-statistics-continuation.html#cb310-2" tabindex="-1"></a>  <span class="fu">group_by</span>(firm) <span class="sc">%&gt;%</span></span>
-<span id="cb310-3"><a href="descriptive-statistics-continuation.html#cb310-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_invest =</span> <span class="fu">mean</span>(invest)) <span class="sc">%&gt;%</span></span>
+<span id="cb310-3"><a href="descriptive-statistics-continuation.html#cb310-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_invest =</span> <span class="fu">mean</span>(inv)) <span class="sc">%&gt;%</span></span>
 <span id="cb310-4"><a href="descriptive-statistics-continuation.html#cb310-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>firm, <span class="at">y=</span>mean_invest)) <span class="sc">+</span></span>
 <span id="cb310-5"><a href="descriptive-statistics-continuation.html#cb310-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&quot;purple&quot;</span>) <span class="sc">+</span></span>
 <span id="cb310-6"><a href="descriptive-statistics-continuation.html#cb310-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Between Variation: Average Investment by Firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Firm&quot;</span>, <span class="at">y=</span><span class="st">&quot;Avg Investment&quot;</span>)<span class="sc">+</span></span>
 <span id="cb310-7"><a href="descriptive-statistics-continuation.html#cb310-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-222-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-225-1.png" alt="" width="672" /></p>
 <ul>
 <li>Shows how firms 1 and 2 have much higher average investment than the others. Unlike before, the between variation here looks at differences in average across firms, ignoring time.</li>
 </ul>

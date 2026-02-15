@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -483,9 +483,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At the start, you need to do the same steps as that of when doing the visualizations <em>without</em> animations.</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="advanced-visualizations.html#cb192-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
 <span id="cb192-2"><a href="advanced-visualizations.html#cb192-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4633598 247.5    7314684 390.7   7314684  390.7
-## Vcells 10205765  77.9   32953147 251.5 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4008562 214.1    7240020 386.7   7240020  386.7
+## Vcells 8866781  67.7   34106410 260.3 218319393 1665.7</code></pre>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="advanced-visualizations.html#cb194-1" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
 <span id="cb194-2"><a href="advanced-visualizations.html#cb194-2" tabindex="-1"></a>quotas <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;quotas.csv&quot;</span>)</span>
 <span id="cb194-3"><a href="advanced-visualizations.html#cb194-3" tabindex="-1"></a></span>
@@ -540,20 +540,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb199-4"><a href="advanced-visualizations.html#cb199-4" tabindex="-1"></a>ch5<span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
 <span id="cb199-5"><a href="advanced-visualizations.html#cb199-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(GDPpc), <span class="sc">!</span><span class="fu">is.na</span>(Life_Exp))</span>
 <span id="cb199-6"><a href="advanced-visualizations.html#cb199-6" tabindex="-1"></a><span class="fu">head</span>(ch5)</span></code></pre></div>
-<pre><code>##   country iso2c iso3c year status lastupdated    GDPpc Life_Exp                    region  capital longitude latitude              income
-## 1  Brazil    BR   BRA 2000         2026-01-28 3766.548   69.584 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-## 2  Brazil    BR   BRA 2001         2026-01-28 3176.290   69.980 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-## 3  Brazil    BR   BRA 2002         2026-01-28 2855.940   70.396 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-## 4  Brazil    BR   BRA 2003         2026-01-28 3090.607   70.884 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-## 5  Brazil    BR   BRA 2004         2026-01-28 3663.823   71.361 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-## 6  Brazil    BR   BRA 2005         2026-01-28 4827.782   71.832 Latin America &amp; Caribbean Brasilia  -47.9292 -15.7801 Upper middle income
-##   lending
-## 1    IBRD
-## 2    IBRD
-## 3    IBRD
-## 4    IBRD
-## 5    IBRD
-## 6    IBRD</code></pre>
+<pre><code>##   country iso2c iso3c year status lastupdated    GDPpc
+## 1  Brazil    BR   BRA 2000         2026-01-28 3766.548
+## 2  Brazil    BR   BRA 2001         2026-01-28 3176.290
+## 3  Brazil    BR   BRA 2002         2026-01-28 2855.940
+## 4  Brazil    BR   BRA 2003         2026-01-28 3090.607
+## 5  Brazil    BR   BRA 2004         2026-01-28 3663.823
+## 6  Brazil    BR   BRA 2005         2026-01-28 4827.782
+##   Life_Exp                    region  capital longitude
+## 1   69.584 Latin America &amp; Caribbean Brasilia  -47.9292
+## 2   69.980 Latin America &amp; Caribbean Brasilia  -47.9292
+## 3   70.396 Latin America &amp; Caribbean Brasilia  -47.9292
+## 4   70.884 Latin America &amp; Caribbean Brasilia  -47.9292
+## 5   71.361 Latin America &amp; Caribbean Brasilia  -47.9292
+## 6   71.832 Latin America &amp; Caribbean Brasilia  -47.9292
+##   latitude              income lending
+## 1 -15.7801 Upper middle income    IBRD
+## 2 -15.7801 Upper middle income    IBRD
+## 3 -15.7801 Upper middle income    IBRD
+## 4 -15.7801 Upper middle income    IBRD
+## 5 -15.7801 Upper middle income    IBRD
+## 6 -15.7801 Upper middle income    IBRD</code></pre>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="advanced-visualizations.html#cb201-1" tabindex="-1"></a>ch5<span class="fl">.3</span><span class="ot">&lt;-</span>ch5 <span class="sc">%&gt;%</span> </span>
 <span id="cb201-2"><a href="advanced-visualizations.html#cb201-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>GDPpc, <span class="at">y=</span>Life_Exp))<span class="sc">+</span></span>
 <span id="cb201-3"><a href="advanced-visualizations.html#cb201-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>region), <span class="at">alpha=</span><span class="fl">0.7</span>, <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
@@ -641,9 +648,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">9.6.1</span> Fetching GDP Data from WDI<a href="advanced-visualizations.html#fetching-gdp-data-from-wdi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="advanced-visualizations.html#cb209-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb209-2"><a href="advanced-visualizations.html#cb209-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4647953 248.3    7314684 390.7   7314684  390.7
-## Vcells 10228151  78.1   32953147 251.5 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4023004 214.9    7240020 386.7   7240020  386.7
+## Vcells 8889315  67.9   34106410 260.3 218319393 1665.7</code></pre>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="advanced-visualizations.html#cb211-1" tabindex="-1"></a>ch5_2<span class="ot">&lt;-</span><span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
 <span id="cb211-2"><a href="advanced-visualizations.html#cb211-2" tabindex="-1"></a>           <span class="at">indicator =</span> <span class="st">&quot;NY.GDP.MKTP.CD&quot;</span>,</span>
 <span id="cb211-3"><a href="advanced-visualizations.html#cb211-3" tabindex="-1"></a>           <span class="at">start =</span> <span class="dv">2000</span>, </span>
@@ -669,13 +676,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb214-5"><a href="advanced-visualizations.html#cb214-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;GDP by Country&quot;</span>,</span>
 <span id="cb214-6"><a href="advanced-visualizations.html#cb214-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Data from WDI&quot;</span>,</span>
 <span id="cb214-7"><a href="advanced-visualizations.html#cb214-7" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;GDP (log scale)&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-164-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-167-1.png" alt="" width="672" /></p>
 <p>We use the merged map and GDP data and <code>geom_sf(aes(fill=gdp_md))</code> filles countries based on GDP. The <code>scale_fill_viridis_c</code> uses “plasma” which is best used for maps. The log scale transformation is used to better differentiate large economies and small economies and grey fill for missing data.</p>
 <div id="animated-world-map-for-gdp" class="section level4 hasAnchor" number="9.6.1.1">
 <h4><span class="header-section-number">9.6.1.1</span> Animated World Map for GDP<a href="advanced-visualizations.html#animated-world-map-for-gdp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Now we create an animated version of the map. You need to check that your time variable does not have any NA. It would be better to choose the years that are available consecutively so we will filter the data to only include from 2009-2019.</p>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="advanced-visualizations.html#cb215-1" tabindex="-1"></a><span class="fu">unique</span>(wgdp<span class="sc">$</span>gdp_year)</span></code></pre></div>
-<pre><code>##  [1] 2019 2014 2018 2017 2016 2013 2010 2009 2012 2006 2015 2003 2007 2011</code></pre>
+<pre><code>##  [1] 2019 2014 2018 2017 2016 2013 2010 2009 2012 2006 2015
+## [12] 2003 2007 2011</code></pre>
 <div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="advanced-visualizations.html#cb217-1" tabindex="-1"></a><span class="co"># Filter for years 2009-2019 </span></span>
 <span id="cb217-2"><a href="advanced-visualizations.html#cb217-2" tabindex="-1"></a>wgdp_filtered <span class="ot">&lt;-</span> wgdp <span class="sc">%&gt;%</span>    </span>
 <span id="cb217-3"><a href="advanced-visualizations.html#cb217-3" tabindex="-1"></a>  <span class="fu">filter</span>(gdp_year <span class="sc">%in%</span> <span class="dv">2009</span><span class="sc">:</span><span class="dv">2019</span>)</span></code></pre></div>
@@ -700,21 +708,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We will use <code>Ch6.xlsx</code> containing Regional GDP and use the Philippine Regions shapefile.</p>
 <div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="advanced-visualizations.html#cb220-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb220-2"><a href="advanced-visualizations.html#cb220-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4648753 248.3    7314684 390.7   7314684  390.7
-## Vcells 10268196  78.4   32953147 251.5 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4023717 214.9    7240020 386.7   7240020  386.7
+## Vcells 8929215  68.2   34106410 260.3 218319393 1665.7</code></pre>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="advanced-visualizations.html#cb222-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb222-2"><a href="advanced-visualizations.html#cb222-2" tabindex="-1"></a>layers<span class="ot">&lt;-</span><span class="fu">st_layers</span>(<span class="st">&quot;PH_Adm1_Regions.shp&quot;</span>)</span>
 <span id="cb222-3"><a href="advanced-visualizations.html#cb222-3" tabindex="-1"></a><span class="fu">print</span>(layers)</span></code></pre></div>
 <pre><code>## Driver: ESRI Shapefile 
 ## Available layers:
-##            layer_name geometry_type features fields              crs_name
-## 1 PH_Adm1_Regions.shp       Polygon       17      7 WGS 84 / UTM zone 51N
-## 2         Regions.shp       Polygon       17     19                WGS 84</code></pre>
+##            layer_name geometry_type features fields
+## 1 PH_Adm1_Regions.shp       Polygon       17      7
+## 2         Regions.shp       Polygon       17     19
+##                crs_name
+## 1 WGS 84 / UTM zone 51N
+## 2                WGS 84</code></pre>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="advanced-visualizations.html#cb224-1" tabindex="-1"></a>sp_df <span class="ot">=</span> sf<span class="sc">::</span><span class="fu">st_read</span>( </span>
 <span id="cb224-2"><a href="advanced-visualizations.html#cb224-2" tabindex="-1"></a>  <span class="at">dsn=</span> <span class="st">&#39;PH_Adm1_Regions.shp&#39;</span>, </span>
 <span id="cb224-3"><a href="advanced-visualizations.html#cb224-3" tabindex="-1"></a>  <span class="at">layer=</span><span class="st">&quot;Regions.shp&quot;</span>)</span></code></pre></div>
-<pre><code>## Reading layer `Regions.shp&#39; from data source `C:\Users\jemma\OneDrive\Documents\DLSU\LBOMETR_Book\PH_Adm1_Regions.shp&#39; using driver `ESRI Shapefile&#39;
+<pre><code>## Reading layer `Regions.shp&#39; from data source 
+##   `C:\Users\jemma\OneDrive\Documents\DLSU\LBOMETR_Book\PH_Adm1_Regions.shp&#39; 
+##   using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 17 features and 19 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -729,28 +742,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Bounding box:  xmin: 114.2779 ymin: 4.587294 xmax: 126.605 ymax: 21.12189
 ## Geodetic CRS:  WGS 84
 ## First 10 features:
-##     psgc_code                            name corr_code geo_level city_class inc_class urb_rur pop_2015 pop_2020 status adm1_pcode
-## 1   100000000        Region I (Ilocos Region)  10000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH01
-## 2   200000000      Region II (Cagayan Valley)  20000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH02
-## 3   300000000      Region III (Central Luzon)  30000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH03
-## 4   400000000        Region IV-A (CALABARZON)  40000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH04
-## 5   500000000         Region V (Bicol Region)  50000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH05
-## 6   600000000     Region VI (Western Visayas)  60000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH06
-## 7   700000000    Region VII (Central Visayas)  70000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH07
-## 8   800000000   Region VIII (Eastern Visayas)  80000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH08
-## 9   900000000 Region IX (Zamboanga Peninsula)  90000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH09
-## 10 1000000000    Region X (Northern Mindanao) 100000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH10
-##                            adm1_en            adm1_alt adm0_pcode           adm0_en       date shape_len shape_area shape_sqkm
-## 1         Region I (Ilocos Region)       Ilocos Region         PH Philippines (the) 2022-11-09  14.99505   1.043983   12307.35
-## 2       Region II (Cagayan Valley)      Cagayan Valley         PH Philippines (the) 2022-11-09  19.13905   2.241812   26387.73
-## 3       Region III (Central Luzon)       Central Luzon         PH Philippines (the) 2022-11-09  15.94956   1.793513   21304.16
-## 4         Region IV-A (Calabarzon)          Calabarzon         PH Philippines (the) 2022-11-09  27.62549   1.326720   15846.63
-## 5          Region V (Bicol Region)        Bicol Region         PH Philippines (the) 2022-11-09  44.92324   1.446324   17338.38
-## 6      Region VI (Western Visayas)     Western Visayas         PH Philippines (the) 2022-11-09  27.77415   1.657591   20047.63
-## 7     Region VII (Central Visayas)     Central Visayas         PH Philippines (the) 2022-11-09  29.11311   1.178431   14293.66
-## 8    Region VIII (Eastern Visayas)     Eastern Visayas         PH Philippines (the) 2022-11-09  42.02116   1.726804   20835.68
-## 9  Region IX (Zamboanga Peninsula) Zamboanga Peninsula         PH Philippines (the) 2022-11-09  23.18144   1.196677   14596.05
-## 10    Region X (Northern Mindanao)   Northern Mindanao         PH Philippines (the) 2022-11-09  15.00295   1.435115   17489.29
+##     psgc_code                            name corr_code
+## 1   100000000        Region I (Ilocos Region)  10000000
+## 2   200000000      Region II (Cagayan Valley)  20000000
+## 3   300000000      Region III (Central Luzon)  30000000
+## 4   400000000        Region IV-A (CALABARZON)  40000000
+## 5   500000000         Region V (Bicol Region)  50000000
+## 6   600000000     Region VI (Western Visayas)  60000000
+## 7   700000000    Region VII (Central Visayas)  70000000
+## 8   800000000   Region VIII (Eastern Visayas)  80000000
+## 9   900000000 Region IX (Zamboanga Peninsula)  90000000
+## 10 1000000000    Region X (Northern Mindanao) 100000000
+##    geo_level city_class inc_class urb_rur pop_2015 pop_2020
+## 1        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 2        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 3        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 4        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 5        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 6        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 7        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 8        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 9        Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 10       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+##    status adm1_pcode                         adm1_en
+## 1    &lt;NA&gt;       PH01        Region I (Ilocos Region)
+## 2    &lt;NA&gt;       PH02      Region II (Cagayan Valley)
+## 3    &lt;NA&gt;       PH03      Region III (Central Luzon)
+## 4    &lt;NA&gt;       PH04        Region IV-A (Calabarzon)
+## 5    &lt;NA&gt;       PH05         Region V (Bicol Region)
+## 6    &lt;NA&gt;       PH06     Region VI (Western Visayas)
+## 7    &lt;NA&gt;       PH07    Region VII (Central Visayas)
+## 8    &lt;NA&gt;       PH08   Region VIII (Eastern Visayas)
+## 9    &lt;NA&gt;       PH09 Region IX (Zamboanga Peninsula)
+## 10   &lt;NA&gt;       PH10    Region X (Northern Mindanao)
+##               adm1_alt adm0_pcode           adm0_en
+## 1        Ilocos Region         PH Philippines (the)
+## 2       Cagayan Valley         PH Philippines (the)
+## 3        Central Luzon         PH Philippines (the)
+## 4           Calabarzon         PH Philippines (the)
+## 5         Bicol Region         PH Philippines (the)
+## 6      Western Visayas         PH Philippines (the)
+## 7      Central Visayas         PH Philippines (the)
+## 8      Eastern Visayas         PH Philippines (the)
+## 9  Zamboanga Peninsula         PH Philippines (the)
+## 10   Northern Mindanao         PH Philippines (the)
+##          date shape_len shape_area shape_sqkm
+## 1  2022-11-09  14.99505   1.043983   12307.35
+## 2  2022-11-09  19.13905   2.241812   26387.73
+## 3  2022-11-09  15.94956   1.793513   21304.16
+## 4  2022-11-09  27.62549   1.326720   15846.63
+## 5  2022-11-09  44.92324   1.446324   17338.38
+## 6  2022-11-09  27.77415   1.657591   20047.63
+## 7  2022-11-09  29.11311   1.178431   14293.66
+## 8  2022-11-09  42.02116   1.726804   20835.68
+## 9  2022-11-09  23.18144   1.196677   14596.05
+## 10 2022-11-09  15.00295   1.435115   17489.29
 ##                          geometry
 ## 1  MULTIPOLYGON (((120.9714 18...
 ## 2  MULTIPOLYGON (((121.9488 21...
@@ -764,45 +810,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 MULTIPOLYGON (((124.6987 9....</code></pre>
 <p>We then check available attributes and also check the region names so that we can merge the shapefile with our GDP data.</p>
 <div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="advanced-visualizations.html#cb228-1" tabindex="-1"></a><span class="fu">colnames</span>(sp_df)</span></code></pre></div>
-<pre><code>##  [1] &quot;psgc_code&quot;  &quot;name&quot;       &quot;corr_code&quot;  &quot;geo_level&quot;  &quot;city_class&quot; &quot;inc_class&quot;  &quot;urb_rur&quot;    &quot;pop_2015&quot;   &quot;pop_2020&quot;   &quot;status&quot;    
-## [11] &quot;adm1_pcode&quot; &quot;adm1_en&quot;    &quot;adm1_alt&quot;   &quot;adm0_pcode&quot; &quot;adm0_en&quot;    &quot;date&quot;       &quot;shape_len&quot;  &quot;shape_area&quot; &quot;shape_sqkm&quot; &quot;geometry&quot;</code></pre>
+<pre><code>##  [1] &quot;psgc_code&quot;  &quot;name&quot;       &quot;corr_code&quot;  &quot;geo_level&quot; 
+##  [5] &quot;city_class&quot; &quot;inc_class&quot;  &quot;urb_rur&quot;    &quot;pop_2015&quot;  
+##  [9] &quot;pop_2020&quot;   &quot;status&quot;     &quot;adm1_pcode&quot; &quot;adm1_en&quot;   
+## [13] &quot;adm1_alt&quot;   &quot;adm0_pcode&quot; &quot;adm0_en&quot;    &quot;date&quot;      
+## [17] &quot;shape_len&quot;  &quot;shape_area&quot; &quot;shape_sqkm&quot; &quot;geometry&quot;</code></pre>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="advanced-visualizations.html#cb230-1" tabindex="-1"></a><span class="fu">head</span>(sp_df)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 19 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: 119.7497 ymin: 9.444193 xmax: 124.4249 ymax: 21.12189
 ## Geodetic CRS:  WGS 84
-##   psgc_code                        name corr_code geo_level city_class inc_class urb_rur pop_2015 pop_2020 status adm1_pcode
-## 1 100000000    Region I (Ilocos Region)  10000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH01
-## 2 200000000  Region II (Cagayan Valley)  20000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH02
-## 3 300000000  Region III (Central Luzon)  30000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH03
-## 4 400000000    Region IV-A (CALABARZON)  40000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH04
-## 5 500000000     Region V (Bicol Region)  50000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH05
-## 6 600000000 Region VI (Western Visayas)  60000000       Reg       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;       PH06
-##                       adm1_en        adm1_alt adm0_pcode           adm0_en       date shape_len shape_area shape_sqkm
-## 1    Region I (Ilocos Region)   Ilocos Region         PH Philippines (the) 2022-11-09  14.99505   1.043983   12307.35
-## 2  Region II (Cagayan Valley)  Cagayan Valley         PH Philippines (the) 2022-11-09  19.13905   2.241812   26387.73
-## 3  Region III (Central Luzon)   Central Luzon         PH Philippines (the) 2022-11-09  15.94956   1.793513   21304.16
-## 4    Region IV-A (Calabarzon)      Calabarzon         PH Philippines (the) 2022-11-09  27.62549   1.326720   15846.63
-## 5     Region V (Bicol Region)    Bicol Region         PH Philippines (the) 2022-11-09  44.92324   1.446324   17338.38
-## 6 Region VI (Western Visayas) Western Visayas         PH Philippines (the) 2022-11-09  27.77415   1.657591   20047.63
-##                         geometry
-## 1 MULTIPOLYGON (((120.9714 18...
-## 2 MULTIPOLYGON (((121.9488 21...
-## 3 MULTIPOLYGON (((122.2342 16...
-## 4 MULTIPOLYGON (((122.3079 14...
-## 5 MULTIPOLYGON (((122.9882 11...
-## 6 MULTIPOLYGON (((121.4341 12...</code></pre>
+##   psgc_code                        name corr_code geo_level
+## 1 100000000    Region I (Ilocos Region)  10000000       Reg
+## 2 200000000  Region II (Cagayan Valley)  20000000       Reg
+## 3 300000000  Region III (Central Luzon)  30000000       Reg
+## 4 400000000    Region IV-A (CALABARZON)  40000000       Reg
+## 5 500000000     Region V (Bicol Region)  50000000       Reg
+## 6 600000000 Region VI (Western Visayas)  60000000       Reg
+##   city_class inc_class urb_rur pop_2015 pop_2020 status
+## 1       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+## 2       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+## 3       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+## 4       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+## 5       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+## 6       &lt;NA&gt;      &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;
+##   adm1_pcode                     adm1_en        adm1_alt
+## 1       PH01    Region I (Ilocos Region)   Ilocos Region
+## 2       PH02  Region II (Cagayan Valley)  Cagayan Valley
+## 3       PH03  Region III (Central Luzon)   Central Luzon
+## 4       PH04    Region IV-A (Calabarzon)      Calabarzon
+## 5       PH05     Region V (Bicol Region)    Bicol Region
+## 6       PH06 Region VI (Western Visayas) Western Visayas
+##   adm0_pcode           adm0_en       date shape_len
+## 1         PH Philippines (the) 2022-11-09  14.99505
+## 2         PH Philippines (the) 2022-11-09  19.13905
+## 3         PH Philippines (the) 2022-11-09  15.94956
+## 4         PH Philippines (the) 2022-11-09  27.62549
+## 5         PH Philippines (the) 2022-11-09  44.92324
+## 6         PH Philippines (the) 2022-11-09  27.77415
+##   shape_area shape_sqkm                       geometry
+## 1   1.043983   12307.35 MULTIPOLYGON (((120.9714 18...
+## 2   2.241812   26387.73 MULTIPOLYGON (((121.9488 21...
+## 3   1.793513   21304.16 MULTIPOLYGON (((122.2342 16...
+## 4   1.326720   15846.63 MULTIPOLYGON (((122.3079 14...
+## 5   1.446324   17338.38 MULTIPOLYGON (((122.9882 11...
+## 6   1.657591   20047.63 MULTIPOLYGON (((121.4341 12...</code></pre>
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="advanced-visualizations.html#cb232-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb232-2"><a href="advanced-visualizations.html#cb232-2" tabindex="-1"></a><span class="fu">unique</span>(sp_df<span class="sc">$</span>name)</span></code></pre></div>
-<pre><code>##  [1] &quot;Region I (Ilocos Region)&quot;                                &quot;Region II (Cagayan Valley)&quot;                             
-##  [3] &quot;Region III (Central Luzon)&quot;                              &quot;Region IV-A (CALABARZON)&quot;                               
-##  [5] &quot;Region V (Bicol Region)&quot;                                 &quot;Region VI (Western Visayas)&quot;                            
-##  [7] &quot;Region VII (Central Visayas)&quot;                            &quot;Region VIII (Eastern Visayas)&quot;                          
-##  [9] &quot;Region IX (Zamboanga Peninsula)&quot;                         &quot;Region X (Northern Mindanao)&quot;                           
-## [11] &quot;Region XI (Davao Region)&quot;                                &quot;Region XII (SOCCSKSARGEN)&quot;                              
-## [13] &quot;National Capital Region (NCR)&quot;                           &quot;Cordillera Administrative Region (CAR)&quot;                 
-## [15] &quot;Region XIII (Caraga)&quot;                                    &quot;MIMAROPA Region&quot;                                        
+<pre><code>##  [1] &quot;Region I (Ilocos Region)&quot;                               
+##  [2] &quot;Region II (Cagayan Valley)&quot;                             
+##  [3] &quot;Region III (Central Luzon)&quot;                             
+##  [4] &quot;Region IV-A (CALABARZON)&quot;                               
+##  [5] &quot;Region V (Bicol Region)&quot;                                
+##  [6] &quot;Region VI (Western Visayas)&quot;                            
+##  [7] &quot;Region VII (Central Visayas)&quot;                           
+##  [8] &quot;Region VIII (Eastern Visayas)&quot;                          
+##  [9] &quot;Region IX (Zamboanga Peninsula)&quot;                        
+## [10] &quot;Region X (Northern Mindanao)&quot;                           
+## [11] &quot;Region XI (Davao Region)&quot;                               
+## [12] &quot;Region XII (SOCCSKSARGEN)&quot;                              
+## [13] &quot;National Capital Region (NCR)&quot;                          
+## [14] &quot;Cordillera Administrative Region (CAR)&quot;                 
+## [15] &quot;Region XIII (Caraga)&quot;                                   
+## [16] &quot;MIMAROPA Region&quot;                                        
 ## [17] &quot;Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)&quot;</code></pre>
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="advanced-visualizations.html#cb234-1" tabindex="-1"></a>sp_df <span class="ot">&lt;-</span> sp_df <span class="sc">%&gt;%</span></span>
 <span id="cb234-2"><a href="advanced-visualizations.html#cb234-2" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region =</span> name)</span></code></pre></div>
@@ -814,15 +885,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## • `` -&gt; `...1`</code></pre>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="advanced-visualizations.html#cb237-1" tabindex="-1"></a><span class="fu">head</span>(rgdp)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 26
-##   ...1  region    `2000` `2001` `2002` `2003` `2004` `2005` `2006` `2007` `2008` `2009` `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017`
-##   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1 NCR   National… 2.42e9 2.48e9 2.51e9 2.62e9 2.84e9 2.99e9 3.16e9 3.37e9 3.52e9 3.52e9 3.75e9 3.83e9 4.07e9 4.34e9 4.58e9 4.87e9 5.22e9 5.51e9
-## 2 CAR   Cordille… 1.44e8 1.49e8 1.56e8 1.64e8 1.73e8 1.76e8 1.83e8 1.96e8 2.03e8 2.08e8 2.20e8 2.21e8 2.22e8 2.37e8 2.49e8 2.60e8 2.67e8 2.92e8
-## 3 I     Ilocos R… 2.40e8 2.45e8 2.53e8 2.64e8 2.78e8 2.91e8 3.08e8 3.26e8 3.36e8 3.35e8 3.64e8 3.79e8 3.99e8 4.33e8 4.61e8 4.86e8 5.25e8 5.55e8
-## 4 II    Cagayan … 1.58e8 1.64e8 1.66e8 1.71e8 1.86e8 1.83e8 2.01e8 2.14e8 2.19e8 2.24e8 2.33e8 2.48e8 2.65e8 2.89e8 3.13e8 3.26e8 3.42e8 3.68e8
-## 5 III   Central … 7.07e8 7.49e8 7.92e8 8.26e8 8.52e8 8.86e8 9.27e8 9.82e8 1.03e9 1.04e9 1.14e9 1.23e9 1.34e9 1.42e9 1.53e9 1.62e9 1.75e9 1.93e9
-## 6 IVA   CALABARZ… 1.05e9 1.07e9 1.12e9 1.18e9 1.24e9 1.31e9 1.37e9 1.45e9 1.50e9 1.49e9 1.64e9 1.68e9 1.81e9 1.94e9 2.05e9 2.20e9 2.35e9 2.53e9
-## # ℹ 6 more variables: `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;, `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;</code></pre>
+##   ...1  region       `2000` `2001` `2002` `2003` `2004` `2005`
+##   &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 NCR   National Ca… 2.42e9 2.48e9 2.51e9 2.62e9 2.84e9 2.99e9
+## 2 CAR   Cordillera … 1.44e8 1.49e8 1.56e8 1.64e8 1.73e8 1.76e8
+## 3 I     Ilocos Regi… 2.40e8 2.45e8 2.53e8 2.64e8 2.78e8 2.91e8
+## 4 II    Cagayan Val… 1.58e8 1.64e8 1.66e8 1.71e8 1.86e8 1.83e8
+## 5 III   Central Luz… 7.07e8 7.49e8 7.92e8 8.26e8 8.52e8 8.86e8
+## 6 IVA   CALABARZON   1.05e9 1.07e9 1.12e9 1.18e9 1.24e9 1.31e9
+## # ℹ 18 more variables: `2006` &lt;dbl&gt;, `2007` &lt;dbl&gt;,
+## #   `2008` &lt;dbl&gt;, `2009` &lt;dbl&gt;, `2010` &lt;dbl&gt;, `2011` &lt;dbl&gt;,
+## #   `2012` &lt;dbl&gt;, `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;,
+## #   `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;,
+## #   `2020` &lt;dbl&gt;, `2021` &lt;dbl&gt;, `2022` &lt;dbl&gt;, `2023` &lt;dbl&gt;</code></pre>
 <p>We need to convert the columns to have the same format first so that we can edit all of them later on when we transform to long format since different formats cannot be combined when modifying to long format.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="advanced-visualizations.html#cb239-1" tabindex="-1"></a><span class="fu">colnames</span>(rgdp)<span class="ot">&lt;-</span><span class="fu">as.character</span>(<span class="fu">colnames</span>(rgdp))</span>
 <span id="cb239-2"><a href="advanced-visualizations.html#cb239-2" tabindex="-1"></a>rgdp<span class="ot">&lt;-</span>rgdp <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">&quot;...1&quot;</span>)</span></code></pre></div>
@@ -843,12 +918,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 National Capital Region  2004 2841837836.
 ## 6 National Capital Region  2005 2988546218.</code></pre>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="advanced-visualizations.html#cb242-1" tabindex="-1"></a><span class="fu">unique</span>(rgdpl<span class="sc">$</span>region)</span></code></pre></div>
-<pre><code>##  [1] &quot;National Capital Region&quot;          &quot;Cordillera Administrative Region&quot; &quot;Ilocos Region&quot;                   
-##  [4] &quot;Cagayan Valley&quot;                   &quot;Central Luzon&quot;                    &quot;CALABARZON&quot;                      
-##  [7] &quot;MIMAROPA Region&quot;                  &quot;Bicol Region&quot;                     &quot;Western Visayas&quot;                 
-## [10] &quot;Central Visayas&quot;                  &quot;Eastern Visayas&quot;                  &quot;Zamboanga Peninsula&quot;             
-## [13] &quot;Northern Mindanao&quot;                &quot;Davao Region&quot;                     &quot;SOCCSKSARGEN&quot;                    
-## [16] &quot;Caraga&quot;                           &quot;BARMM&quot;</code></pre>
+<pre><code>##  [1] &quot;National Capital Region&quot;         
+##  [2] &quot;Cordillera Administrative Region&quot;
+##  [3] &quot;Ilocos Region&quot;                   
+##  [4] &quot;Cagayan Valley&quot;                  
+##  [5] &quot;Central Luzon&quot;                   
+##  [6] &quot;CALABARZON&quot;                      
+##  [7] &quot;MIMAROPA Region&quot;                 
+##  [8] &quot;Bicol Region&quot;                    
+##  [9] &quot;Western Visayas&quot;                 
+## [10] &quot;Central Visayas&quot;                 
+## [11] &quot;Eastern Visayas&quot;                 
+## [12] &quot;Zamboanga Peninsula&quot;             
+## [13] &quot;Northern Mindanao&quot;               
+## [14] &quot;Davao Region&quot;                    
+## [15] &quot;SOCCSKSARGEN&quot;                    
+## [16] &quot;Caraga&quot;                          
+## [17] &quot;BARMM&quot;</code></pre>
 <p>Since we know that the names are different in the shapefile, we rename the regions so that they match through mapping.</p>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="advanced-visualizations.html#cb244-1" tabindex="-1"></a>region_mapping <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb244-2"><a href="advanced-visualizations.html#cb244-2" tabindex="-1"></a>  <span class="st">&quot;Ilocos Region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Region I (Ilocos Region)&quot;</span>,</span>
@@ -898,7 +984,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb251-10"><a href="advanced-visualizations.html#cb251-10" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
 <span id="cb251-11"><a href="advanced-visualizations.html#cb251-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Regional GDP of the Philippines (2023)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb251-12"><a href="advanced-visualizations.html#cb251-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-182-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-185-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="advanced-visualizations.html#cb252-1" tabindex="-1"></a><span class="co">#Saving the images</span></span>
 <span id="cb252-2"><a href="advanced-visualizations.html#cb252-2" tabindex="-1"></a><span class="co">#ggsave(&quot;rgdp2023.jpg&quot;, plot = last_plot(), width = 10, height = 8, dpi = 300)</span></span>
 <span id="cb252-3"><a href="advanced-visualizations.html#cb252-3" tabindex="-1"></a><span class="co">#or plot = nameofplot, width and height are in inches and for high quality image, dpi = 300</span></span></code></pre></div>
@@ -908,7 +994,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A Bubble Map is a type of thematic map that represents data values using circles (bubbles) placed over specific locations. The size of the bubble corresponds to the magnitude of the variable being visualized (e.g., GDP, population, sales, etc.). We use 2023 again.</p>
 <p>The first step that we need to do is calculate the <code>centroids</code> using <code>st_centroid</code> from the <code>sf</code> package because this calculates the geometric center of each polygon region in the shapefile. These will be used as our bubble locations and to ensure that there will be no overlapping with borders.</p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="advanced-visualizations.html#cb253-1" tabindex="-1"></a>phr_centroids<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(rgdp2023)</span></code></pre></div>
-<pre><code>## Warning: st_centroid assumes attributes are constant over geometries</code></pre>
+<pre><code>## Warning: st_centroid assumes attributes are constant over
+## geometries</code></pre>
 <div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="advanced-visualizations.html#cb255-1" tabindex="-1"></a><span class="fu">print</span>(phr_centroids)</span></code></pre></div>
 <pre><code>## Simple feature collection with 17 features and 3 fields
 ## Geometry type: POINT
@@ -916,17 +1003,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Bounding box:  xmin: 119.8902 ymin: 6.580654 xmax: 125.8263 ymax: 17.35385
 ## Geodetic CRS:  WGS 84
 ## First 10 features:
-##                             region Year       GDP                  geometry
-## 1         Region I (Ilocos Region) 2023 0.7014687 POINT (120.4827 16.90283)
-## 2       Region II (Cagayan Valley) 2023 0.4470732 POINT (121.7316 17.20396)
-## 3       Region III (Central Luzon) 2023 2.3184283  POINT (120.8223 15.3919)
-## 4         Region IV-A (CALABARZON) 2023 3.0952557  POINT (121.568 14.16225)
-## 5          Region V (Bicol Region) 2023 0.6103399 POINT (123.4734 13.27216)
-## 6      Region VI (Western Visayas) 2023 1.0242699  POINT (122.652 10.84319)
-## 7     Region VII (Central Visayas) 2023 1.3811721 POINT (123.6147 9.921139)
-## 8    Region VIII (Eastern Visayas) 2023 0.5235611 POINT (124.9534 11.53574)
-## 9  Region IX (Zamboanga Peninsula) 2023 0.4473210 POINT (122.8477 7.825902)
-## 10    Region X (Northern Mindanao) 2023 0.9847503 POINT (124.6742 8.187355)</code></pre>
+##                             region Year       GDP
+## 1         Region I (Ilocos Region) 2023 0.7014687
+## 2       Region II (Cagayan Valley) 2023 0.4470732
+## 3       Region III (Central Luzon) 2023 2.3184283
+## 4         Region IV-A (CALABARZON) 2023 3.0952557
+## 5          Region V (Bicol Region) 2023 0.6103399
+## 6      Region VI (Western Visayas) 2023 1.0242699
+## 7     Region VII (Central Visayas) 2023 1.3811721
+## 8    Region VIII (Eastern Visayas) 2023 0.5235611
+## 9  Region IX (Zamboanga Peninsula) 2023 0.4473210
+## 10    Region X (Northern Mindanao) 2023 0.9847503
+##                     geometry
+## 1  POINT (120.4827 16.90283)
+## 2  POINT (121.7316 17.20396)
+## 3   POINT (120.8223 15.3919)
+## 4   POINT (121.568 14.16225)
+## 5  POINT (123.4734 13.27216)
+## 6   POINT (122.652 10.84319)
+## 7  POINT (123.6147 9.921139)
+## 8  POINT (124.9534 11.53574)
+## 9  POINT (122.8477 7.825902)
+## 10 POINT (124.6742 8.187355)</code></pre>
 <p>We now create our Bubble Map</p>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="advanced-visualizations.html#cb257-1" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
 <span id="cb257-2"><a href="advanced-visualizations.html#cb257-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>rgdp2023, <span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span><span class="co">#base map</span></span>
@@ -943,7 +1041,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb257-13"><a href="advanced-visualizations.html#cb257-13" tabindex="-1"></a>       <span class="at">x=</span><span class="st">&quot;Coordinates&quot;</span>,</span>
 <span id="cb257-14"><a href="advanced-visualizations.html#cb257-14" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Coordinates&quot;</span>)<span class="sc">+</span></span>
 <span id="cb257-15"><a href="advanced-visualizations.html#cb257-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-184-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-187-1.png" alt="" width="672" /></p>
 <p>As you can see, the base map is drawn using <code>geom_sf()</code> then the bubbles represent the GDP values. The bubble size and color represent GDP magnitude.</p>
 <p>You will notice that <code>ggplot()</code> is empty, this creates an empty ggplot canvas where the map layers will be added using the <code>geom_sf</code>.</p>
 <p>In the <code>aes</code> there’s <code>x = st_coordinates(geometry)[,1]</code> same for y. These extract the longitude and latitude of each centroid.</p>
@@ -960,8 +1058,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="advanced-visualizations.html#cb258-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;rgdp_map&quot;</span>))</span>
 <span id="cb258-2"><a href="advanced-visualizations.html#cb258-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  4663968 249.1    7314684  390.7   7314684  390.7
-## Vcells 36335081 277.3  163668003 1248.7 245517968 1873.2</code></pre>
+## Ncells  4038935 215.8    7240020  386.7   7240020  386.7
+## Vcells 34996117 267.0  174826126 1333.9 218532577 1667.3</code></pre>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="advanced-visualizations.html#cb260-1" tabindex="-1"></a><span class="co">#for mp4</span></span>
 <span id="cb260-2"><a href="advanced-visualizations.html#cb260-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(av)) <span class="fu">install.packages</span>(<span class="st">&quot;av&quot;</span>)</span>
 <span id="cb260-3"><a href="advanced-visualizations.html#cb260-3" tabindex="-1"></a><span class="fu">library</span>(av)</span></code></pre></div>

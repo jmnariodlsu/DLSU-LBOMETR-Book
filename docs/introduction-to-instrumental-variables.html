@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -458,10 +458,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="running-iv-regression" class="section level4 hasAnchor" number="14.0.1.2">
 <h4><span class="header-section-number">14.0.1.2</span> Running IV regression<a href="introduction-to-instrumental-variables.html#running-iv-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="introduction-to-instrumental-variables.html#cb398-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
-<span id="cb398-2"><a href="introduction-to-instrumental-variables.html#cb398-2" tabindex="-1"></a>ivmodel<span class="ot">&lt;-</span><span class="fu">ivreg</span>(wage<span class="sc">~</span>educ_iv <span class="sc">|</span> instrument, <span class="at">data =</span> ivd)</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="introduction-to-instrumental-variables.html#cb398-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span></code></pre></div>
+<pre><code>## Loading required package: car</code></pre>
+<pre><code>## Loading required package: carData</code></pre>
+<pre><code>## 
+## Attaching package: &#39;car&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:psych&#39;:
+## 
+##     logit</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     some</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     recode</code></pre>
+<pre><code>## Loading required package: lmtest</code></pre>
+<pre><code>## Loading required package: sandwich</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="introduction-to-instrumental-variables.html#cb408-1" tabindex="-1"></a>ivmodel<span class="ot">&lt;-</span><span class="fu">ivreg</span>(wage<span class="sc">~</span>educ_iv <span class="sc">|</span> instrument, <span class="at">data =</span> ivd)</span></code></pre></div>
 <p>We use the <code>AER</code> package which has functions for instrumental variable regression. We use <code>ivreg</code> to do instrumental variable regression. Inside the parenthesis: <code>outcome ~ endogenous_var | instrument</code>. The vertical bar separates regressors from instruments.</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="introduction-to-instrumental-variables.html#cb399-1" tabindex="-1"></a><span class="fu">summary</span>(ivmodel)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="introduction-to-instrumental-variables.html#cb409-1" tabindex="-1"></a><span class="fu">summary</span>(ivmodel)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## ivreg(formula = wage ~ educ_iv | instrument, data = ivd)
@@ -471,9 +487,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -6.74777 -1.52934  0.04787  1.33048  6.78178 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value            Pr(&gt;|t|)    
-## (Intercept)  5.06622    0.21581   23.48 &lt;0.0000000000000002 ***
-## educ_iv      3.02180    0.09399   32.15 &lt;0.0000000000000002 ***
+##             Estimate Std. Error t value            Pr(&gt;|t|)
+## (Intercept)  5.06622    0.21581   23.48 &lt;0.0000000000000002
+## educ_iv      3.02180    0.09399   32.15 &lt;0.0000000000000002
+##                
+## (Intercept) ***
+## educ_iv     ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -490,7 +509,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="diagnostics" class="section level4 hasAnchor" number="14.0.1.3">
 <h4><span class="header-section-number">14.0.1.3</span> Diagnostics<a href="introduction-to-instrumental-variables.html#diagnostics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="introduction-to-instrumental-variables.html#cb401-1" tabindex="-1"></a><span class="fu">summary</span>(ivmodel, <span class="at">diagnostics=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="introduction-to-instrumental-variables.html#cb411-1" tabindex="-1"></a><span class="fu">summary</span>(ivmodel, <span class="at">diagnostics=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## ivreg(formula = wage ~ educ_iv | instrument, data = ivd)
@@ -500,9 +519,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -6.74777 -1.52934  0.04787  1.33048  6.78178 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value            Pr(&gt;|t|)    
-## (Intercept)  5.06622    0.21581   23.48 &lt;0.0000000000000002 ***
-## educ_iv      3.02180    0.09399   32.15 &lt;0.0000000000000002 ***
+##             Estimate Std. Error t value            Pr(&gt;|t|)
+## (Intercept)  5.06622    0.21581   23.48 &lt;0.0000000000000002
+## educ_iv      3.02180    0.09399   32.15 &lt;0.0000000000000002
+##                
+## (Intercept) ***
+## educ_iv     ***
 ## 
 ## Diagnostic tests:
 ##                  df1 df2 statistic             p-value    

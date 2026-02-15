@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -503,9 +503,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Note</strong>: we will use the <strong><code>cat()</code></strong> function today. The <strong><code>cat()</code></strong> function is used for printing or concatenating objects to the console. It is primarily used to display text, numbers, or other R objects on the screen or to write them to a file. The name “cat” stands for “concatenate” or “concatenation,” as the function can be used to combine and display multiple objects.</p>
 <div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="ordinary-least-squares.html#cb349-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;sample&quot;</span>))</span>
 <span id="cb349-2"><a href="ordinary-least-squares.html#cb349-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells  4648132 248.3    7314684 390.7   7314684  390.7
-## Vcells 10243245  78.2   67038416 511.5 245517968 1873.2</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells 4027071 215.1    7240020 386.7   7240020  386.7
+## Vcells 8913203  68.1   89510977 683.0 218532577 1667.3</code></pre>
 <div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="ordinary-least-squares.html#cb351-1" tabindex="-1"></a><span class="co"># Generate example data</span></span>
 <span id="cb351-2"><a href="ordinary-least-squares.html#cb351-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb351-3"><a href="ordinary-least-squares.html#cb351-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
@@ -519,7 +519,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb351-11"><a href="ordinary-least-squares.html#cb351-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Scatterplot of Simulated Data&quot;</span>,</span>
 <span id="cb351-12"><a href="ordinary-least-squares.html#cb351-12" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;X&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-243-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-246-1.png" alt="" width="672" /></p>
 <div id="the-notation" class="section level3 hasAnchor" number="13.3.1">
 <h3><span class="header-section-number">13.3.1</span> The notation<a href="ordinary-least-squares.html#the-notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="ordinary-least-squares.html#cb353-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Linear Regression Notation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
@@ -570,9 +570,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -4.5116 -1.1157 -0.1313  1.0985  4.3723 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value            Pr(&gt;|t|)    
-## (Intercept)  -0.2847     0.5442  -0.523               0.603    
-## x             2.0764     0.0913  22.743 &lt;0.0000000000000002 ***
+##             Estimate Std. Error t value            Pr(&gt;|t|)
+## (Intercept)  -0.2847     0.5442  -0.523               0.603
+## x             2.0764     0.0913  22.743 &lt;0.0000000000000002
+##                
+## (Intercept)    
+## x           ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -592,7 +595,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="goodness-of-fit-f-statistics-and-adjusted-r-squared" class="section level2 hasAnchor" number="13.6">
 <h2><span class="header-section-number">13.6</span> Goodness of Fit (F-Statistics and Adjusted R-squared)<a href="ordinary-least-squares.html#goodness-of-fit-f-statistics-and-adjusted-r-squared" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The null hypothesis (H0) for the F-test is that all coefficients in the model are equal to zero, meaning that none of the independent variables (wt and cyl) have any effect on the dependent variable. The small p-value (&lt;0.05) means we can reject the null hypothesis.</p>
+<p>The null hypothesis (H0) for the F-test is that all coefficients in the model are equal to zero, meaning that none of the independent variable/s have any effect on the dependent variable. The small p-value (&lt;0.05) means we can reject the null hypothesis.</p>
 <p><strong>Note</strong>: to extract p-value of F-statistic you have to use the function pf() that gives the area, for the F distribution, to the left of the value x for two given degrees of freedom, df1 and df2.</p>
 <div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="ordinary-least-squares.html#cb373-1" tabindex="-1"></a><span class="co"># Adjusted R-squared</span></span>
 <span id="cb373-2"><a href="ordinary-least-squares.html#cb373-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared: &quot;</span>, <span class="fu">summary</span>(model)<span class="sc">$</span>adj.r.squared, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
@@ -645,7 +648,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="ordinary-least-squares.html#cb379-1" tabindex="-1"></a><span class="co"># Check OLS assumptions</span></span>
 <span id="cb379-2"><a href="ordinary-least-squares.html#cb379-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb379-3"><a href="ordinary-least-squares.html#cb379-3" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-248-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-251-1.png" alt="" width="672" /></p>
 </div>
 <div id="real-world-example-3" class="section level2 hasAnchor" number="13.8">
 <h2><span class="header-section-number">13.8</span> Real-World Example<a href="ordinary-least-squares.html#real-world-example-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -667,7 +670,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb382-5"><a href="ordinary-least-squares.html#cb382-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Scatterplot of Wage Data&quot;</span>,</span>
 <span id="cb382-6"><a href="ordinary-least-squares.html#cb382-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Education&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wage&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-250-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-253-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="ordinary-least-squares.html#cb384-1" tabindex="-1"></a><span class="co"># Fit an OLS regression model</span></span>
 <span id="cb384-2"><a href="ordinary-least-squares.html#cb384-2" tabindex="-1"></a>model<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ, <span class="at">data=</span>sample_sub)</span>
 <span id="cb384-3"><a href="ordinary-least-squares.html#cb384-3" tabindex="-1"></a></span>
@@ -682,9 +685,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -5.3396 -2.1501 -0.9674  1.1921 16.6085 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value            Pr(&gt;|t|)    
-## (Intercept) -0.90485    0.68497  -1.321               0.187    
-## educ         0.54136    0.05325  10.167 &lt;0.0000000000000002 ***
+##             Estimate Std. Error t value            Pr(&gt;|t|)
+## (Intercept) -0.90485    0.68497  -1.321               0.187
+## educ         0.54136    0.05325  10.167 &lt;0.0000000000000002
+##                
+## (Intercept)    
+## educ        ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -716,7 +722,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="ordinary-least-squares.html#cb396-1" tabindex="-1"></a><span class="co"># Check OLS assumptions</span></span>
 <span id="cb396-2"><a href="ordinary-least-squares.html#cb396-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb396-3"><a href="ordinary-least-squares.html#cb396-3" tabindex="-1"></a><span class="fu">plot</span>(model<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-254-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-257-1.png" alt="" width="672" /></p>
 </div>
 </div>
 <div id="detecting-endogeneity" class="section level2 hasAnchor" number="13.9">

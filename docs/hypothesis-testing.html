@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-06" />
+<meta name="date" content="2026-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -506,7 +506,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A government report claims that 8% of the labor force is unemployed. We collect a sample of 500 workers and find that 50 are unemployed. Is the actual unemployment rate significantly different from 8%?</p>
 <div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="hypothesis-testing.html#cb311-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  1-sample proportions test without continuity correction
+##  1-sample proportions test without continuity
+##  correction
 ## 
 ## data:  50 out of 500, null probability 0.08
 ## X-squared = 2.7174, df = 1, p-value = 0.09926
@@ -524,7 +525,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we believe the true unemployment rate is higher than 8%</p>
 <div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="hypothesis-testing.html#cb313-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  1-sample proportions test without continuity correction
+##  1-sample proportions test without continuity
+##  correction
 ## 
 ## data:  50 out of 500, null probability 0.08
 ## X-squared = 2.7174, df = 1, p-value = 0.04963
@@ -538,7 +540,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we believe the true unemployment rate is lower than 8%</p>
 <div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="hypothesis-testing.html#cb315-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">n =</span> <span class="dv">500</span>, <span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  1-sample proportions test without continuity correction
+##  1-sample proportions test without continuity
+##  correction
 ## 
 ## data:  50 out of 500, null probability 0.08
 ## X-squared = 2.7174, df = 1, p-value = 0.9504
@@ -562,7 +565,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We test whether the employment rates are significantly different.</p>
 <div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="hypothesis-testing.html#cb317-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  2-sample test for equality of proportions without continuity correction
+##  2-sample test for equality of proportions without
+##  continuity correction
 ## 
 ## data:  c(450, 420) out of c(500, 500)
 ## X-squared = 7.9576, df = 1, p-value = 0.004789
@@ -581,7 +585,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we believe urban employment rate is higher than rural:</p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="hypothesis-testing.html#cb319-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  2-sample test for equality of proportions without continuity correction
+##  2-sample test for equality of proportions without
+##  continuity correction
 ## 
 ## data:  c(450, 420) out of c(500, 500)
 ## X-squared = 7.9576, df = 1, p-value = 0.002394
@@ -594,7 +599,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If we believe urban employment rate is lower than rural:</p>
 <div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="hypothesis-testing.html#cb321-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">450</span>, <span class="dv">420</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>), <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  2-sample test for equality of proportions without continuity correction
+##  2-sample test for equality of proportions without
+##  continuity correction
 ## 
 ## data:  c(450, 420) out of c(500, 500)
 ## X-squared = 7.9576, df = 1, p-value = 0.9976
@@ -615,7 +621,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Is the proportion of female workers greater than 50%?</p>
 <div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="hypothesis-testing.html#cb325-1" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">sum</span>(sample<span class="sc">$</span>female), <span class="fu">nrow</span>(sample), <span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
-##  1-sample proportions test without continuity correction
+##  1-sample proportions test without continuity
+##  correction
 ## 
 ## data:  sum(sample$female) out of nrow(sample), null probability 0.5
 ## X-squared = 0.92015, df = 1, p-value = 0.8313
@@ -713,7 +720,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  F test to compare two variances
 ## 
 ## data:  male_wage and female_wage
-## F = 1.5057, num df = 49, denom df = 49, p-value = 0.1556
+## F = 1.5057, num df = 49, denom df = 49, p-value =
+## 0.1556
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
 ##  0.8544445 2.6533137
@@ -732,7 +740,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  F test to compare two variances
 ## 
 ## data:  sample$wage[sample$female == 1] and sample$wage[wage1$female == 0]
-## F = 0.36954, num df = 251, denom df = 273, p-value = 0.000000000000004813
+## F = 0.36954, num df = 251, denom df = 273, p-value =
+## 0.000000000000004813
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
 ##  0.2900223 0.4714405
@@ -806,7 +815,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This is often used in surveys or panel data with categorical outcomes. Example, Is marital status associated with working in trade?</p>
 <div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="hypothesis-testing.html#cb343-1" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(sample<span class="sc">$</span>married, sample<span class="sc">$</span>trade))</span></code></pre></div>
 <pre><code>## 
-##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity
+##  correction
 ## 
 ## data:  table(sample$married, sample$trade)
 ## X-squared = 9.2022, df = 1, p-value = 0.002417</code></pre>
