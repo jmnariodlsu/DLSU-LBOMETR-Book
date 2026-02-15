@@ -445,9 +445,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Always remember the first steps: Set Working Directory and Clean the Global Environment.</strong></p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="data-management---time-series-and-panel-data.html#cb79-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb79-2"><a href="data-management---time-series-and-panel-data.html#cb79-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells 4007014 214.0    7240020 386.7   7240020  386.7
-## Vcells 8860224  67.6   66614080 508.3 218319393 1665.7</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 3165374 169.1    5173005 276.3  5173005 276.3
+## Vcells 6228023  47.6   12255594  93.6 10624508  81.1</code></pre>
 <p>To make sure that you are using the correct directory and that you have all the files you need, use <code>list.files()</code> function.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-management---time-series-and-panel-data.html#cb81-1" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <p>Now, we load the following packages: <code>dplyr</code>, <code>lubridate</code>, and <code>zoo</code>. Make sure you have all 3 installed; if not, install them.</p>
@@ -698,34 +698,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 13 1983     0     0   1        0   0     4   0    0
 ## 5 13 1984     0     0   0        0   0     5   0    0
 ## 6 13 1985     0     0   1        0   0     6   0    0
-##   poorhlth hours manuf married min nrthcen nrtheast occ1 occ2
-## 1        0  2672     0       0   0       0        1    0    0
-## 2        0  2320     0       0   0       0        1    0    0
-## 3        0  2940     0       0   0       0        1    0    0
-## 4        0  2960     0       0   0       0        1    0    0
-## 5        0  3071     0       0   0       0        1    0    0
-## 6        0  2864     0       0   0       0        1    0    1
-##   occ3 occ4 occ5 occ6 occ7 occ8 occ9 per pro pub rur south
-## 1    0    0    0    0    0    0    1   0   0   0   0     0
-## 2    0    0    0    0    0    0    1   1   0   0   0     0
-## 3    0    0    0    0    0    0    1   0   0   0   0     0
-## 4    0    0    0    0    0    0    1   0   0   0   0     0
-## 5    0    0    1    0    0    0    0   1   0   0   0     0
-## 6    0    0    0    0    0    0    0   0   0   0   0     0
-##   educ tra trad union    lwage d81 d82 d83 d84 d85 d86 d87
-## 1   14   0    0     0 1.197540   0   0   0   0   0   0   0
-## 2   14   0    0     1 1.853060   1   0   0   0   0   0   0
-## 3   14   0    0     0 1.344462   0   1   0   0   0   0   0
-## 4   14   0    0     0 1.433213   0   0   1   0   0   0   0
-## 5   14   0    0     0 1.568125   0   0   0   1   0   0   0
-## 6   14   0    0     0 1.699891   0   0   0   0   1   0   0
-##   expersq
-## 1       1
-## 2       4
-## 3       9
-## 4      16
-## 5      25
-## 6      36</code></pre>
+##   poorhlth hours manuf married min nrthcen nrtheast occ1
+## 1        0  2672     0       0   0       0        1    0
+## 2        0  2320     0       0   0       0        1    0
+## 3        0  2940     0       0   0       0        1    0
+## 4        0  2960     0       0   0       0        1    0
+## 5        0  3071     0       0   0       0        1    0
+## 6        0  2864     0       0   0       0        1    0
+##   occ2 occ3 occ4 occ5 occ6 occ7 occ8 occ9 per pro pub rur
+## 1    0    0    0    0    0    0    0    1   0   0   0   0
+## 2    0    0    0    0    0    0    0    1   1   0   0   0
+## 3    0    0    0    0    0    0    0    1   0   0   0   0
+## 4    0    0    0    0    0    0    0    1   0   0   0   0
+## 5    0    0    0    1    0    0    0    0   1   0   0   0
+## 6    1    0    0    0    0    0    0    0   0   0   0   0
+##   south educ tra trad union    lwage d81 d82 d83 d84 d85 d86
+## 1     0   14   0    0     0 1.197540   0   0   0   0   0   0
+## 2     0   14   0    0     1 1.853060   1   0   0   0   0   0
+## 3     0   14   0    0     0 1.344462   0   1   0   0   0   0
+## 4     0   14   0    0     0 1.433213   0   0   1   0   0   0
+## 5     0   14   0    0     0 1.568125   0   0   0   1   0   0
+## 6     0   14   0    0     0 1.699891   0   0   0   0   1   0
+##   d87 expersq
+## 1   0       1
+## 2   0       4
+## 3   0       9
+## 4   0      16
+## 5   0      25
+## 6   0      36</code></pre>
 </div>
 <div id="checking-panel-balance" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Checking Panel Balance<a href="data-management---time-series-and-panel-data.html#checking-panel-balance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -762,9 +762,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   hours &lt;int&gt;, manuf &lt;int&gt;, married &lt;int&gt;, min &lt;int&gt;,
 ## #   nrthcen &lt;int&gt;, nrtheast &lt;int&gt;, occ1 &lt;int&gt;, occ2 &lt;int&gt;,
 ## #   occ3 &lt;int&gt;, occ4 &lt;int&gt;, occ5 &lt;int&gt;, occ6 &lt;int&gt;,
-## #   occ7 &lt;int&gt;, occ8 &lt;int&gt;, occ9 &lt;int&gt;, per &lt;int&gt;, pro &lt;int&gt;,
-## #   pub &lt;int&gt;, rur &lt;int&gt;, south &lt;int&gt;, educ &lt;int&gt;, tra &lt;int&gt;,
-## #   trad &lt;int&gt;, union &lt;int&gt;, lwage &lt;dbl&gt;, d81 &lt;int&gt;, …</code></pre>
+## #   occ7 &lt;int&gt;, occ8 &lt;int&gt;, occ9 &lt;int&gt;, per &lt;int&gt;,
+## #   pro &lt;int&gt;, pub &lt;int&gt;, rur &lt;int&gt;, south &lt;int&gt;,
+## #   educ &lt;int&gt;, tra &lt;int&gt;, trad &lt;int&gt;, union &lt;int&gt;, …</code></pre>
 <p>It is important to do <code>group_by</code> because each individual has their own time line and the lags stay within individuals. Therefore, what this does is treating each individual as separate time series.</p>
 </div>
 <div id="missing-data-in-panels" class="section level3 hasAnchor" number="7.2.4">

@@ -483,9 +483,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-3"><a href="data-management---cross-sectional-data.html#cb17-3" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="data-management---cross-sectional-data.html#cb17-4" tabindex="-1"></a><span class="co"># Perform garbage collection to free up memory</span></span>
 <span id="cb17-5"><a href="data-management---cross-sectional-data.html#cb17-5" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells 4007295 214.1    7240020 386.7   7240020  386.7
-## Vcells 8857754  67.6   83267600 635.3 218319393 1665.7</code></pre>
+<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 3112258 166.3    5173005 276.3  5173005 276.3
+## Vcells 6108317  46.7   12255594  93.6  9035397  69.0</code></pre>
 </div>
 <div id="importing-the-datasets" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Importing the Datasets<a href="data-management---cross-sectional-data.html#importing-the-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -596,27 +596,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4     Some tension      No tension                3
 ## 5       Don”t know    Some tension                2
 ## 6     Some tension    Some tension                2
-##   Q25e_TensionRace Q25f_TensionReligion Q25g_TensionSexOrient
-## 1     Some tension           No tension            No tension
-## 2     Some tension         Some tension      A lot of tension
-## 3 A lot of tension     A lot of tension          Some tension
-## 4     Some tension         Some tension            No tension
-## 5       Don”t know           Don”t know            Don”t know
-## 6     Some tension         Some tension          Some tension
-##   Q37a_HoursWeekChildren Q37b_HoursWeekHousework
-## 1                      2                      14
-## 2                     NA                       7
-## 3                     NA                      14
-## 4                      5                      NA
-## 5                     NA                      NA
-## 6                     NA                      20
-##   Q37c_HoursWeekElderly Q48_Education               Q49_Area
-## 1                    NA          1250 A medium to large town
-## 2                    NA          2956  A city or city suburb
-## 3                     3          2963 A medium to large town
-## 4                    NA          3420 A medium to large town
-## 5                    NA          1253  A city or city suburb
-## 6                    NA          3530 A medium to large town
+##   Q25e_TensionRace Q25f_TensionReligion
+## 1     Some tension           No tension
+## 2     Some tension         Some tension
+## 3 A lot of tension     A lot of tension
+## 4     Some tension         Some tension
+## 5       Don”t know           Don”t know
+## 6     Some tension         Some tension
+##   Q25g_TensionSexOrient Q37a_HoursWeekChildren
+## 1            No tension                      2
+## 2      A lot of tension                     NA
+## 3          Some tension                     NA
+## 4            No tension                      5
+## 5            Don”t know                     NA
+## 6          Some tension                     NA
+##   Q37b_HoursWeekHousework Q37c_HoursWeekElderly
+## 1                      14                    NA
+## 2                       7                    NA
+## 3                      14                     3
+## 4                      NA                    NA
+## 5                      NA                    NA
+## 6                      20                    NA
+##   Q48_Education               Q49_Area
+## 1          1250 A medium to large town
+## 2          2956  A city or city suburb
+## 3          2963 A medium to large town
+## 4          3420 A medium to large town
+## 5          1253  A city or city suburb
+## 6          3530 A medium to large town
 ##   Q50a_NeighbourhoodNoise Q50b_NeighbourhoodAir
 ## 1             No problems           No problems
 ## 2             No problems           No problems
@@ -995,27 +1002,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We will join the datasets by <code>age_group</code> variable, since that is consistent across both datasets. We name the new file as <code>ch2_p1merged</code>:</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-management---cross-sectional-data.html#cb65-1" tabindex="-1"></a>ch2_p1merged<span class="ot">&lt;-</span><span class="fu">merge</span>(<span class="at">x=</span>ch2_p1<span class="fl">.1</span>, <span class="at">y=</span>ch2_p1<span class="fl">.1</span>ave, <span class="at">by=</span><span class="st">&quot;age_group&quot;</span>)</span>
 <span id="cb65-2"><a href="data-management---cross-sectional-data.html#cb65-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p1merged)</span></code></pre></div>
-<pre><code>##   age_group  country        id    sex age paid_job hours_work
-## 1     adult Bulgaria BG1535216 Female  56        1         NA
-## 2     adult  Hungary HU1042815   Male  39        0         NA
-## 3     adult   Poland PL1229721 Female  47       NA         40
-## 4     adult  Germany DE1045717 Female  56        1         NA
-## 5     adult  Finland FI1024310   Male  58       NA         32
-## 6     adult Slovakia SK1184115 Female  44       NA         43
-##   rooms                   area    income  room_group
-## 1     3 A medium to large town        NA three_rooms
-## 2     2   A village/small town  987.0490   two_rooms
-## 3     4   A village/small town 1722.0737  four_rooms
-## 4     3  A city or city suburb        NA three_rooms
-## 5     5 A medium to large town 3958.9271  five_rooms
-## 6     2 A medium to large town  759.6961   two_rooms
-##   ave_income
-## 1   2145.059
-## 2   2145.059
-## 3   2145.059
-## 4   2145.059
-## 5   2145.059
-## 6   2145.059</code></pre>
+<pre><code>##   age_group  country        id    sex age paid_job
+## 1     adult Bulgaria BG1535216 Female  56        1
+## 2     adult  Hungary HU1042815   Male  39        0
+## 3     adult   Poland PL1229721 Female  47       NA
+## 4     adult  Germany DE1045717 Female  56        1
+## 5     adult  Finland FI1024310   Male  58       NA
+## 6     adult Slovakia SK1184115 Female  44       NA
+##   hours_work rooms                   area    income
+## 1         NA     3 A medium to large town        NA
+## 2         NA     2   A village/small town  987.0490
+## 3         40     4   A village/small town 1722.0737
+## 4         NA     3  A city or city suburb        NA
+## 5         32     5 A medium to large town 3958.9271
+## 6         43     2 A medium to large town  759.6961
+##    room_group ave_income
+## 1 three_rooms   2145.059
+## 2   two_rooms   2145.059
+## 3  four_rooms   2145.059
+## 4 three_rooms   2145.059
+## 5  five_rooms   2145.059
+## 6   two_rooms   2145.059</code></pre>
 </div>
 <div id="splitting-datasets" class="section level3 hasAnchor" number="6.3.9">
 <h3><span class="header-section-number">6.3.9</span> Splitting datasets<a href="data-management---cross-sectional-data.html#splitting-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1042,14 +1049,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb69-9"><a href="data-management---cross-sectional-data.html#cb69-9" tabindex="-1"></a>  )</span>
 <span id="cb69-10"><a href="data-management---cross-sectional-data.html#cb69-10" tabindex="-1"></a><span class="fu">head</span>(ch2_long)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 11
-##   country    id    sex     age paid_job rooms area  room_group
-##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
-## 1 Bulgaria   BG15… Fema…    56        1     3 A me… three_roo…
-## 2 Bulgaria   BG15… Fema…    56        1     3 A me… three_roo…
-## 3 Netherlan… NL51… Fema…    20        1     1 A ci… one_room  
-## 4 Netherlan… NL51… Fema…    20        1     1 A ci… one_room  
-## 5 Netherlan… NL50… Male     63        1     6 A me… six_rooms 
-## 6 Netherlan… NL50… Male     63        1     6 A me… six_rooms 
+##   country   id    sex     age paid_job rooms area  room_group
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
+## 1 Bulgaria  BG15… Fema…    56        1     3 A me… three_roo…
+## 2 Bulgaria  BG15… Fema…    56        1     3 A me… three_roo…
+## 3 Netherla… NL51… Fema…    20        1     1 A ci… one_room  
+## 4 Netherla… NL51… Fema…    20        1     1 A ci… one_room  
+## 5 Netherla… NL50… Male     63        1     6 A me… six_rooms 
+## 6 Netherla… NL50… Male     63        1     6 A me… six_rooms 
 ## # ℹ 3 more variables: age_group &lt;chr&gt;, variable &lt;chr&gt;,
 ## #   value &lt;dbl&gt;</code></pre>
 <p><code>pivot_longer()</code> turns columns into rows</p>
@@ -1063,14 +1070,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb71-5"><a href="data-management---cross-sectional-data.html#cb71-5" tabindex="-1"></a>  )</span>
 <span id="cb71-6"><a href="data-management---cross-sectional-data.html#cb71-6" tabindex="-1"></a><span class="fu">head</span>(ch2_wide)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 11
-##   country    id    sex     age paid_job rooms area  room_group
-##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
-## 1 Bulgaria   BG15… Fema…    56        1     3 A me… three_roo…
-## 2 Netherlan… NL51… Fema…    20        1     1 A ci… one_room  
-## 3 Netherlan… NL50… Male     63        1     6 A me… six_rooms 
-## 4 Slovenia   SI10… Male     63       NA     3 A me… three_roo…
-## 5 Bulgaria   BG13… Male     89        1     1 A ci… one_room  
-## 6 Slovakia   SK11… Fema…    44       NA     2 A me… two_rooms 
+##   country   id    sex     age paid_job rooms area  room_group
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
+## 1 Bulgaria  BG15… Fema…    56        1     3 A me… three_roo…
+## 2 Netherla… NL51… Fema…    20        1     1 A ci… one_room  
+## 3 Netherla… NL50… Male     63        1     6 A me… six_rooms 
+## 4 Slovenia  SI10… Male     63       NA     3 A me… three_roo…
+## 5 Bulgaria  BG13… Male     89        1     1 A ci… one_room  
+## 6 Slovakia  SK11… Fema…    44       NA     2 A me… two_rooms 
 ## # ℹ 3 more variables: age_group &lt;chr&gt;, hours_work &lt;dbl&gt;,
 ## #   income &lt;dbl&gt;</code></pre>
 <p>Say you want to analyze repeated categories or measures. We can pivot the <code>room_group</code> and <code>age_group</code> to long:</p>
@@ -1082,14 +1089,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb73-6"><a href="data-management---cross-sectional-data.html#cb73-6" tabindex="-1"></a>  )</span>
 <span id="cb73-7"><a href="data-management---cross-sectional-data.html#cb73-7" tabindex="-1"></a><span class="fu">head</span>(ch2_long2)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 11
-##   country    id    sex     age paid_job hours_work rooms area 
-##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;      &lt;int&gt; &lt;int&gt; &lt;chr&gt;
-## 1 Bulgaria   BG15… Fema…    56        1         NA     3 A me…
-## 2 Bulgaria   BG15… Fema…    56        1         NA     3 A me…
-## 3 Netherlan… NL51… Fema…    20        1         NA     1 A ci…
-## 4 Netherlan… NL51… Fema…    20        1         NA     1 A ci…
-## 5 Netherlan… NL50… Male     63        1         NA     6 A me…
-## 6 Netherlan… NL50… Male     63        1         NA     6 A me…
+##   country   id    sex     age paid_job hours_work rooms area 
+##   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;      &lt;int&gt; &lt;int&gt; &lt;chr&gt;
+## 1 Bulgaria  BG15… Fema…    56        1         NA     3 A me…
+## 2 Bulgaria  BG15… Fema…    56        1         NA     3 A me…
+## 3 Netherla… NL51… Fema…    20        1         NA     1 A ci…
+## 4 Netherla… NL51… Fema…    20        1         NA     1 A ci…
+## 5 Netherla… NL50… Male     63        1         NA     6 A me…
+## 6 Netherla… NL50… Male     63        1         NA     6 A me…
 ## # ℹ 3 more variables: income &lt;dbl&gt;, category &lt;chr&gt;,
 ## #   group &lt;chr&gt;</code></pre>
 </div>

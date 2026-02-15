@@ -437,11 +437,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="descriptive-statistics-continuation" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">11</span> Descriptive Statistics Continuation<a href="descriptive-statistics-continuation.html#descriptive-statistics-continuation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>For this section, we use built-in datasets in R.</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="descriptive-statistics-continuation.html#cb289-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb289-2"><a href="descriptive-statistics-continuation.html#cb289-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="descriptive-statistics-continuation.html#cb323-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb323-2"><a href="descriptive-statistics-continuation.html#cb323-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
 <pre><code>##           used  (Mb) gc trigger  (Mb)  max used   (Mb)
-## Ncells 4025400 215.0    7240020 386.7   7240020  386.7
-## Vcells 8960036  68.4  111888721 853.7 218532577 1667.3</code></pre>
+## Ncells 4040357 215.8    6548841 349.8   6548841  349.8
+## Vcells 8900232  68.0   99463268 758.9 202265969 1543.2</code></pre>
 <div id="built-in-datasets" class="section level5 hasAnchor" number="11.0.0.0.1">
 <h5><span class="header-section-number">11.0.0.0.1</span> Built-in Datasets<a href="descriptive-statistics-continuation.html#built-in-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The packages you download sometimes have datasets built-in them to serve as practice.</p>
@@ -449,29 +449,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="install-packages-2" class="section level5 hasAnchor" number="11.0.0.0.2">
 <h5><span class="header-section-number">11.0.0.0.2</span> Install Packages<a href="descriptive-statistics-continuation.html#install-packages-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Some of the packages are already installed; but, just in case, they are included in the code chunk.</p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="descriptive-statistics-continuation.html#cb291-1" tabindex="-1"></a>ch7p <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb291-2"><a href="descriptive-statistics-continuation.html#cb291-2" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span>,</span>
-<span id="cb291-3"><a href="descriptive-statistics-continuation.html#cb291-3" tabindex="-1"></a>  <span class="st">&quot;psych&quot;</span>,</span>
-<span id="cb291-4"><a href="descriptive-statistics-continuation.html#cb291-4" tabindex="-1"></a>  <span class="st">&quot;plm&quot;</span>,</span>
-<span id="cb291-5"><a href="descriptive-statistics-continuation.html#cb291-5" tabindex="-1"></a>  <span class="st">&quot;AER&quot;</span>,</span>
-<span id="cb291-6"><a href="descriptive-statistics-continuation.html#cb291-6" tabindex="-1"></a>  <span class="st">&quot;lmtest&quot;</span>,</span>
-<span id="cb291-7"><a href="descriptive-statistics-continuation.html#cb291-7" tabindex="-1"></a>  <span class="st">&quot;sandwich&quot;</span>,</span>
-<span id="cb291-8"><a href="descriptive-statistics-continuation.html#cb291-8" tabindex="-1"></a>  <span class="st">&quot;forecast&quot;</span>,</span>
-<span id="cb291-9"><a href="descriptive-statistics-continuation.html#cb291-9" tabindex="-1"></a>  <span class="st">&quot;wooldridge&quot;</span></span>
-<span id="cb291-10"><a href="descriptive-statistics-continuation.html#cb291-10" tabindex="-1"></a>)</span>
-<span id="cb291-11"><a href="descriptive-statistics-continuation.html#cb291-11" tabindex="-1"></a></span>
-<span id="cb291-12"><a href="descriptive-statistics-continuation.html#cb291-12" tabindex="-1"></a>ch7mp <span class="ot">&lt;-</span> ch7p[</span>
-<span id="cb291-13"><a href="descriptive-statistics-continuation.html#cb291-13" tabindex="-1"></a>  <span class="sc">!</span>(ch7p <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])</span>
-<span id="cb291-14"><a href="descriptive-statistics-continuation.html#cb291-14" tabindex="-1"></a>]</span>
-<span id="cb291-15"><a href="descriptive-statistics-continuation.html#cb291-15" tabindex="-1"></a></span>
-<span id="cb291-16"><a href="descriptive-statistics-continuation.html#cb291-16" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(ch7mp)) {</span>
-<span id="cb291-17"><a href="descriptive-statistics-continuation.html#cb291-17" tabindex="-1"></a>  <span class="fu">install.packages</span>(ch7mp)</span>
-<span id="cb291-18"><a href="descriptive-statistics-continuation.html#cb291-18" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="descriptive-statistics-continuation.html#cb325-1" tabindex="-1"></a>ch7p <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb325-2"><a href="descriptive-statistics-continuation.html#cb325-2" tabindex="-1"></a>  <span class="st">&quot;tidyverse&quot;</span>,</span>
+<span id="cb325-3"><a href="descriptive-statistics-continuation.html#cb325-3" tabindex="-1"></a>  <span class="st">&quot;psych&quot;</span>,</span>
+<span id="cb325-4"><a href="descriptive-statistics-continuation.html#cb325-4" tabindex="-1"></a>  <span class="st">&quot;plm&quot;</span>,</span>
+<span id="cb325-5"><a href="descriptive-statistics-continuation.html#cb325-5" tabindex="-1"></a>  <span class="st">&quot;AER&quot;</span>,</span>
+<span id="cb325-6"><a href="descriptive-statistics-continuation.html#cb325-6" tabindex="-1"></a>  <span class="st">&quot;lmtest&quot;</span>,</span>
+<span id="cb325-7"><a href="descriptive-statistics-continuation.html#cb325-7" tabindex="-1"></a>  <span class="st">&quot;sandwich&quot;</span>,</span>
+<span id="cb325-8"><a href="descriptive-statistics-continuation.html#cb325-8" tabindex="-1"></a>  <span class="st">&quot;forecast&quot;</span>,</span>
+<span id="cb325-9"><a href="descriptive-statistics-continuation.html#cb325-9" tabindex="-1"></a>  <span class="st">&quot;wooldridge&quot;</span></span>
+<span id="cb325-10"><a href="descriptive-statistics-continuation.html#cb325-10" tabindex="-1"></a>)</span>
+<span id="cb325-11"><a href="descriptive-statistics-continuation.html#cb325-11" tabindex="-1"></a></span>
+<span id="cb325-12"><a href="descriptive-statistics-continuation.html#cb325-12" tabindex="-1"></a>ch7mp <span class="ot">&lt;-</span> ch7p[</span>
+<span id="cb325-13"><a href="descriptive-statistics-continuation.html#cb325-13" tabindex="-1"></a>  <span class="sc">!</span>(ch7p <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])</span>
+<span id="cb325-14"><a href="descriptive-statistics-continuation.html#cb325-14" tabindex="-1"></a>]</span>
+<span id="cb325-15"><a href="descriptive-statistics-continuation.html#cb325-15" tabindex="-1"></a></span>
+<span id="cb325-16"><a href="descriptive-statistics-continuation.html#cb325-16" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(ch7mp)) {</span>
+<span id="cb325-17"><a href="descriptive-statistics-continuation.html#cb325-17" tabindex="-1"></a>  <span class="fu">install.packages</span>(ch7mp)</span>
+<span id="cb325-18"><a href="descriptive-statistics-continuation.html#cb325-18" tabindex="-1"></a>}</span></code></pre></div>
 <p>We list the packages we need, then, we locate the missing packages then install them. Finally, we load the libraries of the packages we installed. There will be a lot of warning messages when you install. Always double-check in the Packages list whether the packages were installed.</p>
 </div>
 <div id="load-packages" class="section level5 hasAnchor" number="11.0.0.0.3">
 <h5><span class="header-section-number">11.0.0.0.3</span> Load Packages<a href="descriptive-statistics-continuation.html#load-packages" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="descriptive-statistics-continuation.html#cb292-1" tabindex="-1"></a><span class="fu">lapply</span>(ch7p, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="descriptive-statistics-continuation.html#cb326-1" tabindex="-1"></a><span class="fu">lapply</span>(ch7p, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>The packages are listed;</p>
 </div>
 <div id="time-series-descriptive-statistics" class="section level2 hasAnchor" number="11.1">
@@ -489,18 +489,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="example" class="section level5 hasAnchor" number="11.1.0.1.1">
 <h5><span class="header-section-number">11.1.0.1.1</span> Example:<a href="descriptive-statistics-continuation.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We use the built-in <code>AirPassengers</code> dataset. This dataset is the monthly airline passenger numbers.</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="descriptive-statistics-continuation.html#cb293-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)</span>
-<span id="cb293-2"><a href="descriptive-statistics-continuation.html#cb293-2" tabindex="-1"></a>ch7.ts_data<span class="ot">&lt;-</span>AirPassengers</span>
-<span id="cb293-3"><a href="descriptive-statistics-continuation.html#cb293-3" tabindex="-1"></a>ch7.ts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb293-4"><a href="descriptive-statistics-continuation.html#cb293-4" tabindex="-1"></a>  <span class="at">Month =</span> <span class="fu">time</span>(ch7.ts_data),</span>
-<span id="cb293-5"><a href="descriptive-statistics-continuation.html#cb293-5" tabindex="-1"></a>  <span class="at">Air_Passengers =</span> <span class="fu">as.numeric</span>(ch7.ts_data)</span>
-<span id="cb293-6"><a href="descriptive-statistics-continuation.html#cb293-6" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="descriptive-statistics-continuation.html#cb327-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;AirPassengers&quot;</span>)</span>
+<span id="cb327-2"><a href="descriptive-statistics-continuation.html#cb327-2" tabindex="-1"></a>ch7.ts_data<span class="ot">&lt;-</span>AirPassengers</span>
+<span id="cb327-3"><a href="descriptive-statistics-continuation.html#cb327-3" tabindex="-1"></a>ch7.ts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb327-4"><a href="descriptive-statistics-continuation.html#cb327-4" tabindex="-1"></a>  <span class="at">Month =</span> <span class="fu">time</span>(ch7.ts_data),</span>
+<span id="cb327-5"><a href="descriptive-statistics-continuation.html#cb327-5" tabindex="-1"></a>  <span class="at">Air_Passengers =</span> <span class="fu">as.numeric</span>(ch7.ts_data)</span>
+<span id="cb327-6"><a href="descriptive-statistics-continuation.html#cb327-6" tabindex="-1"></a>)</span></code></pre></div>
 <p>The dataset is loaded through the <code>data</code> command. We are using tidyverse, it expects data frames so we have to change the object (now it is in Values) to data frame.</p>
 <p>You notice that we extracted the time; it is because we are going to plot and detect trend and seasonality. We also have the number of Air Passengers per month so we set that as numeric.</p>
 </div>
 <div id="inspect-data" class="section level5 hasAnchor" number="11.1.0.1.2">
 <h5><span class="header-section-number">11.1.0.1.2</span> Inspect data<a href="descriptive-statistics-continuation.html#inspect-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="descriptive-statistics-continuation.html#cb294-1" tabindex="-1"></a><span class="fu">str</span>(ch7.ts)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="descriptive-statistics-continuation.html#cb328-1" tabindex="-1"></a><span class="fu">str</span>(ch7.ts)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    144 obs. of  2 variables:
 ##  $ Month         : Time-Series  from 1949 to 1961: 1949 1949 1949 1949 1949 ...
 ##  $ Air_Passengers: num  112 118 132 129 121 135 148 148 136 119 ...</code></pre>
@@ -510,7 +510,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">11.1.1</span> 1. Descriptive Statistics using psych<a href="descriptive-statistics-continuation.html#descriptive-statistics-using-psych" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="use-describe-function" class="section level5 hasAnchor" number="11.1.1.0.1">
 <h5><span class="header-section-number">11.1.1.0.1</span> Use describe function<a href="descriptive-statistics-continuation.html#use-describe-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="descriptive-statistics-continuation.html#cb296-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(ch7.ts<span class="sc">$</span>Air_Passengers)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="descriptive-statistics-continuation.html#cb330-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(ch7.ts<span class="sc">$</span>Air_Passengers)</span></code></pre></div>
 <pre><code>##    vars   n  mean     sd median trimmed    mad min max range
 ## X1    1 144 280.3 119.97  265.5  271.45 133.43 104 622   518
 ##    skew kurtosis se
@@ -521,40 +521,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="plot-time-series" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> 2. Plot Time Series<a href="descriptive-statistics-continuation.html#plot-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="descriptive-statistics-continuation.html#cb298-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
-<span id="cb298-2"><a href="descriptive-statistics-continuation.html#cb298-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Month, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
-<span id="cb298-3"><a href="descriptive-statistics-continuation.html#cb298-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
-<span id="cb298-4"><a href="descriptive-statistics-continuation.html#cb298-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
-<span id="cb298-5"><a href="descriptive-statistics-continuation.html#cb298-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Smooth Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>)</span></code></pre></div>
-<pre><code>## Don&#39;t know how to automatically pick scale for object of type
-## &lt;ts&gt;. Defaulting to continuous.
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="descriptive-statistics-continuation.html#cb332-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
+<span id="cb332-2"><a href="descriptive-statistics-continuation.html#cb332-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Month, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
+<span id="cb332-3"><a href="descriptive-statistics-continuation.html#cb332-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb332-4"><a href="descriptive-statistics-continuation.html#cb332-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
+<span id="cb332-5"><a href="descriptive-statistics-continuation.html#cb332-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Smooth Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>)</span></code></pre></div>
+<pre><code>## Don&#39;t know how to automatically pick scale for object of
+## type &lt;ts&gt;. Defaulting to continuous.
 ## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-217-1.png" alt="" width="672" /></p>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-266-1.png" alt="" width="672" /></p>
 <p>Let us improve the graph;</p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="descriptive-statistics-continuation.html#cb300-1" tabindex="-1"></a>ch7.ts<span class="ot">&lt;-</span>ch7.ts <span class="sc">%&gt;%</span> </span>
-<span id="cb300-2"><a href="descriptive-statistics-continuation.html#cb300-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb300-3"><a href="descriptive-statistics-continuation.html#cb300-3" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">floor</span>(Month),</span>
-<span id="cb300-4"><a href="descriptive-statistics-continuation.html#cb300-4" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">round</span>((Month <span class="sc">-</span> year)<span class="sc">*</span><span class="dv">12</span><span class="sc">+</span><span class="dv">1</span>),</span>
-<span id="cb300-5"><a href="descriptive-statistics-continuation.html#cb300-5" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">make_date</span>(<span class="at">year=</span>year, <span class="at">month =</span> month, <span class="at">day =</span> <span class="dv">1</span>)</span>
-<span id="cb300-6"><a href="descriptive-statistics-continuation.html#cb300-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="descriptive-statistics-continuation.html#cb334-1" tabindex="-1"></a>ch7.ts<span class="ot">&lt;-</span>ch7.ts <span class="sc">%&gt;%</span> </span>
+<span id="cb334-2"><a href="descriptive-statistics-continuation.html#cb334-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb334-3"><a href="descriptive-statistics-continuation.html#cb334-3" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">floor</span>(Month),</span>
+<span id="cb334-4"><a href="descriptive-statistics-continuation.html#cb334-4" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">round</span>((Month <span class="sc">-</span> year)<span class="sc">*</span><span class="dv">12</span><span class="sc">+</span><span class="dv">1</span>),</span>
+<span id="cb334-5"><a href="descriptive-statistics-continuation.html#cb334-5" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">make_date</span>(<span class="at">year=</span>year, <span class="at">month =</span> month, <span class="at">day =</span> <span class="dv">1</span>)</span>
+<span id="cb334-6"><a href="descriptive-statistics-continuation.html#cb334-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>We round off the Month to only have the year then, we convert the decimal to months by multiplying by 12 and add 1 because January counts as month 1. Unlike what we used before, <code>as.Date</code>, we use <code>make_date</code> because unlike character strings, this time, it is numeric.</p>
 <div id="improved-plot" class="section level6 hasAnchor" number="11.1.2.0.0.1">
 <h6><span class="header-section-number">11.1.2.0.0.1</span> Improved Plot<a href="descriptive-statistics-continuation.html#improved-plot" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="descriptive-statistics-continuation.html#cb301-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
-<span id="cb301-2"><a href="descriptive-statistics-continuation.html#cb301-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
-<span id="cb301-3"><a href="descriptive-statistics-continuation.html#cb301-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
-<span id="cb301-4"><a href="descriptive-statistics-continuation.html#cb301-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
-<span id="cb301-5"><a href="descriptive-statistics-continuation.html#cb301-5" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;1 year&quot;</span>) <span class="sc">+</span></span>
-<span id="cb301-6"><a href="descriptive-statistics-continuation.html#cb301-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>,</span>
-<span id="cb301-7"><a href="descriptive-statistics-continuation.html#cb301-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb301-8"><a href="descriptive-statistics-continuation.html#cb301-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Passengers&quot;</span>)<span class="sc">+</span></span>
-<span id="cb301-9"><a href="descriptive-statistics-continuation.html#cb301-9" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="descriptive-statistics-continuation.html#cb335-1" tabindex="-1"></a><span class="fu">ggplot</span>(ch7.ts,</span>
+<span id="cb335-2"><a href="descriptive-statistics-continuation.html#cb335-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>date, <span class="at">y=</span>Air_Passengers))<span class="sc">+</span></span>
+<span id="cb335-3"><a href="descriptive-statistics-continuation.html#cb335-3" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb335-4"><a href="descriptive-statistics-continuation.html#cb335-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;loess&quot;</span>, <span class="at">color=</span><span class="st">&quot;tomato&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co">#smooth trend line</span></span>
+<span id="cb335-5"><a href="descriptive-statistics-continuation.html#cb335-5" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;1 year&quot;</span>) <span class="sc">+</span></span>
+<span id="cb335-6"><a href="descriptive-statistics-continuation.html#cb335-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;AirPassengers with Trend Line&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;From 1949 to 1961&quot;</span>,</span>
+<span id="cb335-7"><a href="descriptive-statistics-continuation.html#cb335-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb335-8"><a href="descriptive-statistics-continuation.html#cb335-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Passengers&quot;</span>)<span class="sc">+</span></span>
+<span id="cb335-9"><a href="descriptive-statistics-continuation.html#cb335-9" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-219-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="descriptive-statistics-continuation.html#cb303-1" tabindex="-1"></a><span class="co">#for base R plotting</span></span>
-<span id="cb303-2"><a href="descriptive-statistics-continuation.html#cb303-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(y <span class="sc">~</span> x)</span>
-<span id="cb303-3"><a href="descriptive-statistics-continuation.html#cb303-3" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">order</span>(x)</span>
-<span id="cb303-4"><a href="descriptive-statistics-continuation.html#cb303-4" tabindex="-1"></a><span class="fu">lines</span>(x[ord], <span class="fu">fitted</span>(fit)[ord], <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-268-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="descriptive-statistics-continuation.html#cb337-1" tabindex="-1"></a><span class="co">#for base R plotting</span></span>
+<span id="cb337-2"><a href="descriptive-statistics-continuation.html#cb337-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(y <span class="sc">~</span> x)</span>
+<span id="cb337-3"><a href="descriptive-statistics-continuation.html#cb337-3" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">order</span>(x)</span>
+<span id="cb337-4"><a href="descriptive-statistics-continuation.html#cb337-4" tabindex="-1"></a><span class="fu">lines</span>(x[ord], <span class="fu">fitted</span>(fit)[ord], <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <ul>
 <li><p><code>geom_line</code> shows raw counts of Air Passengers</p></li>
 <li><p><code>geom_smooth(method = "loess")</code> fits a smooth curve to highlight trend, ignoring short-term fluctuations</p>
@@ -568,10 +568,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="autocorrelation" class="section level3 hasAnchor" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> 3. Autocorrelation<a href="descriptive-statistics-continuation.html#autocorrelation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Detect if observations are correlated over time, which violates OLS independence assumption.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="descriptive-statistics-continuation.html#cb304-1" tabindex="-1"></a><span class="fu">acf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;ACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="descriptive-statistics-continuation.html#cb305-1" tabindex="-1"></a><span class="fu">pacf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;PACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-221-2.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="descriptive-statistics-continuation.html#cb338-1" tabindex="-1"></a><span class="fu">acf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;ACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-270-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="descriptive-statistics-continuation.html#cb339-1" tabindex="-1"></a><span class="fu">pacf</span>(ch7.ts<span class="sc">$</span>Air_Passengers, <span class="at">main=</span><span class="st">&quot;PACF: Monthly AirPassengers&quot;</span>)</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-270-2.png" alt="" width="672" /></p>
 <p>How to Interpret:</p>
 <table>
 <colgroup>
@@ -636,11 +636,11 @@ Fixed-effects OLS = controls for unobserved, time-invariant heterogeneity so use
 <div id="example-1" class="section level5 hasAnchor" number="11.2.0.0.1">
 <h5><span class="header-section-number">11.2.0.0.1</span> Example:<a href="descriptive-statistics-continuation.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We use the Grunfeld Dataset which is built-in the <code>plm</code> package that is used for Panel Data modeling</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="descriptive-statistics-continuation.html#cb306-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Grunfeld&quot;</span>, <span class="at">package=</span><span class="st">&quot;plm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="descriptive-statistics-continuation.html#cb340-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;Grunfeld&quot;</span>, <span class="at">package=</span><span class="st">&quot;plm&quot;</span>)</span></code></pre></div>
 </div>
 <div id="inspect-data-1" class="section level5 hasAnchor" number="11.2.0.0.2">
 <h5><span class="header-section-number">11.2.0.0.2</span> Inspect data<a href="descriptive-statistics-continuation.html#inspect-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="descriptive-statistics-continuation.html#cb307-1" tabindex="-1"></a><span class="fu">str</span>(Grunfeld)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="descriptive-statistics-continuation.html#cb341-1" tabindex="-1"></a><span class="fu">str</span>(Grunfeld)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    200 obs. of  5 variables:
 ##  $ firm   : int  1 1 1 1 1 1 1 1 1 1 ...
 ##  $ year   : int  1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 ...
@@ -652,26 +652,26 @@ Fixed-effects OLS = controls for unobserved, time-invariant heterogeneity so use
 <h4><span class="header-section-number">11.2.0.1</span> 1. Plot Panel Data<a href="descriptive-statistics-continuation.html#plot-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="a.-within-variation-investment-over-time-per-firm" class="section level5 hasAnchor" number="11.2.0.1.1">
 <h5><span class="header-section-number">11.2.0.1.1</span> a. Within variation: investment over time per firm<a href="descriptive-statistics-continuation.html#a.-within-variation-investment-over-time-per-firm" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="descriptive-statistics-continuation.html#cb309-1" tabindex="-1"></a><span class="fu">ggplot</span>(Grunfeld,</span>
-<span id="cb309-2"><a href="descriptive-statistics-continuation.html#cb309-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>inv, <span class="at">group=</span>firm, <span class="at">color=</span><span class="fu">factor</span>(firm)))<span class="sc">+</span></span>
-<span id="cb309-3"><a href="descriptive-statistics-continuation.html#cb309-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb309-4"><a href="descriptive-statistics-continuation.html#cb309-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Within variation: investment over time by firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Investment&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Firm&quot;</span>)<span class="sc">+</span></span>
-<span id="cb309-5"><a href="descriptive-statistics-continuation.html#cb309-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-224-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="descriptive-statistics-continuation.html#cb343-1" tabindex="-1"></a><span class="fu">ggplot</span>(Grunfeld,</span>
+<span id="cb343-2"><a href="descriptive-statistics-continuation.html#cb343-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>inv, <span class="at">group=</span>firm, <span class="at">color=</span><span class="fu">factor</span>(firm)))<span class="sc">+</span></span>
+<span id="cb343-3"><a href="descriptive-statistics-continuation.html#cb343-3" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb343-4"><a href="descriptive-statistics-continuation.html#cb343-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Within variation: investment over time by firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Year&quot;</span>, <span class="at">y=</span><span class="st">&quot;Investment&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Firm&quot;</span>)<span class="sc">+</span></span>
+<span id="cb343-5"><a href="descriptive-statistics-continuation.html#cb343-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-273-1.png" alt="" width="672" /></p>
 <ul>
 <li>Some firms show large changes but most of them show little variation. For these firms, it shows changes within the firm but for the others, not really.</li>
 </ul>
 </div>
 <div id="b.-between-variation" class="section level5 hasAnchor" number="11.2.0.1.2">
 <h5><span class="header-section-number">11.2.0.1.2</span> b. Between variation<a href="descriptive-statistics-continuation.html#b.-between-variation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="descriptive-statistics-continuation.html#cb310-1" tabindex="-1"></a>Grunfeld <span class="sc">%&gt;%</span></span>
-<span id="cb310-2"><a href="descriptive-statistics-continuation.html#cb310-2" tabindex="-1"></a>  <span class="fu">group_by</span>(firm) <span class="sc">%&gt;%</span></span>
-<span id="cb310-3"><a href="descriptive-statistics-continuation.html#cb310-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_invest =</span> <span class="fu">mean</span>(inv)) <span class="sc">%&gt;%</span></span>
-<span id="cb310-4"><a href="descriptive-statistics-continuation.html#cb310-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>firm, <span class="at">y=</span>mean_invest)) <span class="sc">+</span></span>
-<span id="cb310-5"><a href="descriptive-statistics-continuation.html#cb310-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&quot;purple&quot;</span>) <span class="sc">+</span></span>
-<span id="cb310-6"><a href="descriptive-statistics-continuation.html#cb310-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Between Variation: Average Investment by Firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Firm&quot;</span>, <span class="at">y=</span><span class="st">&quot;Avg Investment&quot;</span>)<span class="sc">+</span></span>
-<span id="cb310-7"><a href="descriptive-statistics-continuation.html#cb310-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-225-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="descriptive-statistics-continuation.html#cb344-1" tabindex="-1"></a>Grunfeld <span class="sc">%&gt;%</span></span>
+<span id="cb344-2"><a href="descriptive-statistics-continuation.html#cb344-2" tabindex="-1"></a>  <span class="fu">group_by</span>(firm) <span class="sc">%&gt;%</span></span>
+<span id="cb344-3"><a href="descriptive-statistics-continuation.html#cb344-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_invest =</span> <span class="fu">mean</span>(inv)) <span class="sc">%&gt;%</span></span>
+<span id="cb344-4"><a href="descriptive-statistics-continuation.html#cb344-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>firm, <span class="at">y=</span>mean_invest)) <span class="sc">+</span></span>
+<span id="cb344-5"><a href="descriptive-statistics-continuation.html#cb344-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">&quot;purple&quot;</span>) <span class="sc">+</span></span>
+<span id="cb344-6"><a href="descriptive-statistics-continuation.html#cb344-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Between Variation: Average Investment by Firm&quot;</span>, <span class="at">x=</span><span class="st">&quot;Firm&quot;</span>, <span class="at">y=</span><span class="st">&quot;Avg Investment&quot;</span>)<span class="sc">+</span></span>
+<span id="cb344-7"><a href="descriptive-statistics-continuation.html#cb344-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-274-1.png" alt="" width="672" /></p>
 <ul>
 <li>Shows how firms 1 and 2 have much higher average investment than the others. Unlike before, the between variation here looks at differences in average across firms, ignoring time.</li>
 </ul>

@@ -442,31 +442,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="install-packages-1" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Install Packages<a href="descriptive-statistics.html#install-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We install and load the <code>psych</code> , <code>stargazer, kableExtra</code> and <code>gtsummary</code> packages and load <code>tidyverse</code> package.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="descriptive-statistics.html#cb264-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;psych&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span>
-<span id="cb264-2"><a href="descriptive-statistics.html#cb264-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;gtsummary&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;gtsummary&quot;</span>)</span>
-<span id="cb264-3"><a href="descriptive-statistics.html#cb264-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;stargazer&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;stargazer&quot;</span>)</span>
-<span id="cb264-4"><a href="descriptive-statistics.html#cb264-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;kableExtra&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
-<span id="cb264-5"><a href="descriptive-statistics.html#cb264-5" tabindex="-1"></a></span>
-<span id="cb264-6"><a href="descriptive-statistics.html#cb264-6" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb264-7"><a href="descriptive-statistics.html#cb264-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb264-8"><a href="descriptive-statistics.html#cb264-8" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb264-9"><a href="descriptive-statistics.html#cb264-9" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb264-10"><a href="descriptive-statistics.html#cb264-10" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="descriptive-statistics.html#cb287-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;psych&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>)</span>
+<span id="cb287-2"><a href="descriptive-statistics.html#cb287-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;gtsummary&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;gtsummary&quot;</span>)</span>
+<span id="cb287-3"><a href="descriptive-statistics.html#cb287-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;stargazer&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;stargazer&quot;</span>)</span>
+<span id="cb287-4"><a href="descriptive-statistics.html#cb287-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;kableExtra&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])) <span class="fu">install.packages</span>(<span class="st">&quot;kableExtra&quot;</span>)</span>
+<span id="cb287-5"><a href="descriptive-statistics.html#cb287-5" tabindex="-1"></a></span>
+<span id="cb287-6"><a href="descriptive-statistics.html#cb287-6" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:scales&#39;:
+## 
+##     alpha, rescale</code></pre>
+<pre><code>## The following object is masked from &#39;package:car&#39;:
+## 
+##     logit</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
+## 
+##     %+%, alpha</code></pre>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="descriptive-statistics.html#cb292-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb292-2"><a href="descriptive-statistics.html#cb292-2" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb292-3"><a href="descriptive-statistics.html#cb292-3" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code></pre></div>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.3. https://CRAN.R-project.org/package=stargazer</code></pre>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="descriptive-statistics.html#cb296-1" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;kableExtra&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     group_rows</code></pre>
 </div>
 <div id="load-the-dataset-1" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Load the dataset<a href="descriptive-statistics.html#load-the-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="descriptive-statistics.html#cb265-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb265-2"><a href="descriptive-statistics.html#cb265-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells  4038950 215.8    7240020  386.7   7240020  386.7
-## Vcells 34994790 267.0  139860901 1067.1 218532577 1667.3</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="descriptive-statistics.html#cb267-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="descriptive-statistics.html#cb299-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb299-2"><a href="descriptive-statistics.html#cb299-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##            used  (Mb) gc trigger  (Mb)  max used   (Mb)
+## Ncells  3733295 199.4    6548841 349.8   6548841  349.8
+## Vcells 34340189 262.0  124329084 948.6 202265969 1543.2</code></pre>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="descriptive-statistics.html#cb301-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Ch6Practice.RData&quot;</span>)</span></code></pre></div>
 <p>We subset the data:</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="descriptive-statistics.html#cb268-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
-<span id="cb268-2"><a href="descriptive-statistics.html#cb268-2" tabindex="-1"></a>Dataset_CP_f <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>)  </span>
-<span id="cb268-3"><a href="descriptive-statistics.html#cb268-3" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only male respondents</span></span>
-<span id="cb268-4"><a href="descriptive-statistics.html#cb268-4" tabindex="-1"></a>Dataset_CP_m <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span>
-<span id="cb268-5"><a href="descriptive-statistics.html#cb268-5" tabindex="-1"></a><span class="fu">str</span>(Dataset_CP_m)</span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="descriptive-statistics.html#cb302-1" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only female respondents </span></span>
+<span id="cb302-2"><a href="descriptive-statistics.html#cb302-2" tabindex="-1"></a>Dataset_CP_f <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>)  </span>
+<span id="cb302-3"><a href="descriptive-statistics.html#cb302-3" tabindex="-1"></a><span class="co"># Create a subset of the dataset with only male respondents</span></span>
+<span id="cb302-4"><a href="descriptive-statistics.html#cb302-4" tabindex="-1"></a>Dataset_CP_m <span class="ot">&lt;-</span> Dataset_CP <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HH2a_Sex <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb302-5"><a href="descriptive-statistics.html#cb302-5" tabindex="-1"></a><span class="fu">str</span>(Dataset_CP_m)</span></code></pre></div>
 <pre><code>## tibble [1,723 × 49] (S3: tbl_df/tbl/data.frame)
 ##  $ Country                     : Factor w/ 34 levels &quot;Austria&quot;,&quot;Belgium&quot;,..: 20 25 3 8 12 16 7 21 6 6 ...
 ##  $ ID                          : chr [1:1723] &quot;NL5063519&quot; &quot;SI1042916&quot; &quot;BG1396625&quot; &quot;EE1261010&quot; ...
@@ -501,7 +521,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ Q25a_TensionClass           : Factor w/ 5 levels &quot;A lot of tension&quot;,..: 2 2 2 2 1 1 2 1 3 4 ...
 ##  $ Q25b_TensionWork            : Factor w/ 5 levels &quot;A lot of tension&quot;,..: 2 2 4 2 1 1 2 1 3 3 ...
 ##  $ Q25c_TensionSex             : Factor w/ 5 levels &quot;A lot of tension&quot;,..: 3 3 2 3 1 1 3 2 2 2 ...
-##  $ Q25d_TensionsAge            : hvn_lbl_ [1:1723]  3,  3,  2, 98,  1,  1,  2,  2,  3...
+##  $ Q25d_TensionsAge            : hvn_lbl_ [1:1723]  3,  3,  2, 98,  1,  1,  2,  2,  ...
 ##    ..@ label      : chr &quot;Q25d Old people and young people / How much tension is there in this country?&quot;
 ##    ..@ na_values  : num [1:2] 98 99
 ##    ..@ format.spss: chr &quot;F8.0&quot;
@@ -536,7 +556,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="male" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Male<a href="descriptive-statistics.html#male" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Calculate the descriptive statistics for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <em>describe</em> of the package <em>psych</em>:</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="descriptive-statistics.html#cb270-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren)</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="descriptive-statistics.html#cb304-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren)</span></code></pre></div>
 <pre><code>##    vars   n  mean    sd median trimmed   mad min max range
 ## X1    1 575 16.86 15.53     10   14.36 10.38   1 100    99
 ##    skew kurtosis   se
@@ -546,30 +566,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You could also simply call the function by only using its name, R will then search for that specific function across all the loaded R packages. However, if more packages have functions with the same name, specifying the name of the package with the :: operator helps assuring the usage of the correct function.</p>
 <p>There are 575 non-missing observations for <strong>Q37a_HoursWeekChildren</strong>. <code>psych::describe</code> ignores the missing observations.</p>
 <p>Report the Frequency Table for the variable <strong>Q37a_HoursWeekChildren</strong>, using the function <code>tbl_summary</code> of the package <code>gtsummary</code>:</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="descriptive-statistics.html#cb272-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb272-2"><a href="descriptive-statistics.html#cb272-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
-<span id="cb272-3"><a href="descriptive-statistics.html#cb272-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb272-4"><a href="descriptive-statistics.html#cb272-4" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">&quot;{n} ({p}%)&quot;</span>),  <span class="co"># Show count &amp; percentage</span></span>
-<span id="cb272-5"><a href="descriptive-statistics.html#cb272-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
-<span id="cb272-6"><a href="descriptive-statistics.html#cb272-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb272-7"><a href="descriptive-statistics.html#cb272-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
-<div id="xtjsgiqbqj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xtjsgiqbqj table {
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="descriptive-statistics.html#cb306-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
+<span id="cb306-2"><a href="descriptive-statistics.html#cb306-2" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren) <span class="sc">%&gt;%</span></span>
+<span id="cb306-3"><a href="descriptive-statistics.html#cb306-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb306-4"><a href="descriptive-statistics.html#cb306-4" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">&quot;{n} ({p}%)&quot;</span>),  <span class="co"># Show count &amp; percentage</span></span>
+<span id="cb306-5"><a href="descriptive-statistics.html#cb306-5" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">&quot;no&quot;</span>  <span class="co"># Exclude missing values (set to &quot;ifany&quot; to include)</span></span>
+<span id="cb306-6"><a href="descriptive-statistics.html#cb306-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb306-7"><a href="descriptive-statistics.html#cb306-7" tabindex="-1"></a>  <span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">&quot;**Hours per Week with Children**&quot;</span>)  <span class="co"># Customize header</span></span></code></pre></div>
+<div id="wjyjwvyeul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wjyjwvyeul table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xtjsgiqbqj thead, #xtjsgiqbqj tbody, #xtjsgiqbqj tfoot, #xtjsgiqbqj tr, #xtjsgiqbqj td, #xtjsgiqbqj th {
+#wjyjwvyeul thead, #wjyjwvyeul tbody, #wjyjwvyeul tfoot, #wjyjwvyeul tr, #wjyjwvyeul td, #wjyjwvyeul th {
   border-style: none;
 }
 
-#xtjsgiqbqj p {
+#wjyjwvyeul p {
   margin: 0;
   padding: 0;
 }
 
-#xtjsgiqbqj .gt_table {
+#wjyjwvyeul .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -595,12 +615,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_caption {
+#wjyjwvyeul .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xtjsgiqbqj .gt_title {
+#wjyjwvyeul .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -612,7 +632,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#xtjsgiqbqj .gt_subtitle {
+#wjyjwvyeul .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -624,7 +644,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#xtjsgiqbqj .gt_heading {
+#wjyjwvyeul .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -636,13 +656,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_bottom_border {
+#wjyjwvyeul .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_col_headings {
+#wjyjwvyeul .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -657,7 +677,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_col_heading {
+#wjyjwvyeul .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,7 +697,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#xtjsgiqbqj .gt_column_spanner_outer {
+#wjyjwvyeul .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -689,15 +709,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#xtjsgiqbqj .gt_column_spanner_outer:first-child {
+#wjyjwvyeul .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xtjsgiqbqj .gt_column_spanner_outer:last-child {
+#wjyjwvyeul .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xtjsgiqbqj .gt_column_spanner {
+#wjyjwvyeul .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -709,11 +729,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#xtjsgiqbqj .gt_spanner_row {
+#wjyjwvyeul .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xtjsgiqbqj .gt_group_heading {
+#wjyjwvyeul .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -739,7 +759,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#xtjsgiqbqj .gt_empty_group_heading {
+#wjyjwvyeul .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -754,15 +774,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#xtjsgiqbqj .gt_from_md > :first-child {
+#wjyjwvyeul .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xtjsgiqbqj .gt_from_md > :last-child {
+#wjyjwvyeul .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xtjsgiqbqj .gt_row {
+#wjyjwvyeul .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -781,7 +801,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#xtjsgiqbqj .gt_stub {
+#wjyjwvyeul .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -794,7 +814,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#xtjsgiqbqj .gt_stub_row_group {
+#wjyjwvyeul .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -808,15 +828,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#xtjsgiqbqj .gt_row_group_first td {
+#wjyjwvyeul .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xtjsgiqbqj .gt_row_group_first th {
+#wjyjwvyeul .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xtjsgiqbqj .gt_summary_row {
+#wjyjwvyeul .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -826,16 +846,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#xtjsgiqbqj .gt_first_summary_row {
+#wjyjwvyeul .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_first_summary_row.thick {
+#wjyjwvyeul .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xtjsgiqbqj .gt_last_summary_row {
+#wjyjwvyeul .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -845,7 +865,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_grand_summary_row {
+#wjyjwvyeul .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -855,7 +875,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#xtjsgiqbqj .gt_first_grand_summary_row {
+#wjyjwvyeul .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -865,7 +885,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_last_grand_summary_row_top {
+#wjyjwvyeul .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -875,11 +895,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_striped {
+#wjyjwvyeul .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xtjsgiqbqj .gt_table_body {
+#wjyjwvyeul .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -888,7 +908,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_footnotes {
+#wjyjwvyeul .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -902,7 +922,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_footnote {
+#wjyjwvyeul .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -911,7 +931,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#xtjsgiqbqj .gt_sourcenotes {
+#wjyjwvyeul .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -925,7 +945,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#xtjsgiqbqj .gt_sourcenote {
+#wjyjwvyeul .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -933,72 +953,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#xtjsgiqbqj .gt_left {
+#wjyjwvyeul .gt_left {
   text-align: left;
 }
 
-#xtjsgiqbqj .gt_center {
+#wjyjwvyeul .gt_center {
   text-align: center;
 }
 
-#xtjsgiqbqj .gt_right {
+#wjyjwvyeul .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xtjsgiqbqj .gt_font_normal {
+#wjyjwvyeul .gt_font_normal {
   font-weight: normal;
 }
 
-#xtjsgiqbqj .gt_font_bold {
+#wjyjwvyeul .gt_font_bold {
   font-weight: bold;
 }
 
-#xtjsgiqbqj .gt_font_italic {
+#wjyjwvyeul .gt_font_italic {
   font-style: italic;
 }
 
-#xtjsgiqbqj .gt_super {
+#wjyjwvyeul .gt_super {
   font-size: 65%;
 }
 
-#xtjsgiqbqj .gt_footnote_marks {
+#wjyjwvyeul .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xtjsgiqbqj .gt_asterisk {
+#wjyjwvyeul .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xtjsgiqbqj .gt_indent_1 {
+#wjyjwvyeul .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xtjsgiqbqj .gt_indent_2 {
+#wjyjwvyeul .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xtjsgiqbqj .gt_indent_3 {
+#wjyjwvyeul .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xtjsgiqbqj .gt_indent_4 {
+#wjyjwvyeul .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xtjsgiqbqj .gt_indent_5 {
+#wjyjwvyeul .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xtjsgiqbqj .katex-display {
+#wjyjwvyeul .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xtjsgiqbqj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wjyjwvyeul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1036,19 +1056,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="histogram-2" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Histogram<a href="descriptive-statistics.html#histogram-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Plot the histogram for the variable <strong>Q37a_HoursWeekChildren</strong></p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="descriptive-statistics.html#cb273-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Dataset_CP_m, <span class="fu">aes</span>(<span class="at">x =</span> Q37a_HoursWeekChildren)) <span class="sc">+</span>      </span>
-<span id="cb273-2"><a href="descriptive-statistics.html#cb273-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
-<span id="cb273-3"><a href="descriptive-statistics.html#cb273-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb273-4"><a href="descriptive-statistics.html#cb273-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
-<span id="cb273-5"><a href="descriptive-statistics.html#cb273-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span>   </span>
-<span id="cb273-6"><a href="descriptive-statistics.html#cb273-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram: Hours per week spent taking care of children&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Only male respondents&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb273-7"><a href="descriptive-statistics.html#cb273-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Hours per week spent taking care of children (Question 37a)&quot;</span>) <span class="sc">+</span>   </span>
-<span id="cb273-8"><a href="descriptive-statistics.html#cb273-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span>      </span>
-<span id="cb273-9"><a href="descriptive-statistics.html#cb273-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
-<span id="cb273-10"><a href="descriptive-statistics.html#cb273-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
-<span id="cb273-11"><a href="descriptive-statistics.html#cb273-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
-<span id="cb273-12"><a href="descriptive-statistics.html#cb273-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
-<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-199-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="descriptive-statistics.html#cb307-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Dataset_CP_m, <span class="fu">aes</span>(<span class="at">x =</span> Q37a_HoursWeekChildren)) <span class="sc">+</span>      </span>
+<span id="cb307-2"><a href="descriptive-statistics.html#cb307-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
+<span id="cb307-3"><a href="descriptive-statistics.html#cb307-3" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
+<span id="cb307-4"><a href="descriptive-statistics.html#cb307-4" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
+<span id="cb307-5"><a href="descriptive-statistics.html#cb307-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span>   </span>
+<span id="cb307-6"><a href="descriptive-statistics.html#cb307-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram: Hours per week spent taking care of children&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Only male respondents&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb307-7"><a href="descriptive-statistics.html#cb307-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Hours per week spent taking care of children (Question 37a)&quot;</span>) <span class="sc">+</span>   </span>
+<span id="cb307-8"><a href="descriptive-statistics.html#cb307-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Count&quot;</span>) <span class="sc">+</span>      </span>
+<span id="cb307-9"><a href="descriptive-statistics.html#cb307-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, </span>
+<span id="cb307-10"><a href="descriptive-statistics.html#cb307-10" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">14</span>, </span>
+<span id="cb307-11"><a href="descriptive-statistics.html#cb307-11" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>), </span>
+<span id="cb307-12"><a href="descriptive-statistics.html#cb307-12" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>))</span></code></pre></div>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-248-1.png" alt="" width="672" /></p>
 <ul>
 <li><p>Depending on the data, different number of bins are more or less appropriate. In this case, we indicate that we want our data to be split in 50 intervals. You could indicate a different number or you could also leave the <em>bins</em> option out of the code and let R select it (R will give a warning (not error) about the number of bins which has been selected). Each type of graph has its own set of options that can be set, use the help function to learn more about them.</p></li>
 <li><p>Next, we call a pre-defined layout of the graph called <em>theme_minimal</em>. There are many pre-defined layouts and you are free to choose whichever you like the most, or even create your own layout (which is partially what we do with the last layer).</p></li>
@@ -1064,7 +1084,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A chunk of code, as we have seen so far, is separated from the text of our Quarto document and does not allow us to build a readable text combining words with output from R codes which in one linear sentence. So, if we want to say:<br />
 <br />
 The number of male respondents in our dataset is equal to</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="descriptive-statistics.html#cb274-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="descriptive-statistics.html#cb308-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##       n
 ##   &lt;int&gt;
@@ -1138,23 +1158,23 @@ The number of male respondents in our dataset is equal to 1723</p>
 <h3><span class="header-section-number">10.4.1</span> Summary Table using Stargazer<a href="descriptive-statistics.html#summary-table-using-stargazer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can create a descriptive statistics table for respondents including <strong>mean, median, SD, min, and max</strong>:</p>
 <p>We do this by combining <code>psych</code> package with stargazer. We also need to create a data frame since stargazer can’t handle tibbles. <code>out=</code> is so that we can have the tables and we can copy-paste them.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="descriptive-statistics.html#cb276-1" tabindex="-1"></a>desc <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb276-2"><a href="descriptive-statistics.html#cb276-2" tabindex="-1"></a>                         <span class="fu">select</span>(Q37a_HoursWeekChildren))</span>
-<span id="cb276-3"><a href="descriptive-statistics.html#cb276-3" tabindex="-1"></a></span>
-<span id="cb276-4"><a href="descriptive-statistics.html#cb276-4" tabindex="-1"></a><span class="co">#We don&#39;t need all stats</span></span>
-<span id="cb276-5"><a href="descriptive-statistics.html#cb276-5" tabindex="-1"></a>desc_table <span class="ot">&lt;-</span> desc <span class="sc">%&gt;%</span></span>
-<span id="cb276-6"><a href="descriptive-statistics.html#cb276-6" tabindex="-1"></a>  <span class="fu">select</span>(mean, median, sd, min, max) <span class="sc">%&gt;%</span></span>
-<span id="cb276-7"><a href="descriptive-statistics.html#cb276-7" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb276-8"><a href="descriptive-statistics.html#cb276-8" tabindex="-1"></a></span>
-<span id="cb276-9"><a href="descriptive-statistics.html#cb276-9" tabindex="-1"></a>desc_table<span class="sc">$</span>Variable <span class="ot">&lt;-</span> <span class="fu">rownames</span>(desc_table)</span>
-<span id="cb276-10"><a href="descriptive-statistics.html#cb276-10" tabindex="-1"></a>desc_table <span class="ot">&lt;-</span> desc_table[, <span class="fu">c</span>(<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>)]</span>
-<span id="cb276-11"><a href="descriptive-statistics.html#cb276-11" tabindex="-1"></a></span>
-<span id="cb276-12"><a href="descriptive-statistics.html#cb276-12" tabindex="-1"></a></span>
-<span id="cb276-13"><a href="descriptive-statistics.html#cb276-13" tabindex="-1"></a><span class="fu">stargazer</span>(desc_table, </span>
-<span id="cb276-14"><a href="descriptive-statistics.html#cb276-14" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>, </span>
-<span id="cb276-15"><a href="descriptive-statistics.html#cb276-15" tabindex="-1"></a>          <span class="at">summary =</span> <span class="cn">FALSE</span>,        <span class="co"># Don&#39;t summarize again</span></span>
-<span id="cb276-16"><a href="descriptive-statistics.html#cb276-16" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Descriptive Statistics: Selected Variable (Male Respondents)&quot;</span>,</span>
-<span id="cb276-17"><a href="descriptive-statistics.html#cb276-17" tabindex="-1"></a>          <span class="at">out=</span><span class="st">&quot;Desc_Stats_HWC.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="descriptive-statistics.html#cb310-1" tabindex="-1"></a>desc <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(Dataset_CP_m <span class="sc">%&gt;%</span></span>
+<span id="cb310-2"><a href="descriptive-statistics.html#cb310-2" tabindex="-1"></a>                         <span class="fu">select</span>(Q37a_HoursWeekChildren))</span>
+<span id="cb310-3"><a href="descriptive-statistics.html#cb310-3" tabindex="-1"></a></span>
+<span id="cb310-4"><a href="descriptive-statistics.html#cb310-4" tabindex="-1"></a><span class="co">#We don&#39;t need all stats</span></span>
+<span id="cb310-5"><a href="descriptive-statistics.html#cb310-5" tabindex="-1"></a>desc_table <span class="ot">&lt;-</span> desc <span class="sc">%&gt;%</span></span>
+<span id="cb310-6"><a href="descriptive-statistics.html#cb310-6" tabindex="-1"></a>  <span class="fu">select</span>(mean, median, sd, min, max) <span class="sc">%&gt;%</span></span>
+<span id="cb310-7"><a href="descriptive-statistics.html#cb310-7" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb310-8"><a href="descriptive-statistics.html#cb310-8" tabindex="-1"></a></span>
+<span id="cb310-9"><a href="descriptive-statistics.html#cb310-9" tabindex="-1"></a>desc_table<span class="sc">$</span>Variable <span class="ot">&lt;-</span> <span class="fu">rownames</span>(desc_table)</span>
+<span id="cb310-10"><a href="descriptive-statistics.html#cb310-10" tabindex="-1"></a>desc_table <span class="ot">&lt;-</span> desc_table[, <span class="fu">c</span>(<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>, <span class="st">&quot;sd&quot;</span>, <span class="st">&quot;min&quot;</span>, <span class="st">&quot;max&quot;</span>)]</span>
+<span id="cb310-11"><a href="descriptive-statistics.html#cb310-11" tabindex="-1"></a></span>
+<span id="cb310-12"><a href="descriptive-statistics.html#cb310-12" tabindex="-1"></a></span>
+<span id="cb310-13"><a href="descriptive-statistics.html#cb310-13" tabindex="-1"></a><span class="fu">stargazer</span>(desc_table, </span>
+<span id="cb310-14"><a href="descriptive-statistics.html#cb310-14" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>, </span>
+<span id="cb310-15"><a href="descriptive-statistics.html#cb310-15" tabindex="-1"></a>          <span class="at">summary =</span> <span class="cn">FALSE</span>,        <span class="co"># Don&#39;t summarize again</span></span>
+<span id="cb310-16"><a href="descriptive-statistics.html#cb310-16" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Descriptive Statistics: Selected Variable (Male Respondents)&quot;</span>,</span>
+<span id="cb310-17"><a href="descriptive-statistics.html#cb310-17" tabindex="-1"></a>          <span class="at">out=</span><span class="st">&quot;Desc_Stats_HWC.txt&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Descriptive Statistics: Selected Variable (Male Respondents)
 ## ===================================================
@@ -1167,15 +1187,15 @@ The number of male respondents in our dataset is equal to 1723</p>
 <div id="summary-table-with-grouping-and-stargazer" class="section level3 hasAnchor" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> Summary Table with Grouping and Stargazer<a href="descriptive-statistics.html#summary-table-with-grouping-and-stargazer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Say you want to see <code>Q37a_HoursWeekChildren</code> by <code>PaidJob</code>. We use <code>describeBy</code> command which is similar to <code>describe()</code> but it works when you want to group by factor.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="descriptive-statistics.html#cb278-1" tabindex="-1"></a>desc_grp<span class="ot">&lt;-</span>psych<span class="sc">::</span><span class="fu">describeBy</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren, </span>
-<span id="cb278-2"><a href="descriptive-statistics.html#cb278-2" tabindex="-1"></a>                  <span class="at">group =</span> Dataset_CP_m<span class="sc">$</span>Q1_PaidJob, </span>
-<span id="cb278-3"><a href="descriptive-statistics.html#cb278-3" tabindex="-1"></a>                  <span class="at">mat =</span> <span class="cn">TRUE</span>)  <span class="co"># mat=TRUE gives a nice combined data frame which we use for stargazer</span></span></code></pre></div>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="descriptive-statistics.html#cb279-1" tabindex="-1"></a>df_grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(desc_grp)</span>
-<span id="cb279-2"><a href="descriptive-statistics.html#cb279-2" tabindex="-1"></a></span>
-<span id="cb279-3"><a href="descriptive-statistics.html#cb279-3" tabindex="-1"></a><span class="fu">stargazer</span>(df_grp, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
-<span id="cb279-4"><a href="descriptive-statistics.html#cb279-4" tabindex="-1"></a>          <span class="at">summary =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb279-5"><a href="descriptive-statistics.html#cb279-5" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Hours with Children by Paid Job Status&quot;</span>,</span>
-<span id="cb279-6"><a href="descriptive-statistics.html#cb279-6" tabindex="-1"></a>          <span class="at">out=</span><span class="st">&quot;HWCbyPJS.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="descriptive-statistics.html#cb312-1" tabindex="-1"></a>desc_grp<span class="ot">&lt;-</span>psych<span class="sc">::</span><span class="fu">describeBy</span>(Dataset_CP_m<span class="sc">$</span>Q37a_HoursWeekChildren, </span>
+<span id="cb312-2"><a href="descriptive-statistics.html#cb312-2" tabindex="-1"></a>                  <span class="at">group =</span> Dataset_CP_m<span class="sc">$</span>Q1_PaidJob, </span>
+<span id="cb312-3"><a href="descriptive-statistics.html#cb312-3" tabindex="-1"></a>                  <span class="at">mat =</span> <span class="cn">TRUE</span>)  <span class="co"># mat=TRUE gives a nice combined data frame which we use for stargazer</span></span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="descriptive-statistics.html#cb313-1" tabindex="-1"></a>df_grp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(desc_grp)</span>
+<span id="cb313-2"><a href="descriptive-statistics.html#cb313-2" tabindex="-1"></a></span>
+<span id="cb313-3"><a href="descriptive-statistics.html#cb313-3" tabindex="-1"></a><span class="fu">stargazer</span>(df_grp, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb313-4"><a href="descriptive-statistics.html#cb313-4" tabindex="-1"></a>          <span class="at">summary =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb313-5"><a href="descriptive-statistics.html#cb313-5" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Hours with Children by Paid Job Status&quot;</span>,</span>
+<span id="cb313-6"><a href="descriptive-statistics.html#cb313-6" tabindex="-1"></a>          <span class="at">out=</span><span class="st">&quot;HWCbyPJS.txt&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Hours with Children by Paid Job Status
 ## ====================================================================================================
@@ -1263,43 +1283,43 @@ The number of male respondents in our dataset is equal to 1723</p>
 <h2><span class="header-section-number">10.8</span> Descriptive Statistics of Control and Confounding Variables<a href="descriptive-statistics.html#descriptive-statistics-of-control-and-confounding-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For this portion, I will show you the Descriptive Statistics of our outcome, explanatory, control and confounding variables:</p>
 <p>a. Create our data frame</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="descriptive-statistics.html#cb281-1" tabindex="-1"></a><span class="co">#Start with males</span></span>
-<span id="cb281-2"><a href="descriptive-statistics.html#cb281-2" tabindex="-1"></a>df_m <span class="ot">&lt;-</span> Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb281-3"><a href="descriptive-statistics.html#cb281-3" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren, HH1_Num_People, Q7_HoursWeekWork) <span class="sc">%&gt;%</span></span>
-<span id="cb281-4"><a href="descriptive-statistics.html#cb281-4" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb281-5"><a href="descriptive-statistics.html#cb281-5" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb281-6"><a href="descriptive-statistics.html#cb281-6" tabindex="-1"></a></span>
-<span id="cb281-7"><a href="descriptive-statistics.html#cb281-7" tabindex="-1"></a><span class="co"># Females</span></span>
-<span id="cb281-8"><a href="descriptive-statistics.html#cb281-8" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> Dataset_CP_f <span class="sc">%&gt;%</span></span>
-<span id="cb281-9"><a href="descriptive-statistics.html#cb281-9" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren, HH1_Num_People, Q7_HoursWeekWork) <span class="sc">%&gt;%</span></span>
-<span id="cb281-10"><a href="descriptive-statistics.html#cb281-10" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb281-11"><a href="descriptive-statistics.html#cb281-11" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="descriptive-statistics.html#cb315-1" tabindex="-1"></a><span class="co">#Start with males</span></span>
+<span id="cb315-2"><a href="descriptive-statistics.html#cb315-2" tabindex="-1"></a>df_m <span class="ot">&lt;-</span> Dataset_CP_m <span class="sc">%&gt;%</span></span>
+<span id="cb315-3"><a href="descriptive-statistics.html#cb315-3" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren, HH1_Num_People, Q7_HoursWeekWork) <span class="sc">%&gt;%</span></span>
+<span id="cb315-4"><a href="descriptive-statistics.html#cb315-4" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb315-5"><a href="descriptive-statistics.html#cb315-5" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb315-6"><a href="descriptive-statistics.html#cb315-6" tabindex="-1"></a></span>
+<span id="cb315-7"><a href="descriptive-statistics.html#cb315-7" tabindex="-1"></a><span class="co"># Females</span></span>
+<span id="cb315-8"><a href="descriptive-statistics.html#cb315-8" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> Dataset_CP_f <span class="sc">%&gt;%</span></span>
+<span id="cb315-9"><a href="descriptive-statistics.html#cb315-9" tabindex="-1"></a>  <span class="fu">select</span>(Q37a_HoursWeekChildren, HH1_Num_People, Q7_HoursWeekWork) <span class="sc">%&gt;%</span></span>
+<span id="cb315-10"><a href="descriptive-statistics.html#cb315-10" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb315-11"><a href="descriptive-statistics.html#cb315-11" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
 <p>b. use <code>psych::describe</code></p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="descriptive-statistics.html#cb282-1" tabindex="-1"></a>dsc_male <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(df_m)</span>
-<span id="cb282-2"><a href="descriptive-statistics.html#cb282-2" tabindex="-1"></a>dsc_female <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(df_f)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="descriptive-statistics.html#cb316-1" tabindex="-1"></a>dsc_male <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(df_m)</span>
+<span id="cb316-2"><a href="descriptive-statistics.html#cb316-2" tabindex="-1"></a>dsc_female <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">describe</span>(df_f)</span></code></pre></div>
 <p>c. Combine both descriptive statistics results from <code>psych::describe</code></p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="descriptive-statistics.html#cb283-1" tabindex="-1"></a>both_dsc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb283-2"><a href="descriptive-statistics.html#cb283-2" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">rownames</span>(dsc_male)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-3"><a href="descriptive-statistics.html#cb283-3" tabindex="-1"></a>  <span class="at">Mean_Male =</span> dsc_male<span class="sc">$</span>mean[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-4"><a href="descriptive-statistics.html#cb283-4" tabindex="-1"></a>  <span class="at">Mean_Female =</span> dsc_female<span class="sc">$</span>mean[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-5"><a href="descriptive-statistics.html#cb283-5" tabindex="-1"></a>  <span class="at">Median_Male =</span> dsc_male<span class="sc">$</span>median[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-6"><a href="descriptive-statistics.html#cb283-6" tabindex="-1"></a>  <span class="at">Median_Female =</span> dsc_female<span class="sc">$</span>median[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-7"><a href="descriptive-statistics.html#cb283-7" tabindex="-1"></a>  <span class="at">SD_Male =</span> dsc_male<span class="sc">$</span>sd[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-8"><a href="descriptive-statistics.html#cb283-8" tabindex="-1"></a>  <span class="at">SD_Female =</span> dsc_female<span class="sc">$</span>sd[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-9"><a href="descriptive-statistics.html#cb283-9" tabindex="-1"></a>  <span class="at">Min_Male =</span> dsc_male<span class="sc">$</span>min[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-10"><a href="descriptive-statistics.html#cb283-10" tabindex="-1"></a>  <span class="at">Min_Female =</span> dsc_female<span class="sc">$</span>min[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-11"><a href="descriptive-statistics.html#cb283-11" tabindex="-1"></a>  <span class="at">Max_Male =</span> dsc_male<span class="sc">$</span>max[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb283-12"><a href="descriptive-statistics.html#cb283-12" tabindex="-1"></a>  <span class="at">Max_Female =</span> dsc_female<span class="sc">$</span>max[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb283-13"><a href="descriptive-statistics.html#cb283-13" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="descriptive-statistics.html#cb317-1" tabindex="-1"></a>both_dsc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb317-2"><a href="descriptive-statistics.html#cb317-2" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">rownames</span>(dsc_male)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-3"><a href="descriptive-statistics.html#cb317-3" tabindex="-1"></a>  <span class="at">Mean_Male =</span> dsc_male<span class="sc">$</span>mean[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-4"><a href="descriptive-statistics.html#cb317-4" tabindex="-1"></a>  <span class="at">Mean_Female =</span> dsc_female<span class="sc">$</span>mean[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-5"><a href="descriptive-statistics.html#cb317-5" tabindex="-1"></a>  <span class="at">Median_Male =</span> dsc_male<span class="sc">$</span>median[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-6"><a href="descriptive-statistics.html#cb317-6" tabindex="-1"></a>  <span class="at">Median_Female =</span> dsc_female<span class="sc">$</span>median[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-7"><a href="descriptive-statistics.html#cb317-7" tabindex="-1"></a>  <span class="at">SD_Male =</span> dsc_male<span class="sc">$</span>sd[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-8"><a href="descriptive-statistics.html#cb317-8" tabindex="-1"></a>  <span class="at">SD_Female =</span> dsc_female<span class="sc">$</span>sd[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-9"><a href="descriptive-statistics.html#cb317-9" tabindex="-1"></a>  <span class="at">Min_Male =</span> dsc_male<span class="sc">$</span>min[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-10"><a href="descriptive-statistics.html#cb317-10" tabindex="-1"></a>  <span class="at">Min_Female =</span> dsc_female<span class="sc">$</span>min[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-11"><a href="descriptive-statistics.html#cb317-11" tabindex="-1"></a>  <span class="at">Max_Male =</span> dsc_male<span class="sc">$</span>max[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb317-12"><a href="descriptive-statistics.html#cb317-12" tabindex="-1"></a>  <span class="at">Max_Female =</span> dsc_female<span class="sc">$</span>max[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb317-13"><a href="descriptive-statistics.html#cb317-13" tabindex="-1"></a>)</span></code></pre></div>
 <p>We create a data frame and get the names of the three variables <code>Variable = rownames(dsc_male)[1:3]</code> No need to double this, as it is the same for the female. <code>dsc_male$mean[1:3]</code> gets the mean (median, SD, min, max) for each of the three variables. just copy what was done to the males, for the females.</p>
 <p>d. Use <code>stargazer</code> for pretty tables</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="descriptive-statistics.html#cb284-1" tabindex="-1"></a><span class="fu">stargazer</span>(</span>
-<span id="cb284-2"><a href="descriptive-statistics.html#cb284-2" tabindex="-1"></a>  both_dsc,</span>
-<span id="cb284-3"><a href="descriptive-statistics.html#cb284-3" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
-<span id="cb284-4"><a href="descriptive-statistics.html#cb284-4" tabindex="-1"></a>  <span class="at">summary =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb284-5"><a href="descriptive-statistics.html#cb284-5" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&quot;Descriptive Statistics: Outcome, Control, and Confounding by Sex&quot;</span>,</span>
-<span id="cb284-6"><a href="descriptive-statistics.html#cb284-6" tabindex="-1"></a>  <span class="at">out=</span><span class="st">&quot;DS_OCCbySex.txt&quot;</span></span>
-<span id="cb284-7"><a href="descriptive-statistics.html#cb284-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="descriptive-statistics.html#cb318-1" tabindex="-1"></a><span class="fu">stargazer</span>(</span>
+<span id="cb318-2"><a href="descriptive-statistics.html#cb318-2" tabindex="-1"></a>  both_dsc,</span>
+<span id="cb318-3"><a href="descriptive-statistics.html#cb318-3" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb318-4"><a href="descriptive-statistics.html#cb318-4" tabindex="-1"></a>  <span class="at">summary =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb318-5"><a href="descriptive-statistics.html#cb318-5" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&quot;Descriptive Statistics: Outcome, Control, and Confounding by Sex&quot;</span>,</span>
+<span id="cb318-6"><a href="descriptive-statistics.html#cb318-6" tabindex="-1"></a>  <span class="at">out=</span><span class="st">&quot;DS_OCCbySex.txt&quot;</span></span>
+<span id="cb318-7"><a href="descriptive-statistics.html#cb318-7" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## 
 ## Descriptive Statistics: Outcome, Control, and Confounding by Sex
 ## ==================================================================================================================================
@@ -1310,11 +1330,11 @@ The number of male respondents in our dataset is equal to 1723</p>
 ## 3    Q7_HoursWeekWork     44.414     35.646        40           40       11.186   11.087      8         5         90        80    
 ## ----------------------------------------------------------------------------------------------------------------------------------</code></pre>
 <p>e. <strong>Optional</strong> Use <code>kableExtra</code> for even prettier tables</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="descriptive-statistics.html#cb286-1" tabindex="-1"></a>both_dsc <span class="sc">%&gt;%</span> </span>
-<span id="cb286-2"><a href="descriptive-statistics.html#cb286-2" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb286-3"><a href="descriptive-statistics.html#cb286-3" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;SD&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb286-4"><a href="descriptive-statistics.html#cb286-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>, <span class="at">font_size =</span> <span class="dv">12</span>, <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb286-5"><a href="descriptive-statistics.html#cb286-5" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="at">height =</span> <span class="st">&quot;300px&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="descriptive-statistics.html#cb320-1" tabindex="-1"></a>both_dsc <span class="sc">%&gt;%</span> </span>
+<span id="cb320-2"><a href="descriptive-statistics.html#cb320-2" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb320-3"><a href="descriptive-statistics.html#cb320-3" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;SD&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb320-4"><a href="descriptive-statistics.html#cb320-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>, <span class="at">font_size =</span> <span class="dv">12</span>, <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb320-5"><a href="descriptive-statistics.html#cb320-5" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="at">height =</span> <span class="st">&quot;300px&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1492,17 +1512,17 @@ Q7_HoursWeekWork
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="descriptive-statistics.html#cb287-1" tabindex="-1"></a><span class="co">#saving kableExtra table</span></span>
-<span id="cb287-2"><a href="descriptive-statistics.html#cb287-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb287-3"><a href="descriptive-statistics.html#cb287-3" tabindex="-1"></a><span class="fu">library</span>(htmltools) <span class="co">#install</span></span>
-<span id="cb287-4"><a href="descriptive-statistics.html#cb287-4" tabindex="-1"></a></span>
-<span id="cb287-5"><a href="descriptive-statistics.html#cb287-5" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> both_dsc <span class="sc">%&gt;%</span> </span>
-<span id="cb287-6"><a href="descriptive-statistics.html#cb287-6" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb287-7"><a href="descriptive-statistics.html#cb287-7" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;SD&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb287-8"><a href="descriptive-statistics.html#cb287-8" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>)</span>
-<span id="cb287-9"><a href="descriptive-statistics.html#cb287-9" tabindex="-1"></a></span>
-<span id="cb287-10"><a href="descriptive-statistics.html#cb287-10" tabindex="-1"></a></span>
-<span id="cb287-11"><a href="descriptive-statistics.html#cb287-11" tabindex="-1"></a><span class="fu">save_html</span>(tbl, <span class="st">&quot;DSOCCbySex.html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="descriptive-statistics.html#cb321-1" tabindex="-1"></a><span class="co">#saving kableExtra table</span></span>
+<span id="cb321-2"><a href="descriptive-statistics.html#cb321-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb321-3"><a href="descriptive-statistics.html#cb321-3" tabindex="-1"></a><span class="fu">library</span>(htmltools) <span class="co">#install</span></span>
+<span id="cb321-4"><a href="descriptive-statistics.html#cb321-4" tabindex="-1"></a></span>
+<span id="cb321-5"><a href="descriptive-statistics.html#cb321-5" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> both_dsc <span class="sc">%&gt;%</span> </span>
+<span id="cb321-6"><a href="descriptive-statistics.html#cb321-6" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="st">&quot;html&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb321-7"><a href="descriptive-statistics.html#cb321-7" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">&quot; &quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Mean&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Median&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;SD&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Min&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;Max&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb321-8"><a href="descriptive-statistics.html#cb321-8" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>)</span>
+<span id="cb321-9"><a href="descriptive-statistics.html#cb321-9" tabindex="-1"></a></span>
+<span id="cb321-10"><a href="descriptive-statistics.html#cb321-10" tabindex="-1"></a></span>
+<span id="cb321-11"><a href="descriptive-statistics.html#cb321-11" tabindex="-1"></a><span class="fu">save_html</span>(tbl, <span class="st">&quot;DSOCCbySex.html&quot;</span>)</span></code></pre></div>
 <p>For <code>kable("html", escape = FALSE, align = "c")</code> is to have html of the table and the escape is that HTML be shown correctly. The alignment is centered but you can change to “r”, “l”. <code>add_header_above()</code> is to create our multi-column header like the one in the table. The argument where <code>" " = 1</code> is the first column and it is empty but the others span 2 columns because we are differentiating between Male and Female. The table is not stretched across the page but it is centered. You can copy-paste this after rendering your Quarto document. The <code>scroll_box</code> is so that we can scroll when we have a lot of columns.</p>
 <div id="results" class="section level4 hasAnchor" number="10.8.0.1">
 <h4><span class="header-section-number">10.8.0.1</span> Results:<a href="descriptive-statistics.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1530,26 +1550,26 @@ Q7_HoursWeekWork
 <div id="descriptive-statistics-of-categoricalcharacter-variables" class="section level2 hasAnchor" number="10.9">
 <h2><span class="header-section-number">10.9</span> Descriptive Statistics of Categorical/Character Variables<a href="descriptive-statistics.html#descriptive-statistics-of-categoricalcharacter-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Some variables such as <code>EmploymentSituation</code> are in character format. Therefore, to find out more about the variable, we use <code>gtsummary</code> . You can transform these variables to numeric, though, this is also a good way to know how many respondents there are.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="descriptive-statistics.html#cb288-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
-<span id="cb288-2"><a href="descriptive-statistics.html#cb288-2" tabindex="-1"></a>  <span class="fu">select</span>(HH2d_EmploymentSituation) <span class="sc">%&gt;%</span></span>
-<span id="cb288-3"><a href="descriptive-statistics.html#cb288-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code></pre></div>
-<div id="mtmcnvyeiq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mtmcnvyeiq table {
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="descriptive-statistics.html#cb322-1" tabindex="-1"></a>Dataset_CP_m <span class="sc">%&gt;%</span></span>
+<span id="cb322-2"><a href="descriptive-statistics.html#cb322-2" tabindex="-1"></a>  <span class="fu">select</span>(HH2d_EmploymentSituation) <span class="sc">%&gt;%</span></span>
+<span id="cb322-3"><a href="descriptive-statistics.html#cb322-3" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code></pre></div>
+<div id="cewbzgvqtm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cewbzgvqtm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mtmcnvyeiq thead, #mtmcnvyeiq tbody, #mtmcnvyeiq tfoot, #mtmcnvyeiq tr, #mtmcnvyeiq td, #mtmcnvyeiq th {
+#cewbzgvqtm thead, #cewbzgvqtm tbody, #cewbzgvqtm tfoot, #cewbzgvqtm tr, #cewbzgvqtm td, #cewbzgvqtm th {
   border-style: none;
 }
 
-#mtmcnvyeiq p {
+#cewbzgvqtm p {
   margin: 0;
   padding: 0;
 }
 
-#mtmcnvyeiq .gt_table {
+#cewbzgvqtm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1575,12 +1595,12 @@ Q7_HoursWeekWork
   border-left-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_caption {
+#cewbzgvqtm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mtmcnvyeiq .gt_title {
+#cewbzgvqtm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1592,7 +1612,7 @@ Q7_HoursWeekWork
   border-bottom-width: 0;
 }
 
-#mtmcnvyeiq .gt_subtitle {
+#cewbzgvqtm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1604,7 +1624,7 @@ Q7_HoursWeekWork
   border-top-width: 0;
 }
 
-#mtmcnvyeiq .gt_heading {
+#cewbzgvqtm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1616,13 +1636,13 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_bottom_border {
+#cewbzgvqtm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_col_headings {
+#cewbzgvqtm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1637,7 +1657,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_col_heading {
+#cewbzgvqtm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1657,7 +1677,7 @@ Q7_HoursWeekWork
   overflow-x: hidden;
 }
 
-#mtmcnvyeiq .gt_column_spanner_outer {
+#cewbzgvqtm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1669,15 +1689,15 @@ Q7_HoursWeekWork
   padding-right: 4px;
 }
 
-#mtmcnvyeiq .gt_column_spanner_outer:first-child {
+#cewbzgvqtm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mtmcnvyeiq .gt_column_spanner_outer:last-child {
+#cewbzgvqtm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mtmcnvyeiq .gt_column_spanner {
+#cewbzgvqtm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1689,11 +1709,11 @@ Q7_HoursWeekWork
   width: 100%;
 }
 
-#mtmcnvyeiq .gt_spanner_row {
+#cewbzgvqtm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mtmcnvyeiq .gt_group_heading {
+#cewbzgvqtm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1719,7 +1739,7 @@ Q7_HoursWeekWork
   text-align: left;
 }
 
-#mtmcnvyeiq .gt_empty_group_heading {
+#cewbzgvqtm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1734,15 +1754,15 @@ Q7_HoursWeekWork
   vertical-align: middle;
 }
 
-#mtmcnvyeiq .gt_from_md > :first-child {
+#cewbzgvqtm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mtmcnvyeiq .gt_from_md > :last-child {
+#cewbzgvqtm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mtmcnvyeiq .gt_row {
+#cewbzgvqtm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1761,7 +1781,7 @@ Q7_HoursWeekWork
   overflow-x: hidden;
 }
 
-#mtmcnvyeiq .gt_stub {
+#cewbzgvqtm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1774,7 +1794,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#mtmcnvyeiq .gt_stub_row_group {
+#cewbzgvqtm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1788,15 +1808,15 @@ Q7_HoursWeekWork
   vertical-align: top;
 }
 
-#mtmcnvyeiq .gt_row_group_first td {
+#cewbzgvqtm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mtmcnvyeiq .gt_row_group_first th {
+#cewbzgvqtm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mtmcnvyeiq .gt_summary_row {
+#cewbzgvqtm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1806,16 +1826,16 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#mtmcnvyeiq .gt_first_summary_row {
+#cewbzgvqtm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_first_summary_row.thick {
+#cewbzgvqtm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mtmcnvyeiq .gt_last_summary_row {
+#cewbzgvqtm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1825,7 +1845,7 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_grand_summary_row {
+#cewbzgvqtm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1835,7 +1855,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#mtmcnvyeiq .gt_first_grand_summary_row {
+#cewbzgvqtm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1845,7 +1865,7 @@ Q7_HoursWeekWork
   border-top-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_last_grand_summary_row_top {
+#cewbzgvqtm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1855,11 +1875,11 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_striped {
+#cewbzgvqtm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mtmcnvyeiq .gt_table_body {
+#cewbzgvqtm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1868,7 +1888,7 @@ Q7_HoursWeekWork
   border-bottom-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_footnotes {
+#cewbzgvqtm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1882,7 +1902,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_footnote {
+#cewbzgvqtm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1891,7 +1911,7 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#mtmcnvyeiq .gt_sourcenotes {
+#cewbzgvqtm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1905,7 +1925,7 @@ Q7_HoursWeekWork
   border-right-color: #D3D3D3;
 }
 
-#mtmcnvyeiq .gt_sourcenote {
+#cewbzgvqtm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1913,72 +1933,72 @@ Q7_HoursWeekWork
   padding-right: 5px;
 }
 
-#mtmcnvyeiq .gt_left {
+#cewbzgvqtm .gt_left {
   text-align: left;
 }
 
-#mtmcnvyeiq .gt_center {
+#cewbzgvqtm .gt_center {
   text-align: center;
 }
 
-#mtmcnvyeiq .gt_right {
+#cewbzgvqtm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mtmcnvyeiq .gt_font_normal {
+#cewbzgvqtm .gt_font_normal {
   font-weight: normal;
 }
 
-#mtmcnvyeiq .gt_font_bold {
+#cewbzgvqtm .gt_font_bold {
   font-weight: bold;
 }
 
-#mtmcnvyeiq .gt_font_italic {
+#cewbzgvqtm .gt_font_italic {
   font-style: italic;
 }
 
-#mtmcnvyeiq .gt_super {
+#cewbzgvqtm .gt_super {
   font-size: 65%;
 }
 
-#mtmcnvyeiq .gt_footnote_marks {
+#cewbzgvqtm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mtmcnvyeiq .gt_asterisk {
+#cewbzgvqtm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mtmcnvyeiq .gt_indent_1 {
+#cewbzgvqtm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mtmcnvyeiq .gt_indent_2 {
+#cewbzgvqtm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mtmcnvyeiq .gt_indent_3 {
+#cewbzgvqtm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mtmcnvyeiq .gt_indent_4 {
+#cewbzgvqtm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mtmcnvyeiq .gt_indent_5 {
+#cewbzgvqtm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mtmcnvyeiq .katex-display {
+#cewbzgvqtm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mtmcnvyeiq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cewbzgvqtm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
