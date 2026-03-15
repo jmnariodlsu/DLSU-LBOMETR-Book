@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>LBOMETR Course Book</title>
+  <title>19 Part 2: Instrumental Variables Interpretation (Simulation) | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="LBOMETR Course Book" />
+  <meta property="og:title" content="19 Part 2: Instrumental Variables Interpretation (Simulation) | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="LBOMETR Course Book" />
+  <meta name="twitter:title" content="19 Part 2: Instrumental Variables Interpretation (Simulation) | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="part-1-dummy-variables-and-interaction-effects-simulation.html"/>
 
-<link rel="next" href="syllabus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -491,29 +491,226 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">LBOMETR Course Book</h1>
-<p class="author"><em>Jem Marie M. Nario</em></p>
-<p class="date"><em>2026-03-15</em></p>
-</div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to the <strong>LBOMETR Course Book</strong>! This book is designed to guide students through the course by providing all necessary resources, materials, and instructions.</p>
-<div class="float">
-<img src="cover.jpg" style="float: right; width: 300px; margin-left: 15px; margin-bottom: 15px;" alt="LBOMETR" />
-<div class="figcaption">LBOMETR</div>
-</div>
-<p>This course book is intended to ensure that DLSU Carlos L. Tiu-School of Economics students will be able to learn more about Econometrics using R. You will find sections on the syllabus, course assessments, and group projects, as well as guidance for navigating the course effectively.</p>
-<div id="about-me" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> About Me<a href="index.html#about-me" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>My name is <strong>Jem Marie M. Nario</strong>, and I am your lecturer for this course. I am excited to guide you through this journey of learning and discovery since I am also on a journey of learning and discovery while teaching part-time.</p>
-<p>This book is a trial version whnb ich will be updated along the course as it also serves as a practice for me.</p>
+<div id="part-2-instrumental-variables-interpretation-simulation" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Part 2: Instrumental Variables Interpretation (Simulation)<a href="part-2-instrumental-variables-interpretation-simulation.html#part-2-instrumental-variables-interpretation-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Now consider a situation where <strong>education may be endogenous</strong>.</p>
+<p>Possible reasons:</p>
 <ul>
-<li><strong>Email</strong>: <a href="mailto:jem.nario@dlsu.edu.ph">jem.nario@dlsu.edu.ph</a><br />
-</li>
-<li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/jmnario/">linkedin.com/in/jmnario/</a></li>
+<li><p>ability affects both education and wages</p></li>
+<li><p>family background influences both</p></li>
 </ul>
-<p>Feel free to reach out with any questions or concerns throughout the course.</p>
+<p>If education is correlated with the error term, OLS estimates of the return to education are biased.</p>
+<p>We simulate an <strong>instrument</strong>: distance to college.</p>
+<p>Idea:</p>
+<ul>
+<li><p>living closer to college increases education</p></li>
+<li><p>but distance should not directly affect wages</p></li>
+</ul>
+<div id="simulated-data" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Simulated Data<a href="part-2-instrumental-variables-interpretation-simulation.html#simulated-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">321</span>)</span>
+<span id="cb455-2"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-2" tabindex="-1"></a></span>
+<span id="cb455-3"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb455-4"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-4" tabindex="-1"></a></span>
+<span id="cb455-5"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-5" tabindex="-1"></a>iv_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb455-6"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-6" tabindex="-1"></a>  <span class="at">distance_college =</span> <span class="fu">runif</span>(n,<span class="dv">0</span>,<span class="dv">20</span>),</span>
+<span id="cb455-7"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-7" tabindex="-1"></a>  <span class="at">ability =</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb455-8"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-8" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb455-9"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-9" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb455-10"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-10" tabindex="-1"></a>    <span class="at">educ =</span> <span class="dv">12</span> <span class="sc">-</span> <span class="fl">0.2</span><span class="sc">*</span>distance_college <span class="sc">+</span> ability <span class="sc">+</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb455-11"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-11" tabindex="-1"></a>    <span class="at">wage =</span> <span class="dv">5</span> <span class="sc">+</span> <span class="fl">0.9</span><span class="sc">*</span>educ <span class="sc">+</span> ability <span class="sc">+</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb455-12"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb455-12" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Here:</p>
+<ul>
+<li><p><code>ability</code> affects both education and wages</p></li>
+<li><p>therefore OLS will be biased</p></li>
+</ul>
+</div>
+<div id="ols-regression" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> OLS Regression<a href="part-2-instrumental-variables-interpretation-simulation.html#ols-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb456-1" tabindex="-1"></a>ols_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> educ, <span class="at">data =</span> iv_data)</span>
+<span id="cb456-2"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb456-2" tabindex="-1"></a><span class="fu">summary</span>(ols_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ educ, data = iv_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q 
+## -4.2791 -0.9928 -0.0048  0.9130 
+##     Max 
+##  4.5021 
+## 
+## Coefficients:
+##             Estimate Std. Error
+## (Intercept)  2.10619    0.24171
+## educ         1.19107    0.02386
+##             t value
+## (Intercept)   8.714
+## educ         49.927
+##                        Pr(&gt;|t|)
+## (Intercept) &lt;0.0000000000000002
+## educ        &lt;0.0000000000000002
+##                
+## (Intercept) ***
+## educ        ***
+## ---
+## Signif. codes:  
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39;
+##   0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.353 on 998 degrees of freedom
+## Multiple R-squared:  0.7141, Adjusted R-squared:  0.7138 
+## F-statistic:  2493 on 1 and 998 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<p>Interpretation:</p>
+<blockquote>
+<p>“OLS estimates the association between education and wages, but this estimate may be biased because unobserved ability affects both variables.”</p>
+</blockquote>
+</div>
+<div id="first-stage-regression" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> First Stage Regression<a href="part-2-instrumental-variables-interpretation-simulation.html#first-stage-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb458-1" tabindex="-1"></a>first_stage <span class="ot">&lt;-</span> <span class="fu">lm</span>(educ <span class="sc">~</span> distance_college, <span class="at">data =</span> iv_data)</span>
+<span id="cb458-2"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb458-2" tabindex="-1"></a><span class="fu">summary</span>(first_stage)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = educ ~ distance_college, data = iv_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q 
+## -4.1973 -1.0360  0.0289  1.0139 
+##     Max 
+##  4.9790 
+## 
+## Coefficients:
+##                   Estimate
+## (Intercept)      11.982741
+## distance_college -0.196666
+##                  Std. Error
+## (Intercept)        0.088877
+## distance_college   0.007563
+##                  t value
+## (Intercept)        134.8
+## distance_college   -26.0
+##                             Pr(&gt;|t|)
+## (Intercept)      &lt;0.0000000000000002
+## distance_college &lt;0.0000000000000002
+##                     
+## (Intercept)      ***
+## distance_college ***
+## ---
+## Signif. codes:  
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39;
+##   0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.386 on 998 degrees of freedom
+## Multiple R-squared:  0.4039, Adjusted R-squared:  0.4033 
+## F-statistic: 676.2 on 1 and 998 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<p>Interpretation:</p>
+<p>The coefficient on <code>distance_college</code> tells us whether the instrument predicts education.</p>
+<p>If significant:</p>
+<blockquote>
+<p>“Distance to college is strongly related to educational attainment, satisfying the relevance condition for a valid instrument.”</p>
+</blockquote>
+<p>Check the <strong>first‑stage F‑statistic</strong>.</p>
+<p>Rule of thumb:</p>
+<ul>
+<li><strong>F &gt; 10 → instrument likely strong</strong></li>
+</ul>
+</div>
+<div id="iv-regression-two-stage-least-squares" class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> IV Regression (Two Stage Least Squares)<a href="part-2-instrumental-variables-interpretation-simulation.html#iv-regression-two-stage-least-squares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb460-1" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
+<span id="cb460-2"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb460-2" tabindex="-1"></a>iv_model <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(wage <span class="sc">~</span> educ <span class="sc">|</span> distance_college, <span class="at">data =</span> iv_data)</span>
+<span id="cb460-3"><a href="part-2-instrumental-variables-interpretation-simulation.html#cb460-3" tabindex="-1"></a><span class="fu">summary</span>(iv_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## ivreg(formula = wage ~ educ | distance_college, data = iv_data)
+## 
+## Residuals:
+##       Min        1Q    Median 
+## -4.013526 -1.057973  0.002348 
+##        3Q       Max 
+##  1.137755  4.163679 
+## 
+## Coefficients:
+##             Estimate Std. Error
+## (Intercept)  5.42866    0.41194
+## educ         0.85789    0.04104
+##             t value
+## (Intercept)   13.18
+## educ          20.90
+##                        Pr(&gt;|t|)
+## (Intercept) &lt;0.0000000000000002
+## educ        &lt;0.0000000000000002
+##                
+## (Intercept) ***
+## educ        ***
+## ---
+## Signif. codes:  
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39;
+##   0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.479 on 998 degrees of freedom
+## Multiple R-Squared: 0.6582,  Adjusted R-squared: 0.6579 
+## Wald test: 436.9 on 1 and 998 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+<div id="interpretation-of-iv-coefficient" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Interpretation of IV Coefficient<a href="part-2-instrumental-variables-interpretation-simulation.html#interpretation-of-iv-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The IV estimate measures the <strong>causal effect of education on wages</strong> using only variation in education generated by the instrument.</p>
+<p>Interpretation example:</p>
+<blockquote>
+<p>“Using distance to college as an instrument for education, a one‑year increase in education increases wages by β₁ units on average.”</p>
+</blockquote>
+<p>Key idea:</p>
+<ul>
+<li><p>OLS uses <strong>all variation in education</strong></p></li>
+<li><p>IV uses only <strong>exogenous variation generated by the instrument</strong></p></li>
+</ul>
+<p>Thus IV attempts to isolate a causal effect.</p>
+</div>
+<div id="comparing-ols-and-iv" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Comparing OLS and IV<a href="part-2-instrumental-variables-interpretation-simulation.html#comparing-ols-and-iv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Researchers often compare the two estimates.</p>
+<p>If they differ substantially, that suggests <strong>endogeneity bias</strong> in the OLS model.</p>
+<p>Example interpretation:</p>
+<blockquote>
+<p>“The IV estimate of the return to education differs from the OLS estimate, suggesting that unobserved ability biases the OLS coefficient.”</p>
+</blockquote>
+</div>
+<div id="interpreting-iv-results-carefully" class="section level2 hasAnchor" number="19.7">
+<h2><span class="header-section-number">19.7</span> Interpreting IV Results Carefully<a href="part-2-instrumental-variables-interpretation-simulation.html#interpreting-iv-results-carefully" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Always discuss:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Instrument relevance</strong></p></li>
+<li><p><strong>Instrument validity (exclusion restriction)</strong></p></li>
+<li><p><strong>Precision of the IV estimate</strong></p></li>
+</ol>
+<p>Weak instruments lead to large standard errors and unreliable estimates.</p>
+</div>
+<div id="summary-of-interpretation-strategy" class="section level2 hasAnchor" number="19.8">
+<h2><span class="header-section-number">19.8</span> Summary of Interpretation Strategy<a href="part-2-instrumental-variables-interpretation-simulation.html#summary-of-interpretation-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When interpreting regression results:</p>
+<ol style="list-style-type: decimal">
+<li><p>Identify the <strong>reference group</strong>.</p></li>
+<li><p>Interpret coefficients relative to that group.</p></li>
+<li><p>For interactions, compute <strong>combined effects</strong>.</p></li>
+<li><p>For IV models, discuss <strong>instrument validity and first stage strength</strong>.</p></li>
+<li><p>Distinguish <strong>statistical significance from economic importance</strong>.</p></li>
+</ol>
+</div>
+<div id="final-reminders-for-interpretation" class="section level2 hasAnchor" number="19.9">
+<h2><span class="header-section-number">19.9</span> Final reminders for interpretation<a href="part-2-instrumental-variables-interpretation-simulation.html#final-reminders-for-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When writing up your regression results, avoid statements such as:</p>
+<ul>
+<li><p>“X has no effect” when the coefficient is not significant</p></li>
+<li><p>“The relationship is strong” without explaining whether you mean statistical significance, economic size, or model fit</p></li>
+<li><p>“p = 0.08 means insignificant” without noting that it is marginal at the 10% level</p></li>
+</ul>
+<p>Better wording is:</p>
+<ul>
+<li><p>“The estimated effect is negative, but it is not statistically distinguishable from zero at the 5% level.”</p></li>
+<li><p>“The effect is statistically significant, but its magnitude is economically small.”</p></li>
+<li><p>“The coefficient is marginally significant at the 10% level, so the evidence is suggestive rather than strong.”</p></li>
+</ul>
 
 </div>
 </div>
@@ -522,8 +719,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="part-1-dummy-variables-and-interaction-effects-simulation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="syllabus.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>LBOMETR Course Book</title>
+  <title>18 Part 1: Dummy Variables and Interaction Effects (Simulation) | LBOMETR Course Book</title>
   <meta name="description" content="An introduction to the LBOMETR Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="LBOMETR Course Book" />
+  <meta property="og:title" content="18 Part 1: Dummy Variables and Interaction Effects (Simulation) | LBOMETR Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="LBOMETR Course Book" />
+  <meta name="twitter:title" content="18 Part 1: Dummy Variables and Interaction Effects (Simulation) | LBOMETR Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="syllabus.html"/>
+<link rel="prev" href="deep-dive-interpreting-regression-results-with-simulated-examples.html"/>
+<link rel="next" href="part-2-instrumental-variables-interpretation-simulation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -491,30 +491,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">LBOMETR Course Book</h1>
-<p class="author"><em>Jem Marie M. Nario</em></p>
-<p class="date"><em>2026-03-15</em></p>
-</div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to the <strong>LBOMETR Course Book</strong>! This book is designed to guide students through the course by providing all necessary resources, materials, and instructions.</p>
-<div class="float">
-<img src="cover.jpg" style="float: right; width: 300px; margin-left: 15px; margin-bottom: 15px;" alt="LBOMETR" />
-<div class="figcaption">LBOMETR</div>
-</div>
-<p>This course book is intended to ensure that DLSU Carlos L. Tiu-School of Economics students will be able to learn more about Econometrics using R. You will find sections on the syllabus, course assessments, and group projects, as well as guidance for navigating the course effectively.</p>
-<div id="about-me" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> About Me<a href="index.html#about-me" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>My name is <strong>Jem Marie M. Nario</strong>, and I am your lecturer for this course. I am excited to guide you through this journey of learning and discovery since I am also on a journey of learning and discovery while teaching part-time.</p>
-<p>This book is a trial version whnb ich will be updated along the course as it also serves as a practice for me.</p>
+<div id="part-1-dummy-variables-and-interaction-effects-simulation" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">18</span> Part 1: Dummy Variables and Interaction Effects (Simulation)<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#part-1-dummy-variables-and-interaction-effects-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="data-generating-process" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Data Generating Process<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#data-generating-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose we simulate a study about the effect of a <strong>job training program</strong> on wages.</p>
+<p>Variables:</p>
 <ul>
-<li><strong>Email</strong>: <a href="mailto:jem.nario@dlsu.edu.ph">jem.nario@dlsu.edu.ph</a><br />
-</li>
-<li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/jmnario/">linkedin.com/in/jmnario/</a></li>
+<li><p><code>wage</code> : hourly wage</p></li>
+<li><p><code>female</code> : 1 if female</p></li>
+<li><p><code>training</code> : 1 if worker attended training program</p></li>
+<li><p><code>educ</code> : years of education</p></li>
+<li><p><code>training_female</code> : interaction between training and female</p></li>
 </ul>
-<p>Feel free to reach out with any questions or concerns throughout the course.</p>
-
+<p>Interpretation goal: determine whether <strong>training increases wages and whether the effect differs by gender</strong>.</p>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb449-2"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-2" tabindex="-1"></a></span>
+<span id="cb449-3"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb449-4"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-4" tabindex="-1"></a></span>
+<span id="cb449-5"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-5" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb449-6"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-6" tabindex="-1"></a>  <span class="at">female =</span> <span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.5</span>),</span>
+<span id="cb449-7"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-7" tabindex="-1"></a>  <span class="at">training =</span> <span class="fu">rbinom</span>(n,<span class="dv">1</span>,<span class="fl">0.4</span>),</span>
+<span id="cb449-8"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-8" tabindex="-1"></a>  <span class="at">educ =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n,<span class="dv">12</span>,<span class="dv">2</span>))</span>
+<span id="cb449-9"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-9" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb449-10"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-10" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb449-11"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-11" tabindex="-1"></a>    <span class="at">training_female =</span> training<span class="sc">*</span>female,</span>
+<span id="cb449-12"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-12" tabindex="-1"></a>    <span class="at">wage =</span> <span class="dv">8</span> <span class="sc">+</span></span>
+<span id="cb449-13"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-13" tabindex="-1"></a>           <span class="fl">0.8</span><span class="sc">*</span>educ <span class="sc">+</span></span>
+<span id="cb449-14"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-14" tabindex="-1"></a>           <span class="fl">1.5</span><span class="sc">*</span>training <span class="sc">+</span></span>
+<span id="cb449-15"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-15" tabindex="-1"></a>           (<span class="sc">-</span><span class="fl">1.0</span>)<span class="sc">*</span>female <span class="sc">+</span></span>
+<span id="cb449-16"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-16" tabindex="-1"></a>           (<span class="sc">-</span><span class="fl">0.7</span>)<span class="sc">*</span>training_female <span class="sc">+</span></span>
+<span id="cb449-17"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-17" tabindex="-1"></a>           <span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb449-18"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-18" tabindex="-1"></a>  )</span>
+<span id="cb449-19"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-19" tabindex="-1"></a></span>
+<span id="cb449-20"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb449-20" tabindex="-1"></a><span class="fu">summary</span>(sim_data)</span></code></pre></div>
+<pre><code>##      female         training    
+##  Min.   :0.000   Min.   :0.000  
+##  1st Qu.:0.000   1st Qu.:0.000  
+##  Median :0.000   Median :0.000  
+##  Mean   :0.493   Mean   :0.386  
+##  3rd Qu.:1.000   3rd Qu.:1.000  
+##  Max.   :1.000   Max.   :1.000  
+##       educ      training_female
+##  Min.   : 6.0   Min.   :0.000  
+##  1st Qu.:11.0   1st Qu.:0.000  
+##  Median :12.0   Median :0.000  
+##  Mean   :12.1   Mean   :0.172  
+##  3rd Qu.:14.0   3rd Qu.:0.000  
+##  Max.   :19.0   Max.   :1.000  
+##       wage       
+##  Min.   : 9.502  
+##  1st Qu.:15.747  
+##  Median :17.502  
+##  Mean   :17.608  
+##  3rd Qu.:19.456  
+##  Max.   :26.287</code></pre>
+</div>
+<div id="regression-model" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Regression Model<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math inline">\(wage = \beta_0 + \beta_1 training + \beta_2 female + \beta_3 (training \cdot female) + \beta_4 educ + u\)</span></p>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb451-1" tabindex="-1"></a>model_sim <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> training <span class="sc">+</span> female <span class="sc">+</span> training_female <span class="sc">+</span> educ, <span class="at">data =</span> sim_data)</span>
+<span id="cb451-2"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb451-2" tabindex="-1"></a><span class="fu">summary</span>(model_sim)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wage ~ training + female + training_female + educ, 
+##     data = sim_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q 
+## -5.5004 -1.2808 -0.0565  1.3490 
+##     Max 
+##  6.8218 
+## 
+## Coefficients:
+##                 Estimate
+## (Intercept)       7.7616
+## training          1.2314
+## female           -1.0992
+## training_female  -0.3404
+## educ              0.8239
+##                 Std. Error
+## (Intercept)         0.3848
+## training            0.1761
+## female              0.1582
+## training_female     0.2553
+## educ                0.0302
+##                 t value
+## (Intercept)      20.169
+## training          6.994
+## female           -6.950
+## training_female  -1.333
+## educ             27.281
+##                             Pr(&gt;|t|)
+## (Intercept)     &lt; 0.0000000000000002
+## training            0.00000000000488
+## female              0.00000000000658
+## training_female                0.183
+## educ            &lt; 0.0000000000000002
+##                    
+## (Intercept)     ***
+## training        ***
+## female          ***
+## training_female    
+## educ            ***
+## ---
+## Signif. codes:  
+##   0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39;
+##   0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.957 on 995 degrees of freedom
+## Multiple R-squared:  0.4787, Adjusted R-squared:  0.4766 
+## F-statistic: 228.4 on 4 and 995 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+<div id="interpreting-each-coefficient" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Interpreting Each Coefficient<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#interpreting-each-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="intercept" class="section level3 hasAnchor" number="18.3.1">
+<h3><span class="header-section-number">18.3.1</span> Intercept<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#intercept" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The intercept represents the predicted wage for the <strong>reference group</strong>.</p>
+<p>Reference group here:</p>
+<ul>
+<li><p>male</p></li>
+<li><p>not in training</p></li>
+<li><p>education = 0</p></li>
+</ul>
+<p>In practice the intercept is often not that important because zero education may be unrealistic.</p>
+</div>
+<div id="training-coefficient" class="section level3 hasAnchor" number="18.3.2">
+<h3><span class="header-section-number">18.3.2</span> Training coefficient<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#training-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The coefficient on <code>training</code> measures the <strong>effect of training for males</strong>.</p>
+<p>Why?</p>
+<p>Because the interaction term allows the effect of training to change for females.</p>
+<p>Interpretation example:</p>
+<blockquote>
+<p>“Among males, participation in the training program increases wages by approximately β₁ units on average, holding education constant.”</p>
+</blockquote>
+</div>
+<div id="female-coefficient" class="section level3 hasAnchor" number="18.3.3">
+<h3><span class="header-section-number">18.3.3</span> Female coefficient<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#female-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The coefficient on <code>female</code> measures the <strong>gender wage gap among workers who did not receive training</strong>.</p>
+<p>Interpretation:</p>
+<blockquote>
+<p>“Among workers without training, females earn β₂ units less than males on average.”</p>
+</blockquote>
+</div>
+<div id="interaction-term" class="section level3 hasAnchor" number="18.3.4">
+<h3><span class="header-section-number">18.3.4</span> Interaction term<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#interaction-term" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The coefficient on <code>training_female</code> shows how the <strong>training effect differs for females relative to males</strong>.</p>
+<p>Important rule:</p>
+<p>Do <strong>not</strong> interpret this coefficient by itself.</p>
+<p>Instead compute the total effect.</p>
+<p>Training effect for males: <span class="math inline">\(\beta_1\)</span></p>
+<p>Training effect for females: <span class="math inline">\(\beta_1+\beta_3\)</span></p>
+<p>Example interpretation:</p>
+<blockquote>
+<p>“Training increases wages for males by β₁ units, but the training effect for females is β₁ + β₃. The negative interaction coefficient indicates that the training effect is smaller for females.”</p>
+</blockquote>
+</div>
+<div id="education-coefficient" class="section level3 hasAnchor" number="18.3.5">
+<h3><span class="header-section-number">18.3.5</span> Education coefficient<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#education-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The coefficient on education measures the <strong>return to schooling</strong>, holding gender and training constant.</p>
+<p>Interpretation:</p>
+<blockquote>
+<p>“Each additional year of education increases wages by β₄ units on average, controlling for training participation and gender.”</p>
+</blockquote>
+</div>
+</div>
+<div id="visualizing-interaction-effects" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Visualizing Interaction Effects<a href="part-1-dummy-variables-and-interaction-effects-simulation.html#visualizing-interaction-effects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb453-1" tabindex="-1"></a><span class="fu">ggplot</span>(sim_data, <span class="fu">aes</span>(<span class="at">x =</span> training, <span class="at">y =</span> wage, <span class="at">color =</span> <span class="fu">factor</span>(female)))<span class="sc">+</span></span>
+<span id="cb453-2"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb453-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha=</span>.<span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb453-3"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb453-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb453-4"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb453-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color=</span><span class="st">&quot;Female&quot;</span>)<span class="sc">+</span></span>
+<span id="cb453-5"><a href="part-1-dummy-variables-and-interaction-effects-simulation.html#cb453-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula =
+## &#39;y ~ x&#39;</code></pre>
+<p><img src="LBOMETR_Course_Book_files/figure-html/unnamed-chunk-288-1.png" alt="" width="672" /></p>
+<p>The graph helps visualize that the <strong>slope of training differs across groups</strong>.</p>
 </div>
 </div>
             </section>
@@ -522,8 +674,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="syllabus.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="deep-dive-interpreting-regression-results-with-simulated-examples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="part-2-instrumental-variables-interpretation-simulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
